@@ -34,21 +34,37 @@ def parse_date(param):
 
 class MainHandler(webapp2.RequestHandler):
     def get(self):
-
         path = os.path.join(os.path.join(os.path.dirname(__file__), 'html'), '../templates/stats_view.html')
         self.response.out.write(template.render(path, {}))
 
 
-class MigraineData(webapp2.RequestHandler):
-    def generate_frequencies(self, days_of_week, weekdays_counter):
-        frequencies = []
-        for day in days_of_week:
-            if day in weekdays_counter:
-                frequencies.append(weekdays_counter[day])
-            else:
-                frequencies.append(0)
-        return frequencies
+def generate_frequencies_response(keys, weekdays_counter):
+    frequencies = []
+    for day in keys:
+        if day in weekdays_counter:
+            frequencies.append(weekdays_counter[day])
+        else:
+            frequencies.append(0)
 
+    return frequencies
+
+
+def fetch_start_date(args):
+    return args['StartDate']
+
+
+def find_average_days_between_event(events):
+    first_date = min(events, key=fetch_start_date)
+    last_date = max(events, key=fetch_start_date)
+
+    duration = last_date['StartDate'] - first_date['StartDate']
+
+    average_days_between_event = float(duration.days) / len(events)
+
+    return average_days_between_event
+
+
+class MigraineData(webapp2.RequestHandler):
     def get(self):
 
         p = os.path.join(os.path.split(__file__)[0], 'migraines.json')
@@ -61,30 +77,81 @@ class MigraineData(webapp2.RequestHandler):
 
         weekdays_counter = Counter()
         months_counter = Counter()
+        hours_counter = Counter()
+        years_counter = Counter()
 
         for event in events:
             if 'Start' in event:
                 event['StartDate'] = parse_date(event['Start'])
                 event['Day'] = event['StartDate'].strftime('%A')
                 event['Month'] = event['StartDate'].strftime('%B')
+                event['Year'] = str(event['StartDate'].year)
+
+                hour = event['StartDate'].hour
+
+                event['Hour'] = "%02d:00" % (0 if hour == 23 else hour if hour % 2 == 0 else hour + 1)
 
                 weekdays_counter[event['Day']] += 1
                 months_counter[event['Month']] += 1
+                hours_counter[event['Hour']] += 1
+                years_counter[event['Year']] += 1
 
         days_of_week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
-        months_of_year = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
+        months_of_year = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
+                          'October', 'November', 'December']
 
-        days_of_week_frequencies = self.generate_frequencies(days_of_week, weekdays_counter)
-        months_of_year_frequencies = self.generate_frequencies(months_of_year, months_counter)
+        hours_of_day = ["%02d:00" % (hour * 2) for hour in range(12)]
 
-        days_data = {'daysOfWeek': days_of_week,
-                     'frequencies': days_of_week_frequencies}
+        years = sorted(list(years_counter))
 
-        months_data = {'daysOfWeek': months_of_year,
-                     'frequencies': months_of_year_frequencies}
+        weekdays_year_counters = {}
+        months_year_counters = {}
 
-        response = {'daysOfWeek': days_data,
-                    'monthsOfYear': months_data}
+        for event in events:
+            if event['Year'] not in weekdays_year_counters:
+                weekdays_year_counters[event['Year']] = Counter()
+                months_year_counters[event['Year']] = Counter()
+
+            weekdays_year_counters[event['Year']][event['Day']] += 1
+            months_year_counters[event['Year']][event['Month']] += 1
+
+        days_data = {'title': 'Days of week',
+                     'keys': days_of_week,
+                     'frequencies': [generate_frequencies_response(days_of_week, weekdays_counter)]}
+        months_data = {'title': 'Month of year',
+                       'keys': months_of_year,
+                       'frequencies': [generate_frequencies_response(months_of_year, months_counter)]}
+        hours_data = {'title': 'Hours of the day',
+                      'keys': hours_of_day,
+                      'frequencies': [generate_frequencies_response(hours_of_day, hours_counter)]}
+        years_data = {'title': 'Yearly trend',
+                      'keys': years,
+                      'frequencies': [generate_frequencies_response(years, years_counter)]}
+
+        days_by_year_data = {'title': 'Days of week by year',
+                             'keys': days_of_week,
+                             'frequencies': [generate_frequencies_response(days_of_week, weekdays_year_counters[year])
+                                             for year in years]}
+
+        months_by_year_data = {'title': 'Month by year',
+                             'keys': months_of_year,
+                             'frequencies': [generate_frequencies_response(months_of_year, months_year_counters[year])
+                                             for year in years]}
+
+        average_days_between_event = find_average_days_between_event(events)
+
+        overview = {'totalEvents': len(events),
+                    'averageTimeBetweenEvent': "{:.0f}".format(average_days_between_event),
+                    'firstDate': min(events, key=fetch_start_date)['StartDate'].strftime("%d %B %Y"),
+                    'lastDate': max(events, key=fetch_start_date)['StartDate'].strftime("%d %B %Y")}
+
+        response = {'overview': overview,
+                    'daysOfWeek': days_data,
+                    'weekdaysByYearData': days_by_year_data,
+                    'monthsOfYear': months_data,
+                    'monthsByYearData': months_by_year_data,
+                    'hoursOfDay': hours_data,
+                    'yearlyTrend': years_data}
 
         self.response.out.write(simplejson.dumps(response))
 

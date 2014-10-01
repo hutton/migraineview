@@ -191,6 +191,9 @@ body {
 .underline {
   text-decoration: underline;
 }
+.right {
+  float: right;
+}
 .center {
   text-align: center;
 }
@@ -223,23 +226,66 @@ h4 {
 .stat-section {
   margin: 20px 20px;
 }
+.date-range {
+  float: right;
+}
 .stat-section-title {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   font-size: 120%;
 }
+.stat-section-item-container {
+  margin-left: auto;
+  margin-right: auto;
+}
 .stat-section-item {
   display: inline-block;
-  padding: 10px 20px 10px 0px;
-  margin: 10px 20px 10px 0px;
+  margin-right: 20px;
   text-align: right;
   vertical-align: top;
 }
-.stat-section-item > div {
-  font-size: 160%;
-  line-height: 1.4em;
+.stat-section-full-width-item {
+  padding: 10px;
+  margin: 10px auto 10px auto;
+  text-align: center;
 }
-.stat-section-item > div:first-child {
-  text-align: left;
+.stat-section-item > div {
+  vertical-align: middle;
+  text-align: center;
+}
+.stat-section-item > div.label {
   font-size: 160%;
   line-height: 1.4em;
+  opacity: 0.6;
+}
+.stat-section-item > div.count {
+  font-size: 600%;
+  line-height: 1.2em;
+  opacity: 0.6;
+}
+.side-by-side-container {
+  position: relative;
+  height: 240px;
+}
+.side-by-side {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+.graph-mode {
+  text-align: center;
+  margin-top: 10px;
+}
+.selected {
+  background: rgba(0, 0, 0, 0.12);
+}
+.graph-mode > span {
+  margin: 0px 10px;
+  cursor: pointer;
+  opacity: 0.7;
+  font-size: 90%;
+  padding: 1px 10px;
+  border-radius: 10px;
+}
+.graph-mode > span:hover {
+  opacity: 0.9;
 }

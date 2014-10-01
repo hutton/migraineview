@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Statistics - ICS Converter</title>
+    <title>Migraine Analysis</title>
 
     <link type="text/css" rel="stylesheet" href="/static/css/stats_view.css" />
 </head>
@@ -19,13 +19,50 @@
         </div>
     </div>
 
+    <script type="text/template" id="overview-view-template">
+        <div class="stat-section-title">
+            Overview
+            <span class="date-range"><%= overview.firstDate %> - <%= overview.lastDate %></span>
+        </div>
+        <div class="stat-section-item-container">
+            <div class="stat-section-full-width-item">
+                <div class="stat-section-item">
+                    <div class="count"><%= overview.totalEvents %></div>
+                    <div class="label">total<br/>attacks</div>
+                </div>
+                <div class="stat-section-item">
+                    <div class="count"><%= overview.averageTimeBetweenEvent %></div>
+                    <div class="label">average days<br/>between attacks</div>
+                </div>
+                <div class="stat-section-item right">
+                    <canvas class="trend-type-chart" width="300" height="200"></canvas>
+                </div>
+            </div>
+        </div>
+    </script>
+
     <script type="text/template" id="days-of-week-view-template">
-            <div class="stat-section-title">
-                Days of week
+        <div class="stat-section-title">
+            <%= all.title %>
+        </div>
+        <div class="stat-section-full-width-item">
+            <div class="side-by-side-container">
+                <canvas class="side-by-side all-chart" width="700" height="240"></canvas>
+                <canvas style="display: none;" class="side-by-side by-year-chart" width="700" height="240"></canvas>
             </div>
-            <div class="stat-section-item">
-                <canvas class="download-type-chart" width="760" height="240"></canvas>
+            <div class="graph-mode">
+                <span class="graph-mode-all selected">all</span><span class="graph-mode-year">by year</span>
             </div>
+        </div>
+    </script>
+
+    <script type="text/template" id="radar-chart-view-template">
+        <div class="stat-section-title">
+            <%= title %>
+        </div>
+        <div class="stat-section-full-width-item">
+            <canvas class="radar-type-chart" width="300" height="300"></canvas>
+        </div>
     </script>
 
     <script src="/static/javascript/tp/jquery-2.1.1.js" language="javascript" type="text/javascript"></script>
