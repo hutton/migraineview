@@ -64,6 +64,22 @@ def find_average_days_between_event(events):
     return average_days_between_event
 
 
+def add_month(datetime, months):
+    pass
+
+
+def get_month_years(first_date, last_date):
+    current_month_year = first_date
+    month_years = []
+
+    while current_month_year <= last_date:
+        month_years.append(current_month_year.strftime('%m/%y'))
+
+        add_month(current_month_year, 1)
+
+    return month_years
+
+
 class MigraineData(webapp2.RequestHandler):
     def get(self):
 
@@ -75,10 +91,14 @@ class MigraineData(webapp2.RequestHandler):
 
         events = json.loads(contents)
 
+        first_date = min(events, key=fetch_start_date)
+        last_date = max(events, key=fetch_start_date)
+
         weekdays_counter = Counter()
         months_counter = Counter()
         hours_counter = Counter()
         years_counter = Counter()
+        month_year_counter = Counter()
 
         for event in events:
             if 'Start' in event:
@@ -86,6 +106,7 @@ class MigraineData(webapp2.RequestHandler):
                 event['Day'] = event['StartDate'].strftime('%A')
                 event['Month'] = event['StartDate'].strftime('%B')
                 event['Year'] = str(event['StartDate'].year)
+                event['MonthYear'] = event['StartDate'].strftime('%m/%y')
 
                 hour = event['StartDate'].hour
 
@@ -95,6 +116,7 @@ class MigraineData(webapp2.RequestHandler):
                 months_counter[event['Month']] += 1
                 hours_counter[event['Hour']] += 1
                 years_counter[event['Year']] += 1
+                month_year_counter[event['MonthYear']] += 1
 
         days_of_week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
         months_of_year = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
@@ -103,6 +125,8 @@ class MigraineData(webapp2.RequestHandler):
         hours_of_day = ["%02d:00" % (hour * 2) for hour in range(12)]
 
         years = sorted(list(years_counter))
+
+        month_years = get_month_years(first_date, last_date)
 
         weekdays_year_counters = {}
         months_year_counters = {}
@@ -142,8 +166,8 @@ class MigraineData(webapp2.RequestHandler):
 
         overview = {'totalEvents': len(events),
                     'averageTimeBetweenEvent': "{:.0f}".format(average_days_between_event),
-                    'firstDate': min(events, key=fetch_start_date)['StartDate'].strftime("%d %B %Y"),
-                    'lastDate': max(events, key=fetch_start_date)['StartDate'].strftime("%d %B %Y")}
+                    'firstDate': first_date['StartDate'].strftime("%d %B %Y"),
+                    'lastDate': last_date['StartDate'].strftime("%d %B %Y")}
 
         response = {'overview': overview,
                     'daysOfWeek': days_data,
