@@ -22,7 +22,7 @@
     <script type="text/template" id="overview-view-template">
         <div class="stat-section-title">
             Overview
-            <span class="date-range"><%= overview.firstDate %> - <%= overview.lastDate %></span>
+            <!--<span class="date-range"><%= overview.firstDate %> - <%= overview.lastDate %></span>-->
         </div>
         <div class="stat-section-item-container">
             <div class="stat-section-full-width-item">
@@ -35,8 +35,15 @@
                     <div class="label">average days<br/>between attacks</div>
                 </div>
                 <div class="stat-section-item right">
-                    <canvas class="trend-type-chart" width="300" height="200"></canvas>
+                    <canvas class="year-trend-chart" width="300" height="200"></canvas>
                 </div>
+            </div>
+        </div>
+        <div class="stat-section-item-container" id="overview-trend">
+            <div class="stat-section-full-width-item">
+                <canvas class="overview-trend-chart" width="740" height="40"></canvas>
+                <div class="overview-first-date"><%= overview.firstDate %></div>
+                <div class="overview-last-date"><%= overview.lastDate %></div>
             </div>
         </div>
     </script>

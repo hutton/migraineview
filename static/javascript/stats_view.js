@@ -12,7 +12,7 @@ window.OverviewView = Backbone.View.extend({
     render: function(){
         this.$el.html(this.template(this.model));
 
-        this.chartEl = this.$el.find('canvas');
+        this.chartEl = this.$el.find('.year-trend-chart');
 
         var ctx = this.chartEl.get(0).getContext("2d");
 
@@ -30,6 +30,31 @@ window.OverviewView = Backbone.View.extend({
         ]};
 
         new Chart(ctx).Bar(data);
+
+
+        this.chartEl = this.$el.find('.overview-trend-chart');
+
+        var ctx = this.chartEl.get(0).getContext("2d");
+
+        var data = {
+            labels: this.model.monthYears.keys,
+            datasets: [
+            {
+                label: "Uploads",
+                fillColor: "rgba(220,220,220,0.5)",
+                strokeColor: "rgba(220,220,220,0.8)",
+                highlightFill: "rgba(220,220,220,0.75)",
+                highlightStroke: "rgba(220,220,220,1)",
+                data: this.model.monthYears.frequencies[0]
+            }
+        ]};
+
+        new Chart(ctx).Bar(data,
+            { barValueSpacing: false,
+                scaleShowGridLines: false,
+                barShowStroke: false,
+                showScale: false
+            });
 
         return this;
     },

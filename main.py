@@ -14,6 +14,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
+import calendar
 from collections import Counter
 import os
 import datetime
@@ -64,8 +65,13 @@ def find_average_days_between_event(events):
     return average_days_between_event
 
 
-def add_month(datetime, months):
-    pass
+def add_months(source_datetime, months):
+    month = source_datetime.month - 1 + months
+    year = source_datetime.year + month / 12
+    month = month % 12 + 1
+    day = min(source_datetime.day, calendar.monthrange(year, month)[1])
+
+    return datetime.datetime(year, month, day)
 
 
 def get_month_years(first_date, last_date):
@@ -75,7 +81,7 @@ def get_month_years(first_date, last_date):
     while current_month_year <= last_date:
         month_years.append(current_month_year.strftime('%m/%y'))
 
-        add_month(current_month_year, 1)
+        current_month_year = add_months(current_month_year, 1)
 
     return month_years
 
@@ -90,9 +96,6 @@ class MigraineData(webapp2.RequestHandler):
         contents = f.read()
 
         events = json.loads(contents)
-
-        first_date = min(events, key=fetch_start_date)
-        last_date = max(events, key=fetch_start_date)
 
         weekdays_counter = Counter()
         months_counter = Counter()
@@ -118,6 +121,9 @@ class MigraineData(webapp2.RequestHandler):
                 years_counter[event['Year']] += 1
                 month_year_counter[event['MonthYear']] += 1
 
+        first_date = min(events, key=fetch_start_date)
+        last_date = max(events, key=fetch_start_date)
+
         days_of_week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
         months_of_year = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
                           'October', 'November', 'December']
@@ -126,18 +132,20 @@ class MigraineData(webapp2.RequestHandler):
 
         years = sorted(list(years_counter))
 
-        month_years = get_month_years(first_date, last_date)
+        month_years = get_month_years(first_date['StartDate'], last_date['StartDate'])
 
-        weekdays_year_counters = {}
-        months_year_counters = {}
+        weekdays_by_year_counters = {}
+        months_by_year_counters = {}
+        month_years_counter = Counter()
 
         for event in events:
-            if event['Year'] not in weekdays_year_counters:
-                weekdays_year_counters[event['Year']] = Counter()
-                months_year_counters[event['Year']] = Counter()
+            if event['Year'] not in weekdays_by_year_counters:
+                weekdays_by_year_counters[event['Year']] = Counter()
+                months_by_year_counters[event['Year']] = Counter()
 
-            weekdays_year_counters[event['Year']][event['Day']] += 1
-            months_year_counters[event['Year']][event['Month']] += 1
+            weekdays_by_year_counters[event['Year']][event['Day']] += 1
+            months_by_year_counters[event['Year']][event['Month']] += 1
+            month_years_counter[event['MonthYear']] += 1
 
         days_data = {'title': 'Days of week',
                      'keys': days_of_week,
@@ -151,23 +159,28 @@ class MigraineData(webapp2.RequestHandler):
         years_data = {'title': 'Yearly trend',
                       'keys': years,
                       'frequencies': [generate_frequencies_response(years, years_counter)]}
+        month_year_data = {'title': 'Overview trend',
+                           'keys': month_years,
+                           'frequencies': [generate_frequencies_response(month_years, month_years_counter)]}
 
         days_by_year_data = {'title': 'Days of week by year',
                              'keys': days_of_week,
-                             'frequencies': [generate_frequencies_response(days_of_week, weekdays_year_counters[year])
-                                             for year in years]}
+                             'frequencies': [
+                                 generate_frequencies_response(days_of_week, weekdays_by_year_counters[year])
+                                 for year in years]}
 
         months_by_year_data = {'title': 'Month by year',
-                             'keys': months_of_year,
-                             'frequencies': [generate_frequencies_response(months_of_year, months_year_counters[year])
-                                             for year in years]}
+                               'keys': months_of_year,
+                               'frequencies': [
+                                   generate_frequencies_response(months_of_year, months_by_year_counters[year])
+                                   for year in years]}
 
         average_days_between_event = find_average_days_between_event(events)
 
         overview = {'totalEvents': len(events),
                     'averageTimeBetweenEvent': "{:.0f}".format(average_days_between_event),
-                    'firstDate': first_date['StartDate'].strftime("%d %B %Y"),
-                    'lastDate': last_date['StartDate'].strftime("%d %B %Y")}
+                    'firstDate': first_date['StartDate'].strftime("%B") + " " + first_date['StartDate'].strftime("%Y"),
+                    'lastDate': last_date['StartDate'].strftime("%B") + " " + last_date['StartDate'].strftime("%Y")}
 
         response = {'overview': overview,
                     'daysOfWeek': days_data,
@@ -175,7 +188,8 @@ class MigraineData(webapp2.RequestHandler):
                     'monthsOfYear': months_data,
                     'monthsByYearData': months_by_year_data,
                     'hoursOfDay': hours_data,
-                    'yearlyTrend': years_data}
+                    'yearlyTrend': years_data,
+                    'monthYears': month_year_data}
 
         self.response.out.write(simplejson.dumps(response))
 
