@@ -18,15 +18,31 @@ import os
 from google.appengine.ext.webapp import template
 import webapp2
 from migraine_statistics import MigraineData
+from google.appengine._internal.django.utils import simplejson
 
 
-class MainHandler(webapp2.RequestHandler):
+class Stats(webapp2.RequestHandler):
     def get(self):
         path = os.path.join(os.path.join(os.path.dirname(__file__), 'html'), '../templates/stats_view.html')
         self.response.out.write(template.render(path, {}))
 
 
+class Main(webapp2.RequestHandler):
+    def get(self):
+        path = os.path.join(os.path.join(os.path.dirname(__file__), 'html'), '../templates/main.html')
+        self.response.out.write(template.render(path, {}))
+
+
+class Upload(webapp2.RequestHandler):
+    def post(self):
+        response = {}
+
+        self.response.out.write(simplejson.dumps(response))
+
+
 app = webapp2.WSGIApplication([
-                                  ('/', MainHandler),
-                                  ('/migraine-data', MigraineData)
+                                  ('/', Main),
+                                  ('/stats', Stats),
+                                  ('/migraine-data', MigraineData),
+                                  ('/upload', MigraineData)
                               ], debug=True)

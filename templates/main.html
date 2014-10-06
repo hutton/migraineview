@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <link type="text/css" rel="stylesheet" href="/static/css/main.css" />
+    <link type="text/css" rel="stylesheet" href="/static/css/stats_view.css" />
+
+</head>
+<body>
+    <!-
+    Home view
+    ->
+    <div id="home-view">
+        <div class="fixed-width">
+            <h1 class="title">Frequency Analysis</h1>
+        </div>
+
+        <div class="fixed-width">
+            <div class="upload-container">
+
+            </div>
+            <div id="uploading-message">Uploading
+                <div class='progress'>
+                    <span style="width: 0%;"></span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-
+        Stats view
+    ->
+    <div id="stats-view" style="display: none;">
+        <div class="fixed-width">
+            <h2 class="stat-title">Migraine Statistics</h2>
+            <div id="stat-sections-container">
+                <div id="stats-loading">
+                    <div>Fetching data...</div>
+                    <div class='progress indefinite'>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-
+        Templates
+    ->
+    <script type="text/template" id="overview-view-template">
+        <div class="stat-section-title">
+            Overview
+            <!--<span class="date-range"><%= overview.firstDate %> - <%= overview.lastDate %></span>-->
+        </div>
+        <div class="stat-section-item-container">
+            <div class="stat-section-full-width-item">
+                <div class="stat-section-item">
+                    <div class="count"><%= overview.totalEvents %></div>
+                    <div class="label">total<br/>attacks</div>
+                </div>
+                <div class="stat-section-item">
+                    <div class="count"><%= overview.averageTimeBetweenEvent %></div>
+                    <div class="label">average days<br/>between attacks</div>
+                </div>
+                <div class="stat-section-item right">
+                    <canvas class="year-trend-chart" width="300" height="200"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="stat-section-item-container" id="overview-trend">
+            <div class="stat-section-full-width-item">
+                <canvas class="overview-trend-chart" width="740" height="40"></canvas>
+                <div class="overview-first-date"><%= overview.firstDate %></div>
+                <div class="overview-last-date"><%= overview.lastDate %></div>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/template" id="days-of-week-view-template">
+        <div class="stat-section-title">
+            <%= all.title %>
+        </div>
+        <div class="stat-section-full-width-item">
+            <div class="side-by-side-container">
+                <canvas class="side-by-side all-chart" width="700" height="240"></canvas>
+                <canvas style="display: none;" class="side-by-side by-year-chart" width="700" height="240"></canvas>
+            </div>
+            <div class="graph-mode">
+                <span class="graph-mode-all selected">all</span><span class="graph-mode-year">by year</span>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/template" id="radar-chart-view-template">
+        <div class="stat-section-title">
+            <%= title %>
+        </div>
+        <div class="stat-section-full-width-item">
+            <canvas class="radar-type-chart" width="300" height="300"></canvas>
+        </div>
+    </script>
+
+
+    <script src="/static/javascript/tp/jquery-2.1.1.js" language="javascript" type="text/javascript"></script>
+    <script src="/static/javascript/tp/Chart.min.js" language="javascript" type="text/javascript"></script>
+    <script src="/static/javascript/tp/underscore.js" language="javascript" type="text/javascript"></script>
+    <script src="/static/javascript/tp/backbone.js" language="javascript" type="text/javascript"></script>
+
+    <script src="/static/javascript/stats_view.js" language="javascript" type="text/javascript"></script>
+    <script src="/static/javascript/app.js" language="javascript" type="text/javascript"></script>
+</body>
+</html>
