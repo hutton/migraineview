@@ -1,6 +1,10 @@
-import hashlib
-from libs import icalendar
-from helper import process_calendar
+import sys
+
+sys.path.insert(0, 'libs')
+
+import icalendar
+
+from helper import process_calendar, build_json_events, date_to_datetime
 
 __author__ = 'simonhutton'
 
@@ -34,14 +38,18 @@ def generate_frequencies_response(keys, weekdays_counter):
 
 
 def fetch_start_date(args):
-    return args['StartDate']
+
+    if isinstance(args['Start'], datetime.date):
+        return datetime.datetime(args['Start'].year, args['Start'].month, args['Start'].day)
+
+    return args['Start']
 
 
 def find_average_days_between_event(events):
     first_date = min(events, key=fetch_start_date)
     last_date = max(events, key=fetch_start_date)
 
-    duration = last_date['StartDate'] - first_date['StartDate']
+    duration = date_to_datetime(last_date['Start']) - date_to_datetime(first_date['Start'])
 
     average_days_between_event = float(duration.days) / len(events)
 
@@ -58,7 +66,8 @@ def add_months(source_datetime, months):
 
 
 def get_month_years(first_date, last_date):
-    current_month_year = first_date
+    current_month_year = date_to_datetime(first_date)
+    last_date = date_to_datetime(last_date)
     month_years = []
 
     while current_month_year <= last_date:
@@ -69,21 +78,10 @@ def get_month_years(first_date, last_date):
     return month_years
 
 
-def build_json_events(events):
-    json_events = []
-
-    for event in events:
-        json_events.append({'Start': event['StartDate'],
-                            'Duration': event['StartDate'],
-                            'Comment': event['Description']})
-
-    return json_events
-
-
 def generate_statistics_from_events(events):
 
     # Events should have:
-    #       StartDate
+    #       Start
     #       EndDate (optional)
     #       Comment (optional)
 
@@ -94,22 +92,20 @@ def generate_statistics_from_events(events):
     month_year_counter = Counter()
 
     for event in events:
-        if 'Start' in event:
-            event['StartDate'] = parse_date(event['Start'])
-            event['Day'] = event['StartDate'].strftime('%A')
-            event['Month'] = event['StartDate'].strftime('%B')
-            event['Year'] = str(event['StartDate'].year)
-            event['MonthYear'] = event['StartDate'].strftime('%m/%y')
+        event['Day'] = event['Start'].strftime('%A')
+        event['Month'] = event['Start'].strftime('%B')
+        event['Year'] = str(event['Start'].year)
+        event['MonthYear'] = event['Start'].strftime('%m/%y')
 
-            hour = event['StartDate'].hour
+        weekdays_counter[event['Day']] += 1
+        months_counter[event['Month']] += 1
+        years_counter[event['Year']] += 1
+        month_year_counter[event['MonthYear']] += 1
 
+        if isinstance(event['Start'], datetime.datetime):
+            hour = event['Start'].hour
             event['Hour'] = "%02d:00" % (0 if hour == 23 else hour if hour % 2 == 0 else hour + 1)
-
-            weekdays_counter[event['Day']] += 1
-            months_counter[event['Month']] += 1
             hours_counter[event['Hour']] += 1
-            years_counter[event['Year']] += 1
-            month_year_counter[event['MonthYear']] += 1
 
     first_date = min(events, key=fetch_start_date)
     last_date = max(events, key=fetch_start_date)
@@ -119,7 +115,7 @@ def generate_statistics_from_events(events):
                       'October', 'November', 'December']
     hours_of_day = ["%02d:00" % (hour * 2) for hour in range(12)]
     years = sorted(list(years_counter))
-    month_years = get_month_years(first_date['StartDate'], last_date['StartDate'])
+    month_years = get_month_years(first_date['Start'], last_date['Start'])
 
     weekdays_by_year_counters = {}
     months_by_year_counters = {}
@@ -163,8 +159,8 @@ def generate_statistics_from_events(events):
 
     overview = {'totalEvents': len(events),
                 'averageTimeBetweenEvent': "{:.0f}".format(average_days_between_event),
-                'firstDate': first_date['StartDate'].strftime("%B") + " " + first_date['StartDate'].strftime("%Y"),
-                'lastDate': last_date['StartDate'].strftime("%B") + " " + last_date['StartDate'].strftime("%Y")}
+                'firstDate': first_date['Start'].strftime("%B") + " " + first_date['Start'].strftime("%Y"),
+                'lastDate': last_date['Start'].strftime("%B") + " " + last_date['Start'].strftime("%Y")}
 
     json_events = build_json_events(events)
 
@@ -175,7 +171,8 @@ def generate_statistics_from_events(events):
                 'monthsByYearData': months_by_year_data,
                 'hoursOfDay': hours_data,
                 'yearlyTrend': years_data,
-                'monthYears': month_year_data}
+                'monthYears': month_year_data,
+                'events': json_events}
 
     return response
 

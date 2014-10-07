@@ -1,29 +1,20 @@
 import logging
 from types import *
+import datetime
 
 from google.appengine.api import mail
 
-import download_item
-
+import sys
 
 sys.path.insert(0, 'libs')
 
-from google.appengine.ext import db
 
-
-def add_text_field(component, component_name, dict, dict_name):
-    value = component.get(component_name)
-
-    if value:
-        dict[dict_name] = unicode(value)
-
-
-def add_date_field(component, component_name, dict, dict_name):
+def get_date_field(component, component_name):
     value = component.get(component_name)
 
     if not isinstance(value, (list, tuple)):
         if value:
-            dict[dict_name] = str(value.dt)
+            return value.dt
     else:
         logging.warn('Got a list as a date field')
         logging.warn(value)
@@ -32,29 +23,7 @@ def add_date_field(component, component_name, dict, dict_name):
             value = value[0]
 
             if value:
-                dict[dict_name] = str(value.dt)
-
-
-def add_attendee_field(component, event):
-    attendee = component.get('attendee')
-    if attendee:
-        if type(attendee) == ListType:
-            names = [name[7:] if name.startswith('mailto:') else name for name in attendee]
-
-            event['Attendees'] = unicode(', '.join(names))
-        else:
-            att = unicode(attendee)
-
-            event['Attendees'] = att[7:] if att.startswith('mailto:') else att
-
-
-def add_mail_field(component, component_name, dict, dict_name):
-    value = component.get(component_name)
-
-    if value:
-        name = unicode(value)
-
-        dict[dict_name] = name[7:] if name.startswith('mailto:') else name
+                return value.dt
 
 
 def process_calendar(calendar):
@@ -62,49 +31,50 @@ def process_calendar(calendar):
 
     for component in calendar.walk():
         if component.name == "VEVENT":
-            event = {}
+            start_date = get_date_field(component, 'dtstart')
 
-            # add_text_field(component, 'summary', event, 'Summary')
-            add_text_field(component, 'description', event, 'Comment')
-            # add_mail_field(component, 'organizer', event, 'Organizer')
-            # add_text_field(component, 'location', event, 'Location')
+            if start_date:
+                event = {'Start': start_date, 'CompareDate': str(start_date)}
 
-            add_date_field(component, 'dtstart', event, 'Start')
-            add_date_field(component, 'dtend', event, 'End')
-            # add_date_field(component, 'created', event, 'Created')
+                value = component.get('description')
 
-            # add_attendee_field(component, event)
+                if value:
+                    event['Comment'] = unicode(value)
+                else:
+                    event['Comment'] = ""
 
-            events.append(event)
+                end_date = get_date_field(component, 'dtend')
 
-    sorted_events = sorted(events, key=lambda event: event.get('Start'))
+                if end_date:
+                    duration_delta = end_date - start_date
+
+                    event['Duration'] = duration_delta.seconds
+                else:
+                    event['Duration'] = None
+
+                events.append(event)
+
+    sorted_events = sorted(events, key=lambda event: event.get('CompareDate'))
 
     return sorted_events
 
 
-def log_upload(current_conversion, time):
-    new_upload = download_item.Download()
+def date_to_datetime(date):
+    if isinstance(date, datetime.date):
+        return datetime.datetime(date.year, date.month, date.day)
 
-    new_upload.download = False
-    new_upload.hash = current_conversion.hash
-    new_upload.filename = current_conversion.full_filename
-    new_upload.file_size = current_conversion.file_size
-    new_upload.time = time
-
-    db.put(new_upload)
+    return date
 
 
-def log_download(current_conversion, time, extension):
-    new_download = download_item.Download()
+def build_json_events(events):
+    json_events = []
 
-    new_download.download = True
-    new_download.hash = current_conversion.hash
-    new_download.filename = current_conversion.full_filename
-    new_download.file_size = current_conversion.file_size
-    new_download.time = time
-    new_download.extension = extension
+    for event in events:
+        json_events.append({'Start': str(event['Start']),
+                            'Duration': event['Duration'],
+                            'Comment': event['Comment']})
 
-    db.put(new_download)
+    return json_events
 
 
 def support_email(subject, message):

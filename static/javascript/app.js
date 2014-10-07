@@ -73,8 +73,6 @@ window.App = Backbone.View.extend({
             that.Routes.navigate('uploaded', {trigger: true});
 
             that.showStats(data);
-
-            // that.showFileStatus();
         }).fail(function (data) {
         });
     },
