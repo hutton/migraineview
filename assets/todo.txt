@@ -1,1 +1,9 @@
-Test
+Show events
+Add stats view backbone class
+Start using Pure
+Upload of xlsx
+Layout of homepage
+
+
+Done
+====
