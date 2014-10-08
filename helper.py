@@ -70,9 +70,9 @@ def build_json_events(events):
     json_events = []
 
     for event in events:
-        json_events.append({'Start': str(event['Start']),
-                            'Duration': event['Duration'],
-                            'Comment': event['Comment']})
+        json_events.append({'start': str(event['Start']),
+                            'duration': event['Duration'],
+                            'comment': event['Comment']})
 
     return json_events
 

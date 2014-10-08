@@ -70,9 +70,10 @@ window.App = Backbone.View.extend({
         }).done(function (data) {
             var response = jQuery.parseJSON(data);
 
-            that.Routes.navigate('uploaded', {trigger: true});
+            that.Routes.navigate('uploaded/events', {trigger: true});
 
-            that.showStats(data);
+            that.showStats(response);
+            that.showEvents(response);
         }).fail(function (data) {
         });
     },
@@ -108,14 +109,8 @@ window.App = Backbone.View.extend({
 //        this.fileUploadFailedMessage.hide();
     },
 
-    uploaded: function(){
-//        this.showStats();
-    },
-
-    showStats: function(data){
+    showStats: function(response){
         var that = this;
-
-        var response = jQuery.parseJSON(data);
 
         that.statsListEl.empty();
 
@@ -134,30 +129,56 @@ window.App = Backbone.View.extend({
         var hoursOfDay = new RadarChartView({model: response.hoursOfDay});
 
         that.statsListEl.append(hoursOfDay.el);
+    },
+
+    showEvents: function(response){
+        var models = [];
+
+        _.each(response.events, function(event){
+            var eventModel = new window.EventModel(event);
+
+            models.push(eventModel);
+        });
+
+        this.eventsCollecton = new EventsCollection(models);
+
+        this.eventsView = new EventListView({model :this.eventsCollecton});
     }
 });
 
 window.Workspace = Backbone.Router.extend({
 
     routes: {
-        "uploaded":     "uploaded",
-        "":             "home"
+        "uploaded/stats":   "stats",
+        "uploaded/events":  "events",
+        "":                 "home"
     },
 
     homeView: $('#home-view'),
 
     statsView: $('#stats-view'),
 
+    eventsView: $('#event_list_container'),
+
     home: function() {
         this.homeView.show();
+
         this.statsView.hide();
+        this.eventsView.hide();
     },
 
-    uploaded: function(){
+    stats: function(){
         this.homeView.hide();
-        this.statsView.show();
 
-        App.uploaded();
+        this.statsView.show();
+        this.eventsView.hide();
+    },
+
+    events: function(){
+        this.homeView.hide();
+
+        this.statsView.hide();
+        this.eventsView.show();
     }
 });
 

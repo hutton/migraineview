@@ -48,6 +48,12 @@
     </div>
 
     <!-
+        Events view
+    ->
+    <div id="event_list_container" style="display: none;">
+    </div>
+
+    <!-
         Templates
     ->
     <script type="text/template" id="overview-view-template">
@@ -103,13 +109,25 @@
         </div>
     </script>
 
+    <script type="text/template" id="event-view-template">
+        <div>
+            <span><%= start %></span>
+            <span><%= duration %></span>
+            <span><%= comment %></span>
+        </div>
+    </script>
 
     <script src="/static/javascript/tp/jquery-2.1.1.js" language="javascript" type="text/javascript"></script>
     <script src="/static/javascript/tp/Chart.min.js" language="javascript" type="text/javascript"></script>
     <script src="/static/javascript/tp/underscore.js" language="javascript" type="text/javascript"></script>
     <script src="/static/javascript/tp/backbone.js" language="javascript" type="text/javascript"></script>
 
+    <script src="/static/javascript/models/event.js" language="javascript" type="text/javascript"></script>
+    <script src="/static/javascript/models/events.js" language="javascript" type="text/javascript"></script>
+
     <script src="/static/javascript/stats_view.js" language="javascript" type="text/javascript"></script>
+    <script src="/static/javascript/event_list_view.js" language="javascript" type="text/javascript"></script>
+    <script src="/static/javascript/event_view.js" language="javascript" type="text/javascript"></script>
     <script src="/static/javascript/app.js" language="javascript" type="text/javascript"></script>
 </body>
 </html>

@@ -8,12 +8,16 @@ window.EventListView = Backbone.View.extend({
         this.render();
     },
 
-    template: _.template($('#radar-chart-view-template').html()),
-
     el: $('#event_list_container'),
 
     render: function(){
-        this.$el.html(this.template(this.model));
+        var that = this;
+
+        _.each(this.model.models, function(event_model){
+            var event_view = new EventView(event_model);
+
+            that.el.append(event_view.el);
+        });
 
         return this;
     }
