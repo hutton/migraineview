@@ -4,6 +4,5 @@ Start using Pure
 Upload of xlsx
 Layout of homepage
 
-
 Done
 ====
