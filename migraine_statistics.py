@@ -1,4 +1,5 @@
 import sys
+from google.appengine.ext.webapp import template
 
 sys.path.insert(0, 'libs')
 
@@ -178,7 +179,26 @@ def generate_statistics_from_events(events):
 
 
 def json_to_events(file_content):
-    return json.loads(file_content)
+    json_data = json.loads(file_content)
+
+    events = []
+
+    for item in json_data:
+        event = {}
+
+        start = parse_date(item['Start'])
+        end = parse_date(item['End'])
+
+        duration_delta = end - start
+
+        event['Start'] = start
+        event['Duration'] = duration_delta.seconds
+
+        event['Comment'] = item['Description']
+
+        events.append(event)
+
+    return events
 
 
 def ics_to_events(file_content):
@@ -204,4 +224,18 @@ class MigraineData(webapp2.RequestHandler):
             response = generate_statistics_from_events(events)
 
             self.response.out.write(simplejson.dumps(response))
+
+
+class Example(webapp2.RequestHandler):
+    def get(self):
+        f = open('migraines.json')
+
+        file_content = f.read()
+
+        events = json_to_events(file_content)
+
+        response = generate_statistics_from_events(events)
+
+        path = os.path.join(os.path.join(os.path.dirname(__file__), 'html'), '../templates/main.html')
+        self.response.out.write(template.render(path, {'data': simplejson.dumps(response)}))
 

@@ -171,3 +171,30 @@ window.RadarChartView = Backbone.View.extend({
 
     className: 'stat-section'
 });
+
+window.StatisticsView = Backbone.View.extend({
+    initialize: function () {
+    },
+
+    statsListEl: $("#stat-sections-container"),
+
+    render: function() {
+        this.statsListEl.empty();
+
+        var overviewView = new OverviewView({model: this.model});
+
+        this.statsListEl.append(overviewView.el);
+
+        var monthsOfYear = new FrequencyBarView({model: {'all' : this.model.daysOfWeek, 'byYear' : this.model.weekdaysByYearData}});
+
+        this.statsListEl.append(monthsOfYear.el);
+
+        var daysOfWeekView = new FrequencyBarView({model: {'all' : this.model.monthsOfYear, 'byYear' : this.model.monthsByYearData}});
+
+        this.statsListEl.append(daysOfWeekView.el);
+
+        var hoursOfDay = new RadarChartView({model: this.model.hoursOfDay});
+
+        this.statsListEl.append(hoursOfDay.el);
+    }
+});

@@ -5,13 +5,14 @@
 
 window.EventView = Backbone.View.extend({
     initialize: function () {
-        this.render();
     },
+
+    tagName: 'tr',
 
     template: _.template($('#event-view-template').html()),
 
     render: function(){
-        this.$el.html(this.template(this.model));
+        this.$el.html(this.template(this.model.toJSON()));
 
         return this;
     }

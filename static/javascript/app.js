@@ -2,9 +2,24 @@
  * Created by simonhutton on 03/10/2014.
  */
 
+if (!String.prototype.startsWith) {
+  Object.defineProperty(String.prototype, 'startsWith', {
+    enumerable: false,
+    configurable: false,
+    writable: false,
+    value: function (searchString, position) {
+      position = position || 0;
+      return this.lastIndexOf(searchString, position) === position;
+    }
+  });
+}
+
 window.App = Backbone.View.extend({
     initialize: function (){
         var that = this;
+
+        this.eventsView = new EventListView();
+        this.statisticsView = new StatisticsView();
 
         this.tests = {
             fileReader: typeof FileReader != 'undefined',
@@ -27,11 +42,14 @@ window.App = Backbone.View.extend({
 
     el: $("body"),
 
-    statsListEl: $("#stat-sections-container"),
-
     uploadContainer: $('.upload-container'),
 
     uploadingProgress: $('#uploading-message > .progress > span'),
+
+    events: {
+        "click #statistics-toggle":   "showStatistics",
+        "click #events-toggle":   "showEvents"
+    },
 
     onDrop: function(e){
         e.preventDefault();
@@ -67,15 +85,35 @@ window.App = Backbone.View.extend({
                 }
                 return myXhr;
             }
-        }).done(function (data) {
-            var response = jQuery.parseJSON(data);
+        }).done(function (response) {
+            that.showStatistics();
 
-            that.Routes.navigate('uploaded/events', {trigger: true});
+            var data = jQuery.parseJSON(response);
 
-            that.showStats(response);
-            that.showEvents(response);
+            that.loadData(data);
         }).fail(function (data) {
         });
+    },
+
+    loadData: function(data){
+        this.populateStats(data);
+        this.populateEvents(data);
+    },
+
+    getCurrentBase: function(){
+        if (window.location.pathname.startsWith("/example")){
+            return 'example';
+        } else {
+            return 'uploaded';
+        }
+    },
+
+    showStatistics: function(){
+        this.Routes.navigate(this.getCurrentBase() + '/stats', {trigger: true});
+    },
+
+    showEvents: function(){
+        this.Routes.navigate(this.getCurrentBase() + '/events', {trigger: true});
     },
 
     showProgress: function(evt){
@@ -109,29 +147,13 @@ window.App = Backbone.View.extend({
 //        this.fileUploadFailedMessage.hide();
     },
 
-    showStats: function(response){
-        var that = this;
+    populateStats: function(response){
+        this.statisticsView.model = response;
 
-        that.statsListEl.empty();
-
-        var overviewView = new OverviewView({model: response});
-
-        that.statsListEl.append(overviewView.el);
-
-        var monthsOfYear = new FrequencyBarView({model: {'all' : response.daysOfWeek, 'byYear' : response.weekdaysByYearData}});
-
-        that.statsListEl.append(monthsOfYear.el);
-
-        var daysOfWeekView = new FrequencyBarView({model: {'all' : response.monthsOfYear, 'byYear' : response.monthsByYearData}});
-
-        that.statsListEl.append(daysOfWeekView.el);
-
-        var hoursOfDay = new RadarChartView({model: response.hoursOfDay});
-
-        that.statsListEl.append(hoursOfDay.el);
+        this.statisticsView.render();
     },
 
-    showEvents: function(response){
+    populateEvents: function(response){
         var models = [];
 
         _.each(response.events, function(event){
@@ -140,21 +162,23 @@ window.App = Backbone.View.extend({
             models.push(eventModel);
         });
 
-        this.eventsCollecton = new EventsCollection(models);
+        this.eventsView.collection = new EventsCollection(models);
 
-        this.eventsView = new EventListView({model :this.eventsCollecton});
+        this.eventsView.render();
     }
 });
 
 window.Workspace = Backbone.Router.extend({
 
     routes: {
-        "uploaded/stats":   "stats",
-        "uploaded/events":  "events",
+        ":base/stats":   "stats",
+        ":base/events":  "events",
         "":                 "home"
     },
 
     homeView: $('#home-view'),
+
+    everythingView: $('#everything-view'),
 
     statsView: $('#stats-view'),
 
@@ -162,6 +186,7 @@ window.Workspace = Backbone.Router.extend({
 
     home: function() {
         this.homeView.show();
+        this.everythingView.hide();
 
         this.statsView.hide();
         this.eventsView.hide();
@@ -169,6 +194,7 @@ window.Workspace = Backbone.Router.extend({
 
     stats: function(){
         this.homeView.hide();
+        this.everythingView.show();
 
         this.statsView.show();
         this.eventsView.hide();
@@ -176,17 +202,9 @@ window.Workspace = Backbone.Router.extend({
 
     events: function(){
         this.homeView.hide();
+        this.everythingView.show();
 
         this.statsView.hide();
         this.eventsView.show();
     }
 });
-
-$(document).ready(function(){
-    window.App = new App();
-
-    window.App.Routes = new Workspace();
-
-    Backbone.history.start({pushState: true});
-});
-

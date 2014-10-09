@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <title></title>
 
+    <link type="text/css" rel="stylesheet" href="/static/css/tp/pure-min.css" />
+
     <link type="text/css" rel="stylesheet" href="/static/css/main.css" />
     <link type="text/css" rel="stylesheet" href="/static/css/stats_view.css" />
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
     <!-
@@ -27,15 +30,24 @@
                 </div>
             </div>
 
+            <a class="center" href="/example/stats">Example</a>
+
         </div>
     </div>
 
+
     <!-
-        Stats view
+        Uploaded view
     ->
-    <div id="stats-view" style="display: none;">
-        <div class="fixed-width">
+    <div class="fixed-width" id="everything-view" style="display: none;">
+        <div>
             <h2 class="stat-title">Migraine Statistics</h2>
+            <button class="pure-button" id="statistics-toggle">Statistics</button><button class="pure-button" id="events-toggle">Events</button>
+        </div>
+        <!-
+            Stats view
+        ->
+        <div id="stats-view" style="display: none;">
             <div id="stat-sections-container">
                 <div id="stats-loading">
                     <div>Fetching data...</div>
@@ -45,12 +57,25 @@
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-
-        Events view
-    ->
-    <div id="event_list_container" style="display: none;">
+        <!-
+            Events view
+        ->
+
+        <div id="event_list_container" style="display: none;">
+            <table class="pure-table pure-table-horizontal">
+                <thead>
+                    <tr>
+                        <th>Started</th>
+                        <th>Duration</th>
+                        <th>Comment</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <!-
@@ -110,11 +135,9 @@
     </script>
 
     <script type="text/template" id="event-view-template">
-        <div>
-            <span><%= start %></span>
-            <span><%= duration %></span>
-            <span><%= comment %></span>
-        </div>
+        <td><%= start %></td>
+        <td><%= duration %></td>
+        <td><%= comment %></td>
     </script>
 
     <script src="/static/javascript/tp/jquery-2.1.1.js" language="javascript" type="text/javascript"></script>
@@ -129,5 +152,21 @@
     <script src="/static/javascript/event_list_view.js" language="javascript" type="text/javascript"></script>
     <script src="/static/javascript/event_view.js" language="javascript" type="text/javascript"></script>
     <script src="/static/javascript/app.js" language="javascript" type="text/javascript"></script>
+
+    <script>
+        $(document).ready(function(){
+            window.App = new App();
+
+            window.App.Routes = new Workspace();
+
+            Backbone.history.start({pushState: true});
+
+            {% if data %}
+            window.App.loadData({{ data|safe }});
+            {% endif %}
+        });
+
+
+    </script>
 </body>
 </html>
