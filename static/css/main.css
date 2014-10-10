@@ -178,8 +178,18 @@ body {
   font-family: 'Open Sans Light', sans-serif;
   font-size: 16px;
 }
+html,
+button,
+input,
+select,
+textarea,
+.pure-g [class*="pure-u"] {
+  /* Set your content font stack here: */
+
+  font-family: 'Open Sans Light', sans-serif;
+}
 .fixed-width {
-  max-width: 800px;
+  max-width: 1024px;
   margin: 0px auto;
 }
 .big-font {

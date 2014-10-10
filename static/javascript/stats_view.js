@@ -4,7 +4,6 @@
 
 window.OverviewView = Backbone.View.extend({
     initialize: function () {
-        this.render();
     },
 
     template: _.template($('#overview-view-template').html()),
@@ -29,8 +28,8 @@ window.OverviewView = Backbone.View.extend({
             }
         ]};
 
-        new Chart(ctx).Bar(data);
-
+        this.yearTrendChart = new Chart(ctx).Bar(data, {responsive: true,
+                                  maintainAspectRatio: false});
 
         this.chartEl = this.$el.find('.overview-trend-chart');
 
@@ -49,11 +48,14 @@ window.OverviewView = Backbone.View.extend({
             }
         ]};
 
-        new Chart(ctx).Bar(data,
-            { barValueSpacing: false,
+        this.monthYearChart = new Chart(ctx).Bar(data,
+            {
+                barValueSpacing: false,
                 scaleShowGridLines: false,
                 barShowStroke: false,
-                showScale: false
+                showScale: false,
+                responsive: true,
+                maintainAspectRatio: false
             });
 
         return this;
@@ -107,7 +109,8 @@ window.FrequencyBarView = Backbone.View.extend({
             datasets: datasets
         };
 
-        new Chart(ctx).Bar(chartData);
+        new Chart(ctx).Bar(chartData, {responsive: true,
+                                  maintainAspectRatio: false});
     },
 
     render: function(){
@@ -121,7 +124,6 @@ window.FrequencyBarView = Backbone.View.extend({
     },
 
     allMode: function(event){
-        this.$el.find('.all-chart').fadeIn();
         this.$el.find('.by-year-chart').fadeOut();
 
         this.$el.find('.graph-mode > span').removeClass('selected');
@@ -129,7 +131,6 @@ window.FrequencyBarView = Backbone.View.extend({
     },
 
     yearMode: function(event){
-        this.$el.find('.all-chart').fadeOut();
         this.$el.find('.by-year-chart').fadeIn();
 
         this.$el.find('.graph-mode > span').removeClass('selected');
@@ -181,20 +182,22 @@ window.StatisticsView = Backbone.View.extend({
     render: function() {
         this.statsListEl.empty();
 
-        var overviewView = new OverviewView({model: this.model});
+        this.overviewView = new OverviewView({model: this.model});
 
-        this.statsListEl.append(overviewView.el);
+        this.statsListEl.append(this.overviewView.render().el);
 
-        var monthsOfYear = new FrequencyBarView({model: {'all' : this.model.daysOfWeek, 'byYear' : this.model.weekdaysByYearData}});
+        this.monthsOfYearBarView = new FrequencyBarView({model: {'all' : this.model.daysOfWeek, 'byYear' : this.model.weekdaysByYearData}});
 
-        this.statsListEl.append(monthsOfYear.el);
+        this.statsListEl.append(this.monthsOfYearBarView.el);
 
-        var daysOfWeekView = new FrequencyBarView({model: {'all' : this.model.monthsOfYear, 'byYear' : this.model.monthsByYearData}});
+        this.daysOfWeekViewBarView = new FrequencyBarView({model: {'all' : this.model.monthsOfYear, 'byYear' : this.model.monthsByYearData}});
 
-        this.statsListEl.append(daysOfWeekView.el);
+        this.statsListEl.append(this.daysOfWeekViewBarView.el);
 
-        var hoursOfDay = new RadarChartView({model: this.model.hoursOfDay});
+        this.hoursOfDayRadarView = new RadarChartView({model: this.model.hoursOfDay});
 
-        this.statsListEl.append(hoursOfDay.el);
+        this.statsListEl.append(this.hoursOfDayRadarView.el);
+
+        window.dispatchEvent(new Event('resize'));
     }
 });

@@ -178,8 +178,18 @@ body {
   font-family: 'Open Sans Light', sans-serif;
   font-size: 16px;
 }
+html,
+button,
+input,
+select,
+textarea,
+.pure-g [class*="pure-u"] {
+  /* Set your content font stack here: */
+
+  font-family: 'Open Sans Light', sans-serif;
+}
 .fixed-width {
-  max-width: 800px;
+  max-width: 1024px;
   margin: 0px auto;
 }
 .big-font {
@@ -238,8 +248,6 @@ h4 {
   margin-right: auto;
 }
 .stat-section-item {
-  display: inline-block;
-  margin-right: 20px;
   text-align: right;
   vertical-align: top;
 }
@@ -264,9 +272,11 @@ h4 {
 }
 .side-by-side-container {
   position: relative;
-  height: 240px;
 }
-.side-by-side {
+.side-by-side-container > canvas {
+  height: 240px !important;
+}
+.by-year-chart {
   position: absolute;
   left: 0px;
   top: 0px;
@@ -294,10 +304,11 @@ h4 {
 }
 .overview-trend-chart {
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+  height: 40px !important;
 }
 .year-trend-chart {
-  width: 100%;
-  height: 40px;
+  width: 100% !important;
+  height: 200px !important;
 }
 .overview-first-date {
   margin-top: 5px;
