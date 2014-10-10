@@ -1,8 +1,11 @@
-Show events
-Add stats view backbone class
-Start using Pure
+Better format event grid
+Fix upload tz problem
 Upload of xlsx
 Layout of homepage
 
 Done
 ====
+Show events
+Add stats view backbone class
+Start using Pure
+Add example
