@@ -97,21 +97,17 @@
             <div class="pure-g stat-section-full-width-item">
                 <div class="pure-u-1 pure-u-sm-1-3">
                     <div class="stat-section-item">
-                        <div class="count"><%= overview.totalEvents %></div>
-                        <div class="label">
-                            <div>attacks between</div>
-                            <div><%= overview.firstDate %> and</div>
-                            <div><%= overview.lastDate %></div>
+                        <div class="description-item">
+                            <div>Average of <span><%= overview.averageTimeBetweenEvent %></span> between attacks. The longest interval between attacks was <span><%= overview.longestGap %></span>, shortest <span><%= overview.shortestGap %></span>.</div>
                         </div>
                     </div>
                 </div>
                 <div class="pure-u-1 pure-u-sm-1-3">
                     <div class="stat-section-item">
-                        <div>average <%= overview.averageTimeBetweenEvent %> days between attacks</div>
-                        <div>longest <%= overview.averageTimeBetweenEvent %> days between attacks</div>
-                        <div>average <%= overview.averageTimeBetweenEvent %> days between attacks</div>
-                        <div class="count"><%= overview.averageTimeBetweenEvent %></div>
-                        <div class="label">average days<br/>between attacks</div>
+                        <div class="count"><%= overview.totalEvents %></div>
+                        <div class="description-item" id="total-count-description">
+                            <div>Attacks in total between <span><%= overview.firstDate %></span> and <span><%= overview.lastDate %></span>.</div>
+                        </div>
                     </div>
                 </div>
                 <div class="pure-u-1 pure-u-sm-1-3">

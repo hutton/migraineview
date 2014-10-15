@@ -3,3 +3,8 @@
 average of 26 days between attacks
 longest interval between attacks is
 153 days, shortest interval 12 hours
+
+
+Most frequent attacks have been on
+Tuesday or Saturday in February, least
+likely Tuesday or Saturday in February

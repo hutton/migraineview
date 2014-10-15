@@ -93,6 +93,13 @@ def timedelta_to_text(delta):
     return str((delta.days * 24) + seconds_to_hours(delta.seconds)) + " hours"
 
 
+def find_most_and_least_frequent(months_counter, weekdays_counter):
+    most_common_months = months_counter.most_common()
+    most_common_weekdays = weekdays_counter.most_common()
+
+    return "", ""
+
+
 def generate_statistics_from_events(events):
 
     # Events should have:
@@ -171,6 +178,9 @@ def generate_statistics_from_events(events):
     months_data = {'title': 'Month of year',
                    'keys': months_of_year,
                    'frequencies': [generate_frequencies_response(months_of_year, months_counter)]}
+
+    most_frequent, least_frequent = find_most_and_least_frequent(months_counter, weekdays_counter)
+
     hours_data = {'title': 'Hours of the day',
                   'keys': hours_of_day,
                   'frequencies': [generate_frequencies_response(hours_of_day, hours_counter)]}
@@ -193,7 +203,7 @@ def generate_statistics_from_events(events):
     average_days_between_event = find_average_days_between_event(events)
 
     overview = {'totalEvents': len(events),
-                'averageTimeBetweenEvent': "{:.0f}".format(average_days_between_event),
+                'averageTimeBetweenEvent': "{:.0f} days".format(average_days_between_event),
                 'firstDate': first_date['Start'].strftime("%B") + " " + first_date['Start'].strftime("%Y"),
                 'lastDate': last_date['Start'].strftime("%B") + " " + last_date['Start'].strftime("%Y"),
                 'longestGap': longest_gap_text,
