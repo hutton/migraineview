@@ -1,7 +1,17 @@
+62 between April 2010 and September 2014
+
 Better format event grid
 Fix upload tz problem
 Upload of xlsx
 Layout of homepage
+
+
+Stats
+=====
+Shortest/longest between attacks (next to average days between between attacks)
+Least/most likely "Tuesday or Saturday in February" (next to day frequency)
+Distribution by Quarter (Polar Area chart next to month frequency)
+
 
 Done
 ====

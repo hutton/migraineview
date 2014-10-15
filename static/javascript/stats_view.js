@@ -125,6 +125,7 @@ window.FrequencyBarView = Backbone.View.extend({
 
     allMode: function(event){
         this.$el.find('.by-year-chart').fadeOut();
+        this.$el.find('.all-chart').removeClass('faded');
 
         this.$el.find('.graph-mode > span').removeClass('selected');
         $(event.target).addClass('selected');
@@ -132,6 +133,7 @@ window.FrequencyBarView = Backbone.View.extend({
 
     yearMode: function(event){
         this.$el.find('.by-year-chart').fadeIn();
+        this.$el.find('.all-chart').addClass('faded');
 
         this.$el.find('.graph-mode > span').removeClass('selected');
         $(event.target).addClass('selected');

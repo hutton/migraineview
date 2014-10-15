@@ -79,6 +79,20 @@ def get_month_years(first_date, last_date):
     return month_years
 
 
+def seconds_to_hours(seconds):
+    return seconds / (60 * 60)
+
+
+def timedelta_to_text(delta):
+    if delta.days > 14:
+        return str(delta.days) + " days"
+
+    if delta.days > 2:
+        return str(delta.days) + " days " + seconds_to_hours(delta.seconds) + " hours"
+
+    return str((delta.days * 24) + seconds_to_hours(delta.seconds)) + " hours"
+
+
 def generate_statistics_from_events(events):
 
     # Events should have:
@@ -92,6 +106,13 @@ def generate_statistics_from_events(events):
     years_counter = Counter()
     month_year_counter = Counter()
 
+    longest_gap = datetime.timedelta(0)
+    shortest_gap = datetime.timedelta(10000)
+
+    previous_start = None
+
+    finding_gaps = len(events) > 10
+
     for event in events:
         event['Day'] = event['Start'].strftime('%A')
         event['Month'] = event['Start'].strftime('%B')
@@ -103,6 +124,16 @@ def generate_statistics_from_events(events):
         years_counter[event['Year']] += 1
         month_year_counter[event['MonthYear']] += 1
 
+        if finding_gaps and previous_start:
+            gap = event['Start'] - previous_start
+
+            if gap > longest_gap:
+                longest_gap = gap
+            if gap < shortest_gap:
+                shortest_gap = gap
+
+        previous_start = event['Start']
+
         if isinstance(event['Start'], datetime.datetime):
             hour = event['Start'].hour
             event['Hour'] = "%02d:00" % (0 if hour == 23 else hour if hour % 2 == 0 else hour + 1)
@@ -110,6 +141,9 @@ def generate_statistics_from_events(events):
 
     first_date = min(events, key=fetch_start_date)
     last_date = max(events, key=fetch_start_date)
+
+    longest_gap_text = timedelta_to_text(longest_gap)
+    shortest_gap_text = timedelta_to_text(shortest_gap)
 
     days_of_week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
     months_of_year = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
@@ -161,7 +195,9 @@ def generate_statistics_from_events(events):
     overview = {'totalEvents': len(events),
                 'averageTimeBetweenEvent': "{:.0f}".format(average_days_between_event),
                 'firstDate': first_date['Start'].strftime("%B") + " " + first_date['Start'].strftime("%Y"),
-                'lastDate': last_date['Start'].strftime("%B") + " " + last_date['Start'].strftime("%Y")}
+                'lastDate': last_date['Start'].strftime("%B") + " " + last_date['Start'].strftime("%Y"),
+                'longestGap': longest_gap_text,
+                'shortestGap': shortest_gap_text}
 
     json_events = build_json_events(events)
 
