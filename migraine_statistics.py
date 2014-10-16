@@ -1,3 +1,4 @@
+import string
 import sys
 from google.appengine.ext.webapp import template
 
@@ -39,11 +40,14 @@ def generate_frequencies_response(keys, weekdays_counter):
 
 
 def fetch_start_date(args):
-
     if isinstance(args['Start'], datetime.date):
         return datetime.datetime(args['Start'].year, args['Start'].month, args['Start'].day)
 
     return args['Start']
+
+
+def fetch_count_from_tuple(args):
+    return args[1]
 
 
 def find_average_days_between_event(events):
@@ -93,17 +97,25 @@ def timedelta_to_text(delta):
     return str((delta.days * 24) + seconds_to_hours(delta.seconds)) + " hours"
 
 
-def find_most_and_least_frequent(months_counter, weekdays_counter):
-    most_common_months = months_counter.most_common()
-    most_common_weekdays = weekdays_counter.most_common()
+def find_most_and_least_frequent(keys, frequencies):
+    zipped = zip(keys, frequencies)
 
-    return "", ""
+    least_frequency = min(frequencies)
+    most_frequency = max(frequencies)
+
+    least = [item[0] for item in zipped if item[1] == least_frequency]
+    most = [item[0] for item in zipped if item[1] == most_frequency]
+
+    return most, least
+
+
+def build_frequency_text(frequent_days, frequent_months):
+    return string.join(frequent_days, ' or ') + ' in ' + string.join(frequent_months, ' or ')
 
 
 def generate_statistics_from_events(events):
-
     # Events should have:
-    #       Start
+    # Start
     #       EndDate (optional)
     #       Comment (optional)
 
@@ -179,7 +191,13 @@ def generate_statistics_from_events(events):
                    'keys': months_of_year,
                    'frequencies': [generate_frequencies_response(months_of_year, months_counter)]}
 
-    most_frequent, least_frequent = find_most_and_least_frequent(months_counter, weekdays_counter)
+    most_frequent_months, least_frequent_months = find_most_and_least_frequent(months_data['keys'],
+                                                                               months_data['frequencies'][0])
+    most_frequent_days, least_frequent_days = find_most_and_least_frequent(days_data['keys'],
+                                                                           days_data['frequencies'][0])
+
+    most_frequent_text = build_frequency_text(most_frequent_days, most_frequent_months)
+    least_frequent_text = build_frequency_text(least_frequent_days, least_frequent_months)
 
     hours_data = {'title': 'Hours of the day',
                   'keys': hours_of_day,
@@ -209,13 +227,19 @@ def generate_statistics_from_events(events):
                 'longestGap': longest_gap_text,
                 'shortestGap': shortest_gap_text}
 
+    days_of_week_response = {'daysData': days_data,
+                             'daysDataByYear': days_by_year_data,
+                             'mostFrequentText': most_frequent_text,
+                             'leastFrequentText': least_frequent_text}
+
+    months_of_year_response = {'monthsData': months_data,
+                               'monthsDataByYear': months_by_year_data}
+
     json_events = build_json_events(events)
 
     response = {'overview': overview,
-                'daysOfWeek': days_data,
-                'weekdaysByYearData': days_by_year_data,
-                'monthsOfYear': months_data,
-                'monthsByYearData': months_by_year_data,
+                'daysOfWeek': days_of_week_response,
+                'monthsOfYear': months_of_year_response,
                 'hoursOfDay': hours_data,
                 'yearlyTrend': years_data,
                 'monthYears': month_year_data,

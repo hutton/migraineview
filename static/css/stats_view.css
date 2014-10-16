@@ -263,7 +263,7 @@ h4 {
 .stat-section-item > div.label {
   font-size: 130%;
   line-height: 1.4em;
-  opacity: 0.6;
+  opacity: 0.4;
 }
 #total-count-description {
   max-width: 250px;

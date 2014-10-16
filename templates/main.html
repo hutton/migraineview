@@ -97,13 +97,6 @@
             <div class="pure-g stat-section-full-width-item">
                 <div class="pure-u-1 pure-u-sm-1-3">
                     <div class="stat-section-item">
-                        <div class="description-item">
-                            <div>Average of <span><%= overview.averageTimeBetweenEvent %></span> between attacks. The longest interval between attacks was <span><%= overview.longestGap %></span>, shortest <span><%= overview.shortestGap %></span>.</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="pure-u-1 pure-u-sm-1-3">
-                    <div class="stat-section-item">
                         <div class="count"><%= overview.totalEvents %></div>
                         <div class="description-item" id="total-count-description">
                             <div>Attacks in total between <span><%= overview.firstDate %></span> and <span><%= overview.lastDate %></span>.</div>
@@ -113,6 +106,13 @@
                 <div class="pure-u-1 pure-u-sm-1-3">
                     <div class="stat-section-item">
                         <canvas class="year-trend-chart" height="200" width="100"></canvas>
+                    </div>
+                </div>
+                <div class="pure-u-1 pure-u-sm-1-3">
+                    <div class="stat-section-item">
+                        <div class="description-item">
+                            <div>Average of <span><%= overview.averageTimeBetweenEvent %></span> between attacks. The longest interval between attacks was <span><%= overview.longestGap %></span>, shortest <span><%= overview.shortestGap %></span>.</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -128,7 +128,7 @@
 
     <script type="text/template" id="days-of-week-view-template">
         <div class="stat-section-title">
-            <%= all.title %>
+            <%= daysData.title %>
         </div>
         <div class="pure-g stat-section-full-width-item">
             <div class="pure-u-1 pure-u-sm-2-3">
@@ -136,14 +136,33 @@
                     <canvas class="side-by-side all-chart" height="240"></canvas>
                     <canvas style="display: none;" class="side-by-side by-year-chart" height="240"></canvas>
                 </div>
+                <div class="graph-mode">
+                    <span class="graph-mode-all selected">all</span><span class="graph-mode-year">by year</span>
+                </div>
             </div>
             <div class="pure-u-1 pure-u-sm-1-3">
-                Test
+                <div class="stat-section-item">
+                    <div class="description-item">
+                        <div>Attacks have most frequently been on a <span><%= mostFrequentText %></span>  or least frequently on a  <span><%= leastFrequentText %></span>.</div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="pure-g">
-            <div class="pure-u-1-1 graph-mode">
-                <span class="graph-mode-all selected">all</span><span class="graph-mode-year">by year</span>
+    </script>
+
+    <script type="text/template" id="months-of-year-view-template">
+        <div class="stat-section-title">
+            <%= all.title %>
+        </div>
+        <div class="pure-g stat-section-full-width-item">
+            <div class="pure-u-1">
+                <div class="side-by-side-container">
+                    <canvas class="side-by-side all-chart" height="240"></canvas>
+                    <canvas style="display: none;" class="side-by-side by-year-chart" height="240"></canvas>
+                </div>
+                <div class="graph-mode">
+                    <span class="graph-mode-all selected">all</span><span class="graph-mode-year">by year</span>
+                </div>
             </div>
         </div>
     </script>

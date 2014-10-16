@@ -64,7 +64,83 @@ window.OverviewView = Backbone.View.extend({
     className: 'stat-section'
 });
 
-window.FrequencyBarView = Backbone.View.extend({
+window.MonthsOfYearBarView = Backbone.View.extend({
+    initialize: function () {
+        this.render();
+    },
+
+    className: 'stat-section',
+
+    template: _.template($('#months-of-year-view-template').html()),
+
+    events: {
+        "click .graph-mode-all":    "allMode",
+        "click .graph-mode-year":    "yearMode"
+    },
+
+    createChart: function(element, data){
+        var ctx = element.get(0).getContext("2d");
+
+        var datasets = [];
+
+        var colors = ["151,187,205","151,205,187","205,187,151"];
+
+        var count = 0;
+
+        _.each(data.frequencies, function(item){
+            var color = colors[count % colors.length];
+
+            var dataSet = {
+                label: "Uploads",
+                fillColor: "rgba(" + color + ",0.5)",
+                strokeColor: "rgba(" + color + ",0.8)",
+                highlightFill: "rgba(" + color + ",0.75)",
+                highlightStroke: "rgba(" + color + ",1)",
+                data: item
+            };
+
+            datasets.push(dataSet);
+
+            count++;
+        });
+
+        var chartData = {
+            labels: data.keys,
+            datasets: datasets
+        };
+
+        new Chart(ctx).Bar(chartData, {responsive: true,
+                                  maintainAspectRatio: false});
+    },
+
+    render: function(){
+        this.$el.html(this.template(this.model));
+
+        this.createChart(this.$el.find('.all-chart'), this.model.all);
+
+        this.createChart(this.$el.find('.by-year-chart'), this.model.byYear);
+
+        return this;
+    },
+
+    allMode: function(event){
+        this.$el.find('.by-year-chart').fadeOut();
+        this.$el.find('.all-chart').removeClass('faded');
+
+        this.$el.find('.graph-mode > span').removeClass('selected');
+        $(event.target).addClass('selected');
+    },
+
+    yearMode: function(event){
+        this.$el.find('.by-year-chart').fadeIn();
+        this.$el.find('.all-chart').addClass('faded');
+
+        this.$el.find('.graph-mode > span').removeClass('selected');
+        $(event.target).addClass('selected');
+    }
+});
+
+window.DaysOfWeekBarView = Backbone.View.extend({
     initialize: function () {
         this.render();
     },
@@ -116,9 +192,9 @@ window.FrequencyBarView = Backbone.View.extend({
     render: function(){
         this.$el.html(this.template(this.model));
 
-        this.createChart(this.$el.find('.all-chart'), this.model.all);
+        this.createChart(this.$el.find('.all-chart'), this.model.daysData);
 
-        this.createChart(this.$el.find('.by-year-chart'), this.model.byYear);
+        this.createChart(this.$el.find('.by-year-chart'), this.model.daysDataByYear);
 
         return this;
     },
@@ -188,13 +264,13 @@ window.StatisticsView = Backbone.View.extend({
 
         this.statsListEl.append(this.overviewView.render().el);
 
-        this.monthsOfYearBarView = new FrequencyBarView({model: {'all' : this.model.daysOfWeek, 'byYear' : this.model.weekdaysByYearData}});
-
-        this.statsListEl.append(this.monthsOfYearBarView.el);
-
-        this.daysOfWeekViewBarView = new FrequencyBarView({model: {'all' : this.model.monthsOfYear, 'byYear' : this.model.monthsByYearData}});
+        this.daysOfWeekViewBarView = new DaysOfWeekBarView({model: this.model.daysOfWeek});
 
         this.statsListEl.append(this.daysOfWeekViewBarView.el);
+
+        this.monthsOfYearBarView = new MonthsOfYearBarView({model: {'all' : this.model.monthsOfYear.monthsData, 'byYear' : this.model.monthsOfYear.monthsDataByYear}});
+
+        this.statsListEl.append(this.monthsOfYearBarView.el);
 
         this.hoursOfDayRadarView = new RadarChartView({model: this.model.hoursOfDay});
 
