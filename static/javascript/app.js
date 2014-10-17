@@ -198,6 +198,9 @@ window.Workspace = Backbone.Router.extend({
 
         this.statsView.show();
         this.eventsView.hide();
+
+        $('#statistics-toggle').addClass('selected');
+        $('#events-toggle').removeClass('selected');
     },
 
     events: function(){
@@ -206,5 +209,8 @@ window.Workspace = Backbone.Router.extend({
 
         this.statsView.hide();
         this.eventsView.show();
+
+        $('#statistics-toggle').removeClass('selected');
+        $('#events-toggle').addClass('selected');
     }
 });

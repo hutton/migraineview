@@ -20,7 +20,7 @@ window.OverviewView = Backbone.View.extend({
             datasets: [
             {
                 label: "Uploads",
-                fillColor: "rgba(151,187,205,0.5)",
+                fillColor: "rgba(151,187,205,0.15)",
                 strokeColor: "rgba(151,187,205,0.8)",
                 highlightFill: "rgba(151,187,205,0.75)",
                 highlightStroke: "rgba(151,187,205,1)",
@@ -28,7 +28,7 @@ window.OverviewView = Backbone.View.extend({
             }
         ]};
 
-        this.yearTrendChart = new Chart(ctx).Bar(data, {responsive: true,
+        this.yearTrendChart = new Chart(ctx).Line(data, {responsive: true,
                                   maintainAspectRatio: false});
 
         this.chartEl = this.$el.find('.overview-trend-chart');
@@ -258,6 +258,10 @@ window.StatisticsView = Backbone.View.extend({
     statsListEl: $("#stat-sections-container"),
 
     render: function() {
+
+        Chart.defaults.global.animation = false;
+        Chart.defaults.global.scaleBeginAtZero = true;
+
         this.statsListEl.empty();
 
         this.overviewView = new OverviewView({model: this.model});

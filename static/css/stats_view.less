@@ -14,6 +14,32 @@
 
 .stat-title{
     margin: 40px 20px 30px 20px;
+    text-align: center;
+}
+
+@primary-color: #70A5DA;
+
+.mode-buttons{
+    text-align: center;
+}
+
+.mode-buttons > div{
+    border: 1px solid @primary-color;
+    border-radius: 5px;
+    display: inline-block;
+    margin: 0px auto;
+}
+
+.mode-buttons span{
+    padding: 10px 30px;
+    color: @primary-color;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.mode-buttons .selected{
+    background: @primary-color;
+    color: white;
 }
 
 .stat-section{

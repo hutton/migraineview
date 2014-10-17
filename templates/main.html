@@ -15,6 +15,7 @@
 
     <link type="text/css" rel="stylesheet" href="/static/css/main.css" />
     <link type="text/css" rel="stylesheet" href="/static/css/stats_view.css" />
+    <link type="text/css" rel="stylesheet" href="/static/css/events_view.css" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -49,7 +50,11 @@
     <div class="fixed-width" id="everything-view" style="display: none;">
         <div>
             <h2 class="stat-title">Migraine Statistics</h2>
-            <button class="pure-button" id="statistics-toggle">Statistics</button><button class="pure-button" id="events-toggle">Events</button>
+            <div class="mode-buttons">
+                <div>
+                    <span id="statistics-toggle">Statistics</span><span id="events-toggle">Events</span>
+                </div>
+            </div>
         </div>
         <!-
             Stats view

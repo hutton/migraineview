@@ -232,6 +232,26 @@ h4 {
 }
 .stat-title {
   margin: 40px 20px 30px 20px;
+  text-align: center;
+}
+.mode-buttons {
+  text-align: center;
+}
+.mode-buttons > div {
+  border: 1px solid #70a5da;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 0px auto;
+}
+.mode-buttons span {
+  padding: 10px 30px;
+  color: #70a5da;
+  cursor: pointer;
+  display: inline-block;
+}
+.mode-buttons .selected {
+  background: #70a5da;
+  color: white;
 }
 .stat-section {
   margin: 20px 20px;
