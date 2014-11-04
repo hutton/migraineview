@@ -12,19 +12,25 @@
     width: 180px;
 }
 
-.stat-title{
-    margin: 40px 20px 30px 20px;
-    text-align: center;
+#title-container{
+    background: @primary-color;
+    color: white;
+    padding: 60px 20px 40px 20px;
 }
 
-@primary-color: #70A5DA;
+.stat-title{
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+@primary-color: #1f8dd6;
 
 .mode-buttons{
     text-align: center;
 }
 
 .mode-buttons > div{
-    border: 1px solid @primary-color;
+    border: 1px solid white;
     border-radius: 5px;
     display: inline-block;
     margin: 0px auto;
@@ -32,27 +38,26 @@
 
 .mode-buttons span{
     padding: 10px 30px;
-    color: @primary-color;
+    color: white;
     cursor: pointer;
     display: inline-block;
 }
 
 .mode-buttons .selected{
-    background: @primary-color;
-    color: white;
+    background: white;
+    color: @primary-color;
 }
 
 .stat-section{
-    margin: 20px 20px;
-
+    padding: 100px 20px;
 }
 .date-range{
     float: right;
 }
 
 .stat-section-title{
-    border-bottom: 1px solid @border-color;
-    font-size: 120%;
+    font-size: 160%;
+    margin-bottom: 20px;
 }
 .stat-section-item-container{
     margin-left: auto;
@@ -92,10 +97,15 @@
     opacity: 0.6;
 }
 
+.stat-section.inverted{
+    background: @primary-color;
+    color: white;
+}
+
 .description-item{
     font-size: 130%;
     line-height: 1.5em;
-    opacity: 0.6;
+    opacity: 0.8;
     padding: 10px;
     text-align: justify;
 }
@@ -133,7 +143,7 @@
 
 .graph-mode{
     text-align: center;
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .selected{

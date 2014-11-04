@@ -47,9 +47,9 @@
     <!-
         Uploaded view
     ->
-    <div class="fixed-width" id="everything-view" style="display: none;">
-        <div>
-            <h2 class="stat-title">Migraine Statistics</h2>
+    <div id="everything-view" style="display: none;">
+        <div id="title-container">
+            <h1 class="stat-title">Migraine Report</h1>
             <div class="mode-buttons">
                 <div>
                     <span id="statistics-toggle">Statistics</span><span id="events-toggle">Events</span>
@@ -94,61 +94,65 @@
         Templates
     ->
     <script type="text/template" id="overview-view-template">
-        <div class="stat-section-title">
-            Overview
-            <!--<span class="date-range"><%= overview.firstDate %> - <%= overview.lastDate %></span>-->
-        </div>
-        <div class="stat-section-item-container">
-            <div class="pure-g stat-section-full-width-item">
-                <div class="pure-u-1 pure-u-sm-1-3">
-                    <div class="stat-section-item">
-                        <div class="count"><%= overview.totalEvents %></div>
-                        <div class="description-item" id="total-count-description">
-                            <div>Attacks in total between <span><%= overview.firstDate %></span> and <span><%= overview.lastDate %></span>.</div>
+        <div class="fixed-width">
+            <div class="stat-section-title">
+                Overview
+                <!--<span class="date-range"><%= overview.firstDate %> - <%= overview.lastDate %></span>-->
+            </div>
+            <div class="stat-section-item-container">
+                <div class="pure-g stat-section-full-width-item">
+                    <div class="pure-u-1 pure-u-sm-1-3">
+                        <div class="stat-section-item">
+                            <div class="count"><%= overview.totalEvents %></div>
+                            <div class="description-item" id="total-count-description">
+                                <div>Attacks in total between <span><%= overview.firstDate %></span> and <span><%= overview.lastDate %></span>.</div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="pure-u-1 pure-u-sm-1-3">
-                    <div class="stat-section-item">
-                        <canvas class="year-trend-chart" height="200" width="100"></canvas>
+                    <div class="pure-u-1 pure-u-sm-1-3">
+                        <div class="stat-section-item">
+                            <canvas class="year-trend-chart" height="200" width="100"></canvas>
+                        </div>
                     </div>
-                </div>
-                <div class="pure-u-1 pure-u-sm-1-3">
-                    <div class="stat-section-item">
-                        <div class="description-item">
-                            <div>Average of <span><%= overview.averageTimeBetweenEvent %></span> between attacks. The longest interval between attacks was <span><%= overview.longestGap %></span>, shortest <span><%= overview.shortestGap %></span>.</div>
+                    <div class="pure-u-1 pure-u-sm-1-3">
+                        <div class="stat-section-item">
+                            <div class="description-item">
+                                <div>Average of <span><%= overview.averageTimeBetweenEvent %></span> between attacks. The longest interval between attacks was <span><%= overview.longestGap %></span>, shortest <span><%= overview.shortestGap %></span>.</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="pure-g stat-section-full-width-item" id="overview-trend">
-            <div class="pure-u-1-1">
-                <canvas class="overview-trend-chart" width="740" height="40"></canvas>
-                <div class="overview-first-date"><%= overview.firstDate %></div>
-                <div class="overview-last-date"><%= overview.lastDate %></div>
+            <div class="pure-g stat-section-full-width-item" id="overview-trend">
+                <div class="pure-u-1-1">
+                    <canvas class="overview-trend-chart" width="740" height="40"></canvas>
+                    <div class="overview-first-date"><%= overview.firstDate %></div>
+                    <div class="overview-last-date"><%= overview.lastDate %></div>
+                </div>
             </div>
         </div>
     </script>
 
     <script type="text/template" id="days-of-week-view-template">
-        <div class="stat-section-title">
-            <%= daysData.title %>
-        </div>
-        <div class="pure-g stat-section-full-width-item">
-            <div class="pure-u-1 pure-u-sm-2-3">
-                <div class="side-by-side-container">
-                    <canvas class="side-by-side all-chart" height="240"></canvas>
-                    <canvas style="display: none;" class="side-by-side by-year-chart" height="240"></canvas>
-                </div>
-                <div class="graph-mode">
-                    <span class="graph-mode-all selected">all</span><span class="graph-mode-year">by year</span>
-                </div>
+        <div class="fixed-width">
+            <div class="stat-section-title">
+                <%= daysData.title %>
             </div>
-            <div class="pure-u-1 pure-u-sm-1-3">
-                <div class="stat-section-item">
-                    <div class="description-item">
-                        <div>Attacks have most frequently been on a <span><%= mostFrequentText %></span>  or least frequently on a  <span><%= leastFrequentText %></span>.</div>
+            <div class="pure-g stat-section-full-width-item">
+                <div class="pure-u-1 pure-u-sm-2-3">
+                    <div class="side-by-side-container">
+                        <canvas class="side-by-side all-chart" height="240"></canvas>
+                        <canvas style="display: none;" class="side-by-side by-year-chart" height="240"></canvas>
+                    </div>
+                    <div class="graph-mode">
+                        <span class="graph-mode-all selected">all</span><span class="graph-mode-year">by year</span>
+                    </div>
+                </div>
+                <div class="pure-u-1 pure-u-sm-1-3">
+                    <div class="stat-section-item">
+                        <div class="description-item">
+                            <div>Attacks have most frequently been on a <span><%= mostFrequentText %></span>  and least frequently on a  <span><%= leastFrequentText %></span>.</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -156,29 +160,33 @@
     </script>
 
     <script type="text/template" id="months-of-year-view-template">
-        <div class="stat-section-title">
-            <%= all.title %>
-        </div>
-        <div class="pure-g stat-section-full-width-item">
-            <div class="pure-u-1">
-                <div class="side-by-side-container">
-                    <canvas class="side-by-side all-chart" height="240"></canvas>
-                    <canvas style="display: none;" class="side-by-side by-year-chart" height="240"></canvas>
-                </div>
-                <div class="graph-mode">
-                    <span class="graph-mode-all selected">all</span><span class="graph-mode-year">by year</span>
+        <div class="fixed-width">
+            <div class="stat-section-title">
+                <%= all.title %>
+            </div>
+            <div class="pure-g stat-section-full-width-item">
+                <div class="pure-u-1">
+                    <div class="side-by-side-container">
+                        <canvas class="side-by-side all-chart" height="240"></canvas>
+                        <canvas style="display: none;" class="side-by-side by-year-chart" height="240"></canvas>
+                    </div>
+                    <div class="graph-mode">
+                        <span class="graph-mode-all selected">all</span><span class="graph-mode-year">by year</span>
+                    </div>
                 </div>
             </div>
         </div>
     </script>
 
     <script type="text/template" id="radar-chart-view-template">
-        <div class="stat-section-title">
-            <%= title %>
-        </div>
-        <div class="pure-g stat-section-full-width-item">
-            <div class="pure-u-1-1">
-                <canvas class="radar-type-chart" width="260" height="260"></canvas>
+        <div class="fixed-width">
+            <div class="stat-section-title">
+                <%= title %>
+            </div>
+            <div class="pure-g stat-section-full-width-item">
+                <div class="pure-u-1-1">
+                    <canvas class="radar-type-chart" width="260" height="260"></canvas>
+                </div>
             </div>
         </div>
     </script>

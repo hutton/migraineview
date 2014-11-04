@@ -1,4 +1,3 @@
-62 between April 2010 and September 2014
 
 Better format event grid
 Fix upload tz problem
@@ -6,10 +5,11 @@ Upload of xlsx
 Layout of homepage
 
 
-Stats
-=====
-Shortest/longest between attacks (next to average days between between attacks)
-Least/most likely "Tuesday or Saturday in February" (next to day frequency)
+
+
+Stats View
+==========
+Reformat average, longest and shortest
 Distribution by Quarter (Polar Area chart next to month frequency)
 
 
@@ -19,3 +19,5 @@ Show events
 Add stats view backbone class
 Start using Pure
 Add example
+Shortest/longest between attacks (next to average days between between attacks)
+Least/most likely "Tuesday or Saturday in February" (next to day frequency)

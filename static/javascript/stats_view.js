@@ -159,7 +159,7 @@ window.DaysOfWeekBarView = Backbone.View.extend({
 
         var datasets = [];
 
-        var colors = ["151,187,205","151,205,187","205,187,151"];
+        var colors = ["255,255,255","151,205,187","205,187,151"];
 
         var count = 0;
 
@@ -186,7 +186,11 @@ window.DaysOfWeekBarView = Backbone.View.extend({
         };
 
         new Chart(ctx).Bar(chartData, {responsive: true,
-                                  maintainAspectRatio: false});
+                                    maintainAspectRatio: false,
+                                    scaleLineColor: "rgba(255,255,255,.5)",
+                                    scaleFontColor: "rgba(255,255,255,0.8)",
+                                    scaleShowGridLines : false
+                                    });
     },
 
     render: function(){
@@ -195,6 +199,8 @@ window.DaysOfWeekBarView = Backbone.View.extend({
         this.createChart(this.$el.find('.all-chart'), this.model.daysData);
 
         this.createChart(this.$el.find('.by-year-chart'), this.model.daysDataByYear);
+
+        this.$el.addClass('inverted');
 
         return this;
     },
@@ -235,15 +241,21 @@ window.RadarChartView = Backbone.View.extend({
             datasets: [
             {
                 label: "Uploads",
-                fillColor: "rgba(151,187,205,0.5)",
-                strokeColor: "rgba(151,187,205,0.8)",
+                fillColor: "rgba(255,255,255,0.5)",
+                strokeColor: "rgba(255,255,255,0.8)",
                 highlightFill: "rgba(151,187,205,0.75)",
                 highlightStroke: "rgba(151,187,205,1)",
                 data: this.model.frequencies[0]
             }
         ]};
 
-        new Chart(ctx).Radar(data);
+        new Chart(ctx).Radar(data, {
+                                    angleLineColor: "rgba(255,255,255,.3)",
+                                    pointLabelFontColor: "rgba(255,255,255,0.8)",
+                                    scaleLineColor: "rgba(255,255,255,0.3)"
+                                    });
+
+        this.$el.addClass('inverted');
 
         return this;
     },

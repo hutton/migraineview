@@ -230,38 +230,43 @@ h4 {
 #stats-loading .progress {
   width: 180px;
 }
+#title-container {
+  background: #1f8dd6;
+  color: white;
+  padding: 60px 20px 40px 20px;
+}
 .stat-title {
-  margin: 40px 20px 30px 20px;
   text-align: center;
+  margin-bottom: 60px;
 }
 .mode-buttons {
   text-align: center;
 }
 .mode-buttons > div {
-  border: 1px solid #70a5da;
+  border: 1px solid white;
   border-radius: 5px;
   display: inline-block;
   margin: 0px auto;
 }
 .mode-buttons span {
   padding: 10px 30px;
-  color: #70a5da;
+  color: white;
   cursor: pointer;
   display: inline-block;
 }
 .mode-buttons .selected {
-  background: #70a5da;
-  color: white;
+  background: white;
+  color: #1f8dd6;
 }
 .stat-section {
-  margin: 20px 20px;
+  padding: 100px 20px;
 }
 .date-range {
   float: right;
 }
 .stat-section-title {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  font-size: 120%;
+  font-size: 160%;
+  margin-bottom: 20px;
 }
 .stat-section-item-container {
   margin-left: auto;
@@ -294,10 +299,14 @@ h4 {
   line-height: 1.2em;
   opacity: 0.6;
 }
+.stat-section.inverted {
+  background: #1f8dd6;
+  color: white;
+}
 .description-item {
   font-size: 130%;
   line-height: 1.5em;
-  opacity: 0.6;
+  opacity: 0.8;
   padding: 10px;
   text-align: justify;
 }
@@ -328,7 +337,7 @@ h4 {
 }
 .graph-mode {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 .selected {
   background: rgba(0, 0, 0, 0.15);
