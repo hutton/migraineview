@@ -187,7 +187,7 @@ table {
 }
 /********************* Globals ********************/
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', 'helvetica neue', helvetica, arial, sans-serif;
   font-weight: 100;
   font-size: 16px;
 }
@@ -199,7 +199,7 @@ textarea,
 .pure-g [class*="pure-u"] {
   /* Set your content font stack here: */
 
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', 'helvetica neue', helvetica, arial, sans-serif;
   font-weight: 100;
 }
 .fixed-width {
