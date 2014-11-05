@@ -13,11 +13,14 @@
         <link rel="stylesheet" href="/static/css/tp/grids-responsive-min.css">
     <!--<![endif]-->
 
+    <link type="text/css" rel="stylesheet" href="/static/css/tp/side-menu.css" />
+    <link type="text/css" rel="stylesheet" href="/static/css/tp/font-awesome.min.css" />
+
     <link type="text/css" rel="stylesheet" href="/static/css/main.css" />
     <link type="text/css" rel="stylesheet" href="/static/css/stats_view.css" />
     <link type="text/css" rel="stylesheet" href="/static/css/events_view.css" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui"/>
 </head>
 <body>
     <!-
@@ -47,46 +50,72 @@
     <!-
         Uploaded view
     ->
-    <div class="fixed-width" id="everything-view" style="display: none;">
-        <div>
-            <h2 class="stat-title">Migraine Statistics</h2>
-            <div class="mode-buttons">
-                <div>
-                    <span id="statistics-toggle">Statistics</span><span id="events-toggle">Events</span>
+    <div id="everything-view" style="display: none;">
+        <div id="layout">
+            <!-- Menu toggle -->
+            <a href="#menu" id="menuLink" class="menu-link">
+                <!-- Hamburger icon -->
+                <span></span>
+            </a>
+
+            <div id="menu">
+                <div class="pure-menu pure-menu-open">
+                    <a class="pure-menu-heading" href="#">Migraine Report</a>
+
+                    <ul>
+                        <li><a href="#"><i class="fa fa-plus"></i> Add</a></li>
+                        <li class="pure-menu-selected"><a href="#"><i class="fa fa-bar-chart"></i> Statistics</a></li>
+                        <li><a href="#"><i class="fa fa-list"></i> List</a></li>
+
+                        <li class="menu-item-divided">
+                            <a href="#"><i class="fa fa-sign-out"></i> Logout</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-        </div>
-        <!-
-            Stats view
-        ->
-        <div id="stats-view" style="display: none;">
-            <div id="stat-sections-container">
-                <div id="stats-loading">
-                    <div>Fetching data...</div>
-                    <div class='progress indefinite'>
-                        <span></span>
+
+            <div id="main">
+                <div>
+                    <h2 class="stat-title">Migraine Statistics</h2>
+                    <div class="mode-buttons">
+                        <div>
+                            <span id="statistics-toggle">Statistics</span><span id="events-toggle">Events</span>
+                        </div>
                     </div>
                 </div>
+                <!-
+                    Stats view
+                ->
+                <div id="stats-view" style="display: none;">
+                    <div id="stat-sections-container">
+                        <div id="stats-loading">
+                            <div>Fetching data...</div>
+                            <div class='progress indefinite'>
+                                <span></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-
+                    Events view
+                ->
+
+                <div id="event_list_container" style="display: none;">
+                    <table class="pure-table pure-table-horizontal">
+                        <thead>
+                            <tr>
+                                <th>Started</th>
+                                <th>Duration</th>
+                                <th>Comment</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
             </div>
-        </div>
-
-        <!-
-            Events view
-        ->
-
-        <div id="event_list_container" style="display: none;">
-            <table class="pure-table pure-table-horizontal">
-                <thead>
-                    <tr>
-                        <th>Started</th>
-                        <th>Duration</th>
-                        <th>Comment</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                </tbody>
-            </table>
         </div>
     </div>
 

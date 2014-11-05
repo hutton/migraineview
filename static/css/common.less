@@ -11,19 +11,35 @@
   src: local('Open Sans Light'), local('OpenSans-Light'), url('/static/fonts/opensans-light.wof') format('woff');
 }
 
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Regular'), local('Roboto-Regular'), url('/static/fonts/roboto-normal.wof') format('woff');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Roboto Thin'), local('Roboto-Thin'), url('/static/fonts/roboto-light.wof') format('woff');
+}
+
 /********************* Globals ********************/
 
 body{
     //font-family: Helvetica, "Trebuchet MS", sans-serif;
 
-    font-family: 'Open Sans Light', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
     font-size: 16px;
 }
 
 html, button, input, select, textarea,
 .pure-g [class *= "pure-u"] {
     /* Set your content font stack here: */
-    font-family: 'Open Sans Light', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
 }
 
 .fixed-width{
