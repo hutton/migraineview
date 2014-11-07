@@ -2,9 +2,9 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
+    <title>Migraine Report</title>
 
-    <link type="text/css" rel="stylesheet" href="/static/css/tp/pure.css" />
+    <link type="text/css" rel="stylesheet" href="/static/css/all.css" />
 
     <!--[if lte IE 8]>
         <link rel="stylesheet" href="/static/css/tp/grids-responsive-old-ie-min.css">
@@ -13,13 +13,6 @@
         <link rel="stylesheet" href="/static/css/tp/grids-responsive-min.css">
     <!--<![endif]-->
 
-    <link type="text/css" rel="stylesheet" href="/static/css/tp/side-menu.css" />
-    <link type="text/css" rel="stylesheet" href="/static/css/tp/font-awesome.min.css" />
-
-    <link type="text/css" rel="stylesheet" href="/static/css/main.css" />
-    <link type="text/css" rel="stylesheet" href="/static/css/stats_view.css" />
-    <link type="text/css" rel="stylesheet" href="/static/css/events_view.css" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0, minimal-ui"/>
 </head>
 <body>
@@ -27,23 +20,156 @@
     Home view
     ->
     <div id="home-view">
-        <div class="fixed-width">
-            <h1 class="title">Frequency Analysis</h1>
+        <div class="header">
+            <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
+                <a class="pure-menu-heading" href="">Migraine Report</a>
+
+                <ul>
+                    <li class="pure-menu-selected"><a href="#">Home</a></li>
+                    <li><a href="#">Tour</a></li>
+                    <li><a href="#">Sign Up</a></li>
+                </ul>
+            </div>
         </div>
 
-        <div class="fixed-width">
-            <div class="upload-container">
-
+        <div class="splash-container">
+            <div class="splash">
+                <h1 class="splash-head">Get Clarity</h1>
+                <p class="splash-subhead">
+                </p>
+                <p>
+                    <a href="/example/stats" class="pure-button pure-button-primary">See Example</a>
+                </p>
             </div>
-            <div id="uploading-message">Uploading
-                <div class='progress'>
-                    <span style="width: 0%;"></span>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="content">
+                <h2 class="content-head is-center">Excepteur sint occaecat cupidatat.</h2>
+
+                <div class="pure-g">
+                    <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+
+                        <h3 class="content-subhead">
+                            <i class="fa fa-rocket"></i>
+                            Get Started Quickly
+                        </h3>
+                        <p>
+                            Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                        </p>
+                    </div>
+                    <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                        <h3 class="content-subhead">
+                            <i class="fa fa-mobile"></i>
+                            Responsive Layouts
+                        </h3>
+                        <p>
+                            Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                        </p>
+                    </div>
+                    <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                        <h3 class="content-subhead">
+                            <i class="fa fa-th-large"></i>
+                            Modular
+                        </h3>
+                        <p>
+                            Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                        </p>
+                    </div>
+                    <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                        <h3 class="content-subhead">
+                            <i class="fa fa-check-square-o"></i>
+                            Plays Nice
+                        </h3>
+                        <p>
+                            Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                        </p>
+                    </div>
                 </div>
             </div>
 
-            <a class="center" href="/example/stats">Example</a>
+            <div class="ribbon l-box-lrg pure-g">
+                <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
+                    <img class="pure-img-responsive" alt="File Icons" width="300" src="img/common/file-icons.png">
+                </div>
+                <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
+
+                    <h2 class="content-head content-head-ribbon">Laboris nisi ut aliquip.</h2>
+
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor.
+                    </p>
+                </div>
+            </div>
+
+            <div class="content">
+                <h2 class="content-head is-center">Dolore magna aliqua. Uis aute irure.</h2>
+
+                <div class="pure-g">
+                    <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
+                        <form class="pure-form pure-form-stacked">
+                            <fieldset>
+
+                                <label for="name">Your Name</label>
+                                <input id="name" type="text" placeholder="Your Name">
+
+
+                                <label for="email">Your Email</label>
+                                <input id="email" type="email" placeholder="Your Email">
+
+                                <label for="password">Your Password</label>
+                                <input id="password" type="password" placeholder="Your Password">
+
+                                <button type="submit" class="pure-button">Sign Up</button>
+                            </fieldset>
+                        </form>
+                    </div>
+
+                    <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+                        <h4>Contact Us</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                            consequat.
+                        </p>
+
+                        <h4>More Information</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                            tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer l-box is-center">
+                View the source of this layout to learn more. Made with love by the YUI Team.
+            </div>
 
         </div>
+
+        <!--<div class="fixed-width">-->
+            <!--<h1 class="title">Frequency Analysis</h1>-->
+        <!--</div>-->
+
+        <!--<div class="fixed-width">-->
+            <!--<div class="upload-container">-->
+
+            <!--</div>-->
+            <!--<div id="uploading-message">Uploading-->
+                <!--<div class='progress'>-->
+                    <!--<span style="width: 0%;"></span>-->
+                <!--</div>-->
+            <!--</div>-->
+
+            <!--<a class="center" href="/example/stats">Example</a>-->
+
+        <!--</div>-->
     </div>
 
 
@@ -60,33 +186,28 @@
 
             <div id="menu">
                 <div class="pure-menu pure-menu-open">
-                    <a class="pure-menu-heading" href="#">Migraine Report</a>
+                    <a class="pure-menu-heading" href="/"><i class="fa fa-home"></i> Migraine Report</a>
 
                     <ul>
                         <li><a href="#"><i class="fa fa-plus"></i> Add</a></li>
-                        <li class="pure-menu-selected"><a href="#"><i class="fa fa-bar-chart"></i> Statistics</a></li>
-                        <li><a href="#"><i class="fa fa-list"></i> List</a></li>
+                        <li><a id="statistics-toggle" href="#"><i class="fa fa-bar-chart"></i> Statistics</a></li>
+                        <li><a id="events-toggle" href="#"><i class="fa fa-list"></i> List</a></li>
 
                         <li class="menu-item-divided">
-                            <a href="#"><i class="fa fa-sign-out"></i> Logout</a>
+                            <a href="/"><i class="fa fa-sign-out"></i> Logout</a>
                         </li>
                     </ul>
                 </div>
             </div>
 
             <div id="main" class="fixed-width">
-                <div>
-                    <h2 class="stat-title">Migraine Statistics</h2>
-                    <div class="mode-buttons">
-                        <div>
-                            <span id="statistics-toggle">Statistics</span><span id="events-toggle">Events</span>
-                        </div>
-                    </div>
-                </div>
                 <!-
                     Stats view
                 ->
                 <div id="stats-view" style="display: none;">
+                    <div>
+                        <h2 class="stat-title">Statistics</h2>
+                    </div>
                     <div id="stat-sections-container">
                         <div id="stats-loading">
                             <div>Fetching data...</div>
@@ -102,6 +223,9 @@
                 ->
 
                 <div id="event_list_container" style="display: none;">
+                    <div>
+                        <h2 class="stat-title">Migraine List</h2>
+                    </div>
                     <table class="pure-table pure-table-horizontal">
                         <thead>
                             <tr>

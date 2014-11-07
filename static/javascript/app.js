@@ -14,42 +14,6 @@ if (!String.prototype.startsWith) {
   });
 }
 
-(function (window, document) {
-
-    var layout   = document.getElementById('layout'),
-        menu     = document.getElementById('menu'),
-        menuLink = document.getElementById('menuLink');
-
-    function toggleClass(element, className) {
-        var classes = element.className.split(/\s+/),
-            length = classes.length,
-            i = 0;
-
-        for(; i < length; i++) {
-          if (classes[i] === className) {
-            classes.splice(i, 1);
-            break;
-          }
-        }
-        // The className is not found
-        if (length === classes.length) {
-            classes.push(className);
-        }
-
-        element.className = classes.join(' ');
-    }
-
-    menuLink.onclick = function (e) {
-        var active = 'active';
-
-        e.preventDefault();
-        toggleClass(layout, active);
-        toggleClass(menu, active);
-        toggleClass(menuLink, active);
-    };
-
-}(this, this.document));
-
 window.App = Backbone.View.extend({
     initialize: function (){
         var that = this;
@@ -83,8 +47,10 @@ window.App = Backbone.View.extend({
     uploadingProgress: $('#uploading-message > .progress > span'),
 
     events: {
-        "click #statistics-toggle":   "showStatistics",
-        "click #events-toggle":   "showEvents"
+        "click #statistics-toggle":     "showStatistics",
+        "click #events-toggle":         "showEvents",
+        "click #menuLink":              "menuLinkClick",
+        "click #menu":                  "closeMenuLink"
     },
 
     onDrop: function(e){
@@ -144,12 +110,24 @@ window.App = Backbone.View.extend({
         }
     },
 
-    showStatistics: function(){
+    showStatistics: function(event){
         this.Routes.navigate(this.getCurrentBase() + '/stats', {trigger: true});
+
+        event.preventDefault();
     },
 
-    showEvents: function(){
+    showEvents: function(event){
         this.Routes.navigate(this.getCurrentBase() + '/events', {trigger: true});
+
+        event.preventDefault();
+    },
+
+    closeMenuLink: function(){
+        if ($('#menuLink').is(':visible') && $('#menu').hasClass('active')){
+            $('#layout').toggleClass('active');
+            $('#menu').toggleClass('active');
+            $('#menulink').toggleClass('active');
+        }
     },
 
     showProgress: function(evt){
@@ -201,6 +179,14 @@ window.App = Backbone.View.extend({
         this.eventsView.collection = new EventsCollection(models);
 
         this.eventsView.render();
+    },
+
+    menuLinkClick: function(event){
+        event.preventDefault();
+
+        $('#layout').toggleClass('active');
+        $('#menu').toggleClass('active');
+        $('#menulink').toggleClass('active');
     }
 });
 
@@ -235,8 +221,8 @@ window.Workspace = Backbone.Router.extend({
         this.statsView.show();
         this.eventsView.hide();
 
-        $('#statistics-toggle').addClass('selected');
-        $('#events-toggle').removeClass('selected');
+        $('#statistics-toggle').parent().addClass('pure-menu-selected');
+        $('#events-toggle').parent().removeClass('pure-menu-selected');
     },
 
     events: function(){
@@ -246,7 +232,7 @@ window.Workspace = Backbone.Router.extend({
         this.statsView.hide();
         this.eventsView.show();
 
-        $('#statistics-toggle').removeClass('selected');
-        $('#events-toggle').addClass('selected');
+        $('#statistics-toggle').parent().removeClass('pure-menu-selected');
+        $('#events-toggle').parent().addClass('pure-menu-selected');
     }
 });
