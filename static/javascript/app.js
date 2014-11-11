@@ -49,6 +49,7 @@ window.App = Backbone.View.extend({
     events: {
         "click #statistics-toggle":     "showStatistics",
         "click #events-toggle":         "showEvents",
+        "click #add-toggle":            "showAdd",
         "click #menuLink":              "menuLinkClick",
         "click #menu":                  "closeMenuLink"
     },
@@ -105,19 +106,27 @@ window.App = Backbone.View.extend({
     getCurrentBase: function(){
         if (window.location.pathname.startsWith("/example")){
             return 'example';
+        } else if (window.location.pathname.startsWith("/report")) {
+            return 'report';
         } else {
             return 'uploaded';
         }
     },
 
     showStatistics: function(event){
-        this.Routes.navigate(this.getCurrentBase() + '/stats', {trigger: true});
+        this.Routes.navigate(this.getCurrentBase() + '/statistics', {trigger: true});
 
         event.preventDefault();
     },
 
     showEvents: function(event){
-        this.Routes.navigate(this.getCurrentBase() + '/events', {trigger: true});
+        this.Routes.navigate(this.getCurrentBase() + '/list', {trigger: true});
+
+        event.preventDefault();
+    },
+
+    showAdd: function(event){
+        this.Routes.navigate(this.getCurrentBase() + '/add', {trigger: true});
 
         event.preventDefault();
     },
@@ -193,8 +202,9 @@ window.App = Backbone.View.extend({
 window.Workspace = Backbone.Router.extend({
 
     routes: {
-        ":base/stats":   "stats",
-        ":base/events":  "events",
+        ":base/statistics": "statistics",
+        ":base/list":       "list",
+        ":base/add":        "add",
         "":                 "home"
     },
 
@@ -206,33 +216,53 @@ window.Workspace = Backbone.Router.extend({
 
     eventsView: $('#event_list_container'),
 
+    addView: $('#add-view'),
+
     home: function() {
         this.homeView.show();
         this.everythingView.hide();
 
+        this.addView.hide();
         this.statsView.hide();
         this.eventsView.hide();
     },
 
-    stats: function(){
+    statistics: function(){
         this.homeView.hide();
         this.everythingView.show();
 
+        this.addView.hide();
         this.statsView.show();
         this.eventsView.hide();
 
         $('#statistics-toggle').parent().addClass('pure-menu-selected');
         $('#events-toggle').parent().removeClass('pure-menu-selected');
+        $('#add-toggle').parent().removeClass('pure-menu-selected');
     },
 
-    events: function(){
+    list: function(){
         this.homeView.hide();
         this.everythingView.show();
 
+        this.addView.hide();
         this.statsView.hide();
         this.eventsView.show();
 
         $('#statistics-toggle').parent().removeClass('pure-menu-selected');
         $('#events-toggle').parent().addClass('pure-menu-selected');
+        $('#add-toggle').parent().removeClass('pure-menu-selected');
+    },
+
+    add: function(){
+        this.homeView.hide();
+        this.everythingView.show();
+
+        this.addView.show();
+        this.statsView.hide();
+        this.eventsView.hide();
+
+        $('#statistics-toggle').parent().removeClass('pure-menu-selected');
+        $('#events-toggle').parent().removeClass('pure-menu-selected');
+        $('#add-toggle').parent().addClass('pure-menu-selected');
     }
 });

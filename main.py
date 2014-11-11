@@ -15,16 +15,29 @@
 # limitations under the License.
 #
 import os
+
+from google.appengine.api import users
 from google.appengine.ext.webapp import template
 import webapp2
-from migraine_statistics import MigraineData, Example
-from google.appengine._internal.django.utils import simplejson
+
+from app.migraine_statistics import MigraineData, Example
+from app.report import Report
 
 
 class Main(webapp2.RequestHandler):
     def get(self):
-        path = os.path.join(os.path.join(os.path.dirname(__file__), 'html'), '../templates/main.html')
-        self.response.out.write(template.render(path, {}))
+
+        user = users.get_current_user()
+
+        if user:
+            template_values = {'user': {'name': user.nickname()},
+                               'logout_url': users.create_logout_url('/')}
+        else:
+            template_values = {'user': None,
+                               'login_url': users.create_login_url('/report/statistics')}
+
+        path = os.path.join(os.path.join(os.path.dirname(__file__), 'html'), '../templates/home.html')
+        self.response.out.write(template.render(path, template_values))
 
 
 class Uploaded(webapp2.RequestHandler):
@@ -36,5 +49,6 @@ app = webapp2.WSGIApplication([
                                   ('/', Main),
                                   ('/upload', MigraineData),
                                   ('/uploaded/.*', Uploaded),
+                                  ('/report/.*', Report),
                                   ('/example/.*', Example),
                               ], debug=True)

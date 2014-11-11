@@ -183,12 +183,18 @@ table {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 100;
-  src: local('Roboto Thin'), local('Roboto-Thin'), url('/static/fonts/roboto-light.wof') format('woff');
+  src: local('Roboto Thin'), local('Roboto-Thin'), url('/static/fonts/roboto-thin.wof') format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Thin'), url('/static/fonts/roboto-light.wof') format('woff');
 }
 /********************* Globals ********************/
 body {
   font-family: 'Roboto', 'helvetica neue', helvetica, arial, sans-serif;
-  font-weight: 100;
+  font-weight: 300;
   line-height: 1.5em;
   font-size: 16px;
 }
@@ -201,7 +207,7 @@ textarea,
   /* Set your content font stack here: */
 
   font-family: 'Roboto', 'helvetica neue', helvetica, arial, sans-serif;
-  font-weight: 100;
+  font-weight: 300;
 }
 .fixed-width {
   max-width: 1024px;

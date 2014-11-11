@@ -183,12 +183,18 @@ table {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 100;
-  src: local('Roboto Thin'), local('Roboto-Thin'), url('/static/fonts/roboto-light.wof') format('woff');
+  src: local('Roboto Thin'), local('Roboto-Thin'), url('/static/fonts/roboto-thin.wof') format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Thin'), url('/static/fonts/roboto-light.wof') format('woff');
 }
 /********************* Globals ********************/
 body {
   font-family: 'Roboto', 'helvetica neue', helvetica, arial, sans-serif;
-  font-weight: 100;
+  font-weight: 300;
   line-height: 1.5em;
   font-size: 16px;
 }
@@ -201,7 +207,7 @@ textarea,
   /* Set your content font stack here: */
 
   font-family: 'Roboto', 'helvetica neue', helvetica, arial, sans-serif;
-  font-weight: 100;
+  font-weight: 300;
 }
 .fixed-width {
   max-width: 1024px;
@@ -248,6 +254,7 @@ h4 {
 .stat-title {
   margin: 40px 20px 30px 20px;
   text-align: center;
+  font-weight: 100;
 }
 .mode-buttons {
   text-align: center;
@@ -306,6 +313,7 @@ h4 {
 }
 .stat-section-item > div.count {
   font-size: 600%;
+  font-weight: 100;
   line-height: 1.2em;
   opacity: 0.6;
 }

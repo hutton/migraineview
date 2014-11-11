@@ -1,12 +1,14 @@
 import string
 import sys
+
 from google.appengine.ext.webapp import template
+
 
 sys.path.insert(0, 'libs')
 
 import icalendar
 
-from helper import process_calendar, build_json_events, date_to_datetime
+from app.helper import process_calendar, build_json_events, date_to_datetime
 
 __author__ = 'simonhutton'
 
@@ -306,6 +308,6 @@ class Example(webapp2.RequestHandler):
 
         response = generate_statistics_from_events(events)
 
-        path = os.path.join(os.path.join(os.path.dirname(__file__), 'html'), '../templates/main.html')
+        path = os.path.join(os.path.join(os.path.dirname(__file__), 'html'), '../../templates/main.html')
         self.response.out.write(template.render(path, {'data': simplejson.dumps(response)}))
 
