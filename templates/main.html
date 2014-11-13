@@ -38,7 +38,6 @@
 
                         <li class="menu-item-divided">
                             <a href="/"><i class="fa fa-sign-out"></i> Logout</a>
-                            <a href="/"><i class="fa fa-sign-out"></i> Logout</a>
                         </li>
                     </ul>
                 </div>
@@ -52,22 +51,55 @@
                     <div>
                         <h2 class="stat-title">Add</h2>
                     </div>
-                    <div class="center">
-                        <form class="pure-form pure-form-aligned">
+                    <div class="content">
+                        <form class="pure-form pure-form-aligned" action="add" method="post">
                             <fieldset>
+                                <legend>Log an attack</legend>
                                 <div class="pure-control-group">
-                                    <label for="name">Started</label>
-                                    <input id="name" type="datetime" placeholder="Username">
+                                    <label for="started">Started</label>
+                                    <input name="started" id="started" type="date" placeholder="Started">
+                                    <select name="started-time">
+                                       <option value="one">00:00</option>
+                                       <option value="one">00:30</option>
+                                       <option value="one">01:00</option>
+                                       <option value="one">01:30</option>
+                                       <option value="one">02:00</option>
+                                       <option value="one">02:30</option>
+                                       <option value="one">03:00</option>
+                                       <option value="one">03:30</option>
+                                    </select>
                                 </div>
 
                                 <div class="pure-control-group">
-                                    <label for="password">Ended</label>
-                                    <input id="password" type="datetime" placeholder="Password">
+                                    <label for="ended">Ended</label>
+                                    <input name="ended" id="ended" type="date" placeholder="Ended">
+                                    <select name="ended-time">
+                                       <option value="00:00">00:00</option>
+                                       <option value="00:30">00:30</option>
+                                       <option value="01:00">01:00</option>
+                                       <option value="01:30">01:30</option>
+                                       <option value="02:00">02:00</option>
+                                       <option value="02:30">02:30</option>
+                                       <option value="03:00">03:00</option>
+                                       <option value="03:30">03:30</option>
+                                       <option value="04:00">04:00</option>
+                                       <option value="04:30">04:30</option>
+                                       <option value="05:00">05:00</option>
+                                       <option value="05:30">05:30</option>
+                                       <option value="06:00">06:00</option>
+                                       <option value="06:30">06:30</option>
+                                       <option value="07:00">07:00</option>
+                                       <option value="07:30">07:30</option>
+                                       <option value="08:00">08:00</option>
+                                       <option value="08:30">08:30</option>
+                                       <option value="09:00">09:00</option>
+                                       <option value="09:30">09:30</option>
+                                    </select>
                                 </div>
 
                                 <div class="pure-control-group">
-                                    <label for="email">Comment</label>
-                                    <input id="email" type="text" placeholder="Email Address">
+                                    <label for="comment">Comment</label>
+                                    <textarea name="comment" id="comment"></textarea>
                                 </div>
 
                                 <div class="pure-controls">
