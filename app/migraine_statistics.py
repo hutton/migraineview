@@ -132,7 +132,7 @@ def generate_statistics_from_events(events):
 
     previous_start = None
 
-    finding_gaps = len(events) > 10
+    finding_gaps = True #len(events) > 10
 
     for event in events:
         event['Day'] = event['Start'].strftime('%A')
@@ -277,25 +277,6 @@ def ics_to_events(file_content):
     cal = icalendar.Calendar.from_ical(file_content)
 
     return process_calendar(cal)
-
-
-class MigraineData(webapp2.RequestHandler):
-    def post(self):
-
-        if len(self.request.params.multi.dicts) > 1 and 'file' in self.request.params.multi.dicts[1]:
-            file_info = self.request.POST['file']
-
-            file_content = file_info.file.read()
-
-            if file_info.filename.endswith('.json'):
-                events = json_to_events(file_content)
-
-            if file_info.filename.endswith('.ics'):
-                events = ics_to_events(file_content)
-
-            response = generate_statistics_from_events(events)
-
-            self.response.out.write(simplejson.dumps(response))
 
 
 class Example(webapp2.RequestHandler):

@@ -31,7 +31,7 @@ def process_calendar(calendar):
 
     for component in calendar.walk():
         if component.name == "VEVENT":
-            start_date = get_date_field(component, 'dtstart')
+            start_date = date_to_datetime(get_date_field(component, 'dtstart'))
 
             if start_date:
                 event = {'Start': start_date, 'CompareDate': str(start_date)}
@@ -43,7 +43,7 @@ def process_calendar(calendar):
                 else:
                     event['Comment'] = ""
 
-                end_date = get_date_field(component, 'dtend')
+                end_date = date_to_datetime(get_date_field(component, 'dtend'))
 
                 if end_date:
                     duration_delta = end_date - start_date

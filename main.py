@@ -20,8 +20,9 @@ from google.appengine.api import users
 from google.appengine.ext.webapp import template
 import webapp2
 
-from app.migraine_statistics import MigraineData, Example
+from app.migraine_statistics import Example
 from app.report import Report
+from app.upload import Upload
 
 
 class Main(webapp2.RequestHandler):
@@ -47,7 +48,7 @@ class Uploaded(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
                                   ('/', Main),
-                                  ('/upload', MigraineData),
+                                  ('/upload', Upload),
                                   ('/uploaded/.*', Uploaded),
                                   ('/report/.*', Report),
                                   ('/example/.*', Example),
