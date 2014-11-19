@@ -1,5 +1,8 @@
-62 between April 2010 and September 2014
+Get all add tab working
+Get stats and event list to reload after add
 
+Make logout work
+Hide logout for example
 Better format event grid
 Fix upload tz problem
 Upload of xlsx
@@ -8,8 +11,8 @@ Layout of homepage
 
 Stats
 =====
-Shortest/longest between attacks (next to average days between between attacks)
-Least/most likely "Tuesday or Saturday in February" (next to day frequency)
+Graph of time between attacks
+D3 calendar view
 Distribution by Quarter (Polar Area chart next to month frequency)
 
 
@@ -19,3 +22,5 @@ Show events
 Add stats view backbone class
 Start using Pure
 Add example
+Shortest/longest between attacks (next to average days between between attacks)
+Least/most likely "Tuesday or Saturday in February" (next to day frequency)
