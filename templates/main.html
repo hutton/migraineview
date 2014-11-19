@@ -52,9 +52,11 @@
                         <h2 class="stat-title">Add</h2>
                     </div>
                     <div class="content">
-                        <form class="pure-form pure-form-aligned" action="report/add" method="post">
+                        <div class="stat-section-title">
+                            Log an attack
+                        </div>
+                        <form class="pure-form pure-form-aligned" action="/report/add" method="post">
                             <fieldset>
-                                <legend>Log an attack</legend>
                                 <div class="pure-control-group">
                                     <label for="started">Started</label>
                                     <input name="started" id="started" type="date" placeholder="Started">
@@ -165,9 +167,14 @@
                                     </select>
                                 </div>
 
+                                <div class="pure-control-group" id="add-duration-group">
+                                    <label>Duration</label>
+                                    <span>2 hours</span>
+                                </div>
+
                                 <div class="pure-control-group">
-                                    <label for="comment">Comment</label>
-                                    <textarea name="comment" id="comment"></textarea>
+                                    <label for="add-comment-text">Description</label>
+                                    <textarea name="comment" id="add-comment-text"></textarea>
                                 </div>
 
                                 <div class="pure-controls">
@@ -176,6 +183,9 @@
                             </fieldset>
                         </form>
 
+                        <div class="stat-section-title">
+                            Upload attacks
+                        </div>
                         <div class="upload-container">
 
                         </div>
@@ -195,7 +205,7 @@
                     <div>
                         <h2 class="stat-title">Statistics</h2>
                     </div>
-                    <div id="stat-sections-container">
+                    <div id="stat-sections-container" class="content">
                         <div id="stats-loading" style="display: none;">
                             <div>Fetching data...</div>
                             <div class='progress indefinite'>
@@ -213,18 +223,20 @@
                     <div>
                         <h2 class="stat-title">Migraine List</h2>
                     </div>
-                    <table class="pure-table pure-table-horizontal">
-                        <thead>
-                            <tr>
-                                <th>Started</th>
-                                <th>Duration</th>
-                                <th>Comment</th>
-                            </tr>
-                        </thead>
-                        <tbody>
+                    <div class="content">
+                        <table class="pure-table pure-table-horizontal">
+                            <thead>
+                                <tr>
+                                    <th>Started</th>
+                                    <th>Duration</th>
+                                    <th>Comment</th>
+                                </tr>
+                            </thead>
+                            <tbody>
 
-                        </tbody>
-                    </table>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>

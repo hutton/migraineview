@@ -1566,7 +1566,7 @@ The content `<div>` is where all your content goes.
 .content {
   margin: 0 auto;
   padding: 0 2em;
-  max-width: 800px;
+  max-width: 1024px;
   margin-bottom: 50px;
   line-height: 1.6em;
 }
@@ -3416,6 +3416,27 @@ Hides the menu at `48em`, but modify this based on your app's needs.
 .pure-form select {
   height: 42px;
 }
+@media only screen and (max-width: 480px) {
+  .pure-form input:not([type]),
+  .pure-form input[type="text"],
+  .pure-form input[type="password"],
+  .pure-form input[type="email"],
+  .pure-form input[type="url"],
+  .pure-form input[type="date"],
+  .pure-form input[type="month"],
+  .pure-form input[type="time"],
+  .pure-form input[type="datetime"],
+  .pure-form input[type="datetime-local"],
+  .pure-form input[type="week"],
+  .pure-form input[type="number"],
+  .pure-form input[type="search"],
+  .pure-form input[type="tel"],
+  .pure-form input[type="color"],
+  .pure-form label {
+    margin-bottom: 0em;
+    display: inline-block;
+  }
+}
 /* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
 html,
 body,
@@ -4197,6 +4218,13 @@ h4 {
   height: 400px;
   margin: 40px auto;
   border-radius: 30px;
+}
+#add-duration-group {
+  margin-bottom: 20px;
+}
+#add-comment-text {
+  width: 320px;
+  height: 120px;
 }
 /* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
 html,
