@@ -30,3 +30,11 @@ class Report(webapp2.RequestHandler):
         else:
             self.redirect('/')
 
+    def post(self):
+
+        response = {}
+
+        path = os.path.join(os.path.join(os.path.dirname(__file__), 'html'), '../../templates/main.html')
+        self.response.out.write(template.render(path, response))
+
+

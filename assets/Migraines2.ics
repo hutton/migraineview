@@ -1,0 +1,1057 @@
+BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Migraines
+X-WR-TIMEZONE:Europe/London
+X-WR-CALDESC:
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20100429
+DTEND;VALUE=DATE:20100430
+DTSTAMP:20141117T203948Z
+UID:ania1duml79rdkr8pk9pjgbnvo@google.com
+CREATED:20110222T093628Z
+DESCRIPTION:
+LAST-MODIFIED:20110222T093628Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;VALUE=DATE:20101216
+DTEND;VALUE=DATE:20101217
+DTSTAMP:20141117T203948Z
+UID:fjh6eb5588nhc45p9melogqhf0@google.com
+CREATED:20110222T093649Z
+DESCRIPTION:
+LAST-MODIFIED:20110222T093649Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130522T050000Z
+DTEND:20130522T060000Z
+DTSTAMP:20141117T203948Z
+UID:c91disatdo27uhsjpgv3nq7t0o@google.com
+CREATED:20130523T114917Z
+DESCRIPTION:Had previous day off work.  Started in early hours of morning\,
+  felt rough during day.
+LAST-MODIFIED:20130523T115008Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130522T170000Z
+DTEND:20130522T180000Z
+DTSTAMP:20141117T203948Z
+UID:bfifvp31099kdir29g3pkbi9u0@google.com
+CREATED:20130523T115118Z
+DESCRIPTION:Had been off with migraine during day\, starting to feel better
+  then got another one in the evening. Had pack of ham and cheese sandwich.
+LAST-MODIFIED:20130523T115118Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20131014T130000Z
+DTEND:20131014T150000Z
+DTSTAMP:20141117T203948Z
+UID:6i5t5urr2rmvftae0ho70hdvds@google.com
+CREATED:20131017T073143Z
+DESCRIPTION:Out shopping in Fowey had just had a pasty
+LAST-MODIFIED:20131017T073144Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:OPAQUE
+CATEGORIES:http://schemas.google.com/g/2005#event
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20131009T030000Z
+DTEND:20131009T070000Z
+DTSTAMP:20141117T203948Z
+UID:as7gfvb6mob55c2ihjljcrutus@google.com
+CREATED:20131017T073435Z
+DESCRIPTION:Started middle of the night\, got numb hand\, still went to wor
+ k
+LAST-MODIFIED:20131017T073436Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:OPAQUE
+CATEGORIES:http://schemas.google.com/g/2005#event
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20131011T060000Z
+DTEND:20131011T110000Z
+DTSTAMP:20141117T203948Z
+UID:bfmb98e7n9ih6oaoi5n4ic9c7s@google.com
+CREATED:20131017T073552Z
+DESCRIPTION:Started while getting ready for work\, took day off\, holiday t
+ he next day.
+LAST-MODIFIED:20131017T073553Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:OPAQUE
+CATEGORIES:http://schemas.google.com/g/2005#event
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20131013T100000Z
+DTEND:20131013T130000Z
+DTSTAMP:20141117T203948Z
+UID:3plhlat1e78b41bn79gn9aah94@google.com
+CREATED:20131017T073750Z
+DESCRIPTION:Was over at Rich's\, just gone out to help move E-type. Stayed 
+ out through arura\, had pills when got home. Drove down to Fowey at 4pm.
+LAST-MODIFIED:20131017T073751Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:OPAQUE
+CATEGORIES:http://schemas.google.com/g/2005#event
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20131016T010000Z
+DTEND:20131016T040000Z
+DTSTAMP:20141117T203948Z
+UID:kmn4dmr4plo3gr6a61c18sr7sk@google.com
+CREATED:20131017T074004Z
+DESCRIPTION:On holiday in Fowey\, started while asleep didn't really notice
+ \, got up in night and felt rough. Made it out to Eden project in afternoon
+ .
+LAST-MODIFIED:20131017T074004Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:OPAQUE
+CATEGORIES:http://schemas.google.com/g/2005#event
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130924T160000Z
+DTEND:20130924T190000Z
+DTSTAMP:20141117T203948Z
+UID:738i8u17e131fuqosc9ttc68vg@google.com
+CREATED:20131017T074146Z
+DESCRIPTION:Had got out of hospital with Annabel the previous day\, just un
+ winding and having some dinner when it started.
+LAST-MODIFIED:20131017T074147Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:OPAQUE
+CATEGORIES:http://schemas.google.com/g/2005#event
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130925T160000Z
+DTEND:20130925T190000Z
+DTSTAMP:20141117T203948Z
+UID:u1bjpe0d84afmtjmhtshfc1pik@google.com
+CREATED:20131017T074255Z
+DESCRIPTION:Just had late afternoon snack\, had finished work (from home) f
+ or the week and it started
+LAST-MODIFIED:20131017T074255Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:OPAQUE
+CATEGORIES:http://schemas.google.com/g/2005#event
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140724T193000Z
+DTEND:20140724T230000Z
+DTSTAMP:20141117T203948Z
+UID:l0gt5dg2uofamr48hn59hak2o0@google.com
+CREATED:20140729T103844Z
+DESCRIPTION:Met Tony for a drink in Corkers\, migraine started within 10 mi
+ ns of getting there.  Was very hot that week.\nWent to bed\, slept\, when t
+ o work the next day.
+LAST-MODIFIED:20140729T104031Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140728T210000Z
+DTEND:20140729T030000Z
+DTSTAMP:20141117T203948Z
+UID:4bhjgstcesg7rmp12920reres0@google.com
+CREATED:20140729T104036Z
+DESCRIPTION:Was just about to go to bed\, went downstairs to watch the 100m
+  final and it started.\nSlept\, took pills in the night (Annabel was up) we
+ nt to work the next day.
+LAST-MODIFIED:20140807T154144Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140731T193000Z
+DTEND:20140801T030000Z
+DTSTAMP:20141117T203948Z
+UID:1n8dgh374rjk5246743i5r972g@google.com
+CREATED:20140807T154045Z
+DESCRIPTION:Another evening one.  Had just finished dinner and it started. 
+  Went to work the next day.
+LAST-MODIFIED:20140807T154347Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140903T210000Z
+DTEND:20140904T030000Z
+DTSTAMP:20141117T203948Z
+UID:meu2ttbam05gvj9ptt4ka51d3s@google.com
+CREATED:20140904T131223Z
+DESCRIPTION:Sat in bed reading my book and it started.  Hadn't done much in
+  the evening\, had couscous with chicken for tea.  Had been to gym.
+LAST-MODIFIED:20140904T131346Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140908T180000Z
+DTEND:20140908T230000Z
+DTSTAMP:20141117T203948Z
+UID:ie8mdk199temjgcms33klli5l8@google.com
+CREATED:20140910T112050Z
+DESCRIPTION:I'd just put Annabel to bed\, came downstairs and it started.  
+ Had pasta for lunch not been to the gym.
+LAST-MODIFIED:20140910T112147Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140709T060000Z
+DTEND:20140709T120000Z
+DTSTAMP:20141117T203948Z
+UID:3q4m60a5t3eok6k6ki6m94lu9s@google.com
+CREATED:20140711T150102Z
+DESCRIPTION:Got up around 6:30 with Annabel\, previous few nights she had b
+ een up so was quite tired.\nGot her feed and dressed\, sat down in front of
+  TV (Postman Pat) and it started.  Took day of work\, slept during the morn
+ ing.  Still felt quite rough the next day.\nHad stir-fry the night before (
+ big portion\, plum sauce).
+LAST-MODIFIED:20140910T112251Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140627T040000Z
+DTEND:20140627T080000Z
+DTSTAMP:20141117T203948Z
+UID:2t42imutep9ncpa9foj15pp2qs@google.com
+CREATED:20140630T095857Z
+DESCRIPTION:Woke up 6am had bad headache\, missed all of numbness and auror
+ a.  Only took nurofen since missed the start.  Felt rough all day\, felt be
+ tter by the next day.
+LAST-MODIFIED:20140910T112326Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130625T190000Z
+DTEND:20130626T010000Z
+DTSTAMP:20141117T203948Z
+UID:4mlj5ag5ukesh0ha85arlvkbg0@google.com
+CREATED:20130629T085308Z
+DESCRIPTION:Started at 8pm went straight to bed and didn't feel too bad the
+  next bad\, went to work.  Had pasta dinner\, didn't eat that much the day 
+ before.
+LAST-MODIFIED:20140910T112452Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130617T040000Z
+DTEND:20130617T100000Z
+DTSTAMP:20141117T203948Z
+UID:ordv2oti3bqbbeqj9b6ubcel54@google.com
+CREATED:20130629T085520Z
+DESCRIPTION:Had been off previous Friday with a cold. Felt rough and had ra
+ sh over the weekend.  Migraine started early in morning on Monday\, didn't 
+ really do anything about it until getting up for work and felt very rough. 
+  Felt terrible for next few days\, headache finally cleared on Thursday (ha
+ d Monday and Tuesday off).
+LAST-MODIFIED:20140910T112535Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migarine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130520T170000Z
+DTEND:20130520T220000Z
+DTSTAMP:20141117T203948Z
+UID:ubjcdh0v5rt76813cl97cdg5fc@google.com
+CREATED:20130523T114837Z
+DESCRIPTION:Very tired at work\, started on way home.  Had tuna melt for lu
+ nch.
+LAST-MODIFIED:20140910T112559Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migarine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130511T090000Z
+DTEND:20130511T140000Z
+DTSTAMP:20141117T203948Z
+UID:1b85hi6clucu80rjpalm8ickgo@google.com
+CREATED:20130523T115136Z
+DESCRIPTION:Started Saturday morning after having pizza the night before.
+LAST-MODIFIED:20140910T112617Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130426T193000Z
+DTEND:20130427T003000Z
+DTSTAMP:20141117T203948Z
+UID:484gefvqlon71rd71hnt625dik@google.com
+CREATED:20130523T115319Z
+DESCRIPTION:About an hour after having pizza it started.  After a long week
+ .
+LAST-MODIFIED:20140910T112640Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20130421T170000Z
+DTEND:20130421T220000Z
+DTSTAMP:20141117T203948Z
+UID:nkinnif2s8sr84a0nivf9c8i0k@google.com
+CREATED:20130523T121227Z
+DESCRIPTION:During paternity leave. had a migraine one evening.
+LAST-MODIFIED:20140910T112700Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20121212T010000Z
+DTEND:20121212T050000Z
+DTSTAMP:20141117T203948Z
+UID:csvbr8u03l5fp2o5nililv5ki4@google.com
+CREATED:20130119T163351Z
+DESCRIPTION:It happened during the night\, went to work the next day.
+LAST-MODIFIED:20140910T112717Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20121206T070000Z
+DTEND:20121206T110000Z
+DTSTAMP:20141117T203948Z
+UID:mffpnetgtqn9v2k6ehrk5u2n74@google.com
+CREATED:20121206T201554Z
+DESCRIPTION:Woke up\, had shower\, migraine started.  Felt rough most of da
+ y.  Had noodle\, squash and tomato curry soupy thing for dinner.
+LAST-MODIFIED:20140910T112736Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20121130T083000Z
+DTEND:20121130T133000Z
+DTSTAMP:20141117T203948Z
+UID:j7k4tnu28d3s9frjnh6h2k0cck@google.com
+CREATED:20121130T164017Z
+DESCRIPTION:Woke up felt fine.  Just getting in to Waterloo\, migraine star
+ ted\, got train straight back home.  Went to bed till lunch time\, had more
+  drugs feeling a bit better.
+LAST-MODIFIED:20140910T112757Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20121123T023000Z
+DTEND:20121123T083000Z
+DTSTAMP:20141117T203948Z
+UID:hkqu8m8l5mrqefj88t0jqiit8k@google.com
+CREATED:20121130T163512Z
+DESCRIPTION:Had migraine during the night\, woke up briefly ~2:30am thought
+  my eyes were going funny\, went back to sleep.  Woke up before alarm\, fel
+ t a bit rough\, had a shower didn't feel too bad so went to work. Was ok at
+  work\, felt better after more drugs for lunch.\nWas ok the next day.
+LAST-MODIFIED:20140910T112811Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20121022T063000Z
+DTEND:20121022T103000Z
+DTSTAMP:20141117T203948Z
+UID:muoda6lijlf3pqv6k45a70bkfg@google.com
+CREATED:20121119T224022Z
+DESCRIPTION:Had been in Southampton for the weekend had stew for dinner on 
+ Sunday. Woke up Monday morning and migraine started\, felt rough until the 
+ following evening.
+LAST-MODIFIED:20140910T112833Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20121005T160000Z
+DTEND:20121005T200000Z
+DTSTAMP:20141117T203948Z
+UID:sm7k2kgjflduhfjpep5b31n4io@google.com
+CREATED:20121119T224332Z
+DESCRIPTION:Started 5pm at work\, what feeling fine\, been to gym etc.  Had
+  half heated discussion then migraine started 10 mins later.  Felt rough un
+ til Sunday.
+LAST-MODIFIED:20140910T112901Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20121001T103000Z
+DTEND:20121001T153000Z
+DTSTAMP:20141117T203948Z
+UID:tbo2d3fg3eamddpo45nmcpgdgk@google.com
+CREATED:20121130T163417Z
+DESCRIPTION:About 11:30am at work\, got migraine\, went home.  Back at work
+  on Tuesday.
+LAST-MODIFIED:20140910T112913Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20120910T043000Z
+DTEND:20120910T093000Z
+DTSTAMP:20141117T203948Z
+UID:ndpbr9g1mco2hks624tm6f8mkk@google.com
+CREATED:20120922T085839Z
+DESCRIPTION:Started 5:30 in the morning\, had to take the day off.  Had lin
+ gering headache for a few days after.
+LAST-MODIFIED:20140910T112926Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20120708T193000Z
+DTEND:20120709T003000Z
+DTSTAMP:20141117T203948Z
+UID:ps3q4gfuo90kvrthikidi9bngo@google.com
+CREATED:20120922T090619Z
+DESCRIPTION:Had been back in Worksop\, watched Wimbledon final.  Got back h
+ ome\, took rubbish out did a few chores then migraine started.  Felt rough 
+ for a few days. 
+LAST-MODIFIED:20140910T112949Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migarine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20120610T030000Z
+DTEND:20120610T080000Z
+DTSTAMP:20141117T203948Z
+UID:vfjls6rs1tb09bqugbi7ug9vks@google.com
+CREATED:20120625T204406Z
+DESCRIPTION:Woke up at 4am Sunday morning at No Direction Home. Had pills l
+ eft ok by breakfast.  Had been feeling rough previous couple of days\, felt
+  much better after the migraine.
+LAST-MODIFIED:20140910T113015Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20120605T210000Z
+DTEND:20120606T020000Z
+DTSTAMP:20141117T203948Z
+UID:ttvjkj9dp09sjjlpbth7v92fvo@google.com
+CREATED:20120607T211743Z
+DESCRIPTION:Had Jubilee BBQ day before.  Felt rough all day\, hangover-like
+ . Delicate stomach\, headache-y.  Had just had bowl of muesli then was goin
+ g to bed and migraine started.  BIG block of vision\, most top-right\, inst
+ antly disappeared.  Went straight to bed\, slept ok. Took day off work felt
+  a bit rough and then still rough the day after (delicate stomach etc).
+LAST-MODIFIED:20140910T113055Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140318T020000Z
+DTEND:20140318T070000Z
+DTSTAMP:20141117T203948Z
+UID:s0gvosqbcra7akrjnspoues0ig@google.com
+CREATED:20140404T161451Z
+DESCRIPTION:Started during the night\, around 2am.  Took pills but made it 
+ to work\, felt rough most of days.
+LAST-MODIFIED:20140910T113117Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140319T040000Z
+DTEND:20140319T080000Z
+DTSTAMP:20141117T203948Z
+UID:inj839hu5lgi6f3c83ehm711ro@google.com
+CREATED:20140404T161505Z
+DESCRIPTION:Started during the night\, around 4am.  Took pills but made it 
+ to work\, felt rough most of days.
+LAST-MODIFIED:20140910T113131Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140321T120000Z
+DTEND:20140321T170000Z
+DTSTAMP:20141117T203948Z
+UID:loi38rnjj62d5nuiuelrnc0va0@google.com
+CREATED:20140404T161320Z
+DESCRIPTION:Started at midday\, had to go home.  Felt rough for a few days 
+ after.
+LAST-MODIFIED:20140910T113146Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140516T183000Z
+DTEND:20140516T223000Z
+DTSTAMP:20141117T203948Z
+UID:v55bf2g0d0bgf60ko543vv85u4@google.com
+CREATED:20140523T095854Z
+DESCRIPTION:Had been stick to vomiting and diarrhea.  I'd not eaten for two
+  days\, just have a small fish and potato supper and got migraine.
+LAST-MODIFIED:20140910T113210Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140518T083000Z
+DTEND:20140518T123000Z
+DTSTAMP:20141117T203948Z
+UID:ea256ogo6k4322t4l06g96n7d8@google.com
+CREATED:20140523T100049Z
+DESCRIPTION:Was getting better from being sick\, had been up with Annabel f
+ rom 6:30 then around 9:30 got migraine.
+LAST-MODIFIED:20140910T113227Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20140609T150000Z
+DTEND:20140609T210000Z
+DTSTAMP:20141117T203948Z
+UID:r0ie849t51e02ouv6tuqtijlvg@google.com
+CREATED:20140630T100144Z
+DESCRIPTION:16:10 at work and started getting migraine\, went home slept it
+  off. Was back at work the next day.
+LAST-MODIFIED:20140910T113245Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20100605T173000Z
+DTEND:20100605T223000Z
+DTSTAMP:20141117T203948Z
+UID:kshopuc9eht91htq4g24t2dn3k@google.com
+CREATED:20100726T123257Z
+DESCRIPTION:In Worksop about to have dinner\, just had a G&T.\n
+LAST-MODIFIED:20140910T113335Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20100619T120000Z
+DTEND:20100619T160000Z
+DTSTAMP:20141117T203948Z
+UID:eh1toc27jq5l83jbj9ff20a76s@google.com
+CREATED:20100726T123057Z
+DESCRIPTION:Happened around lunchtime\, having bruschetta.\nHad staying in 
+ and watched World Cup football previous night.\n
+LAST-MODIFIED:20140910T113350Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20100710T140000Z
+DTEND:20100710T190000Z
+DTSTAMP:20141117T203948Z
+UID:4mslinf5a3d8k8vsoauq5euumc@google.com
+CREATED:20100726T122821Z
+DESCRIPTION:Flying from Mauritius to Jo'berg.  \nMigraine wasn't too bad\, 
+ felt better in evening.
+LAST-MODIFIED:20140910T113418Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20100726T050000Z
+DTEND:20100726T100000Z
+DTSTAMP:20141117T203948Z
+UID:2aqvho883lt47vmb1l58o9hh7s@google.com
+CREATED:20100726T122639Z
+DESCRIPTION:Started in night\, woke 6:30am with numb arm.\nBeen to see Athl
+ ete previous day\, out all day 4.5 pints of cider and small portion of fish
+  and chips for dinner.
+LAST-MODIFIED:20140910T113433Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20101004T100000Z
+DTEND:20101004T150000Z
+DTSTAMP:20141117T203948Z
+UID:rvsfioobqpdlr5f0q36b2o54ic@google.com
+CREATED:20110222T093642Z
+DESCRIPTION:Been in Worksop weekend before drove back Sunday afternoon.\nWa
+ lked to work due to tube strike\, had breakfast @9:15.\nStarted at around 1
+ 1am\, got better by evening.
+LAST-MODIFIED:20140910T113452Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20101227T130000Z
+DTEND:20101227T180000Z
+DTSTAMP:20141117T203948Z
+UID:6r091p0u9obfvmda8gj44t34cg@google.com
+CREATED:20110222T093703Z
+DESCRIPTION:Just finished Christmas in Banstead back in Blackheath about to
+  head up to Worksop.  Had eaten and drank lots over past couple of days\, a
+ lso slept well.
+LAST-MODIFIED:20140910T113518Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20110121T213000Z
+DTEND:20110122T023000Z
+DTSTAMP:20141117T203948Z
+UID:qcgo1o6ni3i3a9s6smphf4g43g@google.com
+CREATED:20110222T093712Z
+DESCRIPTION:Friday night at home\, Catherine due to head off to Ghana the n
+ ext day.  Late-ish in the evening\, 9:30.  Was quite tired\, been out night
+  before.
+LAST-MODIFIED:20140910T113539Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20110410T083000Z
+DTEND:20110410T133000Z
+DTSTAMP:20141117T203948Z
+UID:A192DD93-34CC-4C5D-8F32-A35FFBC7D16D
+CREATED:20110410T150258Z
+DESCRIPTION:Woke up just after 9am\, went to start watching GP\, migraine s
+ tarted.\nHad scallops and bacon and half a bottle of wine the night before.
+LAST-MODIFIED:20140910T113557Z
+LOCATION:
+SEQUENCE:5
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20110428T070000Z
+DTEND:20110428T120000Z
+DTSTAMP:20141117T203948Z
+UID:f00gdahhpebda9s3up9kr7to3k@google.com
+CREATED:20110504T220413Z
+DESCRIPTION:In Marrakesh about to travel to Essaouira\, didn't sleep well d
+ uring the night\, woke up with numb hand\, didn't last too long.
+LAST-MODIFIED:20140910T113616Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20110502T110000Z
+DTEND:20110502T150000Z
+DTSTAMP:20141117T203948Z
+UID:ssje4d5ogkkf7v1muv8qc6ghog@google.com
+CREATED:20110504T220229Z
+DESCRIPTION:Just got back from Morocco\, at home in the morning just gettin
+ g ready to walk into Greenwich for lunch.\nNot been eating or drinking much
+  due to upset stomach from holiday.\nLasted around 24 hours\, felt groggy f
+ or a day after that.
+LAST-MODIFIED:20140910T113642Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20110525T050000Z
+DTEND:20110525T100000Z
+DTSTAMP:20141117T203948Z
+UID:p4qabjmal85fgvfj5s3hij5bmc@google.com
+CREATED:20110526T093006Z
+DESCRIPTION:Woke up at 6:30am and it had started.\nHadn't slept well previo
+ us two nights\, had salad for previous two nights.\nStill felt groggy the d
+ ay after.\n
+LAST-MODIFIED:20140910T113658Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20110829T043000Z
+DTEND:20110829T083000Z
+DTSTAMP:20141117T203948Z
+UID:i3vkgq314veq5497b2kbmc24sg@google.com
+CREATED:20110830T161242Z
+DESCRIPTION:Got back from Germany the night before.  Woke up at 6am\, left 
+ hand and face felt numb\, took tablets\, slept till 11am\, didn't feel too 
+ bad for rest of day.  Went to work the next day\, slightly groggy.
+LAST-MODIFIED:20140910T113715Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migriane
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20110918T050000Z
+DTEND:20110918T100000Z
+DTSTAMP:20141117T203948Z
+UID:t7vhbjhphkiov9fhjgso6frufc@google.com
+CREATED:20110927T100330Z
+DESCRIPTION:Started about 6am Sunday morning.  Had salmon en-crote and cham
+ pange the night before.  Had just moved house!\nDidn't take zomig and had N
+ eurofen at 10am once woke up\, didn't feel too bad for rest of day.
+LAST-MODIFIED:20140910T113738Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20110920T183000Z
+DTEND:20110920T233000Z
+DTSTAMP:20141117T203948Z
+UID:5ldveiqvit4mtp0croa22b7l50@google.com
+CREATED:20110927T100634Z
+DESCRIPTION:Started around 7:30pm once I'd got home from work.  Had been ru
+ nning at lunch\, jacket potato with cheese and tuna for lunch.\nHad dinner 
+ before it go too bad at 8pm\, then slept for 1:30 hours got up for a bit an
+ d went to bed.\nTook the next day off work\, didn't feel great in the morni
+ ng and still felt groggy the day after.  Felt better on the Thursday.
+LAST-MODIFIED:20140910T113804Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20111105T203000Z
+DTEND:20111106T013000Z
+DTSTAMP:20141117T203948Z
+UID:8h9pul6l6jaat3e524iv34alts@google.com
+CREATED:20111118T112302Z
+DESCRIPTION:Just before dinner\, 8:30ish.  Been swimming (cold pool) then g
+ ot ready for dinner in warm room\, a bit hungry but didn't snack because di
+ dn't want to spoil dinner.   \nOrdered aperitif and had a mouthful of Bomba
+ y mix and it started.
+LAST-MODIFIED:20140910T113819Z
+LOCATION:Dartmouth
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20111201T083000Z
+DTEND:20111201T133000Z
+DTSTAMP:20141117T203948Z
+UID:p7uhdu2g9d1cv1kar7hn1tsq1k@google.com
+CREATED:20120113T094153Z
+DESCRIPTION:Had been out the previous night - didn't eat much\, just a few 
+ crisps and Cornish pasty.  Got on train in\, felt hungry\, made it to Picca
+ dilly Circus when it started.\nTurned round and headed home\, felt rough al
+ l day\, back to work the next day.
+LAST-MODIFIED:20140910T113838Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20120413T063000Z
+DTEND:20120413T113000Z
+DTSTAMP:20141117T203948Z
+UID:0jc50iaro43klpo68c4vv9q2t0@google.com
+CREATED:20120423T190635Z
+DESCRIPTION:Woke up\, got in shower and it started.  Not too bad\, felt bet
+ ter by evening.\nPrevious lunch\, had very hot quesadilla\, too many chilli
+ es.  For dinner the night before had pizza with courgette and chorizo.  Had
+  some dark chocolate before bed.
+LAST-MODIFIED:20140910T113858Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20120414T130000Z
+DTEND:20120414T180000Z
+DTSTAMP:20141117T203948Z
+UID:vlvpd8me1c9besrkqmlontgj58@google.com
+CREATED:20120423T190927Z
+DESCRIPTION:Had just got over previous days migraine\, just about to have l
+ unch at 2pm and it started very quickly.  Felt really bad till the next day
+  and still felt groggy on Monday.\nHad pizza with courgette and chorizo the
+  night before and some dark chocolate.
+LAST-MODIFIED:20140910T114010Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20120423T073000Z
+DTEND:20120423T123000Z
+DTSTAMP:20141117T203948Z
+UID:2uit72tfjlsq1dphf1dn293rog@google.com
+CREATED:20120423T190619Z
+DESCRIPTION:Monday morning\, travelling to work\, got to Baker Street\, it 
+ started. Felt quite rough\, feeling better by evening.\nHad Sunday lunch (b
+ eef) in Worksop at around 2pm\, had some Quoin and courgette for supper. Ha
+ d some dark chocolate before bed.
+LAST-MODIFIED:20140910T114024Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20120522T173000Z
+DTEND:20120522T223000Z
+DTSTAMP:20141117T203948Z
+UID:ar069eiik5s4bgc12p5h4ulf9g@google.com
+CREATED:20120527T210449Z
+DESCRIPTION:On train home\, slight delay with train\, sat in seat with sun 
+ in eyes\, started half way through.  Went to Pret for lunch\, had cheese ba
+ guette and banana later. Had chicken soup the night before.\nWhen to bed on
+ ce got home\, got up around 9.  Slept well from 11\, felt fine the next day
+ \, went to work and for a run.
+LAST-MODIFIED:20140910T114057Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20120527T070000Z
+DTEND:20120527T120000Z
+DTSTAMP:20141117T203948Z
+UID:kc0m18mk1nbpkskgildvd0nni8@google.com
+CREATED:20120527T210747Z
+DESCRIPTION:Started 8am Sunday morning\, had really bad headache.  Had been
+  for a BBQ at Tony's the night before\, had loads of meat and 4 beers.  Did
+ n't have a proper dinner\, just cereal and snacks.  Didn't drink much water
+  during the BBQ.\nHad been out on Friday and had beer and a burger at the A
+ nchor.
+LAST-MODIFIED:20140910T114109Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20141112T053000Z
+DTEND:20141112T113000Z
+DTSTAMP:20141117T203948Z
+UID:s4q5vukvvuve3ob24viuool1oo@google.com
+CREATED:20141112T130500Z
+DESCRIPTION:Started while asleep.  Woke up with Annabel around 6 and notice
+ d my hand was numb.  Had some pills around 6:30\, had a nap then up at 8:30
+ .  Started to feel better after second tablets at 10:30.\nHad shepherds pie
+  previous night.
+LAST-MODIFIED:20141112T140116Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+CATEGORIES:http://schemas.google.com/g/2005#event
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20141114T110000Z
+DTEND:20141114T170000Z
+DTSTAMP:20141117T203948Z
+UID:35fhn3skhf13p2jis0b5uk39ac@google.com
+CREATED:20141117T174657Z
+DESCRIPTION:Taken day off to look after Annabel who had a cold.  She had a 
+ (impromptu) nap at 10am\, I went and logged into work and it started at 11a
+ m.  Went and slept for a couple of hours then got up\, still felt quite rou
+ gh for most of the day.\nWe had fish (trout) with potatoes and veg the prev
+ ious night.
+LAST-MODIFIED:20141117T174944Z
+LOCATION:
+SEQUENCE:1
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20141115T190000Z
+DTEND:20141115T233000Z
+DTSTAMP:20141117T203948Z
+UID:aok8mknsdvv0m7to2rrtn6m084@google.com
+CREATED:20141117T203600Z
+DESCRIPTION:Annabel had just gone to bed\, was just about to put fillet ste
+ ak in the pan and it started.\nHad prawn jambalaya for tea the previous nig
+ ht and jacket potatoes for lunch.
+LAST-MODIFIED:20141117T203600Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:OPAQUE
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20141117T123000Z
+DTEND:20141117T153000Z
+DTSTAMP:20141117T203948Z
+UID:r05f1v28iopnh34im1et299744@google.com
+CREATED:20141117T203906Z
+DESCRIPTION:Had had a headache during the night (3 attacks in the previous 
+ 4 days)\, went to work\, felt rough then attack started around 12:30.  Went
+  home\, had the afternoon in bed then felt better.\nHad smoked salmon with 
+ scrambled egg for previous lunch then pasta and bolognese for dinner.
+LAST-MODIFIED:20141117T203906Z
+LOCATION:
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:Migraine
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

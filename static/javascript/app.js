@@ -2,22 +2,11 @@
  * Created by simonhutton on 03/10/2014.
  */
 
-if (!String.prototype.startsWith) {
-  Object.defineProperty(String.prototype, 'startsWith', {
-    enumerable: false,
-    configurable: false,
-    writable: false,
-    value: function (searchString, position) {
-      position = position || 0;
-      return this.lastIndexOf(searchString, position) === position;
-    }
-  });
-}
-
 window.App = Backbone.View.extend({
     initialize: function (){
         var that = this;
 
+        this.addView = new AddView();
         this.eventsView = new EventListView();
         this.statisticsView = new StatisticsView();
 

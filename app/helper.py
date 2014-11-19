@@ -60,7 +60,7 @@ def process_calendar(calendar):
 
 
 def date_to_datetime(date):
-    if isinstance(date, datetime.date):
+    if not isinstance(date, datetime.datetime):
         return datetime.datetime(date.year, date.month, date.day)
 
     return date

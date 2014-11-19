@@ -26,6 +26,8 @@ class Upload(webapp2.RequestHandler):
                 if file_info.filename.endswith('.ics'):
                     events = ics_to_events(file_content)
 
+                new_attacks = []
+
                 for event in events:
                     new_attack = attack.Attack(parent=account)
 
@@ -33,9 +35,11 @@ class Upload(webapp2.RequestHandler):
                     new_attack.duration = event['Duration']
                     new_attack.comment = event['Comment']
 
-                    db.put(new_attack)
+                    new_attacks.append(new_attack)
 
-        self.response.out.write(simplejson.dumps({}))
+                db.put(new_attacks)
+
+        self.response.out.write(simplejson.dumps({'message': str(len(new_attacks)) + ' attacks uploaded.'}))
 
 
 
