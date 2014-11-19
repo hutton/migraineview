@@ -1,12 +1,1 @@
-
-Date.prototype.toDateInputValue = (function() {
-    var local = new Date(this);
-    local.setMinutes(this.getMinutes() - this.getTimezoneOffset());
-    return local.toJSON().slice(0,10);
-});
-
-jQuery:
-
-$(document).ready( function() {
-    $('#datePicker').val(new Date().toDateInputValue());
-});​
+print datetime.datetime.strptime(started + " " + started_time, "%Y-%m-%d %H:%M")
