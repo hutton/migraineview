@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Migraine Report</title>
 
-    <link type="text/css" rel="stylesheet" href="/static/css/all.css" />
+    <link type="text/css" rel="stylesheet" href="/static/css/more.css" />
 
     <!--[if lte IE 8]>
         <link rel="stylesheet" href="/static/css/tp/grids-responsive-old-ie-min.css">
@@ -49,10 +49,10 @@
                 ->
                 <div id="add-view" style="display: none;">
                     <div>
-                        <h2 class="stat-title">Add</h2>
+                        <h2 class="title">Add</h2>
                     </div>
-                    <div class="content">
-                        <p>Add a single attack or upload a file containing several.  We accept most spreadsheet formats (.xls, .xlsx, .csv) or calendar files (.ics).</p>
+                    <div class="content narrow">
+                        <p>Add a single attack or upload a file containing several.  We accept most spreadsheet formats (.xls, .xlsx, .csv) or calendar export files (.ics).</p>
                         <div class="stat-section-title">
                             Log an attack
                         </div>
@@ -114,7 +114,7 @@
                                 </div>
 
                                 <div class="pure-control-group">
-                                    <label for="ended">Ended</label>
+                                    <label for="ended">Recovered</label>
                                     <input name="ended" id="ended" type="date" placeholder="Ended">
                                     <select name="ended-time">
                                        <option value="00:00">00:00</option>
@@ -225,7 +225,7 @@
                 ->
                 <div id="stats-view" style="display: none;">
                     <div>
-                        <h2 class="stat-title">Statistics</h2>
+                        <h2 class="title">Statistics</h2>
                     </div>
                     <div id="stat-sections-container" class="content">
                         <div id="stats-loading" style="display: none;">
@@ -243,7 +243,7 @@
 
                 <div id="event_list_container" style="display: none;">
                     <div>
-                        <h2 class="stat-title">Migraine List</h2>
+                        <h2 class="title">Migraine List</h2>
                     </div>
                     <div class="content">
                         <table class="pure-table pure-table-horizontal">

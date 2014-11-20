@@ -6,7 +6,7 @@
   height: 120px;
 }
 form {
-  margin: 50px 0px;
+  margin: 60px 0px 100px 0px;
 }
 .upload-container {
   border: 1px dashed rgba(0, 0, 0, 0.6);
@@ -20,4 +20,8 @@ form {
 }
 .upload-container .file-type {
   margin: 0px 10px;
+}
+input[type=date] {
+  min-width: 160px;
+  min-height: 42px;
 }

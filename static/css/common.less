@@ -3,6 +3,11 @@
 
 @border-color: rgba(0,0,0,0.2);
 
+input, select {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
+
 @font-face {
   font-family: 'Open Sans Light';
   font-style: normal;
@@ -49,8 +54,8 @@ html, button, input, select, textarea,
     font-weight: 300;
 }
 
-.fixed-width{
-    max-width: 1024px;
+.narrow{
+    max-width: 600px;
     margin: 0px auto;
 }
 
@@ -91,3 +96,12 @@ h4{
     font-size: 120%;
     line-height: 1.8em;
 }
+
+// Layout
+
+.title {
+    margin: 80px 20px 70px 20px;
+    text-align: center;
+    font-weight: 100;
+}
+

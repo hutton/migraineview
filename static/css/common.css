@@ -44,6 +44,11 @@
     left: 0%;
   }
 }
+input,
+select {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
 @font-face {
   font-family: 'Open Sans Light';
   font-style: normal;
@@ -86,8 +91,8 @@ textarea,
   font-family: 'Roboto', 'helvetica neue', helvetica, arial, sans-serif;
   font-weight: 300;
 }
-.fixed-width {
-  max-width: 1024px;
+.narrow {
+  max-width: 600px;
   margin: 0px auto;
 }
 .big-font {
@@ -118,4 +123,9 @@ h3 {
 h4 {
   font-size: 120%;
   line-height: 1.8em;
+}
+.title {
+  margin: 80px 20px 70px 20px;
+  text-align: center;
+  font-weight: 100;
 }
