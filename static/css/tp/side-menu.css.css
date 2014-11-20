@@ -37,7 +37,7 @@ The content `<div>` is where all your content goes.
 */
 .content {
   margin: 0 auto;
-  padding: 0 2em;
+  padding: 0 1.5em;
   max-width: 1024px;
   margin-bottom: 50px;
   line-height: 1.6em;
@@ -64,6 +64,10 @@ The content `<div>` is where all your content goes.
   margin: 50px 0 20px 0;
   font-weight: 300;
   color: #888;
+}
+.content p {
+  margin: 30px auto;
+  max-width: 600px;
 }
 /*
 The `#menu` `<div>` is the parent `<div>` that contains the `.pure-menu` that

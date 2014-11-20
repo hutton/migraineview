@@ -5,3 +5,19 @@
   width: 320px;
   height: 120px;
 }
+form {
+  margin: 50px 0px;
+}
+.upload-container {
+  border: 1px dashed rgba(0, 0, 0, 0.6);
+  max-width: 400px;
+  margin: 40px auto;
+  border-radius: 30px;
+  text-align: center;
+}
+.upload-container > div {
+  margin: 40px 0px;
+}
+.upload-container .file-type {
+  margin: 0px 10px;
+}

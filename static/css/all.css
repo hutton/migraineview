@@ -1,3 +1,126 @@
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 /*!
 Pure v0.5.0
 Copyright 2014 Yahoo! Inc. All rights reserved.
@@ -1565,7 +1688,7 @@ The content `<div>` is where all your content goes.
 */
 .content {
   margin: 0 auto;
-  padding: 0 2em;
+  padding: 0 1.5em;
   max-width: 1024px;
   margin-bottom: 50px;
   line-height: 1.6em;
@@ -1592,6 +1715,10 @@ The content `<div>` is where all your content goes.
   margin: 50px 0 20px 0;
   font-weight: 300;
   color: #888;
+}
+.content p {
+  margin: 30px auto;
+  max-width: 600px;
 }
 /*
 The `#menu` `<div>` is the parent `<div>` that contains the `.pure-menu` that
@@ -3409,6 +3536,308 @@ Hides the menu at `48em`, but modify this based on your app's needs.
 .fa-meanpath:before {
   content: "\f20c";
 }
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+.file-type {
+  display: inline-block;
+  -webkit-perspective: 300;
+  -moz-perspective: 300;
+  perspective: 300;
+  width: 4em;
+  height: 6em;
+}
+.file-type-spin div {
+  transition-duration: 0.0s;
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+.file-type-spin:hover div {
+  transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  animation: spinny linear 0.8s;
+  -moz-animation: spinny linear 0.8s;
+  -webkit-animation: spinny linear 0.8s;
+}
+.file-type-jump div {
+  transition-duration: 0.2s;
+}
+.file-type-jump:hover div {
+  -webkit-transform: rotateX(-18deg) translateY(-13px) translateZ(40px);
+  -moz-transform: rotateX(-18deg) translateY(-13px) translateZ(40px);
+  -o-transform: rotateX(-18deg) translateY(-13px) translateZ(40px);
+  -ms-transform: rotateX(-18deg) translateY(-13px) translateZ(40px);
+  transform: rotateX(-18deg) translateY(-13px) translateZ(40px);
+}
+.file-type-spinny div {
+  transform-style: preserve-3d;
+  animation: spinny linear 2s infinite;
+  -webkit-animation: spinny linear 2s infinite;
+  -moz-animation: spinny linear 2s infinite;
+}
+/* Standard syntax */
+@keyframes spinny {
+  0% {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+  25% {
+    -webkit-transform: rotateY(-90deg);
+    -moz-transform: rotateY(-90deg);
+    -o-transform: rotateY(-90deg);
+    -ms-transform: rotateY(-90deg);
+    transform: rotateY(-90deg);
+  }
+  50% {
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+  }
+  75% {
+    -webkit-transform: rotateY(-270deg);
+    -moz-transform: rotateY(-270deg);
+    -o-transform: rotateY(-270deg);
+    -ms-transform: rotateY(-270deg);
+    transform: rotateY(-270deg);
+  }
+  100% {
+    -webkit-transform: rotateY(-360deg);
+    -moz-transform: rotateY(-360deg);
+    -o-transform: rotateY(-360deg);
+    -ms-transform: rotateY(-360deg);
+    transform: rotateY(-360deg);
+  }
+}
+@-webkit-keyframes spinny {
+  0% {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+  25% {
+    -webkit-transform: rotateY(-90deg);
+    -moz-transform: rotateY(-90deg);
+    -o-transform: rotateY(-90deg);
+    -ms-transform: rotateY(-90deg);
+    transform: rotateY(-90deg);
+  }
+  50% {
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+  }
+  75% {
+    -webkit-transform: rotateY(-270deg);
+    -moz-transform: rotateY(-270deg);
+    -o-transform: rotateY(-270deg);
+    -ms-transform: rotateY(-270deg);
+    transform: rotateY(-270deg);
+  }
+  100% {
+    -webkit-transform: rotateY(-360deg);
+    -moz-transform: rotateY(-360deg);
+    -o-transform: rotateY(-360deg);
+    -ms-transform: rotateY(-360deg);
+    transform: rotateY(-360deg);
+  }
+}
+@-webkit-keyframes spinny2 {
+  0% {
+    -webkit-transform: rotateY(0deg) translateZ(0px);
+    -moz-transform: rotateY(0deg) translateZ(0px);
+    -o-transform: rotateY(0deg) translateZ(0px);
+    -ms-transform: rotateY(0deg) translateZ(0px);
+    transform: rotateY(0deg) translateZ(0px);
+    left: 0px;
+  }
+  25% {
+    -webkit-transform: rotateY(-90deg) translateZ(10px);
+    -moz-transform: rotateY(-90deg) translateZ(10px);
+    -o-transform: rotateY(-90deg) translateZ(10px);
+    -ms-transform: rotateY(-90deg) translateZ(10px);
+    transform: rotateY(-90deg) translateZ(10px);
+    left: -20px;
+  }
+  50% {
+    -webkit-transform: rotateY(-180deg) translateZ(20px);
+    -moz-transform: rotateY(-180deg) translateZ(20px);
+    -o-transform: rotateY(-180deg) translateZ(20px);
+    -ms-transform: rotateY(-180deg) translateZ(20px);
+    transform: rotateY(-180deg) translateZ(20px);
+    left: 0px;
+  }
+  75% {
+    -webkit-transform: rotateY(-270deg) translateZ(10px);
+    -moz-transform: rotateY(-270deg) translateZ(10px);
+    -o-transform: rotateY(-270deg) translateZ(10px);
+    -ms-transform: rotateY(-270deg) translateZ(10px);
+    transform: rotateY(-270deg) translateZ(10px);
+    left: 20px;
+  }
+  100% {
+    -webkit-transform: rotateY(-360deg) translateZ(0px);
+    -moz-transform: rotateY(-360deg) translateZ(0px);
+    -o-transform: rotateY(-360deg) translateZ(0px);
+    -ms-transform: rotateY(-360deg) translateZ(0px);
+    transform: rotateY(-360deg) translateZ(0px);
+    left: 0px;
+  }
+}
+.file-type > div {
+  width: 100%;
+  text-align: center;
+  background: #f0f0f0;
+  position: relative;
+  height: 4em;
+  top: 2em;
+  cursor: pointer;
+  display: inline-block;
+  -webkit-transform: rotateX(0deg) translateY(0px);
+  -moz-transform: rotateX(0deg) translateY(0px);
+  -o-transform: rotateX(0deg) translateY(0px);
+  -ms-transform: rotateX(0deg) translateY(0px);
+  transform: rotateX(0deg) translateY(0px);
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+.file-type > div:before {
+  content: "";
+  position: absolute;
+  top: -2em;
+  right: 0;
+  border-width: 0 2em 2em 0;
+  border-style: solid;
+  border-color: white transparent;
+}
+.file-type > div:after {
+  content: "";
+  position: absolute;
+  top: -2em;
+  left: 0;
+  right: 2em;
+  border-width: 1em;
+  border-style: solid;
+  border-color: #f0f0f0;
+}
+.file-type > div > span {
+  position: absolute;
+  top: 0em;
+  right: 0;
+  border-width: 2em 0 0 2em;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.05) transparent;
+}
+.file-type > div > p {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 1.25em;
+  font-weight: bold;
+  margin-top: 1.4em;
+  color: white;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.big {
+  width: 8em;
+  height: 12em;
+}
+.big > div {
+  height: 8em;
+  top: 4em;
+}
+.big > div:before {
+  top: -4em;
+  border-width: 0 4em 4em 0;
+}
+.big > div:after {
+  top: -4em;
+  right: 4em;
+  border-width: 2em;
+}
+.big > div > span {
+  border-width: 4em 0 0 4em;
+}
+.big > div > p {
+  font-size: 2.5em;
+  margin-top: 1.4em;
+}
+.green > div {
+  background: #37C49C;
+}
+.green > div:before {
+  border-color: #4ECEA6 transparent;
+}
+.green > div:after {
+  border-color: #37C49C;
+}
+.red > div {
+  background: #EC5757;
+}
+.red > div:before {
+  border-color: #F47878 transparent;
+}
+.red > div:after {
+  border-color: #EC5757;
+}
+.blue > div {
+  background: #47B8F7;
+}
+.blue > div:before {
+  border-color: #6BD0FB transparent;
+}
+.blue > div:after {
+  border-color: #47B8F7;
+}
+.yellow > div {
+  background: #FFC35A;
+}
+.yellow > div:before {
+  border-color: #FFCE87 transparent;
+}
+.yellow > div:after {
+  border-color: #FFC35A;
+}
+.orange > div {
+  background: #F7974A;
+}
+.orange > div:before {
+  border-color: #FBAB75 transparent;
+}
+.orange > div:after {
+  border-color: #F7974A;
+}
+.pink > div {
+  background: #F76081;
+}
+.pink > div:before {
+  border-color: #F77BA1 transparent;
+}
+.pink > div:after {
+  border-color: #F76081;
+}
+.brown > div {
+  background: #998B79;
+}
+.brown > div:before {
+  border-color: #A2968D transparent;
+}
+.brown > div:after {
+  border-color: #998B79;
+}
 .pure-menu .pure-menu-heading {
   text-transform: none;
   font-weight: 100;
@@ -3437,129 +3866,6 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     display: inline-block;
   }
 }
-/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  margin: 0;
-  padding: 0;
-}
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
 /*---------------------------------------------------
     LESS Elements 0.9
   ---------------------------------------------------
@@ -3680,129 +3986,6 @@ h3 {
 h4 {
   font-size: 120%;
   line-height: 1.8em;
-}
-/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  margin: 0;
-  padding: 0;
-}
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
@@ -3939,140 +4122,6 @@ h4 {
   color: #7f8c8d;
   font-size: 13px;
 }
-.title {
-  text-align: center;
-  margin: 40px 0px;
-}
-.upload-container {
-  border: 6px dashed rgba(0, 0, 0, 0.2);
-  width: 400px;
-  height: 400px;
-  margin: 40px auto;
-  border-radius: 30px;
-}
-/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  margin: 0;
-  padding: 0;
-}
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
 /*---------------------------------------------------
     LESS Elements 0.9
   ---------------------------------------------------
@@ -4207,17 +4256,6 @@ h4 {
   line-height: 1.7em;
   color: #7f8c8d;
   font-size: 13px;
-}
-.title {
-  text-align: center;
-  margin: 40px 0px;
-}
-.upload-container {
-  border: 6px dashed rgba(0, 0, 0, 0.2);
-  width: 400px;
-  height: 400px;
-  margin: 40px auto;
-  border-radius: 30px;
 }
 #add-duration-group {
   margin-bottom: 20px;
@@ -4226,128 +4264,21 @@ h4 {
   width: 320px;
   height: 120px;
 }
-/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  margin: 0;
-  padding: 0;
+form {
+  margin: 50px 0px;
 }
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
+.upload-container {
+  border: 1px dashed rgba(0, 0, 0, 0.6);
+  max-width: 400px;
+  margin: 40px auto;
+  border-radius: 30px;
+  text-align: center;
 }
-body {
-  line-height: 1;
+.upload-container > div {
+  margin: 40px 0px;
 }
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+.upload-container .file-type {
+  margin: 0px 10px;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
@@ -4504,7 +4435,7 @@ h4 {
   color: white;
 }
 .stat-section {
-  margin: 20px 20px;
+  margin: 20px 0px;
 }
 .date-range {
   float: right;

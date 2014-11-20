@@ -1,3 +1,126 @@
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  margin: 0;
+  padding: 0;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
 /*!
 Pure v0.5.0
 Copyright 2014 Yahoo! Inc. All rights reserved.
@@ -3463,129 +3586,6 @@ a.pure-button-primary {
     display: inline-block;
   }
 }
-/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  margin: 0;
-  padding: 0;
-}
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
 /*---------------------------------------------------
     LESS Elements 0.9
   ---------------------------------------------------
@@ -3706,129 +3706,6 @@ h3 {
 h4 {
   font-size: 120%;
   line-height: 1.8em;
-}
-/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  margin: 0;
-  padding: 0;
-}
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
@@ -3964,677 +3841,4 @@ h4 {
   line-height: 1.7em;
   color: #7f8c8d;
   font-size: 13px;
-}
-.title {
-  text-align: center;
-  margin: 40px 0px;
-}
-.upload-container {
-  border: 6px dashed rgba(0, 0, 0, 0.2);
-  width: 400px;
-  height: 400px;
-  margin: 40px auto;
-  border-radius: 30px;
-}
-/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  margin: 0;
-  padding: 0;
-}
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-/*---------------------------------------------------
-    LESS Elements 0.9
-  ---------------------------------------------------
-    A set of useful LESS mixins
-    More info at: http://lesselements.com
-  ---------------------------------------------------*/
-.progress {
-  height: 2px;
-  background: rgba(0, 0, 0, 0.05);
-  margin: 10px auto;
-  width: 300px;
-}
-.progress > span {
-  display: block;
-  height: 100%;
-  background: #4679BD;
-}
-.indefinite > span {
-  position: relative;
-  width: 10% !important;
-  -webkit-animation: myfirst linear 2s infinite;
-  animation: myfirst linear 2s infinite;
-}
-/* Standard syntax */
-@keyframes myfirst {
-  0% {
-    left: 0%;
-  }
-  50% {
-    left: 90%;
-  }
-  100% {
-    left: 0%;
-  }
-}
-@-webkit-keyframes myfirst {
-  0% {
-    left: 0%;
-  }
-  50% {
-    left: 90%;
-  }
-  100% {
-    left: 0%;
-  }
-}
-@font-face {
-  font-family: 'Open Sans Light';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Open Sans Light'), local('OpenSans-Light'), url('/static/fonts/opensans-light.wof') format('woff');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto Regular'), local('Roboto-Regular'), url('/static/fonts/roboto-normal.wof') format('woff');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 100;
-  src: local('Roboto Thin'), local('Roboto-Thin'), url('/static/fonts/roboto-thin.wof') format('woff');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Roboto Light'), local('Roboto-Thin'), url('/static/fonts/roboto-light.wof') format('woff');
-}
-/********************* Globals ********************/
-body {
-  font-family: 'Roboto', 'helvetica neue', helvetica, arial, sans-serif;
-  font-weight: 300;
-  line-height: 1.5em;
-  font-size: 16px;
-}
-html,
-button,
-input,
-select,
-textarea,
-.pure-g [class*="pure-u"] {
-  /* Set your content font stack here: */
-
-  font-family: 'Roboto', 'helvetica neue', helvetica, arial, sans-serif;
-  font-weight: 300;
-}
-.fixed-width {
-  max-width: 1024px;
-  margin: 0px auto;
-}
-.big-font {
-  font-size: 400%;
-}
-.medium-font {
-  font-size: 150%;
-}
-.underline {
-  text-decoration: underline;
-}
-.right {
-  float: right;
-}
-.center {
-  text-align: center;
-}
-h1 {
-  font-size: 300%;
-}
-h2 {
-  font-size: 200%;
-}
-h3 {
-  font-size: 160%;
-  line-height: 1.8em;
-}
-h4 {
-  font-size: 120%;
-  line-height: 1.8em;
-}
-#home-view * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-}
-/*
- * -- BASE STYLES --
- * Most of these are inherited from Base, but I want to change a few.
- */
-#home-view {
-  line-height: 1.7em;
-  color: #7f8c8d;
-  font-size: 13px;
-}
-.title {
-  text-align: center;
-  margin: 40px 0px;
-}
-.upload-container {
-  border: 6px dashed rgba(0, 0, 0, 0.2);
-  width: 400px;
-  height: 400px;
-  margin: 40px auto;
-  border-radius: 30px;
-}
-/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
-html,
-body,
-div,
-span,
-applet,
-object,
-iframe,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-blockquote,
-pre,
-a,
-abbr,
-acronym,
-address,
-big,
-cite,
-code,
-del,
-dfn,
-em,
-img,
-ins,
-kbd,
-q,
-s,
-samp,
-small,
-strike,
-strong,
-sub,
-sup,
-tt,
-var,
-b,
-u,
-i,
-center,
-dl,
-dt,
-dd,
-ol,
-ul,
-li,
-fieldset,
-form,
-label,
-legend,
-table,
-caption,
-tbody,
-tfoot,
-thead,
-tr,
-th,
-td,
-article,
-aside,
-canvas,
-details,
-embed,
-figure,
-figcaption,
-footer,
-header,
-hgroup,
-menu,
-nav,
-output,
-ruby,
-section,
-summary,
-time,
-mark,
-audio,
-video {
-  border: 0;
-  font-size: 100%;
-  font: inherit;
-  vertical-align: baseline;
-  margin: 0;
-  padding: 0;
-}
-article,
-aside,
-details,
-figcaption,
-figure,
-footer,
-header,
-hgroup,
-menu,
-nav,
-section {
-  display: block;
-}
-body {
-  line-height: 1;
-}
-ol,
-ul {
-  list-style: none;
-}
-blockquote,
-q {
-  quotes: none;
-}
-blockquote:before,
-blockquote:after,
-q:before,
-q:after {
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-}
-/*---------------------------------------------------
-    LESS Elements 0.9
-  ---------------------------------------------------
-    A set of useful LESS mixins
-    More info at: http://lesselements.com
-  ---------------------------------------------------*/
-.progress {
-  height: 2px;
-  background: rgba(0, 0, 0, 0.05);
-  margin: 10px auto;
-  width: 300px;
-}
-.progress > span {
-  display: block;
-  height: 100%;
-  background: #4679BD;
-}
-.indefinite > span {
-  position: relative;
-  width: 10% !important;
-  -webkit-animation: myfirst linear 2s infinite;
-  animation: myfirst linear 2s infinite;
-}
-/* Standard syntax */
-@keyframes myfirst {
-  0% {
-    left: 0%;
-  }
-  50% {
-    left: 90%;
-  }
-  100% {
-    left: 0%;
-  }
-}
-@-webkit-keyframes myfirst {
-  0% {
-    left: 0%;
-  }
-  50% {
-    left: 90%;
-  }
-  100% {
-    left: 0%;
-  }
-}
-@font-face {
-  font-family: 'Open Sans Light';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Open Sans Light'), local('OpenSans-Light'), url('/static/fonts/opensans-light.wof') format('woff');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto Regular'), local('Roboto-Regular'), url('/static/fonts/roboto-normal.wof') format('woff');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 100;
-  src: local('Roboto Thin'), local('Roboto-Thin'), url('/static/fonts/roboto-thin.wof') format('woff');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Roboto Light'), local('Roboto-Thin'), url('/static/fonts/roboto-light.wof') format('woff');
-}
-/********************* Globals ********************/
-body {
-  font-family: 'Roboto', 'helvetica neue', helvetica, arial, sans-serif;
-  font-weight: 300;
-  line-height: 1.5em;
-  font-size: 16px;
-}
-html,
-button,
-input,
-select,
-textarea,
-.pure-g [class*="pure-u"] {
-  /* Set your content font stack here: */
-
-  font-family: 'Roboto', 'helvetica neue', helvetica, arial, sans-serif;
-  font-weight: 300;
-}
-.fixed-width {
-  max-width: 1024px;
-  margin: 0px auto;
-}
-.big-font {
-  font-size: 400%;
-}
-.medium-font {
-  font-size: 150%;
-}
-.underline {
-  text-decoration: underline;
-}
-.right {
-  float: right;
-}
-.center {
-  text-align: center;
-}
-h1 {
-  font-size: 300%;
-}
-h2 {
-  font-size: 200%;
-}
-h3 {
-  font-size: 160%;
-  line-height: 1.8em;
-}
-h4 {
-  font-size: 120%;
-  line-height: 1.8em;
-}
-/*************************************************/
-#stats-loading {
-  font-size: 160%;
-  margin-top: 100px;
-  text-align: center;
-}
-#stats-loading .progress {
-  width: 180px;
-}
-.stat-title {
-  margin: 40px 20px 30px 20px;
-  text-align: center;
-  font-weight: 100;
-}
-.mode-buttons {
-  text-align: center;
-}
-.mode-buttons > div {
-  border: 1px solid #70a5da;
-  border-radius: 5px;
-  display: inline-block;
-  margin: 0px auto;
-}
-.mode-buttons span {
-  padding: 10px 30px;
-  color: #70a5da;
-  cursor: pointer;
-  display: inline-block;
-}
-.mode-buttons .selected {
-  background: #70a5da;
-  color: white;
-}
-.stat-section {
-  margin: 20px 20px;
-}
-.date-range {
-  float: right;
-}
-.stat-section-title {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  font-size: 120%;
-}
-.stat-section-item-container {
-  margin-left: auto;
-  margin-right: auto;
-}
-.stat-section-item {
-  vertical-align: top;
-  margin: 15px;
-  text-align: center;
-}
-.stat-section-full-width-item {
-  padding: 10px;
-  margin: 10px auto 10px auto;
-  text-align: center;
-}
-.stat-section-item > div {
-  vertical-align: middle;
-}
-.stat-section-item > div.label {
-  font-size: 130%;
-  line-height: 1.4em;
-  opacity: 0.4;
-}
-#total-count-description {
-  max-width: 250px;
-  margin: 0px auto;
-}
-.stat-section-item > div.count {
-  font-size: 600%;
-  font-weight: 100;
-  line-height: 1.2em;
-  opacity: 0.6;
-}
-.description-item {
-  font-size: 130%;
-  line-height: 1.5em;
-  opacity: 0.6;
-  padding: 10px;
-  text-align: justify;
-}
-.description-item span {
-  opacity: 1.0;
-  font-size: 150%;
-}
-.side-by-side-container {
-  position: relative;
-}
-.side-by-side-container > canvas {
-  height: 240px !important;
-}
-.all-chart {
-  -moz-transition-duration: 0.4s;
-  -webkit-transition-duration: 0.4s;
-  -o-transition-duration: 0.4s;
-  transition-duration: 0.4s;
-  opacity: 1.0;
-}
-.by-year-chart {
-  position: absolute;
-  left: 0px;
-  top: 0px;
-}
-.faded {
-  opacity: 0.0;
-}
-.graph-mode {
-  text-align: center;
-  margin-top: 10px;
-}
-.selected {
-  background: rgba(0, 0, 0, 0.15);
-}
-.graph-mode > span {
-  margin: 0px 10px;
-  cursor: pointer;
-  opacity: 0.7;
-  font-size: 90%;
-  padding: 1px 10px;
-  border-radius: 10px;
-}
-.graph-mode > span:hover {
-  opacity: 0.9;
-}
-#overview-trend {
-  margin-bottom: 50px;
-}
-.overview-trend-chart {
-  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
-  height: 40px !important;
-}
-.year-trend-chart {
-  width: 100% !important;
-  height: 200px !important;
-}
-.overview-first-date {
-  margin-top: 5px;
-  float: left;
-  text-align: left;
-}
-.overview-last-date {
-  margin-top: 5px;
-  float: right;
-  text-align: right;
-}
-#event_list_container {
-  margin: 10px;
 }

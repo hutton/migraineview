@@ -52,6 +52,7 @@
                         <h2 class="stat-title">Add</h2>
                     </div>
                     <div class="content">
+                        <p>Add a single attack or upload a file containing several.  We accept most spreadsheet formats (.xls, .xlsx, .csv) or calendar files (.ics).</p>
                         <div class="stat-section-title">
                             Log an attack
                         </div>
@@ -174,7 +175,7 @@
 
                                 <div class="pure-control-group">
                                     <label for="add-comment-text">Description</label>
-                                    <textarea name="comment" id="add-comment-text"></textarea>
+                                    <textarea name="comment" id="add-comment-text" placeholder="What happened, what you eat, what you were doing, what treatment, how you felt, the weather."></textarea>
                                 </div>
 
                                 <div class="pure-controls">
@@ -186,7 +187,28 @@
                         <div class="stat-section-title">
                             Upload attacks
                         </div>
+                        <p>Drag and drop your spreadsheet or calendar file containing your migraine dairy.</p>
                         <div class="upload-container">
+                            <div>
+                                <div class="file-type green">
+                                    <div>
+                                        <span></span>
+                                        <p>XLSX</p>
+                                    </div>
+                                </div>
+                                <div class="file-type blue">
+                                    <div>
+                                        <span></span>
+                                        <p>CSV</p>
+                                    </div>
+                                </div>
+                                <div class="file-type red">
+                                    <div>
+                                        <span></span>
+                                        <p>ICS</p>
+                                    </div>
+                                </div>
+                            </div>
 
                         </div>
                         <div id="uploading-message">Uploading
