@@ -1,1 +1,4 @@
-print datetime.datetime.strptime(started + " " + started_time, "%Y-%m-%d %H:%M")
+input {
+    -webkit-appearance: none;
+    border-radius: 0;
+}
