@@ -13,6 +13,7 @@ Stats
 =====
 Graph of time between attacks
 D3 calendar view
+Days since last attack
 Distribution by Quarter (Polar Area chart next to month frequency)
 
 
