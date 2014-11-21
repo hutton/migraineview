@@ -1,5 +1,6 @@
 Get all add tab working
 Get stats and event list to reload after add
+Panels to scroll independently
 
 Make logout work
 Hide logout for example
