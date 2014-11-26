@@ -111,10 +111,10 @@ textarea,
   text-align: center;
 }
 h1 {
-  font-size: 300%;
+  font-size: 400%;
 }
 h2 {
-  font-size: 200%;
+  font-size: 300%;
 }
 h3 {
   font-size: 160%;
@@ -125,7 +125,11 @@ h4 {
   line-height: 1.8em;
 }
 .title {
-  margin: 80px 20px 70px 20px;
+  margin: 80px 20px 60px 20px;
   text-align: center;
   font-weight: 100;
+}
+.content p {
+  margin: 40px auto;
+  max-width: 600px;
 }

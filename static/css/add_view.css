@@ -1,3 +1,10 @@
+input[type=date] {
+  min-width: 160px;
+  min-height: 42px;
+}
+form {
+  margin: 50px 0px 100px 0px;
+}
 #add-duration-group {
   margin-bottom: 20px;
 }
@@ -5,14 +12,11 @@
   width: 320px;
   height: 120px;
 }
-form {
-  margin: 60px 0px 100px 0px;
-}
 .upload-container {
   border: 1px dashed rgba(0, 0, 0, 0.6);
   max-width: 400px;
-  margin: 40px auto;
-  border-radius: 30px;
+  margin: 40px auto 10px auto;
+  border-radius: 10px;
   text-align: center;
 }
 .upload-container > div {
@@ -21,7 +25,9 @@ form {
 .upload-container .file-type {
   margin: 0px 10px;
 }
-input[type=date] {
-  min-width: 160px;
-  min-height: 42px;
+#add-status-panel-container {
+  height: 100px;
+}
+#add-status-panel {
+  text-align: center;
 }

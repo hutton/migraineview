@@ -251,16 +251,22 @@ window.RadarChartView = Backbone.View.extend({
     className: 'stat-section'
 });
 
-window.StatisticsView = Backbone.View.extend({
+window.StatisticsView = window.MainViewBase.extend({
     initialize: function () {
     },
 
+    el: $('#stats-view'),
+
     statsListEl: $("#stat-sections-container"),
+
+    statsLoaderEl: $('#stats-loading'),
 
     render: function() {
 
         Chart.defaults.global.animation = false;
         Chart.defaults.global.scaleBeginAtZero = true;
+
+        this.statsLoaderEl.hide();
 
         this.statsListEl.empty();
 
@@ -281,5 +287,11 @@ window.StatisticsView = Backbone.View.extend({
         this.statsListEl.append(this.hoursOfDayRadarView.el);
 
         window.dispatchEvent(new Event('resize'));
+    },
+
+    show: function(){
+        this.$el.show();
+
+        App.refreshData();
     }
 });

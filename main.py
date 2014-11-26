@@ -22,6 +22,7 @@ import webapp2
 
 from app.migraine_statistics import Example
 from app.report import Report
+from app.services import Stats
 from app.upload import Upload
 
 
@@ -52,4 +53,5 @@ app = webapp2.WSGIApplication([
                                   ('/uploaded/.*', Uploaded),
                                   ('/report/.*', Report),
                                   ('/example/.*', Example),
+                                  ('/service/stats', Stats)
                               ], debug=True)

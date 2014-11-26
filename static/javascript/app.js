@@ -9,31 +9,9 @@ window.App = Backbone.View.extend({
         this.addView = new AddView();
         this.eventsView = new EventListView();
         this.statisticsView = new StatisticsView();
-
-        this.tests = {
-            fileReader: typeof FileReader != 'undefined',
-            dnd: 'draggable' in document.createElement('span'),
-            formData: !!window.FormData,
-            progress: "upload" in new XMLHttpRequest
-        };
-
-        this.uploadContainer.on('drop', function (e) {
-            that.onDrop(e);
-        });
-        this.uploadContainer.on('dragover', function (e) {
-            return false;
-        });
-        this.uploadContainer.on('dragend', function (e) {
-            return false;
-        });
-
     },
 
     el: $("body"),
-
-    uploadContainer: $('.upload-container'),
-
-    uploadingProgress: $('#uploading-message > .progress > span'),
 
     events: {
         "click #statistics-toggle":     "showStatistics",
@@ -43,53 +21,27 @@ window.App = Backbone.View.extend({
         "click #menu":                  "closeMenuLink"
     },
 
-    onDrop: function(e){
-        e.preventDefault();
-
-        this.sendFiles(e.originalEvent.dataTransfer.files);
-    },
-
-    sendFiles: function (files) {
-        var that = this;
-
-        var formData = this.tests.formData ? new FormData() : null;
-
-        for (var i = 0; i < files.length; i++) {
-            formData.append('file', files[i]);
-
-            //this.setFileInfo({'full_filename': files[i].name});
-        }
-
-        this.showUploading();
-
-        $.ajax({
-            type: "POST",
-            url: "/upload",
-            data: formData,
-            processData: false,
-            contentType: false,
-            xhr: function () {
-                myXhr = $.ajaxSettings.xhr();
-                if (myXhr.upload) {
-                    myXhr.upload.addEventListener('progress', that.showProgress, false);
-                } else {
-                    console.log("Upload progress is not supported.");
-                }
-                return myXhr;
-            }
-        }).done(function (response) {
-            that.showStatistics();
-
-            var data = jQuery.parseJSON(response);
-
-            that.loadData(data);
-        }).fail(function (data) {
-        });
-    },
+    dataLoaded: false,
 
     loadData: function(data){
-        this.populateStats(data);
-        this.populateEvents(data);
+        if (!this.dataLoaded){
+            this.populateStats(data);
+            this.populateEvents(data);
+
+            this.dataLoaded = true;
+        }
+    },
+
+    refreshData: function(){
+        var that = this;
+
+        $.ajax({
+            dataType: "json",
+            url: "/service/stats"
+        }).done(function(response) {
+
+            that.loadData(response);
+        });
     },
 
     getCurrentBase: function(){
@@ -128,37 +80,6 @@ window.App = Backbone.View.extend({
         }
     },
 
-    showProgress: function(evt){
-
-        if (evt.lengthComputable) {
-            var percentComplete = (evt.loaded / evt.total) * 100;
-
-            if (percentComplete < 100){
-                window.App.uploadingProgress.css("width", percentComplete + "%");
-            } else{
-                window.App.showProcessing();
-            }
-        }
-    },
-
-    showUploading: function(){
-//        this.statusPanel.show();
-//
-//        this.uploadingMessage.show();
-//        this.processingMessage.hide();
-//        this.fileMessage.hide();
-//        this.fileUploadFailedMessage.hide();
-    },
-
-    showProcessing: function(){
-//        this.statusPanel.show();
-//
-//        this.uploadingMessage.hide();
-//        this.processingMessage.show();
-//        this.fileMessage.hide();
-//        this.fileUploadFailedMessage.hide();
-    },
-
     populateStats: function(response){
         this.statisticsView.model = response;
 
@@ -193,36 +114,13 @@ window.Workspace = Backbone.Router.extend({
     routes: {
         ":base/statistics": "statistics",
         ":base/list":       "list",
-        ":base/add":        "add",
-        "":                 "home"
-    },
-
-    homeView: $('#home-view'),
-
-    everythingView: $('#everything-view'),
-
-    statsView: $('#stats-view'),
-
-    eventsView: $('#event_list_container'),
-
-    addView: $('#add-view'),
-
-    home: function() {
-        this.homeView.show();
-        this.everythingView.hide();
-
-        this.addView.hide();
-        this.statsView.hide();
-        this.eventsView.hide();
+        ":base/add":        "add"
     },
 
     statistics: function(){
-        this.homeView.hide();
-        this.everythingView.show();
-
-        this.addView.hide();
-        this.statsView.show();
-        this.eventsView.hide();
+        App.addView.hide();
+        App.statisticsView.show();
+        App.eventsView.hide();
 
         $('#statistics-toggle').parent().addClass('pure-menu-selected');
         $('#events-toggle').parent().removeClass('pure-menu-selected');
@@ -230,12 +128,9 @@ window.Workspace = Backbone.Router.extend({
     },
 
     list: function(){
-        this.homeView.hide();
-        this.everythingView.show();
-
-        this.addView.hide();
-        this.statsView.hide();
-        this.eventsView.show();
+        App.addView.hide();
+        App.statisticsView.hide();
+        App.eventsView.show();
 
         $('#statistics-toggle').parent().removeClass('pure-menu-selected');
         $('#events-toggle').parent().addClass('pure-menu-selected');
@@ -243,12 +138,9 @@ window.Workspace = Backbone.Router.extend({
     },
 
     add: function(){
-        this.homeView.hide();
-        this.everythingView.show();
-
-        this.addView.show();
-        this.statsView.hide();
-        this.eventsView.hide();
+        App.addView.show();
+        App.statisticsView.hide();
+        App.eventsView.hide();
 
         $('#statistics-toggle').parent().removeClass('pure-menu-selected');
         $('#events-toggle').parent().removeClass('pure-menu-selected');

@@ -1716,10 +1716,6 @@ The content `<div>` is where all your content goes.
   font-weight: 300;
   color: #888;
 }
-.content p {
-  margin: 30px auto;
-  max-width: 600px;
-}
 /*
 The `#menu` `<div>` is the parent `<div>` that contains the `.pure-menu` that
 appears on the left side of the page.
@@ -3982,10 +3978,10 @@ textarea,
   text-align: center;
 }
 h1 {
-  font-size: 300%;
+  font-size: 400%;
 }
 h2 {
-  font-size: 200%;
+  font-size: 300%;
 }
 h3 {
   font-size: 160%;
@@ -3996,9 +3992,20 @@ h4 {
   line-height: 1.8em;
 }
 .title {
-  margin: 80px 20px 70px 20px;
+  margin: 80px 20px 60px 20px;
   text-align: center;
   font-weight: 100;
+}
+.content p {
+  margin: 40px auto;
+  max-width: 600px;
+}
+input[type=date] {
+  min-width: 160px;
+  min-height: 42px;
+}
+form {
+  margin: 50px 0px 100px 0px;
 }
 #add-duration-group {
   margin-bottom: 20px;
@@ -4007,14 +4014,11 @@ h4 {
   width: 320px;
   height: 120px;
 }
-form {
-  margin: 60px 0px 100px 0px;
-}
 .upload-container {
   border: 1px dashed rgba(0, 0, 0, 0.6);
   max-width: 400px;
-  margin: 40px auto;
-  border-radius: 30px;
+  margin: 40px auto 10px auto;
+  border-radius: 10px;
   text-align: center;
 }
 .upload-container > div {
@@ -4023,14 +4027,17 @@ form {
 .upload-container .file-type {
   margin: 0px 10px;
 }
-input[type=date] {
-  min-width: 160px;
-  min-height: 42px;
+#add-status-panel-container {
+  height: 100px;
+}
+#add-status-panel {
+  text-align: center;
 }
 #stats-loading {
   font-size: 160%;
   margin-top: 100px;
   text-align: center;
+  font-weight: 100;
 }
 #stats-loading .progress {
   width: 180px;

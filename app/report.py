@@ -14,14 +14,19 @@ __author__ = 'simonhutton'
 class Report(webapp2.RequestHandler):
 
     def show_main(self, acc):
-        query = db.query_descendants(acc)
-        attacks = query.run()
-        events = [{'Start': attack.start_time, 'Duration': attack.duration, 'Comment': attack.comment} for attack in
-                  attacks]
-        if len(events) > 0:
-            response = {'data': simplejson.dumps(generate_statistics_from_events(events))}
+
+        if "statistics" in self.request.uri or "list" in self.request.uri:
+            query = db.query_descendants(acc)
+            attacks = query.run()
+            events = [{'Start': attack.start_time, 'Duration': attack.duration, 'Comment': attack.comment} for attack in
+                      attacks]
+            if len(events) > 0:
+                response = {'data': simplejson.dumps(generate_statistics_from_events(events))}
+            else:
+                response = {}
         else:
             response = {}
+
         path = os.path.join(os.path.join(os.path.dirname(__file__), 'html'), '../../templates/main.html')
         self.response.out.write(template.render(path, response))
 

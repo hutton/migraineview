@@ -3,16 +3,25 @@
  */
 
 
-window.EventListView = Backbone.View.extend({
+window.EventListView = window.MainViewBase.extend({
     initialize: function () {
     },
 
     el: $('#event_list_container'),
 
+    listLoadingEl: $('#list-loading'),
+
     tableBodyEl: $('#event_list_container tbody'),
+
+    tableEl: $('#event_list_container table'),
 
     render: function(){
         var that = this;
+
+        this.listLoadingEl.hide();
+
+        this.tableEl.show();
+        this.tableBodyEl.empty();
 
         _.each(this.collection.models, function(event_model){
             var event_view = new EventView({model: event_model});
@@ -21,5 +30,11 @@ window.EventListView = Backbone.View.extend({
         });
 
         return this;
+    },
+
+    show: function(){
+        this.$el.show();
+
+        App.refreshData();
     }
 });
