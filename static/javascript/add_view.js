@@ -25,6 +25,13 @@ window.AddView = window.MainViewBase.extend({
             return false;
         });
 
+        this.singleUploadFormEl.bind('ajax:complete', function() {
+            that.singleUploadFinished();
+        });
+    },
+
+    events: {
+        "click #single-upload-form-button":     "addSingleAttack"
     },
 
     el: $('#add-view'),
@@ -32,6 +39,8 @@ window.AddView = window.MainViewBase.extend({
     uploadContainer: $('.upload-container'),
 
     uploadingProgress: $('#uploading-message > .progress > span'),
+
+    singleUploadFormEl: $('#single-upload-form'),
 
     render: function(){
 
@@ -133,5 +142,19 @@ window.AddView = window.MainViewBase.extend({
         _.delay(function(){
             that.uploadedMessage.fadeOut()
         }, 5000);
+    },
+
+    addSingleAttack: function(e){
+        this.singleUploadFormEl.submit(function( event ) {
+          if (true) {
+            return;
+          }
+
+          event.preventDefault();
+        });
+    },
+
+    singleUploadFinished: function(){
+        App.dataChanged();
     }
 });

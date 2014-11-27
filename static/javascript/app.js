@@ -9,6 +9,8 @@ window.App = Backbone.View.extend({
         this.addView = new AddView();
         this.eventsView = new EventListView();
         this.statisticsView = new StatisticsView();
+        this.settingsView = new SettingsView();
+        this.exportView = new ExportView();
     },
 
     el: $("body"),
@@ -17,6 +19,8 @@ window.App = Backbone.View.extend({
         "click #statistics-toggle":     "showStatistics",
         "click #events-toggle":         "showEvents",
         "click #add-toggle":            "showAdd",
+        "click #settings-toggle":       "showSettings",
+        "click #export-toggle":         "showExport",
         "click #menuLink":              "menuLinkClick",
         "click #menu":                  "closeMenuLink"
     },
@@ -30,6 +34,10 @@ window.App = Backbone.View.extend({
 
             this.dataLoaded = true;
         }
+    },
+
+    dataChanged: function(){
+        this.dataLoaded = false;
     },
 
     refreshData: function(){
@@ -68,6 +76,18 @@ window.App = Backbone.View.extend({
 
     showAdd: function(event){
         this.Routes.navigate(this.getCurrentBase() + '/add', {trigger: true});
+
+        event.preventDefault();
+    },
+
+    showSettings: function(event){
+        this.Routes.navigate(this.getCurrentBase() + '/settings', {trigger: true});
+
+        event.preventDefault();
+    },
+
+    showExport: function(event){
+        this.Routes.navigate(this.getCurrentBase() + '/export', {trigger: true});
 
         event.preventDefault();
     },
@@ -114,36 +134,86 @@ window.Workspace = Backbone.Router.extend({
     routes: {
         ":base/statistics": "statistics",
         ":base/list":       "list",
-        ":base/add":        "add"
+        ":base/add":        "add",
+        ":base/settings":   "settings",
+        ":base/export":     "export"
     },
 
     statistics: function(){
-        App.addView.hide();
         App.statisticsView.show();
+
+        App.addView.hide();
         App.eventsView.hide();
+        App.settingsView.hide();
+        App.exportView.hide();
 
         $('#statistics-toggle').parent().addClass('pure-menu-selected');
+
         $('#events-toggle').parent().removeClass('pure-menu-selected');
         $('#add-toggle').parent().removeClass('pure-menu-selected');
+        $('#settings-toggle').parent().removeClass('pure-menu-selected');
+        $('#export-toggle').parent().removeClass('pure-menu-selected');
     },
 
     list: function(){
+        App.eventsView.show();
+
         App.addView.hide();
         App.statisticsView.hide();
-        App.eventsView.show();
+        App.settingsView.hide();
+        App.exportView.hide();
 
         $('#statistics-toggle').parent().removeClass('pure-menu-selected');
         $('#events-toggle').parent().addClass('pure-menu-selected');
         $('#add-toggle').parent().removeClass('pure-menu-selected');
+        $('#settings-toggle').parent().removeClass('pure-menu-selected');
+        $('#export-toggle').parent().removeClass('pure-menu-selected');
     },
 
     add: function(){
         App.addView.show();
+
         App.statisticsView.hide();
         App.eventsView.hide();
+        App.settingsView.hide();
+        App.exportView.hide();
 
         $('#statistics-toggle').parent().removeClass('pure-menu-selected');
         $('#events-toggle').parent().removeClass('pure-menu-selected');
         $('#add-toggle').parent().addClass('pure-menu-selected');
+        $('#settings-toggle').parent().removeClass('pure-menu-selected');
+        $('#export-toggle').parent().removeClass('pure-menu-selected');
+    },
+
+    settings: function(){
+        App.settingsView.show();
+
+        App.statisticsView.hide();
+        App.eventsView.hide();
+        App.addView.hide();
+        App.exportView.hide();
+
+        $('#settings-toggle').parent().removeClass('pure-menu-selected');
+
+        $('#statistics-toggle').parent().removeClass('pure-menu-selected');
+        $('#events-toggle').parent().removeClass('pure-menu-selected');
+        $('#add-toggle').parent().removeClass('pure-menu-selected');
+        $('#export-toggle').parent().removeClass('pure-menu-selected');
+    },
+
+    export: function(){
+        App.exportView.show();
+
+        App.statisticsView.hide();
+        App.eventsView.hide();
+        App.addView.hide();
+        App.settingsView.hide();
+
+        $('#export-toggle').parent().removeClass('pure-menu-selected');
+
+        $('#statistics-toggle').parent().removeClass('pure-menu-selected');
+        $('#events-toggle').parent().removeClass('pure-menu-selected');
+        $('#add-toggle').parent().removeClass('pure-menu-selected');
+        $('#settings-toggle').parent().removeClass('pure-menu-selected');
     }
 });

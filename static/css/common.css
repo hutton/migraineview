@@ -133,3 +133,12 @@ h4 {
   margin: 40px auto;
   max-width: 600px;
 }
+.loading-message {
+  font-size: 160%;
+  margin-top: 100px;
+  text-align: center;
+  font-weight: 100;
+}
+.loading-message .progress {
+  width: 180px;
+}

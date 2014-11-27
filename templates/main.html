@@ -19,7 +19,7 @@
     <!-
         Uploaded view
     ->
-    <div id="everything-view">
+    <div>
         <div id="layout">
             <!-- Menu toggle -->
             <a href="#menu" id="menuLink" class="menu-link">
@@ -46,9 +46,9 @@
                 </div>
             </div>
 
-            <div id="main" class="fixed-width">
+            <div>
                 <!-
-                    Stats view
+                    Add view
                 ->
                 <div id="add-view" style="display: none;">
                     <div>
@@ -59,7 +59,7 @@
                         <div class="stat-section-title">
                             Log an attack
                         </div>
-                        <form class="pure-form pure-form-aligned" action="/report/add" method="post">
+                        <form id="single-upload-form" class="pure-form pure-form-aligned" action="/report/add" method="post">
                             <fieldset>
                                 <div class="pure-control-group">
                                     <label for="started">Started</label>
@@ -182,7 +182,7 @@
                                 </div>
 
                                 <div class="pure-controls">
-                                    <button type="submit" class="pure-button pure-button-primary">Submit</button>
+                                    <button id="single-upload-form-button" type="submit" class="pure-button pure-button-primary">Submit</button>
                                 </div>
                             </fieldset>
                         </form>
@@ -242,11 +242,14 @@
                     <div>
                         <h2 class="title">Statistics</h2>
                     </div>
-                    <div id="stats-loading">
-                        <div>Preparing statistics...</div>
+                    <div id="stats-loading" class="loading-message">
+                        <div>Loading...</div>
                         <div class='progress indefinite'>
                             <span></span>
                         </div>
+                    </div>
+                    <div id="stats-no-data" class="loading-message" style="display: none;">
+                        <div>No data</div>
                     </div>
                     <div id="stat-sections-container" class="content">
                     </div>
@@ -261,11 +264,14 @@
                         <h2 class="title">List</h2>
                     </div>
                     <div class="content">
-                        <div id="list-loading">
-                            <div>Fetching attacks...</div>
+                        <div id="list-loading" class="loading-message">
+                            <div>Loading...</div>
                             <div class='progress indefinite'>
                                 <span></span>
                             </div>
+                        </div>
+                        <div id="list-no-data" class="loading-message" style="display: none;">
+                            <div>No data</div>
                         </div>
                         <table style="display: none;" class="pure-table pure-table-horizontal">
                             <thead>
@@ -279,6 +285,28 @@
 
                             </tbody>
                         </table>
+                    </div>
+                </div>
+
+                <!-
+                    Settings view
+                ->
+                <div id="settings-view" style="display: none;">
+                    <div>
+                        <h2 class="title">Settings</h2>
+                    </div>
+                    <div id="settings-container" class="content narrow">
+                    </div>
+                </div>
+
+                <!-
+                    Export view
+                ->
+                <div id="export-view" style="display: none;">
+                    <div>
+                        <h2 class="title">Export</h2>
+                    </div>
+                    <div id="export-container" class="content narrow">
                     </div>
                 </div>
             </div>
@@ -400,6 +428,9 @@
     <script src="/static/javascript/stats_view.js" language="javascript" type="text/javascript"></script>
     <script src="/static/javascript/event_list_view.js" language="javascript" type="text/javascript"></script>
     <script src="/static/javascript/event_view.js" language="javascript" type="text/javascript"></script>
+    <script src="/static/javascript/settings_view.js" language="javascript" type="text/javascript"></script>
+    <script src="/static/javascript/export_view.js" language="javascript" type="text/javascript"></script>
+
     <script src="/static/javascript/app.js" language="javascript" type="text/javascript"></script>
 
     <script>

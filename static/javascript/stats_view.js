@@ -261,12 +261,27 @@ window.StatisticsView = window.MainViewBase.extend({
 
     statsLoaderEl: $('#stats-loading'),
 
+    statsNoDataEl: $('#stats-no-data'),
+
     render: function() {
+        if (_.isUndefined(this.model.events)){
+            this.showNoAttacks();
+        } else {
+            this.showAttacks();
+        }
+    },
+
+    showNoAttacks: function(){
+        this.statsNoDataEl.show();
+        this.statsLoaderEl.hide();
+    },
+
+    showAttacks: function(){
+        this.statsNoDataEl.hide();
+        this.statsLoaderEl.hide();
 
         Chart.defaults.global.animation = false;
         Chart.defaults.global.scaleBeginAtZero = true;
-
-        this.statsLoaderEl.hide();
 
         this.statsListEl.empty();
 

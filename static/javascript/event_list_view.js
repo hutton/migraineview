@@ -15,9 +15,33 @@ window.EventListView = window.MainViewBase.extend({
 
     tableEl: $('#event_list_container table'),
 
+    listNoDataEl: $('#list-no-data'),
+
     render: function(){
+        if (this.collection.models.length > 0){
+            this.showAttacks();
+        } else {
+            this.showNoAttacks();
+        }
+
+        return this;
+    },
+
+    show: function(){
+        this.$el.show();
+
+        App.refreshData();
+    },
+
+    showNoAttacks: function(){
+        this.listNoDataEl.show();
+        this.listLoadingEl.hide();
+    },
+
+    showAttacks: function() {
         var that = this;
 
+        this.listNoDataEl.hide();
         this.listLoadingEl.hide();
 
         this.tableEl.show();
@@ -28,13 +52,5 @@ window.EventListView = window.MainViewBase.extend({
 
             that.tableBodyEl.append(event_view.render().$el);
         });
-
-        return this;
-    },
-
-    show: function(){
-        this.$el.show();
-
-        App.refreshData();
     }
 });
