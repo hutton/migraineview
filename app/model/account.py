@@ -1,5 +1,6 @@
 from google.appengine.api import users
 from google.appengine.ext import db
+from app.model.attack import Attack
 
 __author__ = 'simonhutton'
 
@@ -26,4 +27,10 @@ class Account(db.Model):
                 return new_account
 
         return None
+
+    def get_attacks(self):
+        query = db.Query(Attack)
+        query.ancestor(self)
+
+        return query.run()
 

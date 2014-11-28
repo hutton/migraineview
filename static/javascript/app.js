@@ -55,15 +55,13 @@ window.App = Backbone.View.extend({
     getCurrentBase: function(){
         if (window.location.pathname.startsWith("/example")){
             return 'example';
-        } else if (window.location.pathname.startsWith("/report")) {
-            return 'report';
         } else {
-            return 'uploaded';
+            return '';
         }
     },
 
     showStatistics: function(event){
-        this.Routes.navigate(this.getCurrentBase() + '/statistics', {trigger: true});
+        this.Routes.navigate(this.getCurrentBase() + '/report', {trigger: true});
 
         event.preventDefault();
     },
@@ -132,11 +130,16 @@ window.App = Backbone.View.extend({
 window.Workspace = Backbone.Router.extend({
 
     routes: {
-        ":base/statistics": "statistics",
+        ":base/report": "statistics",
         ":base/list":       "list",
         ":base/add":        "add",
         ":base/settings":   "settings",
-        ":base/export":     "export"
+        ":base/export":     "export",
+        "report": "statistics",
+        "list":       "list",
+        "add":        "add",
+        "settings":   "settings",
+        "export":     "export"
     },
 
     statistics: function(){
@@ -193,7 +196,7 @@ window.Workspace = Backbone.Router.extend({
         App.addView.hide();
         App.exportView.hide();
 
-        $('#settings-toggle').parent().removeClass('pure-menu-selected');
+        $('#settings-toggle').parent().addClass('pure-menu-selected');
 
         $('#statistics-toggle').parent().removeClass('pure-menu-selected');
         $('#events-toggle').parent().removeClass('pure-menu-selected');
@@ -209,7 +212,7 @@ window.Workspace = Backbone.Router.extend({
         App.addView.hide();
         App.settingsView.hide();
 
-        $('#export-toggle').parent().removeClass('pure-menu-selected');
+        $('#export-toggle').parent().addClass('pure-menu-selected');
 
         $('#statistics-toggle').parent().removeClass('pure-menu-selected');
         $('#events-toggle').parent().removeClass('pure-menu-selected');

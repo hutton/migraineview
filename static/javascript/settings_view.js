@@ -9,8 +9,22 @@ window.SettingsView = window.MainViewBase.extend({
 
     el: $('#settings-view'),
 
+    events: {
+        "click #settings-clear-all":  "settingsClearAll"
+    },
+
     render: function(){
 
         return this;
+    },
+
+    settingsClearAll: function(){
+        $.ajax({
+            url: "/service/clearAllEvents"
+        }).done(function(response) {
+
+            App.dataChanged();
+        });
+
     }
 });

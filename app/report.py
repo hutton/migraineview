@@ -1,6 +1,7 @@
 import os
 import datetime
 from google.appengine._internal.django.utils import simplejson
+from google.appengine.api import users
 from google.appengine.ext import db
 from google.appengine.ext.webapp import template
 import webapp2
@@ -15,7 +16,7 @@ class Report(webapp2.RequestHandler):
 
     def show_main(self, acc):
 
-        if "statistics" in self.request.uri or "list" in self.request.uri:
+        if "report" in self.request.uri or "list" in self.request.uri:
             query = db.query_descendants(acc)
             attacks = query.run()
             events = [{'Start': attack.start_time, 'Duration': attack.duration, 'Comment': attack.comment} for attack in
@@ -26,6 +27,8 @@ class Report(webapp2.RequestHandler):
                 response = {}
         else:
             response = {}
+
+        response['logout_url'] = users.create_logout_url('/')
 
         path = os.path.join(os.path.join(os.path.dirname(__file__), 'html'), '../../templates/main.html')
         self.response.out.write(template.render(path, response))

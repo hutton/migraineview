@@ -142,6 +142,8 @@ window.AddView = window.MainViewBase.extend({
         _.delay(function(){
             that.uploadedMessage.fadeOut()
         }, 5000);
+
+        App.dataChanged();
     },
 
     addSingleAttack: function(e){

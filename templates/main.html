@@ -32,15 +32,16 @@
                     <a class="pure-menu-heading" href="/"><i class="fa fa-home"></i> Migraine Report</a>
 
                     <ul>
-                        <li><a id="add-toggle" href="#"><i class="fa fa-plus"></i> Add</a></li>
-                        <li><a id="statistics-toggle" href="#"><i class="fa fa-bar-chart"></i> Statistics</a></li>
+                        <li><a id="statistics-toggle" href="#"><i class="fa fa-bar-chart"></i> Report</a></li>
                         <li><a id="events-toggle" href="#"><i class="fa fa-list"></i> List</a></li>
+
+                        <li class="menu-item-divided"><a id="add-toggle" href="#"><i class="fa fa-plus"></i> Add</a></li>
 
                         <li class="menu-item-divided"><a id="export-toggle" href="#"><i class="fa fa-share-square-o"></i> Export</a></li>
                         <li><a id="settings-toggle" href="#"><i class="fa fa-cog"></i> Settings</a></li>
 
                         <li class="menu-item-divided">
-                            <a href="/"><i class="fa fa-sign-out"></i> Logout</a>
+                            <a href="{{ logout_url }}"><i class="fa fa-sign-out"></i> Logout</a>
                         </li>
                     </ul>
                 </div>
@@ -50,7 +51,8 @@
                 <!-
                     Add view
                 ->
-                <div id="add-view" style="display: none;">
+                <div id="add-view" class="scroll-container" style="display: none;">
+                    <div>
                     <div>
                         <h2 class="title">Add</h2>
                     </div>
@@ -233,6 +235,7 @@
                         </div>
 
                     </div>
+                    </div>
                 </div>
 
                 <!-
@@ -240,7 +243,7 @@
                 ->
                 <div id="stats-view" style="display: none;">
                     <div>
-                        <h2 class="title">Statistics</h2>
+                        <h2 class="title">Report</h2>
                     </div>
                     <div id="stats-loading" class="loading-message">
                         <div>Loading...</div>
@@ -296,6 +299,12 @@
                         <h2 class="title">Settings</h2>
                     </div>
                     <div id="settings-container" class="content narrow">
+                        <div class="stat-section-title">
+                            Account
+                        </div>
+                        <div id="settings-buttons">
+                            <button id="settings-clear-all" class="button-error pure-button">Clear all attacks</button>
+                        </div>
                     </div>
                 </div>
 

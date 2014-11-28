@@ -22,7 +22,7 @@ import webapp2
 
 from app.migraine_statistics import Example
 from app.report import Report
-from app.services import Stats
+from app.services import Stats, ClearAllEvents
 from app.upload import Upload
 
 
@@ -36,7 +36,7 @@ class Main(webapp2.RequestHandler):
                                'logout_url': users.create_logout_url('/')}
         else:
             template_values = {'user': None,
-                               'login_url': users.create_login_url('/report/statistics')}
+                               'login_url': users.create_login_url('/report')}
 
         path = os.path.join(os.path.join(os.path.dirname(__file__), 'html'), '../templates/home.html')
         self.response.out.write(template.render(path, template_values))
@@ -51,7 +51,8 @@ app = webapp2.WSGIApplication([
                                   ('/', Main),
                                   ('/upload', Upload),
                                   ('/uploaded/.*', Uploaded),
-                                  ('/report/.*', Report),
                                   ('/example/.*', Example),
-                                  ('/service/stats', Stats)
+                                  ('/service/stats', Stats),
+                                  ('/service/clearAllEvents', ClearAllEvents),
+                                  ('/.*', Report)
                               ], debug=True)

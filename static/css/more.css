@@ -3865,6 +3865,34 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     display: inline-block;
   }
 }
+.button-success,
+.button-error,
+.button-warning,
+.button-secondary {
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+}
+.button-success {
+  background: #1cb841;
+  /* this is a green */
+
+}
+.button-error {
+  background: #ca3c3c;
+  /* this is a maroon */
+
+}
+.button-warning {
+  background: #df7514;
+  /* this is an orange */
+
+}
+.button-secondary {
+  background: #42b8dd;
+  /* this is a light blue */
+
+}
 /*---------------------------------------------------
     LESS Elements 0.9
   ---------------------------------------------------
@@ -4008,6 +4036,14 @@ h4 {
 }
 .loading-message .progress {
   width: 180px;
+}
+.scroll-container-xx {
+  height: 100%;
+  overflow-y: scroll;
+  position: fixed;
+  left: 0px;
+  width: 100%;
+  margin-left: 220px;
 }
 input[type=date] {
   min-width: 160px;
@@ -4176,4 +4212,8 @@ form {
 }
 #event_list_container {
   margin: 10px;
+}
+#settings-buttons {
+  text-align: center;
+  margin: 40px 0px;
 }
