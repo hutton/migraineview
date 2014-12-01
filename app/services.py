@@ -13,12 +13,10 @@ class Stats(webapp2.RequestHandler):
         acc = account.Account.get_or_create_account()
 
         if acc:
-            attacks = acc.get_attacks()
-            events = [{'Start': attack.start_time, 'Duration': attack.duration, 'Comment': attack.comment} for attack in
-                      attacks]
+            attacks = acc.get_attacks_as_dict()
 
-            if len(events) > 0:
-                self.response.out.write(simplejson.dumps(generate_statistics_from_events(events)))
+            if len(attacks) > 0:
+                self.response.out.write(simplejson.dumps(generate_statistics_from_events(attacks)))
             else:
                 self.response.out.write(simplejson.dumps({}))
         else:

@@ -1,27 +1,12 @@
 from google.appengine._internal.django.utils import simplejson
-from google.appengine.api import users
 from google.appengine.ext import db
 import webapp2
-from app.migraine_statistics import json_to_events, ics_to_events, generate_statistics_from_events
+from app.helper import create_start_text, create_duration_text
+from app.migraine_statistics import json_to_events, ics_to_events
 from app.model import attack
 from model.account import Account
 
 __author__ = 'simonhutton'
-
-
-def create_start_text(start_time):
-    return ""
-
-
-def create_duration_text(duration):
-    """
-    Upto to
-
-    """
-    if duration < 60 * 60:
-        return ""
-
-    return ""
 
 
 class Upload(webapp2.RequestHandler):
@@ -50,7 +35,7 @@ class Upload(webapp2.RequestHandler):
                     new_attack.duration = event['Duration']
                     new_attack.comment = event['Comment']
 
-                    new_attack.start_time = create_start_text(event['Start'])
+                    new_attack.start_text = create_start_text(event['Start'])
                     new_attack.duration_text = create_duration_text(event['Duration'])
 
                     new_attacks.append(new_attack)

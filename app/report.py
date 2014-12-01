@@ -18,12 +18,10 @@ class Report(webapp2.RequestHandler):
     def show_main(self, acc):
 
         if "report" in self.request.uri or "list" in self.request.uri:
-            query = db.query_descendants(acc)
-            attacks = query.run()
-            events = [{'Start': attack.start_time, 'Duration': attack.duration, 'Comment': attack.comment} for attack in
-                      attacks]
-            if len(events) > 0:
-                response = {'data': simplejson.dumps(generate_statistics_from_events(events))}
+            attacks = acc.get_attacks_as_dict()
+
+            if len(attacks) > 0:
+                response = {'data': simplejson.dumps(generate_statistics_from_events(attacks))}
             else:
                 response = {}
         else:

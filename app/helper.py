@@ -70,8 +70,8 @@ def build_json_events(events):
     json_events = []
 
     for event in events:
-        json_events.append({'start': str(event['Start']),
-                            'duration': event['Duration'],
+        json_events.append({'start': event['StartText'] if 'StartText' in event else create_start_text(event['Start']),
+                            'duration': event['DurationText'] if 'DurationText' in event else create_duration_text(event['Duration']),
                             'comment': event['Comment']})
 
     return json_events
@@ -106,4 +106,57 @@ def format_events_for_txt(events):
             event['Description'] = event['Description'].replace('\n', '\r\n')
 
     return events
+
+
+def st_nd_rd_or_th(n):
+    return str(n) + ("th" if 4 <= n % 100 <= 20 else {1: "st", 2: "nd", 3: "rd"}.get(n % 10, "th"))
+
+
+def create_start_text(dt):
+    return dt.strftime("%A<br/>%b " + st_nd_rd_or_th(dt.day) + " '%y<br/>at %H:%M")
+
+
+def create_duration_text(seconds):
+    result = ""
+    one_day = 60 * 60 * 24
+    one_hour = 60 * 60
+    one_minute = 60
+
+    if seconds == 0:
+        return "-"
+
+    if seconds >= one_day:
+        days = int(seconds // one_day)
+
+        if days == 1:
+            result += "1 day "
+        else:
+            result += str(days) + " days "
+
+        seconds -= one_day * days
+
+    if seconds >= one_hour:
+        hours = int(seconds // one_hour)
+
+        if hours == 1:
+            result += "1 hour "
+        else:
+            result += str(hours) + " hours "
+
+        seconds -= one_hour * hours
+
+    if seconds >= one_minute:
+        label = "min"
+
+        if len(result) == 0:
+            label = "minute"
+
+        minutes = int(seconds // one_minute)
+
+        if minutes == 1:
+            result += "1 " + label
+        else:
+            result += str(minutes) + " " + label + "s"
+
+    return result.strip()
 
