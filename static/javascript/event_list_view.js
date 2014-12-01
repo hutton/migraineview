@@ -13,7 +13,7 @@ window.EventListView = window.MainViewBase.extend({
 
     tableBodyEl: $('#event_list_container tbody'),
 
-    tableEl: $('#event_list_container table'),
+    tableContainerEl: $('#list-table-container'),
 
     listNoDataEl: $('#list-no-data'),
 
@@ -27,12 +27,6 @@ window.EventListView = window.MainViewBase.extend({
         return this;
     },
 
-    show: function(){
-        this.$el.show();
-
-        App.refreshData();
-    },
-
     showNoAttacks: function(){
         this.listNoDataEl.show();
         this.listLoadingEl.hide();
@@ -44,7 +38,7 @@ window.EventListView = window.MainViewBase.extend({
         this.listNoDataEl.hide();
         this.listLoadingEl.hide();
 
-        this.tableEl.show();
+        this.tableContainerEl.show();
         this.tableBodyEl.empty();
 
         _.each(this.collection.models, function(event_model){

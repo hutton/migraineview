@@ -7,3 +7,6 @@ class Attack(db.Model):
     start_time = db.DateTimeProperty()
     duration = db.IntegerProperty()
     comment = db.TextProperty()
+
+    start_text = db.TextProperty()
+    duration_text = db.TextProperty()

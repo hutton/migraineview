@@ -4,11 +4,29 @@
 
 window.MainViewBase = Backbone.View.extend({
 
+    bodyEl: $('body'),
+
+    scrollPos: 0,
+
+    visible: false,
+
     show: function(){
-        this.$el.show();
+        if (!this.visible){
+            this.$el.show();
+
+            this.bodyEl.scrollTop(this.scrollPos);
+
+            this.visible = true;
+        }
     },
 
     hide: function(){
-        this.$el.hide();
+        if (this.visible){
+            this.scrollPos = this.bodyEl.scrollTop();
+
+            this.$el.hide();
+
+            this.visible = false;
+        }
     }
 });

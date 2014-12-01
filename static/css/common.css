@@ -142,7 +142,7 @@ h4 {
 .loading-message .progress {
   width: 180px;
 }
-.scroll-container-xx {
+.scroll-container {
   height: 100%;
   overflow-y: scroll;
   position: fixed;

@@ -8,6 +8,7 @@ import webapp2
 from app.migraine_statistics import generate_statistics_from_events
 from app.model import attack, account
 from app.model.account import Account
+from app.upload import create_start_text, create_duration_text
 
 __author__ = 'simonhutton'
 
@@ -57,6 +58,9 @@ class Report(webapp2.RequestHandler):
             new_attack.start_time = started
             new_attack.duration = duration_delta.seconds
             new_attack.comment = self.request.POST['comment']
+
+            new_attack.start_time = create_start_text(started)
+            new_attack.duration_text = create_duration_text(duration_delta.seconds)
 
             db.put(new_attack)
 

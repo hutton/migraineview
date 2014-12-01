@@ -35,10 +35,10 @@
                         <li><a id="statistics-toggle" href="#"><i class="fa fa-bar-chart"></i> Report</a></li>
                         <li><a id="events-toggle" href="#"><i class="fa fa-list"></i> List</a></li>
 
-                        <li class="menu-item-divided"><a id="add-toggle" href="#"><i class="fa fa-plus"></i> Add</a></li>
+                        <li><a id="add-toggle" href="#"><i class="fa fa-plus"></i> Add</a></li>
 
-                        <li class="menu-item-divided"><a id="export-toggle" href="#"><i class="fa fa-share-square-o"></i> Export</a></li>
-                        <li><a id="settings-toggle" href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                        <!--<li class="menu-item-divided"><a id="export-toggle" href="#"><i class="fa fa-share-square-o"></i> Export</a></li>-->
+                        <li class="menu-item-divided"><a id="settings-toggle" href="#"><i class="fa fa-cog"></i> Options</a></li>
 
                         <li class="menu-item-divided">
                             <a href="{{ logout_url }}"><i class="fa fa-sign-out"></i> Logout</a>
@@ -51,7 +51,7 @@
                 <!-
                     Add view
                 ->
-                <div id="add-view" class="scroll-container" style="display: none;">
+                <div id="add-view" style="display: none;">
                     <div>
                     <div>
                         <h2 class="title">Add</h2>
@@ -276,7 +276,13 @@
                         <div id="list-no-data" class="loading-message" style="display: none;">
                             <div>No data</div>
                         </div>
-                        <table style="display: none;" class="pure-table pure-table-horizontal">
+                        <div style="display: none;" id="list-table-container">
+                        <div id="list-search">
+                            <form class="pure-form">
+                                <input type="text" placeholder="Search" class="pure-input-rounded"/>
+                            </form>
+                        </div>
+                        <table class="pure-table pure-table-horizontal">
                             <thead>
                                 <tr>
                                     <th>Started</th>
@@ -288,6 +294,7 @@
 
                             </tbody>
                         </table>
+                        </div>
                     </div>
                 </div>
 
@@ -296,9 +303,15 @@
                 ->
                 <div id="settings-view" style="display: none;">
                     <div>
-                        <h2 class="title">Settings</h2>
+                        <h2 class="title">Options</h2>
                     </div>
                     <div id="settings-container" class="content narrow">
+                        <div class="stat-section-title">
+                            Share
+                        </div>
+                        <div class="stat-section-title">
+                            Export
+                        </div>
                         <div class="stat-section-title">
                             Account
                         </div>

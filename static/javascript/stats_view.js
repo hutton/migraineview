@@ -302,11 +302,5 @@ window.StatisticsView = window.MainViewBase.extend({
         this.statsListEl.append(this.hoursOfDayRadarView.el);
 
         window.dispatchEvent(new Event('resize'));
-    },
-
-    show: function(){
-        this.$el.show();
-
-        App.refreshData();
     }
 });

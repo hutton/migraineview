@@ -4037,7 +4037,7 @@ h4 {
 .loading-message .progress {
   width: 180px;
 }
-.scroll-container-xx {
+.scroll-container {
   height: 100%;
   overflow-y: scroll;
   position: fixed;
@@ -4049,7 +4049,7 @@ input[type=date] {
   min-width: 160px;
   min-height: 42px;
 }
-form {
+#single-upload-form {
   margin: 50px 0px 100px 0px;
 }
 #add-duration-group {
@@ -4210,8 +4210,13 @@ form {
   float: right;
   text-align: right;
 }
-#event_list_container {
-  margin: 10px;
+#list-search {
+  text-align: center;
+}
+#list-search input {
+  width: 100%;
+  max-width: 400px;
+  margin-bottom: 60px;
 }
 #settings-buttons {
   text-align: center;

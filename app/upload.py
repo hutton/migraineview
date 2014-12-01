@@ -9,6 +9,21 @@ from model.account import Account
 __author__ = 'simonhutton'
 
 
+def create_start_text(start_time):
+    return ""
+
+
+def create_duration_text(duration):
+    """
+    Upto to
+
+    """
+    if duration < 60 * 60:
+        return ""
+
+    return ""
+
+
 class Upload(webapp2.RequestHandler):
     def post(self):
 
@@ -34,6 +49,9 @@ class Upload(webapp2.RequestHandler):
                     new_attack.start_time = event['Start']
                     new_attack.duration = event['Duration']
                     new_attack.comment = event['Comment']
+
+                    new_attack.start_time = create_start_text(event['Start'])
+                    new_attack.duration_text = create_duration_text(event['Duration'])
 
                     new_attacks.append(new_attack)
 

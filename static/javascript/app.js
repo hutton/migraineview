@@ -28,12 +28,10 @@ window.App = Backbone.View.extend({
     dataLoaded: false,
 
     loadData: function(data){
-        if (!this.dataLoaded){
-            this.populateStats(data);
-            this.populateEvents(data);
+        this.populateStats(data);
+        this.populateEvents(data);
 
-            this.dataLoaded = true;
-        }
+        this.dataLoaded = true;
     },
 
     dataChanged: function(){
@@ -41,15 +39,17 @@ window.App = Backbone.View.extend({
     },
 
     refreshData: function(){
-        var that = this;
+        if (!this.dataLoaded){
+            var that = this;
 
-        $.ajax({
-            dataType: "json",
-            url: "/service/stats"
-        }).done(function(response) {
+            $.ajax({
+                dataType: "json",
+                url: "/service/stats"
+            }).done(function(response) {
 
-            that.loadData(response);
-        });
+                that.loadData(response);
+            });
+        }
     },
 
     getCurrentBase: function(){
@@ -143,12 +143,12 @@ window.Workspace = Backbone.Router.extend({
     },
 
     statistics: function(){
-        App.statisticsView.show();
-
         App.addView.hide();
         App.eventsView.hide();
         App.settingsView.hide();
         App.exportView.hide();
+
+        App.statisticsView.show();
 
         $('#statistics-toggle').parent().addClass('pure-menu-selected');
 
@@ -159,12 +159,14 @@ window.Workspace = Backbone.Router.extend({
     },
 
     list: function(){
-        App.eventsView.show();
+        App.refreshData();
 
         App.addView.hide();
         App.statisticsView.hide();
         App.settingsView.hide();
         App.exportView.hide();
+
+        App.eventsView.show();
 
         $('#statistics-toggle').parent().removeClass('pure-menu-selected');
         $('#events-toggle').parent().addClass('pure-menu-selected');
@@ -174,12 +176,12 @@ window.Workspace = Backbone.Router.extend({
     },
 
     add: function(){
-        App.addView.show();
-
         App.statisticsView.hide();
         App.eventsView.hide();
         App.settingsView.hide();
         App.exportView.hide();
+
+        App.addView.show();
 
         $('#statistics-toggle').parent().removeClass('pure-menu-selected');
         $('#events-toggle').parent().removeClass('pure-menu-selected');
@@ -189,12 +191,12 @@ window.Workspace = Backbone.Router.extend({
     },
 
     settings: function(){
-        App.settingsView.show();
-
         App.statisticsView.hide();
         App.eventsView.hide();
         App.addView.hide();
         App.exportView.hide();
+
+        App.settingsView.show();
 
         $('#settings-toggle').parent().addClass('pure-menu-selected');
 
@@ -205,12 +207,12 @@ window.Workspace = Backbone.Router.extend({
     },
 
     export: function(){
-        App.exportView.show();
-
         App.statisticsView.hide();
         App.eventsView.hide();
         App.addView.hide();
         App.settingsView.hide();
+
+        App.exportView.show();
 
         $('#export-toggle').parent().addClass('pure-menu-selected');
 
