@@ -3,5 +3,10 @@
  */
 
 window.EventModel = Backbone.Model.extend({
+    initialize: function() {
+
+
+        this.fullText = (this.get('start') + " " + this.get('duration') + " " + this.get('comment')).toUpperCase();
+    }
 });
 

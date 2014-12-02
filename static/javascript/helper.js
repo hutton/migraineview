@@ -20,3 +20,6 @@ if (!String.prototype.startsWith) {
   });
 }
 
+function replaceAll(str, find, replace) {
+  return str.replace(new RegExp(find, 'gi'), replace);
+}

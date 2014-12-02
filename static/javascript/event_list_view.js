@@ -17,6 +17,14 @@ window.EventListView = window.MainViewBase.extend({
 
     listNoDataEl: $('#list-no-data'),
 
+    listSearchInputEl: $('#list-search-input'),
+
+    listCountEl: $('#list-count'),
+
+    events: {
+        "input #list-search-input": "searchInputChanged"
+    },
+
     render: function(){
         if (this.collection.models.length > 0){
             this.showAttacks();
@@ -25,6 +33,34 @@ window.EventListView = window.MainViewBase.extend({
         }
 
         return this;
+    },
+
+    searchInputChanged: function(){
+        var searchTerm = this.listSearchInputEl.val();
+        var searchTermUpper = searchTerm.toUpperCase();
+
+        var shown = 0;
+
+        _.each(this.collection.models, function(model){
+            if (model.fullText.indexOf(searchTermUpper) == -1){
+                model.set({filtered: true});
+            } else {
+                model.set({filtered: false, filter: searchTerm});
+                shown++;
+            }
+        });
+
+        this.updateSearchLabel(shown);
+    },
+
+    updateSearchLabel: function(shown){
+        if (this.collection.models.length == shown){
+            this.listCountEl.html("Showing all " + shown + " attacks");
+        } else if (shown > 0){
+            this.listCountEl.html("Showing " + shown + " of " + this.collection.models.length + " attacks");
+        } else{
+            this.listCountEl.html("No matching attacks");
+        }
     },
 
     showNoAttacks: function(){

@@ -108,6 +108,7 @@ window.App = Backbone.View.extend({
         var models = [];
 
         _.each(response.events, function(event){
+            event['filtered'] = false;
             var eventModel = new window.EventModel(event);
 
             models.push(eventModel);
@@ -143,6 +144,8 @@ window.Workspace = Backbone.Router.extend({
     },
 
     statistics: function(){
+        App.refreshData();
+
         App.addView.hide();
         App.eventsView.hide();
         App.settingsView.hide();
