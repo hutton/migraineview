@@ -8,6 +8,9 @@ __author__ = 'simonhutton'
 class Account(db.Model):
     user_id = db.StringProperty()
 
+    share_report_key = db.StringProperty()
+    share_report_and_list_key = db.StringProperty()
+
     @staticmethod
     def get_or_create_account():
         user = users.get_current_user()
@@ -25,6 +28,20 @@ class Account(db.Model):
                 db.put(new_account)
 
                 return new_account
+
+        return None
+
+    @staticmethod
+    def get_account():
+        user = users.get_current_user()
+
+        if user:
+            query = Account.gql("WHERE user_id = :user_id", user_id=user.user_id())
+            accounts = query.fetch(1)
+            if accounts:
+                return accounts[0]
+            else:
+                return None
 
         return None
 

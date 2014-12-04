@@ -79,7 +79,7 @@ window.App = Backbone.View.extend({
     },
 
     showSettings: function(event){
-        this.Routes.navigate(this.getCurrentBase() + '/settings', {trigger: true});
+        this.Routes.navigate(this.getCurrentBase() + '/options', {trigger: true});
 
         event.preventDefault();
     },
@@ -134,12 +134,12 @@ window.Workspace = Backbone.Router.extend({
         ":base/report": "statistics",
         ":base/list":       "list",
         ":base/add":        "add",
-        ":base/settings":   "settings",
+        ":base/options":   "options",
         ":base/export":     "export",
         "report": "statistics",
         "list":       "list",
         "add":        "add",
-        "settings":   "settings",
+        "options":   "options",
         "export":     "export"
     },
 
@@ -193,7 +193,7 @@ window.Workspace = Backbone.Router.extend({
         $('#export-toggle').parent().removeClass('pure-menu-selected');
     },
 
-    settings: function(){
+    options: function(){
         App.statisticsView.hide();
         App.eventsView.hide();
         App.addView.hide();

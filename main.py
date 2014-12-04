@@ -19,6 +19,7 @@ import os
 from google.appengine.api import users
 from google.appengine.ext.webapp import template
 import webapp2
+from app.export import Export
 
 from app.migraine_statistics import Example
 from app.report import Report
@@ -54,5 +55,6 @@ app = webapp2.WSGIApplication([
                                   ('/example/.*', Example),
                                   ('/service/stats', Stats),
                                   ('/service/clearAllEvents', ClearAllEvents),
-                                  ('/.*', Report)
+                                  ('/export/migraine.*', Export),
+                                  ('/(report|options|add|list)', Report)
                               ], debug=True)

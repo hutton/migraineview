@@ -32,7 +32,7 @@ class Report(webapp2.RequestHandler):
         path = os.path.join(os.path.join(os.path.dirname(__file__), 'html'), '../../templates/main.html')
         self.response.out.write(template.render(path, response))
 
-    def get(self):
+    def get(self, object):
 
         acc = account.Account.get_or_create_account()
 

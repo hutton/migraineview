@@ -17,7 +17,13 @@ window.MainViewBase = Backbone.View.extend({
             this.bodyEl.scrollTop(this.scrollPos);
 
             this.visible = true;
+
+            this.onShow();
         }
+    },
+
+    onShow: function(){
+
     },
 
     hide: function(){

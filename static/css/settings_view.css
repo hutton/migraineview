@@ -2,3 +2,13 @@
   text-align: center;
   margin: 40px 0px;
 }
+.settings-share-link {
+  margin: 40px 0px;
+}
+#settings-export-link-container {
+  text-align: center;
+  margin: 40px 0px;
+}
+#settings-export-link-container .file-type {
+  margin: 0px 10px;
+}

@@ -21,8 +21,11 @@ window.EventListView = window.MainViewBase.extend({
 
     listCountEl: $('#list-count'),
 
+    listSearchInputClearEl: $('#list-search-input-clear'),
+
     events: {
-        "input #list-search-input": "searchInputChanged"
+        "input #list-search-input": "searchInputChanged",
+        "click #list-search-input-clear": "clearInputClicked"
     },
 
     render: function(){
@@ -35,9 +38,19 @@ window.EventListView = window.MainViewBase.extend({
         return this;
     },
 
+    onShow: function(){
+        //this.listSearchInputEl.focus();
+    },
+
     searchInputChanged: function(){
         var searchTerm = this.listSearchInputEl.val();
         var searchTermUpper = searchTerm.toUpperCase();
+
+        if (searchTerm.length == 0){
+            this.listSearchInputClearEl.hide();
+        } else{
+            this.listSearchInputClearEl.show();
+        }
 
         var shown = 0;
 
@@ -82,5 +95,11 @@ window.EventListView = window.MainViewBase.extend({
 
             that.tableBodyEl.append(event_view.render().$el);
         });
+    },
+
+    clearInputClicked: function(){
+        this.listSearchInputEl.val("");
+        this.listSearchInputEl.focus();
+        this.searchInputChanged();
     }
 });

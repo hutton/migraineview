@@ -4018,12 +4018,12 @@ h4 {
   line-height: 1.8em;
 }
 .title {
-  margin: 80px 20px 60px 20px;
+  margin: 80px 20px 80px 20px;
   text-align: center;
   font-weight: 100;
 }
 .content p {
-  margin: 40px auto;
+  margin: 30px auto;
   max-width: 600px;
 }
 .loading-message {
@@ -4043,12 +4043,15 @@ h4 {
   width: 100%;
   margin-left: 220px;
 }
+.section-content {
+  margin-bottom: 100px;
+}
 input[type=date] {
   min-width: 160px;
   min-height: 42px;
 }
 #single-upload-form {
-  margin: 50px 0px 100px 0px;
+  margin: 50px 0px 0px 0px;
 }
 #add-duration-group {
   margin-bottom: 20px;
@@ -4058,14 +4061,14 @@ input[type=date] {
   height: 120px;
 }
 .upload-container {
-  border: 1px dashed rgba(0, 0, 0, 0.6);
+  border: 5px dashed rgba(0, 0, 0, 0.1);
   max-width: 400px;
   margin: 40px auto 10px auto;
   border-radius: 10px;
   text-align: center;
 }
 .upload-container > div {
-  margin: 40px 0px;
+  margin: 60px 0px;
 }
 .upload-container .file-type {
   margin: 0px 10px;
@@ -4104,6 +4107,7 @@ input[type=date] {
 .stat-section-title {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   font-size: 120%;
+  margin: 20px 0px;
 }
 .stat-section-item-container {
   margin-left: auto;
@@ -4216,6 +4220,20 @@ input[type=date] {
   max-width: 400px;
   margin-bottom: 60px;
 }
+#list-search-input-container {
+  position: relative;
+  display: inline;
+}
+#list-search-input-clear {
+  position: absolute;
+  font-size: 200%;
+  opacity: 0.1;
+  right: 6px;
+  top: -4px;
+}
+#list-search-input-clear:hover {
+  opacity: 0.3;
+}
 #list-started-header {
   min-width: 95px;
 }
@@ -4255,4 +4273,14 @@ input[type=date] {
 #settings-buttons {
   text-align: center;
   margin: 40px 0px;
+}
+.settings-share-link {
+  margin: 40px 0px;
+}
+#settings-export-link-container {
+  text-align: center;
+  margin: 40px 0px;
+}
+#settings-export-link-container .file-type {
+  margin: 0px 10px;
 }
