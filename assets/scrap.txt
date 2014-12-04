@@ -1,80 +1,31 @@
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, minimal-ui">
+var start = "2014-12-04";
+var started_time = "12:00";
+var ended = "2014-12-04";
+var ended_time = "14:31";
 
-import datetime
-# timedelta.total_seconds()
 
-minutes = 60 * 14
-hours = 60 * 60 * 7.5
-days = 60 * 60 * 42.5
-many_days = 60 * 60 * 142.5
+var started = new Date(start + "T" + started_time);
+var ended = new Date(ended + "T" + ended_time);
 
-hour = 60 * 60
-hours = 60 * 60 * 6
-normal = 60 * 60 * 4.5
+var timeDiff = Math.abs(ended.getTime() - started.getTime());
+var diffHours = timeDiff / (1000 * 60); 
 
-def create_duration_text(seconds):
-	result = ""
-	one_day = 60 * 60 * 24
-	one_hour = 60 * 60
-	one_minute = 60
+var hours = Math.floor(diffHours/60);
+var mins = diffHours % 60;
 
-	if seconds == 0:
-		return "-"
+var result = "";
 
-	if seconds >= one_day:
-		days = int(seconds // one_day)
+if (hours == 1){
+	result = "1 hour ";
+} else if (hours > 1){
+	result = hours + " hours ";
+}
 
-		if days == 1:
-			result += "1 day "
-		else:
-			result += str(days) + " days "
+if (mins == 1){
+	result += "1 minute";
+} else if (mins > 1){
+	result += mins + " minutes";
+}
 
-		seconds -= one_day * days
 
-	if seconds >= one_hour:
-		hours = int(seconds // one_hour)
-
-		if hours == 1:
-			result += "1 hour "
-		else:
-			result += str(hours) + " hours "
-
-		seconds -= one_hour * hours
-
-	if seconds >= one_minute:
-		label = "min"
-
-		if len(result) == 0:
-			label = "minute"
-
-		minutes = int(seconds // one_minute)
-
-		if minutes == 1:
-			result += "1 " + label
-		else:
-			result += str(minutes) + " " + label + "s"
-
-		seconds -= one_minute * minutes
-
-	return result.strip()
-
-def ord(n):
-    return str(n)+("th" if 4<=n%100<=20 else {1:"st",2:"nd",3:"rd"}.get(n%10, "th"))
-
-def ord2(n):
-    return str(n)
-
-def create_start_text(dt):
-	return dt.strftime("%A\n%b " + ord(dt.day) + " '%y\nat %H:%M")
-
-print create_duration_text(0)
-print create_duration_text(60 * 60 * 26)
-print create_duration_text(minutes)
-print create_duration_text(hours)
-print create_duration_text(days)
-print create_duration_text(many_days)
-print create_duration_text(hour)
-print create_duration_text(hours)
-print create_duration_text(normal)
-
-print create_start_text(datetime.datetime.now())
+console.log(result);
