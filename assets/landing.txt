@@ -1,0 +1,17 @@
+- Links: 
+	About, Tour, Login
+	About, Your Report, Logout
+
+- Hero text ""
+
+- Features:  
+	Beautiful Reporting
+
+	Easy to get started
+
+	Mobile Ready
+
+	Easy Export
+
+- Create account (Get Started)
+	
