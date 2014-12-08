@@ -1,31 +1,4 @@
-var start = "2014-12-04";
-var started_time = "12:00";
-var ended = "2014-12-04";
-var ended_time = "14:31";
+import random
+import string
 
-
-var started = new Date(start + "T" + started_time);
-var ended = new Date(ended + "T" + ended_time);
-
-var timeDiff = Math.abs(ended.getTime() - started.getTime());
-var diffHours = timeDiff / (1000 * 60); 
-
-var hours = Math.floor(diffHours/60);
-var mins = diffHours % 60;
-
-var result = "";
-
-if (hours == 1){
-	result = "1 hour ";
-} else if (hours > 1){
-	result = hours + " hours ";
-}
-
-if (mins == 1){
-	result += "1 minute";
-} else if (mins > 1){
-	result += mins + " minutes";
-}
-
-
-console.log(result);
+print ''.join(random.choice(string.ascii_lowercase + string.digits) for _ in range(10))
