@@ -1,13 +1,10 @@
 Get all add tab working
-Get stats and event list to reload after add
-Panels to scroll independently
+Add share links
+Add .ics export
+Landing page
 
-Make logout work
-Hide logout for example
-Better format event grid
 Fix upload tz problem
 Upload of xlsx
-Layout of homepage
 
 
 Stats
@@ -20,6 +17,11 @@ Distribution by Quarter (Polar Area chart next to month frequency)
 
 Done
 ====
+Better format event grid
+Make logout work
+Hide logout for example
+Get stats and event list to reload after add
+Panels to scroll independently
 Show events
 Add stats view backbone class
 Start using Pure
