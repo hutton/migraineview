@@ -31,16 +31,44 @@ window.AddView = window.MainViewBase.extend({
     },
 
     events: {
-        "click #single-upload-form-button":     "addSingleAttack"
+        "click #single-upload-form-button":     "addSingleAttack",
+        "change #started":                     "datesChanged",
+        "change #started-time":                "datesChanged",
+        "change #ended":                       "datesChanged",
+        "change #ended-time":                  "datesChanged"
     },
 
     el: $('#add-view'),
+
+    statusPanel: $('#add-status-panel'),
+
+    uploadingMessage: $('#add-uploading-message'),
+
+    processingMessage: $('#add-processing-message'),
+
+    uploadedMessage: $('#add-uploaded-message'),
+
+    durationGroupEl: $('#add-duration-group'),
 
     uploadContainer: $('.upload-container'),
 
     uploadingProgress: $('#uploading-message > .progress > span'),
 
     singleUploadFormEl: $('#single-upload-form'),
+
+    startedEL: $('#started'),
+
+    startedTimeEL: $('#started-time'),
+
+    endedEL: $('#ended'),
+
+    endedTimeEL: $('#ended-time'),
+
+    commentEL: $('#add-comment-text'),
+
+    durationLabelEl: $('#add-duration-group > label'),
+
+    durationValueEl: $('#add-duration-group > span'),
 
     render: function(){
 
@@ -91,14 +119,6 @@ window.AddView = window.MainViewBase.extend({
         });
     },
 
-    statusPanel: $('#add-status-panel'),
-
-    uploadingMessage: $('#add-uploading-message'),
-
-    processingMessage: $('#add-processing-message'),
-
-    uploadedMessage: $('#add-uploaded-message'),
-
     showUploading: function(){
         this.statusPanel.show();
 
@@ -147,16 +167,85 @@ window.AddView = window.MainViewBase.extend({
     },
 
     addSingleAttack: function(e){
-        this.singleUploadFormEl.submit(function( event ) {
-          if (true) {
-            return;
-          }
+        e.preventDefault();
 
-          event.preventDefault();
-        });
+        var start = this.startedEL.val();
+        var started_time = this.startedTimeEL.val();
+        var end = this.endedEL.val();
+        var end_time = this.endedTimeEL.val();
+
+        var started = new Date(start + "T" + started_time);
+        var ended = new Date(end + "T" + end_time);
+
+        var started_send = start + " " + started_time;
+        var ended_send = end + " " + end_time;
+
+        var commentEL = this.commentEL.val();
+
+        if (started < ended) {
+            $.ajax({
+                type: "POST",
+                url: "/report/add",
+                data: {
+                    started: started_send,
+                    ended: ended_send,
+                    comment: commentEL
+                }
+            }).done(function (response) {
+            }).fail(function (data) {
+            });
+        }
+
     },
 
     singleUploadFinished: function(){
         App.dataChanged();
+    },
+
+    datesChanged: function(){
+        var start = this.startedEL.val();
+        var started_time = this.startedTimeEL.val();
+        var ended = this.endedEL.val();
+        var ended_time = this.endedTimeEL.val();
+
+        var started = new Date(start + "T" + started_time);
+        var ended = new Date(ended + "T" + ended_time);
+
+        if (started > ended){
+            this.durationGroupEl.show();
+
+            this.durationValueEl.html("Select a valid duration");
+            this.durationLabelEl.html("");
+        } else {
+            var timeDiff = Math.abs(ended.getTime() - started.getTime());
+            var diffHours = timeDiff / (1000 * 60);
+
+            var hours = Math.floor(diffHours/60);
+            var minutes = diffHours % 60;
+
+            var result = "";
+
+            if (hours == 1){
+                result = "1 hour ";
+            } else if (hours > 1){
+                result = hours + " hours ";
+            }
+
+            if (minutes == 1){
+                result += "1 minute";
+            } else if (minutes > 1){
+                result += minutes + " minutes";
+            }
+
+            if (result == ""){
+                this.durationGroupEl.hide();
+                this.durationLabelEl.html("");
+            } else {
+                this.durationGroupEl.show();
+                this.durationLabelEl.html("Duration");
+
+                this.durationValueEl.html(result);
+            }
+        }
     }
 });

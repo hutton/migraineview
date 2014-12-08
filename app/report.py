@@ -28,26 +28,32 @@ class Report(webapp2.RequestHandler):
             response = {}
 
         response['logout_url'] = users.create_logout_url('/')
+        response['show_logout'] = True
 
         path = os.path.join(os.path.join(os.path.dirname(__file__), 'html'), '../../templates/main.html')
         self.response.out.write(template.render(path, response))
 
     def get(self, object):
 
-        acc = account.Account.get_or_create_account()
+        acc = account.Account.get_account()
 
         if acc:
             self.show_main(acc)
         else:
             self.redirect('/')
 
+
+class ReportAdd(webapp2.RequestHandler):
     def post(self):
 
-        acc = Account.get_or_create_account()
+        acc = Account.get_account()
 
         if acc:
-            started = datetime.datetime.strptime(self.request.POST['started'] + " " + self.request.POST['started-time'], "%Y-%m-%d %H:%M")
-            ended = datetime.datetime.strptime(self.request.POST['ended'] + " " + self.request.POST['ended-time'], "%Y-%m-%d %H:%M")
+            # started = datetime.datetime.strptime(self.request.POST['started'] + " " + self.request.POST['started-time'], "%Y-%m-%d %H:%M")
+            # ended = datetime.datetime.strptime(self.request.POST['ended'] + " " + self.request.POST['ended-time'], "%Y-%m-%d %H:%M")
+
+            started = datetime.datetime.strptime(self.request.POST['started'], "%Y-%m-%d %H:%M")
+            ended = datetime.datetime.strptime(self.request.POST['ended'], "%Y-%m-%d %H:%M")
 
             duration_delta = ended - started
 
@@ -65,5 +71,3 @@ class Report(webapp2.RequestHandler):
             self.show_main(acc)
         else:
             self.redirect('/')
-
-

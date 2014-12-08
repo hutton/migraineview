@@ -1,0 +1,5 @@
+/Applications/GoogleAppEngineLauncher.app/Contents/Resources/GoogleAppEngine-default.bundle/Contents/Resources/google_appengine
+
+
+/usr/local/google_appengine
+

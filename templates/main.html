@@ -40,9 +40,11 @@
                         <!--<li class="menu-item-divided"><a id="export-toggle" href="#"><i class="fa fa-share-square-o"></i> Export</a></li>-->
                         <li class="menu-item-divided"><a id="settings-toggle" href="#"><i class="fa fa-cog"></i> Options</a></li>
 
+                        {% if show_logout %}
                         <li class="menu-item-divided">
                             <a href="{{ logout_url }}"><i class="fa fa-sign-out"></i> Logout</a>
                         </li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
@@ -62,12 +64,12 @@
                             Log an attack
                         </div>
                         <div class="section-content">
-                            <form id="single-upload-form" class="pure-form pure-form-aligned" action="/report/add" method="post">
+                            <form id="single-upload-form" class="pure-form pure-form-aligned">
                                 <fieldset>
                                     <div class="pure-control-group">
                                         <label for="started">Started</label>
                                         <input name="started" id="started" type="date" placeholder="Started">
-                                        <select name="started-time">
+                                        <select name="started-time" id="started-time">
                                            <option value="00:00">00:00</option>
                                            <option value="00:30">00:30</option>
                                            <option value="01:00">01:00</option>
@@ -122,7 +124,7 @@
                                     <div class="pure-control-group">
                                         <label for="ended">Recovered</label>
                                         <input name="ended" id="ended" type="date" placeholder="Ended">
-                                        <select name="ended-time">
+                                        <select name="ended-time" id="ended-time">
                                            <option value="00:00">00:00</option>
                                            <option value="00:30">00:30</option>
                                            <option value="01:00">01:00</option>
@@ -174,9 +176,11 @@
                                         </select>
                                     </div>
 
-                                    <div class="pure-control-group" id="add-duration-group">
-                                        <label>Duration</label>
-                                        <span>2 hours</span>
+                                    <div id="add-duration-group-container">
+                                        <div style="display: none;" class="pure-control-group" id="add-duration-group">
+                                            <label>Duration</label>
+                                            <span></span>
+                                        </div>
                                     </div>
 
                                     <div class="pure-control-group">
@@ -185,7 +189,7 @@
                                     </div>
 
                                     <div class="pure-controls">
-                                        <button id="single-upload-form-button" type="submit" class="pure-button pure-button-primary">Submit</button>
+                                        <button id="single-upload-form-button" type="submit" class="pure-button pure-button-primary">Submit</button> <Label id="add-success-label">Attack logged.</Label>
                                     </div>
                                 </fieldset>
                             </form>

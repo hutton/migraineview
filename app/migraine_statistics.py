@@ -289,6 +289,8 @@ class Example(webapp2.RequestHandler):
 
         response = generate_statistics_from_events(events)
 
+        response['show_logout'] = False
+
         path = os.path.join(os.path.join(os.path.dirname(__file__), 'html'), '../../templates/main.html')
         self.response.out.write(template.render(path, {'data': simplejson.dumps(response)}))
 
