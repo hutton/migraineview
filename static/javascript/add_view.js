@@ -70,7 +70,13 @@ window.AddView = window.MainViewBase.extend({
 
     durationValueEl: $('#add-duration-group > span'),
 
+    addMessageLabelEl: $('#add-message-label'),
+
+    singleUploadFormButtonEl: $('#single-upload-form-button'),
+
     render: function(){
+
+        this.datesChanged();
 
         return this;
     },
@@ -169,6 +175,8 @@ window.AddView = window.MainViewBase.extend({
     addSingleAttack: function(e){
         e.preventDefault();
 
+        var that = this;
+
         var start = this.startedEL.val();
         var started_time = this.startedTimeEL.val();
         var end = this.endedEL.val();
@@ -183,6 +191,10 @@ window.AddView = window.MainViewBase.extend({
         var commentEL = this.commentEL.val();
 
         if (started < ended) {
+            this.singleUploadFormButtonEl.addClass('pure-button-disabled');
+
+            this.addMessageLabelEl.html("Saving attack...");
+
             $.ajax({
                 type: "POST",
                 url: "/report/add",
@@ -192,7 +204,19 @@ window.AddView = window.MainViewBase.extend({
                     comment: commentEL
                 }
             }).done(function (response) {
+                that.singleUploadFormButtonEl.removeClass('pure-button-disabled');
+                that.addMessageLabelEl.html("Attack logged.");
+
+                _.delay(function(){
+                    that.addMessageLabelEl.html("");
+                }, 2500);
+
+                App.dataChanged();
+
             }).fail(function (data) {
+                that.addMessageLabelEl.html("Failed to log attack.");
+
+                that.singleUploadFormButtonEl.removeClass('pure-button-disabled');
             });
         }
 
@@ -211,7 +235,7 @@ window.AddView = window.MainViewBase.extend({
         var started = new Date(start + "T" + started_time);
         var ended = new Date(ended + "T" + ended_time);
 
-        if (started > ended){
+        if (started >= ended){
             this.durationGroupEl.show();
 
             this.durationValueEl.html("Select a valid duration");

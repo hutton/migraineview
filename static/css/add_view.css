@@ -6,7 +6,7 @@ input[type=date] {
   margin: 50px 0px 0px 0px;
 }
 #add-duration-group-container {
-  height: 40px;
+  min-height: 40px;
   padding-top: 7px;
 }
 #add-duration-group > label {
@@ -32,7 +32,7 @@ input[type=date] {
 #add-status-panel-container {
   height: 100px;
 }
-#add-success-label {
+#add-message-label {
   margin-left: 20px;
 }
 #add-status-panel {

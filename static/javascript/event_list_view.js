@@ -76,6 +76,13 @@ window.EventListView = window.MainViewBase.extend({
         }
     },
 
+    showDataLoading: function(){
+        this.listNoDataEl.hide();
+        this.listLoadingEl.show();
+
+        this.tableContainerEl.hide();
+    },
+
     showNoAttacks: function(){
         this.listNoDataEl.show();
         this.listLoadingEl.hide();
@@ -95,6 +102,8 @@ window.EventListView = window.MainViewBase.extend({
 
             that.tableBodyEl.append(event_view.render().$el);
         });
+
+        this.updateSearchLabel(this.collection.models.length);
     },
 
     clearInputClicked: function(){

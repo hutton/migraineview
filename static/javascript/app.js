@@ -11,6 +11,8 @@ window.App = Backbone.View.extend({
         this.statisticsView = new StatisticsView();
         this.settingsView = new SettingsView();
         this.exportView = new ExportView();
+
+        this.addView.render();
     },
 
     el: $("body"),
@@ -36,6 +38,9 @@ window.App = Backbone.View.extend({
 
     dataChanged: function(){
         this.dataLoaded = false;
+
+        this.eventsView.showDataLoading();
+        this.statisticsView.showDataLoading();
     },
 
     refreshData: function(){

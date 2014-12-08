@@ -271,6 +271,13 @@ window.StatisticsView = window.MainViewBase.extend({
         }
     },
 
+    showDataLoading: function(){
+        this.statsNoDataEl.hide();
+        this.statsLoaderEl.show();
+
+        this.statsListEl.empty();
+    },
+
     showNoAttacks: function(){
         this.statsNoDataEl.show();
         this.statsLoaderEl.hide();

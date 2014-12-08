@@ -49,9 +49,6 @@ class ReportAdd(webapp2.RequestHandler):
         acc = Account.get_account()
 
         if acc:
-            # started = datetime.datetime.strptime(self.request.POST['started'] + " " + self.request.POST['started-time'], "%Y-%m-%d %H:%M")
-            # ended = datetime.datetime.strptime(self.request.POST['ended'] + " " + self.request.POST['ended-time'], "%Y-%m-%d %H:%M")
-
             started = datetime.datetime.strptime(self.request.POST['started'], "%Y-%m-%d %H:%M")
             ended = datetime.datetime.strptime(self.request.POST['ended'], "%Y-%m-%d %H:%M")
 
@@ -63,11 +60,13 @@ class ReportAdd(webapp2.RequestHandler):
             new_attack.duration = duration_delta.seconds
             new_attack.comment = self.request.POST['comment']
 
-            new_attack.start_time = create_start_text(started)
+            new_attack.start_text = create_start_text(started)
             new_attack.duration_text = create_duration_text(duration_delta.seconds)
 
             db.put(new_attack)
 
-            self.show_main(acc)
+            self.response.out.write({'message': "One attack created"})
+            self.response.status = 200
+
         else:
             self.redirect('/')
