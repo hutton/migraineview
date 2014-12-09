@@ -13,18 +13,33 @@ class Shared(webapp2.RequestHandler):
     def get(self):
 
         matches = re.match(
-                r"/shared/(?P<key>[0-9a-z]+)",
+                r"/shared/(?P<key>[0-9a-z]+)/.*",
                 self.request.path)
 
         if matches:
             shared_link = matches.group("key")
 
-            acc = Account.get_account_from_share_link(shared_link)
+            response = {}
+
+            if len(shared_link) == 7:
+                # Report with List
+                acc = Account.get_account_from_share_link_report_and_list(shared_link)
+
+                response['show_list'] = True
+
+            if len(shared_link) == 8:
+                # Report only
+                acc = Account.get_account_from_share_link_report_only(shared_link)
+
+                response['show_list'] = False
 
             if acc:
                 attacks = acc.get_attacks_as_dict()
 
-                response = {'data': simplejson.dumps(generate_statistics_from_events(attacks)), 'show_logout': True}
+                response['data'] = simplejson.dumps(generate_statistics_from_events(attacks))
+                response['show_logout'] = False
+                response['show_add'] = False
+                response['show_options'] = False
 
                 path = os.path.join(os.path.join(os.path.dirname(__file__), 'html'), '../../templates/main.html')
                 self.response.out.write(template.render(path, response))

@@ -34,12 +34,17 @@
 
                     <ul>
                         <li><a id="statistics-toggle" href="#"><i class="fa fa-bar-chart"></i> Report</a></li>
+                        {% if show_list %}
                         <li><a id="events-toggle" href="#"><i class="fa fa-list"></i> List</a></li>
-
+                        {% endif %}
+                        {% if show_add %}
                         <li><a id="add-toggle" href="#"><i class="fa fa-plus"></i> Add</a></li>
+                        {% endif %}
 
+                        {% if show_options %}
                         <!--<li class="menu-item-divided"><a id="export-toggle" href="#"><i class="fa fa-share-square-o"></i> Export</a></li>-->
                         <li class="menu-item-divided"><a id="settings-toggle" href="#"><i class="fa fa-cog"></i> Options</a></li>
+                        {% endif %}
 
                         {% if show_logout %}
                         <li class="menu-item-divided">
@@ -54,6 +59,7 @@
                 <!-
                     Add view
                 ->
+                {% if show_add %}
                 <div id="add-view" style="display: none;">
                     <div>
                     <div>
@@ -245,6 +251,7 @@
                     </div>
                     </div>
                 </div>
+                {% endif %}
 
                 <!-
                     Stats view
@@ -270,6 +277,7 @@
                     Events view
                 ->
 
+                {% if show_list %}
                 <div id="event_list_container" style="display: none;">
                     <div>
                         <h2 class="title">List</h2>
@@ -309,10 +317,12 @@
                         </div>
                     </div>
                 </div>
+                {% endif %}
 
                 <!-
                     Settings view
                 ->
+                {% if show_options %}
                 <div id="settings-view" style="display: none;">
                     <div>
                         <h2 class="title">Options</h2>
@@ -325,10 +335,10 @@
                             <p>Sometimes it's useful to share information about your migraines with other people; doctors, family, friends or colleagues.</p>
                             <p>Use these links to share up to date read-only versions of your report.</p>
                             <div class="settings-share-link">
-                                <a href="/shared/{{ share_report_and_list }}"><i class="fa fa-share"></i> Share Report and List</a>
+                                <a target="_blank" href="/shared/{{ share_report_and_list }}/report"><i class="fa fa-share"></i> Share Report and List</a>
                             </div>
                             <div class="settings-share-link">
-                                <a href="/shared/{{ share_report }}"><i class="fa fa-share"></i> Share just Report</a>
+                                <a target="_blank" href="/shared/{{ share_report }}/report"><i class="fa fa-share"></i> Share just Report</a>
                             </div>
                         </div>
                         <div class="stat-section-title">
@@ -368,10 +378,12 @@
                         </div>
                     </div>
                 </div>
+                {% endif %}
 
                 <!-
                     Export view
                 ->
+                {% if False %}
                 <div id="export-view" style="display: none;">
                     <div>
                         <h2 class="title">Export</h2>
@@ -379,6 +391,7 @@
                     <div id="export-container" class="content narrow">
                     </div>
                 </div>
+                {% endif %}
             </div>
         </div>
     </div>

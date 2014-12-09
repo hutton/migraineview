@@ -17,20 +17,21 @@ class Report(webapp2.RequestHandler):
 
     def show_main(self, acc):
 
+        response = {}
+
         if "report" in self.request.uri or "list" in self.request.uri:
             attacks = acc.get_attacks_as_dict()
 
             if len(attacks) > 0:
-                response = {'data': simplejson.dumps(generate_statistics_from_events(attacks))}
-            else:
-                response = {}
-        else:
-            response = {}
+                response['data'] = simplejson.dumps(generate_statistics_from_events(attacks))
 
         response['share_report'] = acc.share_report_key
         response['share_report_and_list'] = acc.share_report_and_list_key
         response['logout_url'] = users.create_logout_url('/')
         response['show_logout'] = True
+        response['show_add'] = True
+        response['show_options'] = True
+        response['show_list'] = True
 
         path = os.path.join(os.path.join(os.path.dirname(__file__), 'html'), '../../templates/main.html')
         self.response.out.write(template.render(path, response))

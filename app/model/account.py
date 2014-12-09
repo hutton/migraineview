@@ -49,9 +49,22 @@ class Account(db.Model):
         return None
 
     @staticmethod
-    def get_account_from_share_link(key):
+    def get_account_from_share_link_report_and_list(key):
+
+        query = Account.gql("WHERE share_report_and_list_key = :key", key=key)
+        accounts = query.fetch(1)
+
+        if accounts:
+            return accounts[0]
+        else:
+            return None
+
+    @staticmethod
+    def get_account_from_share_link_report_only(key):
+
         query = Account.gql("WHERE share_report_key = :key", key=key)
         accounts = query.fetch(1)
+
         if accounts:
             return accounts[0]
         else:

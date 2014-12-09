@@ -58,8 +58,20 @@ window.App = Backbone.View.extend({
     },
 
     getCurrentBase: function(){
-        if (window.location.pathname.startsWith("/example")){
+        var location = window.location.pathname;
+
+        if (location.startsWith("/example")){
             return 'example';
+        } else if (location.startsWith("/shared")) {
+            var re = new RegExp("/shared/(.*)?/.*");
+
+            var match = location.match(re);
+
+            if (match.length > 1){
+                return '/shared/' + match[1];
+            } else{
+                return '';
+            }
         } else {
             return '';
         }
@@ -136,16 +148,18 @@ window.App = Backbone.View.extend({
 window.Workspace = Backbone.Router.extend({
 
     routes: {
-        ":base/report": "statistics",
-        ":base/list":       "list",
-        ":base/add":        "add",
-        ":base/options":   "options",
-        ":base/export":     "export",
-        "report": "statistics",
-        "list":       "list",
-        "add":        "add",
-        "options":   "options",
-        "export":     "export"
+        ":base/report":         "statistics",
+        ":base/list":           "list",
+        ":base/add":            "add",
+        ":base/options":        "options",
+        ":base/export":         "export",
+        "report":               "statistics",
+        "list":                 "list",
+        "add":                  "add",
+        "options":              "options",
+        "export":               "export",
+        "shared/:base/report":  "statistics",
+        "shared/:base/list":    "list"
     },
 
     statistics: function(){
