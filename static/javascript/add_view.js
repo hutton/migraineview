@@ -35,7 +35,8 @@ window.AddView = window.MainViewBase.extend({
         "change #started":                     "datesChanged",
         "change #started-time":                "datesChanged",
         "change #ended":                       "datesChanged",
-        "change #ended-time":                  "datesChanged"
+        "change #ended-time":                  "datesChanged",
+        "input #add-comment-text":             "datesChanged"
     },
 
     el: $('#add-view'),
@@ -182,15 +183,12 @@ window.AddView = window.MainViewBase.extend({
         var end = this.endedEL.val();
         var end_time = this.endedTimeEL.val();
 
-        var started = new Date(start + "T" + started_time);
-        var ended = new Date(end + "T" + end_time);
-
         var started_send = start + " " + started_time;
         var ended_send = end + " " + end_time;
 
         var commentEL = this.commentEL.val();
 
-        if (started < ended) {
+        if (!this.singleUploadFormButtonEl.hasClass('pure-button-disabled')) {
             this.singleUploadFormButtonEl.addClass('pure-button-disabled');
 
             this.addMessageLabelEl.html("Saving attack...");
@@ -229,18 +227,26 @@ window.AddView = window.MainViewBase.extend({
     datesChanged: function(){
         var start = this.startedEL.val();
         var started_time = this.startedTimeEL.val();
-        var ended = this.endedEL.val();
+        var end = this.endedEL.val();
         var ended_time = this.endedTimeEL.val();
 
         var started = new Date(start + "T" + started_time);
-        var ended = new Date(ended + "T" + ended_time);
+        var ended = new Date(end + "T" + ended_time);
+
+        var text = this.commentEL.val();
+
+        if (text == "" || started >= ended) {
+            this.singleUploadFormButtonEl.addClass('pure-button-disabled');
+        } else {
+            this.singleUploadFormButtonEl.removeClass('pure-button-disabled');
+        }
 
         if (started >= ended){
             this.durationGroupEl.show();
-
-            this.durationValueEl.html("Select a valid duration");
             this.durationLabelEl.html("");
+            this.durationValueEl.html("Select a valid duration");
         } else {
+
             var timeDiff = Math.abs(ended.getTime() - started.getTime());
             var diffHours = timeDiff / (1000 * 60);
 

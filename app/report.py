@@ -27,6 +27,8 @@ class Report(webapp2.RequestHandler):
         else:
             response = {}
 
+        response['share_report'] = acc.share_report_key
+        response['share_report_and_list'] = acc.share_report_and_list_key
         response['logout_url'] = users.create_logout_url('/')
         response['show_logout'] = True
 
@@ -35,7 +37,7 @@ class Report(webapp2.RequestHandler):
 
     def get(self, object):
 
-        acc = account.Account.get_account()
+        acc = account.Account.get_or_create_account()
 
         if acc:
             self.show_main(acc)

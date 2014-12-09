@@ -24,6 +24,7 @@ from app.export import Export
 from app.migraine_statistics import Example
 from app.report import Report, ReportAdd
 from app.services import Stats, ClearAllEvents
+from app.shared import Shared
 from app.upload import Upload
 
 
@@ -57,5 +58,6 @@ app = webapp2.WSGIApplication([
                                   ('/service/clearAllEvents', ClearAllEvents),
                                   ('/export/migraine.*', Export),
                                   ('/report/add', ReportAdd),
+                                  ('/shared/.*', Shared),
                                   ('/(report|options|add|list)', Report)
                               ], debug=True)

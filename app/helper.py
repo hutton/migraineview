@@ -1,4 +1,6 @@
 import logging
+import random
+import string
 from types import *
 import datetime
 
@@ -160,3 +162,6 @@ def create_duration_text(seconds):
 
     return result.strip()
 
+
+def generate_string(length):
+    return ''.join(random.choice(string.ascii_lowercase + string.digits) for _ in range(length))
