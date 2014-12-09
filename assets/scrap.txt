@@ -1,4 +1,1 @@
-import random
-import string
-
-print ''.join(random.choice(string.ascii_lowercase + string.digits) for _ in range(10))
+Vote.all().filter('created_by =', randy).fetch(limit=10)
