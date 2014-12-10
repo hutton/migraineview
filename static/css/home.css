@@ -993,7 +993,6 @@ a.pure-button-selected {
   padding: 0.5em 0.6em;
   display: inline-block;
   border: 1px solid #ccc;
-  box-shadow: inset 0 1px 3px #ddd;
   border-radius: 4px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1007,7 +1006,6 @@ since IE8 won't execute CSS that contains a CSS3 selector.
   padding: 0.5em 0.6em;
   display: inline-block;
   border: 1px solid #ccc;
-  box-shadow: inset 0 1px 3px #ddd;
   border-radius: 4px;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -1750,16 +1748,8 @@ a.pure-button-primary {
  * This is the blue top section that appears on the page.
  */
 .splash-container {
-  background: #1f8dd6;
-  z-index: 1;
-  overflow: hidden;
-  /* The following styles are required for the "scroll-over" effect */
-
-  width: 100%;
-  height: 88%;
-  top: 0;
-  left: 0;
-  position: fixed !important;
+  background-position: center center;
+  background-size: cover;
   background: -moz-radial-gradient(center, ellipse cover, #1f8dd6 0%, #1b1d3d 86%, #040820 100%);
   background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #1f8dd6), color-stop(86%, #1b1d3d), color-stop(100%, #040820));
   background: -webkit-radial-gradient(center, ellipse cover, #1f8dd6 0%, #1b1d3d 86%, #040820 100%);
@@ -1806,8 +1796,7 @@ a.pure-button-primary {
 .content-wrapper {
   /* These styles are required for the "scroll-over" effect */
 
-  position: absolute;
-  top: 87%;
+  position: relative;
   width: 100%;
   min-height: 12%;
   z-index: 2;
@@ -3586,126 +3575,33 @@ a.pure-button-primary {
     display: inline-block;
   }
 }
-/*---------------------------------------------------
-    LESS Elements 0.9
-  ---------------------------------------------------
-    A set of useful LESS mixins
-    More info at: http://lesselements.com
-  ---------------------------------------------------*/
-.progress {
-  height: 2px;
-  background: rgba(0, 0, 0, 0.05);
-  margin: 10px auto;
-  width: 300px;
+.button-success,
+.button-error,
+.button-warning,
+.button-secondary {
+  color: white;
+  border-radius: 4px;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
 }
-.progress > span {
-  display: block;
-  height: 100%;
-  background: #4679BD;
-}
-.indefinite > span {
-  position: relative;
-  width: 10% !important;
-  -webkit-animation: myfirst linear 2s infinite;
-  animation: myfirst linear 2s infinite;
-}
-/* Standard syntax */
-@keyframes myfirst {
-  0% {
-    left: 0%;
-  }
-  50% {
-    left: 90%;
-  }
-  100% {
-    left: 0%;
-  }
-}
-@-webkit-keyframes myfirst {
-  0% {
-    left: 0%;
-  }
-  50% {
-    left: 90%;
-  }
-  100% {
-    left: 0%;
-  }
-}
-@font-face {
-  font-family: 'Open Sans Light';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Open Sans Light'), local('OpenSans-Light'), url('/static/fonts/opensans-light.wof') format('woff');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto Regular'), local('Roboto-Regular'), url('/static/fonts/roboto-normal.wof') format('woff');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 100;
-  src: local('Roboto Thin'), local('Roboto-Thin'), url('/static/fonts/roboto-thin.wof') format('woff');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Roboto Light'), local('Roboto-Thin'), url('/static/fonts/roboto-light.wof') format('woff');
-}
-/********************* Globals ********************/
-body {
-  font-family: 'Roboto', 'helvetica neue', helvetica, arial, sans-serif;
-  font-weight: 300;
-  line-height: 1.5em;
-  font-size: 16px;
-}
-html,
-button,
-input,
-select,
-textarea,
-.pure-g [class*="pure-u"] {
-  /* Set your content font stack here: */
+.button-success {
+  background: #1cb841;
+  /* this is a green */
 
-  font-family: 'Roboto', 'helvetica neue', helvetica, arial, sans-serif;
-  font-weight: 300;
 }
-.fixed-width {
-  max-width: 1024px;
-  margin: 0px auto;
+.button-error {
+  background: #ca3c3c;
+  /* this is a maroon */
+
 }
-.big-font {
-  font-size: 400%;
+.button-warning {
+  background: #df7514;
+  /* this is an orange */
+
 }
-.medium-font {
-  font-size: 150%;
-}
-.underline {
-  text-decoration: underline;
-}
-.right {
-  float: right;
-}
-.center {
-  text-align: center;
-}
-h1 {
-  font-size: 300%;
-}
-h2 {
-  font-size: 200%;
-}
-h3 {
-  font-size: 160%;
-  line-height: 1.8em;
-}
-h4 {
-  font-size: 120%;
-  line-height: 1.8em;
+.button-secondary {
+  background: #42b8dd;
+  /* this is a light blue */
+
 }
 /*---------------------------------------------------
     LESS Elements 0.9
@@ -3753,6 +3649,11 @@ h4 {
     left: 0%;
   }
 }
+input,
+select {
+  -webkit-appearance: none;
+  border-radius: 0;
+}
 @font-face {
   font-family: 'Open Sans Light';
   font-style: normal;
@@ -3795,8 +3696,8 @@ textarea,
   font-family: 'Roboto', 'helvetica neue', helvetica, arial, sans-serif;
   font-weight: 300;
 }
-.fixed-width {
-  max-width: 1024px;
+.narrow {
+  max-width: 600px;
   margin: 0px auto;
 }
 .big-font {
@@ -3815,10 +3716,10 @@ textarea,
   text-align: center;
 }
 h1 {
-  font-size: 300%;
+  font-size: 400%;
 }
 h2 {
-  font-size: 200%;
+  font-size: 300%;
 }
 h3 {
   font-size: 160%;
@@ -3828,17 +3729,32 @@ h4 {
   font-size: 120%;
   line-height: 1.8em;
 }
-#home-view * {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+.title {
+  margin: 80px 20px 80px 20px;
+  text-align: center;
+  font-weight: 100;
 }
-/*
- * -- BASE STYLES --
- * Most of these are inherited from Base, but I want to change a few.
- */
-#home-view {
-  line-height: 1.7em;
-  color: #7f8c8d;
-  font-size: 13px;
+.content p {
+  margin: 30px auto;
+  max-width: 600px;
+}
+.loading-message {
+  font-size: 160%;
+  margin-top: 100px;
+  text-align: center;
+  font-weight: 100;
+}
+.loading-message .progress {
+  width: 180px;
+}
+.scroll-container {
+  height: 100%;
+  overflow-y: scroll;
+  position: fixed;
+  left: 0px;
+  width: 100%;
+  margin-left: 220px;
+}
+.section-content {
+  margin-bottom: 100px;
 }

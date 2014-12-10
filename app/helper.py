@@ -72,8 +72,8 @@ def build_json_events(events):
     json_events = []
 
     for event in events:
-        json_events.append({'start': event['StartText'] if 'StartText' in event else create_start_text(event['Start']),
-                            'duration': event['DurationText'] if 'DurationText' in event else create_duration_text(event['Duration']),
+        json_events.append({'start': event['StartText'],
+                            'duration': event['DurationText'],
                             'comment': event['Comment']})
 
     return json_events

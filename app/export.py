@@ -18,7 +18,7 @@ def build_tab_lib_dataset(attacks):
 
     data.headers = ['Started', 'Duration', 'Description']
 
-    rows = [[str(attack.start_time), attack.duration_text, attack.comment] for attack in attacks]
+    rows = [[str(attack['Start']), attack['DurationText'], attack['Comment']] for attack in attacks]
 
     for row in rows:
         data.append(row)
@@ -46,11 +46,11 @@ def generate_ics_output(attacks, unique_id):
 
     for attack in attacks:
         event = icalendar.Event()
-        event.add('summary', attack.comment)
-        event.add('dtstart', attack.start_time)
-        event.add('dtend', attack.start_time + timedelta(seconds=attack.duration))
-        event.add('dtstamp', attack.start_time)
-        event['uid'] = attack.start_time.strftime("%Y%m%dT%H%M%S/") + unique_id + '@mxm.dk'
+        event.add('summary', attack['Comment'])
+        event.add('dtstart', attack['Start'])
+        event.add('dtend', attack['Start'] + timedelta(seconds=attack['Duration']))
+        event.add('dtstamp', attack['Start'])
+        event['uid'] = attack['Start'].strftime("%Y%m%dT%H%M%S/") + unique_id + '@mxm.dk'
 
         event.add('priority', 5)
 
@@ -77,7 +77,7 @@ class Export(webapp2.RequestHandler):
             acc = Account.get_account()
 
             if acc:
-                attacks = acc.get_attacks()
+                attacks = acc.get_attacks_as_dict()
                 uid = acc.share_report_and_list_key
 
         if attacks:

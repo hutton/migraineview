@@ -1,5 +1,6 @@
 import os
 import webapp2
+from app.helper import create_start_text, create_duration_text
 from app.migraine_statistics import json_to_events, generate_statistics_from_events
 from google.appengine._internal.django.utils import simplejson
 from google.appengine.ext.webapp import template
@@ -15,7 +16,16 @@ class Example(webapp2.RequestHandler):
 
         file_content = f.read()
 
-        return json_to_events(file_content)
+        events = json_to_events(file_content)
+
+        for event in events:
+            if 'StartText' not in event:
+                event['StartText'] = create_start_text(event['Start'])
+
+            if 'DurationText' not in event:
+                event['DurationText'] = create_duration_text(event['Duration'])
+
+        return events
 
     def get(self):
 

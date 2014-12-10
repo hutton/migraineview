@@ -26,11 +26,13 @@
                 <a class="pure-menu-heading" href="">Migraine Report</a>
 
                 <ul>
-                    <li class="pure-menu-selected"><a href="#">Home</a></li>
-                    <li><a href="/example/report">Tour</a></li>
                     {% if user %}
+                    <li><a href="/report">Your Report</a></li>
+                    <li><a href="/about">About</a></li>
                     <li><a href="{{ logout_url }}">Log out ({{ user.name }})</a></li>
                     {% else %}
+                    <li><a href="/example/report">Tour</a></li>
+                    <li><a href="/about">About</a></li>
                     <li><a href="{{ login_url }}">Log in</a></li>
                     {% endif %}
                 </ul>
@@ -158,6 +160,25 @@
 
         </div>
     </div>
+
+    <script src="/static/javascript/tp/jquery-2.1.1.js" language="javascript" type="text/javascript"></script>
+    <script>
+
+        function setDimensions(){
+          var windowsHeight = $(window).height();
+          $('.splash-container').css('height', windowsHeight + 'px');
+        }
+
+        $(document).ready(function(){
+          setDimensions();
+
+          //when resizing the site, we adjust the heights of the sections
+          $(window).resize(function() {
+            setDimensions();
+          });
+        });
+
+    </script>
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
