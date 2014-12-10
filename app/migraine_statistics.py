@@ -1,9 +1,6 @@
 import string
 import sys
 
-from google.appengine.ext.webapp import template
-
-
 sys.path.insert(0, 'libs')
 
 import icalendar
@@ -18,7 +15,7 @@ import os
 import datetime
 import webapp2
 import json
-from google.appengine._internal.django.utils import simplejson
+
 
 
 def parse_date(param):
@@ -277,20 +274,4 @@ def ics_to_events(file_content):
     cal = icalendar.Calendar.from_ical(file_content)
 
     return process_calendar(cal)
-
-
-class Example(webapp2.RequestHandler):
-    def get(self):
-        f = open('migraines.json')
-
-        file_content = f.read()
-
-        events = json_to_events(file_content)
-
-        response = generate_statistics_from_events(events)
-
-        response['show_logout'] = False
-
-        path = os.path.join(os.path.join(os.path.dirname(__file__), 'html'), '../../templates/main.html')
-        self.response.out.write(template.render(path, {'data': simplejson.dumps(response)}))
 

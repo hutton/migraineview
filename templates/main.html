@@ -347,19 +347,19 @@
                         <div class="section-content">
                             <p>Export all your migraine data with a single click.</p>
                             <div id="settings-export-link-container">
-                                <a href="/export/migraines.xlsx" class="file-type green file-type-jump">
+                                <a href="/export/{% if example %}example/{% endif %}migraines.xlsx" class="file-type green file-type-jump">
                                     <div>
                                         <span></span>
                                         <p>XLSX</p>
                                     </div>
                                 </a>
-                                <a href="/export/migraines.csv" class="file-type blue file-type-jump">
+                                <a href="/export/{% if example %}example/{% endif %}migraines.csv" class="file-type blue file-type-jump">
                                     <div>
                                         <span></span>
                                         <p>CSV</p>
                                     </div>
                                 </a>
-                                <a href="/export/migraines.ics" class="file-type red file-type-jump">
+                                <a href="/export/{% if example %}example/{% endif %}migraines.ics" class="file-type red file-type-jump">
                                     <div>
                                         <span></span>
                                         <p>ICS</p>
