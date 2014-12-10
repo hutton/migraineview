@@ -13,5 +13,7 @@
 
 	Easy Export
 
+	Search
+
 - Create account (Get Started)
-	
+	Click here to login with Google and create an account.
