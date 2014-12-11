@@ -1,8 +1,156 @@
 @import "reset.less";
 @import "./tp/pure.css.less";
-@import "./tp/marketing.css.less";
 @import "./tp/font-awesome.min.css.less";
 
 @import "pure-overrides.less";
 
 @import "common.less";
+
+
+body{
+    font-size: 12px;
+}
+
+/********* MENU STYLES  ***********/
+.home-menu {
+    padding: 0.5em;
+    text-align: center;
+    box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
+}
+.home-menu.pure-menu-open {
+    background: rgba(45, 62, 80, 0.75);
+}
+.pure-menu.pure-menu-open.pure-menu-fixed {
+    /* Fixed menus normally have a border at the bottom. */
+    border-bottom: none;
+    /* I need a higher z-index here because of the scroll-over effect. */
+    z-index: 4;
+}
+
+.home-menu .pure-menu-heading {
+    color: white;
+    font-weight: 100;
+    font-size: 120%;
+}
+
+.home-menu .pure-menu-selected a {
+    color: white;
+}
+
+.home-menu a {
+    color: #6FBEF3;
+}
+.home-menu li a:hover,
+.home-menu li a:focus {
+    background: none;
+    border: none;
+    color: #AECFE5;
+}
+
+/*
+ * -- SPLASH STYLES --
+ * This is the blue top section that appears on the page.
+ */
+
+@splash-start: #1f8dd6;
+@splash-middle: #1b1d3d;
+@splash-end: #040820;
+
+.splash-container {
+	background-position: center center;
+	background-size: cover;
+
+    background: -moz-radial-gradient(center, ellipse cover, @splash-start 0%, @splash-middle 86%, @splash-end 100%);
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,@splash-start), color-stop(86%,@splash-middle), color-stop(100%,@splash-end));
+    background: -webkit-radial-gradient(center, ellipse cover, @splash-start 0%,@splash-middle 86%,@splash-end 100%);
+    background: -o-radial-gradient(center, ellipse cover, @splash-start 0%,@splash-middle 86%,@splash-end 100%);
+    background: -ms-radial-gradient(center, ellipse cover, @splash-start 0%,@splash-middle 86%,@splash-end 100%);
+    background: radial-gradient(ellipse at center, @splash-start 0%,@splash-middle 86%,@splash-end 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@splash-start', endColorstr='@splash-end',GradientType=1 );
+}
+
+.splash {
+    /* absolute center .splash within .splash-container */
+    width: 80%;
+    height: 50%;
+    margin: auto;
+    position: absolute;
+    top: 100px; left: 0; bottom: 0; right: 0;
+    text-align: center;}
+
+/* This is the main heading that appears on the blue section */
+.splash-head {
+    font-size: 30px;
+    font-weight: bold;
+    color: white;
+    /*border: 3px solid white;*/
+    padding: 1em 1.6em;
+    font-weight: 100;
+    border-radius: 5px;
+    line-height: 1em;
+}
+
+/* This is the subheading that appears on the blue section */
+.splash-subhead {
+    color: white;
+    letter-spacing: 0.05em;
+    opacity: 0.8;
+}
+
+/* Content */
+.content{
+    font-size: 14px;
+    padding: 1em;
+}
+
+.l-box > div{
+    margin: 2em;
+}
+
+
+.footer {
+    background: #111;
+}
+
+/*
+ * -- TABLET (AND UP) MEDIA QUERIES --
+ * On tablets and other medium-sized devices, we want to customize some
+ * of the mobile styles.
+ */
+@media (min-width: 48em) {
+
+    body{
+        font-size: 14px;
+    }
+
+    /* We want to give the content area some more padding */
+    .content {
+        padding: 2em;
+    }
+
+    /* We can align the menu header to the left, but float the
+    menu items to the right. */
+    .home-menu {
+        text-align: left;
+    }
+
+    .home-menu ul {
+        float: right;
+    }
+}
+
+/*
+ * -- DESKTOP (AND UP) MEDIA QUERIES --
+ * On desktops and other large devices, we want to over-ride some
+ * of the mobile and tablet styles.
+ */
+@media (min-width: 78em) {
+    body{
+        font-size: 14px;
+    }
+    /* We increase the header font size even more */
+    .splash-head {
+        font-size: 500%;
+    }
+}
+
