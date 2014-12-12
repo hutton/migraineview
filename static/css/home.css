@@ -3369,6 +3369,18 @@ striping:
   /* this is a light blue */
 
 }
+.button-xsmall {
+  font-size: 70%;
+}
+.button-small {
+  font-size: 85%;
+}
+.button-large {
+  font-size: 110%;
+}
+.button-xlarge {
+  font-size: 125%;
+}
 /*---------------------------------------------------
     LESS Elements 0.9
   ---------------------------------------------------
@@ -3599,7 +3611,7 @@ body {
   padding: 1em 1.6em;
   font-weight: 100;
   border-radius: 5px;
-  line-height: 1em;
+  line-height: 1.2em;
 }
 /* This is the subheading that appears on the blue section */
 .splash-subhead {
@@ -3615,8 +3627,37 @@ body {
 .l-box > div {
   margin: 2em;
 }
+/* This is the class used for the main content headers (<h2>) */
+.content-head {
+  font-weight: 100;
+  /*text-transform: uppercase;*/
+
+  letter-spacing: 0.1em;
+  margin: 2em 0 1em;
+  line-height: 1.2em;
+}
+/* This is a modifier class used when the content-head is inside a ribbon */
+.content-head-ribbon {
+  color: white;
+}
+/* This is the class used for the content sub-headers (<h3>) */
+.content-subhead {
+  color: #1f8dd6;
+}
+.content-subhead i {
+  margin-right: 7px;
+}
+/* This is the class used for the dark-background areas. */
+.ribbon {
+  background: #2d3e50;
+  color: #aaa;
+}
 .footer {
   background: #111;
+  color: #555555;
+  padding: 1em;
+  text-align: center;
+  font-size: 80%;
 }
 /*
  * -- TABLET (AND UP) MEDIA QUERIES --

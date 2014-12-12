@@ -3891,6 +3891,18 @@ Hides the menu at `48em`, but modify this based on your app's needs.
   /* this is a light blue */
 
 }
+.button-xsmall {
+  font-size: 70%;
+}
+.button-small {
+  font-size: 85%;
+}
+.button-large {
+  font-size: 110%;
+}
+.button-xlarge {
+  font-size: 125%;
+}
 /*---------------------------------------------------
     LESS Elements 0.9
   ---------------------------------------------------
