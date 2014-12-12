@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4ea88c3-5bc7-4b67-b3fb-d2fa76a7d74d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/home.css" afterPath="$PROJECT_DIR$/static/css/home.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/home.html" afterPath="$PROJECT_DIR$/templates/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/home.less" afterPath="$PROJECT_DIR$/static/css/home.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/landing.txt" afterPath="$PROJECT_DIR$/assets/landing.txt" />
     </list>
     <ignored path="migraineview.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -115,23 +113,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="landing.txt" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="landing.txt" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/landing.txt">
           <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.333333" vertical-offset="0" max-vertical-offset="375">
-              <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.6028369" vertical-offset="0" max-vertical-offset="423">
+              <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.less" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="home.less" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/css/home.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3898305" vertical-offset="1744" max-vertical-offset="2430">
+            <state vertical-scroll-proportion="-6.7083335" vertical-offset="1744" max-vertical-offset="2430">
               <caret line="127" column="21" selection-start-line="127" selection-start-column="8" selection-end-line="127" selection-end-column="21" />
               <folding />
             </state>
@@ -151,7 +149,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/assets/pure-layout-side-menu/css/layouts/side-menu.css" />
         <option value="$PROJECT_DIR$/static/css/tp/side-menu.css" />
         <option value="$PROJECT_DIR$/static/css/tp/marketing.css" />
         <option value="$PROJECT_DIR$/static/css/tp/font-awesome.min.css.less" />
@@ -202,6 +199,7 @@
         <option value="$PROJECT_DIR$/static/css/tp/marketing.css.less" />
         <option value="$PROJECT_DIR$/templates/home.html" />
         <option value="$PROJECT_DIR$/static/css/home.less" />
+        <option value="$PROJECT_DIR$/assets/landing.txt" />
       </list>
     </option>
   </component>
@@ -1062,17 +1060,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/landing.txt">
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.333333" vertical-offset="0" max-vertical-offset="375">
-          <caret line="15" column="4" selection-start-line="15" selection-start-column="4" selection-end-line="15" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.06" vertical-offset="722" max-vertical-offset="2145">
@@ -1094,8 +1081,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/home.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3898305" vertical-offset="1744" max-vertical-offset="2430">
+        <state vertical-scroll-proportion="-6.7083335" vertical-offset="1744" max-vertical-offset="2430">
           <caret line="127" column="21" selection-start-line="127" selection-start-column="8" selection-end-line="127" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/landing.txt">
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6028369" vertical-offset="0" max-vertical-offset="423">
+          <caret line="17" column="10" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
           <folding />
         </state>
       </provider>

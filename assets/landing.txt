@@ -2,7 +2,9 @@
 	About, Tour, Login
 	About, Your Report, Logout
 
-- Hero text ""
+- Hero text "See beautiful "
+"Insightful reporting into your migraines."
+"Easily log, search and share your migraine data
 
 - Features:  
 	Beautiful Reporting
