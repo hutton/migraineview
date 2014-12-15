@@ -1,28 +1,71 @@
-div{
-    background: linear-gradient(136deg, #91b4ab, #7881ad, #ad8d78);
-    background-size: 600% 600%;
-    
-    -webkit-animation: AnimationName 10s ease infinite;
-    -moz-animation: AnimationName 10s ease infinite;
-    animation: AnimationName 10s ease infinite;
-    
-    height: 100%;
-    width: 100%;
-    position: absolute;
+<div class="cube" id="logo">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+#logo{
+    position: relative;
+    width: 24px;
+    height: 24px;
+
+    transition-duration: 1s;
+    transform: rotate(0deg) scale(0.8);
 }
 
-@-webkit-keyframes AnimationName {
-    0%{background-position:0% 92%}
-    50%{background-position:100% 9%}
-    100%{background-position:0% 92%}
+#logo > div{
+    border: 2px #0094FD solid;
+    width: 8px;
+    height: 8px;
+    position: absolute;
+    transition-duration: 1s;
 }
-@-moz-keyframes AnimationName {
-    0%{background-position:0% 92%}
-    50%{background-position:100% 9%}
-    100%{background-position:0% 92%}
+
+#logo > div:nth-child(1){
+    border-top-style: none;
+    border-left-style: none;
 }
-@keyframes AnimationName { 
-    0%{background-position:0% 92%}
-    50%{background-position:100% 9%}
-    100%{background-position:0% 92%}
+
+#logo > div:nth-child(2){
+    left: 14px;
+
+    border-top-style: none;
+    border-right-style: none;
 }
+
+#logo > div:nth-child(3){
+    top: 14px;
+    
+    border-bottom-style: none;
+    border-left-style: none;
+}
+
+#logo > div:nth-child(4){
+    top: 14px;
+    left: 14px;
+
+    border-bottom-style: none;
+    border-right-style: none;
+}
+
+#logo:hover{
+    transform: rotate(360deg) scale(0.8);
+}
+
+.cube:hover > div:nth-child(1){
+    transform: translate(10px,10px);
+}
+
+.cube:hover > div:nth-child(2){
+    transform: translate(-10px,10px);
+}
+
+.cube:hover > div:nth-child(3){
+    transform: translate(10px,-10px);
+}
+
+.cube:hover > div:nth-child(4){
+    transform: translate(-10px,-10px);
+}
+ 
