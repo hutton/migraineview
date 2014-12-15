@@ -2,14 +2,15 @@
 	About, Tour, Login
 	About, Your Report, Logout
 
-- Hero text "See beautiful "
-"Insightful reporting into your migraines."
-"Easily log, search and share your migraine data
+- Hero text "Simple Migraine Dairy"
+"Log and visualise your migraines"
 
 - Features:  
 	Beautiful Reporting
+	See patterns and irregularites of when your migraines happen
 
 	Easy to get started
+	Import your exisiting migraines from spreadsheets (.xls, .xlsx) or calendar export (.ics).
 
 	Mobile Ready
 
