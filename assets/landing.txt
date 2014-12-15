@@ -12,23 +12,23 @@
 
 - Features:  
 	Reporting
-	See beautfully visualisations of your migraine data, immediately see patterns of migraines frequency.
+	See beautifully visualisations of your migraine data, immediately see patterns of migraines frequency.
 
 	Get Started
-	Import exisiting migraine data from spreadsheets (.xls, .xlsx, .csv) or calendar exports (.ics).
+	Import existing migraine data from spreadsheets (.xls, .xlsx, .csv) or calendar exports (.ics).
 
 	Mobile Ready
 	Whether using your phone, tablet or desktop Migraine.Report looks great and works everywhere.
 
 	Export
-	You can always export your migraine data as a spreadsheet or calendar export with a single click.
+	You can always export your migraine data as a spreadsheet or calendar with a single click.
 	
 	Search
 	Instantly search all your migraine data to narrow down attacks with certain key words.
 	
 	Sharing
-	Share read-only versions of your migraine data visulisations with health professionals with your own private links.
-	
+	Share read-only versions of your migraine data with health professionals with your own private links.
+
 
 - Create account (Get Started)
 	Click here to login with Google and create an account.
