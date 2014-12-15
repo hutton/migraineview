@@ -7,12 +7,13 @@
 "Simple Migraine Logging"
 "Simple Migraine Dairy"
 "Visualise Your Migraines"
-"Log And Visualise Your Migraines"
+*"Log And Visualise Your Migraines"
+"
 "Log Your Migraines"
 
 - Features:  
 	Reporting
-	See beautifully visualisations of your migraine data, immediately see patterns of migraines frequency.
+	View beautifully visualisations of your migraine data, immediately see patterns when attacks occur.
 
 	Get Started
 	Import existing migraine data from spreadsheets (.xls, .xlsx, .csv) or calendar exports (.ics).
