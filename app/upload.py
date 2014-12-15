@@ -12,7 +12,7 @@ __author__ = 'simonhutton'
 class Upload(webapp2.RequestHandler):
     def post(self):
 
-        account = Account.get_or_create_account()
+        account = Account.get_account()
 
         if account:
             if len(self.request.params.multi.dicts) > 1 and 'file' in self.request.params.multi.dicts[1]:

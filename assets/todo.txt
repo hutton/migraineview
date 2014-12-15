@@ -1,7 +1,9 @@
-Get all add tab working
-Add share links
-Add .ics export
 Landing page
+Logo
+Help banners
+Example banners
+About page
+
 
 Fix upload tz problem
 Upload of xlsx
@@ -17,6 +19,9 @@ Distribution by Quarter (Polar Area chart next to month frequency)
 
 Done
 ====
+Get all add tab working
+Add share links
+Add .ics export
 Better format event grid
 Make logout work
 Hide logout for example

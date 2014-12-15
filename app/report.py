@@ -38,7 +38,7 @@ class Report(webapp2.RequestHandler):
 
     def get(self, object):
 
-        acc = account.Account.get_or_create_account()
+        acc = account.Account.get_account()
 
         if acc:
             self.show_main(acc)

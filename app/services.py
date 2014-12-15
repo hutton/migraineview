@@ -10,7 +10,7 @@ __author__ = 'simonhutton'
 
 class Stats(webapp2.RequestHandler):
     def get(self):
-        acc = account.Account.get_or_create_account()
+        acc = account.Account.get_account()
 
         if acc:
             attacks = acc.get_attacks_as_dict()
@@ -25,11 +25,13 @@ class Stats(webapp2.RequestHandler):
 
 class ClearAllEvents(webapp2.RequestHandler):
     def get(self):
-        acc = account.Account.get_or_create_account()
+        acc = account.Account.get_account()
 
         if acc:
             attacks = acc.get_attacks()
 
             db.delete(attacks)
 
-        self.response.out.write(simplejson.dumps({}))
+            self.response.out.write(simplejson.dumps({}))
+        else:
+            self.redirect('/')

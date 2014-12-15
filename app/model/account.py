@@ -12,6 +12,8 @@ class Account(db.Model):
     share_report_key = db.StringProperty()
     share_report_and_list_key = db.StringProperty()
 
+    nickname = ""
+
     @staticmethod
     def get_or_create_account():
         user = users.get_current_user()
@@ -30,6 +32,8 @@ class Account(db.Model):
 
                 db.put(new_account)
 
+                new_account.nickname = user.nickname()
+
                 return new_account
 
         return None
@@ -42,6 +46,8 @@ class Account(db.Model):
             query = Account.gql("WHERE user_id = :user_id", user_id=user.user_id())
             accounts = query.fetch(1)
             if accounts:
+                accounts[0].nickname = user.nickname()
+
                 return accounts[0]
             else:
                 return None
@@ -69,6 +75,7 @@ class Account(db.Model):
             return accounts[0]
         else:
             return None
+
 
     def get_attacks(self):
         query = db.Query(Attack)

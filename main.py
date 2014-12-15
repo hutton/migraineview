@@ -21,6 +21,7 @@ from google.appengine.ext.webapp import template
 import webapp2
 from app.example import Example
 from app.export import Export
+from app.model.account import Account
 
 from app.report import Report, ReportAdd
 from app.services import Stats, ClearAllEvents
@@ -31,14 +32,16 @@ from app.upload import Upload
 class Main(webapp2.RequestHandler):
     def get(self):
 
-        user = users.get_current_user()
+        user = Account.get_account()
 
         if user:
-            template_values = {'user': {'name': user.nickname()},
+            template_values = {'user': {'name': user.nickname},
                                'logout_url': users.create_logout_url('/')}
         else:
             template_values = {'user': None,
                                'login_url': users.create_login_url('/report')}
+
+        template_values['login_create_url'] = users.create_login_url('/create')
 
         path = os.path.join(os.path.join(os.path.dirname(__file__), 'html'), '../templates/home.html')
         self.response.out.write(template.render(path, template_values))
@@ -47,6 +50,17 @@ class Main(webapp2.RequestHandler):
 class Uploaded(webapp2.RequestHandler):
     def get(self):
         self.redirect('/')
+
+
+class CreateAccount(webapp2.RequestHandler):
+    def get(self):
+
+        acc = Account.get_or_create_account()
+
+        if acc:
+            self.redirect('/add')
+        else:
+            self.redirect('/')
 
 
 app = webapp2.WSGIApplication([
@@ -59,5 +73,6 @@ app = webapp2.WSGIApplication([
                                   ('/export/.*', Export),
                                   ('/report/add', ReportAdd),
                                   ('/shared/.*', Shared),
+                                  ('/create', CreateAccount),
                                   ('/(report|options|add|list)', Report)
                               ], debug=True)
