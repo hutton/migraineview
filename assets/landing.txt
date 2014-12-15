@@ -2,24 +2,30 @@
 	About, Tour, Login
 	About, Your Report, Logout
 
-- Hero text "Simple Migraine Dairy"
-"Beautifully Simple Migraine Dairy"
-"Log and visualise your migraines"
+- Hero text 
+"Simple Migraine Log"
+"Simple Migraine Logging"
+"Simple Migraine Dairy"
+"Visualise Your Migraines"
+"Log And Visualise Your Migraines"
+"Log Your Migraines"
 
 - Features:  
 	Beautiful Reporting
-	See patterns and irregularites of when your migraines happen
+	Migraine.Report shows you beautfully simple visualisations of your migraine data.  Immediately see patterns of when your migraines are occuring.
 
 	Easy to get started
-	Import your exisiting migraines from spreadsheets (.xls, .xlsx) or calendar export (.ics) and 
+	Import exisiting migraine data from spreadsheets (.xls, .xlsx, .csv) or calendar exports (.ics).  Log indiviual attacks with our simple form.
 
 	Mobile Ready
-	
+	Whether using your phone, tablet or desktop Migraine.Report looks great and works everywhere.
 
 	Easy Export
-
 	
+
 	Search
+	
+	
 
 - Create account (Get Started)
 	Click here to login with Google and create an account.
