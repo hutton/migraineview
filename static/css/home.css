@@ -3341,6 +3341,9 @@ striping:
     display: inline-block;
   }
 }
+.pure-button {
+  border-radius: 4px;
+}
 .button-success,
 .button-error,
 .button-warning,
@@ -3536,10 +3539,112 @@ h4 {
 .section-content {
   margin-bottom: 100px;
 }
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+.logo {
+  display: inline-block;
+  position: relative;
+  width: 24px;
+  height: 24px;
+  -moz-transition-duration: 1s;
+  -webkit-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  transition-duration: 1s;
+  -webkit-transform: rotate(0deg) scale(0.7);
+  -moz-transform: rotate(0deg) scale(0.7);
+  -o-transform: rotate(0deg) scale(0.7);
+  -ms-transform: rotate(0deg) scale(0.7);
+  transform: rotate(0deg) scale(0.7);
+}
+.logo > div {
+  border: 2px #6FBEF3 solid;
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  -moz-transition-duration: 1s;
+  -webkit-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  transition-duration: 1s;
+}
+.logo > div:nth-child(1) {
+  border-top-style: none;
+  border-left-style: none;
+}
+.logo > div:nth-child(2) {
+  left: 14px;
+  border-top-style: none;
+  border-right-style: none;
+}
+.logo > div:nth-child(3) {
+  top: 14px;
+  border-bottom-style: none;
+  border-left-style: none;
+}
+.logo > div:nth-child(4) {
+  top: 14px;
+  left: 14px;
+  border-bottom-style: none;
+  border-right-style: none;
+}
+.logo:hover {
+  -webkit-transform: rotate(360deg) scale(0.8);
+  -moz-transform: rotate(360deg) scale(0.8);
+  -o-transform: rotate(360deg) scale(0.8);
+  -ms-transform: rotate(360deg) scale(0.8);
+  transform: rotate(360deg) scale(0.8);
+}
+.cube:hover > div:nth-child(1) {
+  -webkit-transform: translate(10px, 10px);
+  -moz-transform: translate(10px, 10px);
+  -o-transform: translate(10px, 10px);
+  -ms-transform: translate(10px, 10px);
+  transform: translate(10px, 10px);
+}
+.cube:hover > div:nth-child(2) {
+  -webkit-transform: translate(-10px, 10px);
+  -moz-transform: translate(-10px, 10px);
+  -o-transform: translate(-10px, 10px);
+  -ms-transform: translate(-10px, 10px);
+  transform: translate(-10px, 10px);
+}
+.cube:hover > div:nth-child(3) {
+  -webkit-transform: translate(10px, -10px);
+  -moz-transform: translate(10px, -10px);
+  -o-transform: translate(10px, -10px);
+  -ms-transform: translate(10px, -10px);
+  transform: translate(10px, -10px);
+}
+.cube:hover > div:nth-child(4) {
+  -webkit-transform: translate(-10px, -10px);
+  -moz-transform: translate(-10px, -10px);
+  -o-transform: translate(-10px, -10px);
+  -ms-transform: translate(-10px, -10px);
+  transform: translate(-10px, -10px);
+}
 body {
   font-size: 12px;
 }
 /********* MENU STYLES  ***********/
+#header-home-link {
+  position: relative;
+}
+#header-home-link > span {
+  margin-left: 27px;
+}
+#header-logo {
+  position: absolute;
+  top: 4px;
+}
+@media (min-width: 48em) {
+  #header-logo {
+    position: absolute;
+    top: 6px;
+  }
+}
 .home-menu {
   padding: 0.5em;
   text-align: center;
@@ -3580,19 +3685,13 @@ body {
 .splash-container {
   background-position: center center;
   background-size: cover;
-  background: -moz-radial-gradient(center, ellipse cover, #1f8dd6 0%, #1b1d3d 86%, #040820 100%);
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, #1f8dd6), color-stop(86%, #1b1d3d), color-stop(100%, #040820));
-  background: -webkit-radial-gradient(center, ellipse cover, #1f8dd6 0%, #1b1d3d 86%, #040820 100%);
-  background: -o-radial-gradient(center, ellipse cover, #1f8dd6 0%, #1b1d3d 86%, #040820 100%);
-  background: -ms-radial-gradient(center, ellipse cover, #1f8dd6 0%, #1b1d3d 86%, #040820 100%);
-  background: radial-gradient(ellipse at center, #1f8dd6 0%, #1b1d3d 86%, #040820 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@splash-start', endColorstr='@splash-end', GradientType=1);
+  border-bottom: 1px solid #888;
 }
 .splash {
   /* absolute center .splash within .splash-container */
 
   width: 80%;
-  height: 50%;
+  height: 80%;
   margin: auto;
   position: absolute;
   top: 100px;
@@ -3603,9 +3702,9 @@ body {
 }
 /* This is the main heading that appears on the blue section */
 .splash-head {
-  font-size: 30px;
+  font-size: 40px;
   font-weight: bold;
-  color: white;
+  color: #555;
   /*border: 3px solid white;*/
 
   padding: 1em 1.6em;
@@ -3615,9 +3714,10 @@ body {
 }
 /* This is the subheading that appears on the blue section */
 .splash-subhead {
-  color: white;
+  color: #222;
   letter-spacing: 0.05em;
   opacity: 0.8;
+  font-size: 200%;
 }
 /* Content */
 .content {

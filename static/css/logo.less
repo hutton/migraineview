@@ -1,0 +1,68 @@
+@import "elements.less";
+
+.logo{
+    display: inline-block;
+    position: relative;
+    width: 24px;
+    height: 24px;
+
+    .transition-duration(1s);
+    .transform(rotate(0deg) scale(0.7));
+}
+
+.logo > div{
+    border: 2px #6FBEF3 solid;
+    width: 8px;
+    height: 8px;
+    position: absolute;
+
+    .transition-duration(1s);
+}
+
+.logo > div:nth-child(1){
+    border-top-style: none;
+    border-left-style: none;
+}
+
+.logo > div:nth-child(2){
+    left: 14px;
+
+    border-top-style: none;
+    border-right-style: none;
+}
+
+.logo > div:nth-child(3){
+    top: 14px;
+
+    border-bottom-style: none;
+    border-left-style: none;
+}
+
+.logo > div:nth-child(4){
+    top: 14px;
+    left: 14px;
+
+    border-bottom-style: none;
+    border-right-style: none;
+}
+
+.logo:hover{
+    .transform(rotate(360deg) scale(0.8));
+}
+
+.cube:hover > div:nth-child(1){
+    .transform(translate(10px,10px));
+}
+
+.cube:hover > div:nth-child(2){
+    .transform(translate(-10px,10px));
+}
+
+.cube:hover > div:nth-child(3){
+    .transform(translate(10px,-10px));
+}
+
+.cube:hover > div:nth-child(4){
+    .transform(translate(-10px,-10px));
+}
+

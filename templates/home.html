@@ -6,6 +6,11 @@
 
     <link type="text/css" rel="stylesheet" href="/static/css/home.css" />
 
+    <meta name="description" content="Simple free migraine dairy.  Log your migraines and see beautiful reports .  Import from Excel o">
+    <meta name="keywords"
+          content="migraine dairy, migraine calendar, log migraines, migraine report, log migraine">
+
+
     <!--[if lte IE 8]>
         <link rel="stylesheet" href="/static/css/tp/grids-responsive-old-ie-min.css">
     <![endif]-->
@@ -23,7 +28,17 @@
     <div id="home-view">
         <div class="header">
             <div class="home-menu pure-menu pure-menu-open pure-menu-horizontal pure-menu-fixed">
-                <a class="pure-menu-heading" href="">Migraine Report</a>
+                <span id="header-home-link" class="pure-menu-heading">
+                    <div id="header-logo" class="cube logo">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <span>
+                    Migraine Report
+                    </span>
+                </span>
 
                 <ul>
                     {% if user %}
@@ -41,13 +56,13 @@
 
         <div class="splash-container">
             <div class="splash">
-                <h1 class="splash-head">Visualise Your Migraine Data</h1>
+                <h1 class="splash-head">Simple Migraine Dairy</h1>
                 <p class="splash-subhead">
-                    Log and visualise data about your migraine to see the patterns.
+                    Log and visualise data about your migraine.
                 </p>
                 <p>
-                    <a href="/example/report" class="pure-button pure-button-primary">See Example</a>
-                    <a href="#started" class="pure-button button-error">Get Started</a>
+                    <a href="/example/report" class="button-xlarge pure-button pure-button-primary">See Example</a>
+                    <a href="#started" class="button-xlarge pure-button button-error">Get Started</a>
                 </p>
             </div>
         </div>
@@ -57,51 +72,77 @@
                 <h2 class="content-head center">Features.</h2>
 
                 <div class="pure-g">
-                    <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-                        <div>
-                            <h3 class="content-subhead">
-                                <i class="fa fa-th-large"></i>
-                                Simple To Get Started
-                            </h3>
-                            <p>
-                                Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                    <div class="l-box pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
                         <div>
                             <h3 class="content-subhead">
                                 <i class="fa fa-bar-chart"></i>
-                                Beautiful Reporting
+                                Reporting
                             </h3>
                             <p>
-                                Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                                View beautifully visualisations of your migraine data, immediately see patterns when attacks occur.
                             </p>
                         </div>
                     </div>
-                    <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
+                    <div class="l-box pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+                        <div>
+                            <h3 class="content-subhead">
+                                <i class="fa fa-th-large"></i>
+                                Get Started
+                            </h3>
+                            <p>
+                                Import existing migraine data from spreadsheets (.xls, .xlsx, .csv) or calendar exports (.ics).
+                            </p>
+                        </div>
+                    </div>
+                    <div class="l-box pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
                         <div>
                             <h3 class="content-subhead">
                                 <i class="fa fa-mobile"></i>
                                 Mobile Ready
                             </h3>
                             <p>
-                                Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-                        <div>
-                            <h3 class="content-subhead">
-                                <i class="fa fa-search"></i>
-                                Instant Search
-                            </h3>
-                            <p>
-                                Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
+                                Whether using your phone, tablet or desktop Migraine.Report looks great and works everywhere.
                             </p>
                         </div>
                     </div>
                 </div>
+
+                <div class="pure-g">
+                    <div class="l-box pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+                        <div>
+                            <h3 class="content-subhead">
+                                <i class="fa fa-file-excel-o"></i>
+                                Export
+                            </h3>
+                            <p>
+                                You can always export your migraine data as a spreadsheet or calendar with a single click.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="l-box pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+                        <div>
+                            <h3 class="content-subhead">
+                                <i class="fa fa-search"></i>
+                                Search
+                            </h3>
+                            <p>
+                                Instantly search all your migraine data to narrow down attacks with certain key words.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="l-box pure-u-1 pure-u-md-1-3 pure-u-lg-1-3">
+                        <div>
+                            <h3 class="content-subhead">
+                                <i class="fa fa-share-square-o"></i>
+                                Share
+                            </h3>
+                            <p>
+                                Share read-only versions of your migraine data with health professionals with your own private links.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
             <div class="ribbon content">
@@ -111,6 +152,10 @@
                 <div class="pure-g">
                     <div class="l-box-lrg pure-u-1 pure-u-md-2-5 center">
                         <a href="{{ login_create_url }}" class="button-xlarge button-error pure-button">Click to login with Google</a>
+
+                        <div class="center">
+                        <a href="#">Not got a Google account.</a>
+                        </div>
                     </div>
 
                     <div class="l-box-lrg pure-u-1 pure-u-md-3-5">

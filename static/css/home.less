@@ -6,12 +6,34 @@
 
 @import "common.less";
 
+@import "logo.less";
+
 
 body{
     font-size: 12px;
 }
 
 /********* MENU STYLES  ***********/
+#header-home-link{
+    position: relative;
+}
+
+#header-home-link > span{
+    margin-left: 27px;
+}
+
+#header-logo{
+    position: absolute;
+    top: 4px;
+}
+
+@media (min-width: 48em){
+    #header-logo{
+        position: absolute;
+        top: 6px;
+    }
+}
+
 .home-menu {
     padding: 0.5em;
     text-align: center;
@@ -60,29 +82,33 @@ body{
 	background-position: center center;
 	background-size: cover;
 
-    background: -moz-radial-gradient(center, ellipse cover, @splash-start 0%, @splash-middle 86%, @splash-end 100%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,@splash-start), color-stop(86%,@splash-middle), color-stop(100%,@splash-end));
-    background: -webkit-radial-gradient(center, ellipse cover, @splash-start 0%,@splash-middle 86%,@splash-end 100%);
-    background: -o-radial-gradient(center, ellipse cover, @splash-start 0%,@splash-middle 86%,@splash-end 100%);
-    background: -ms-radial-gradient(center, ellipse cover, @splash-start 0%,@splash-middle 86%,@splash-end 100%);
-    background: radial-gradient(ellipse at center, @splash-start 0%,@splash-middle 86%,@splash-end 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@splash-start', endColorstr='@splash-end',GradientType=1 );
+
+//    background: -moz-radial-gradient(center, ellipse cover, @splash-start 0%, @splash-middle 86%, @splash-end 100%);
+//    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,@splash-start), color-stop(86%,@splash-middle), color-stop(100%,@splash-end));
+//    background: -webkit-radial-gradient(center, ellipse cover, @splash-start 0%,@splash-middle 86%,@splash-end 100%);
+//    background: -o-radial-gradient(center, ellipse cover, @splash-start 0%,@splash-middle 86%,@splash-end 100%);
+//    background: -ms-radial-gradient(center, ellipse cover, @splash-start 0%,@splash-middle 86%,@splash-end 100%);
+//    background: radial-gradient(ellipse at center, @splash-start 0%,@splash-middle 86%,@splash-end 100%);
+//    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@splash-start', endColorstr='@splash-end',GradientType=1 );
+
+    border-bottom: 1px solid #888;
 }
 
 .splash {
     /* absolute center .splash within .splash-container */
     width: 80%;
-    height: 50%;
+    height: 80%;
     margin: auto;
     position: absolute;
     top: 100px; left: 0; bottom: 0; right: 0;
-    text-align: center;}
+    text-align: center;
+}
 
 /* This is the main heading that appears on the blue section */
 .splash-head {
-    font-size: 30px;
+    font-size: 40px;
     font-weight: bold;
-    color: white;
+    color: #555;
     /*border: 3px solid white;*/
     padding: 1em 1.6em;
     font-weight: 100;
@@ -92,9 +118,10 @@ body{
 
 /* This is the subheading that appears on the blue section */
 .splash-subhead {
-    color: white;
+    color: #222;
     letter-spacing: 0.05em;
     opacity: 0.8;
+    font-size: 200%;
 }
 
 /* Content */
