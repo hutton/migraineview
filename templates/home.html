@@ -6,9 +6,9 @@
 
     <link type="text/css" rel="stylesheet" href="/static/css/home.css" />
 
-    <meta name="description" content="Simple free migraine dairy.  Log your migraines and see beautiful reports .  Import from Excel o">
+    <meta name="description" content="Simple free migraine diary.  Log your migraines and see beautiful reports .  Import from Excel o">
     <meta name="keywords"
-          content="migraine dairy, migraine calendar, log migraines, migraine report, log migraine">
+          content="migraine diary, migraine calendar, log migraines, migraine report, log migraine">
 
 
     <!--[if lte IE 8]>
@@ -43,7 +43,7 @@
                 <ul>
                     {% if user %}
                     <li><a href="/report">Report</a></li>
-                    <li><a href="/about">About</a></li>
+                    <li><a href="/">About</a></li>
                     <li><a href="{{ logout_url }}">Log out ({{ user.name }})</a></li>
                     {% else %}
                     <li><a href="/example/report">Tour</a></li>
@@ -56,14 +56,19 @@
 
         <div class="splash-container">
             <div class="splash">
-                <h1 class="splash-head">Simple Migraine Dairy</h1>
-                <p class="splash-subhead">
-                    Log and visualise data about your migraine.
-                </p>
-                <p>
-                    <a href="/example/report" class="button-xlarge pure-button pure-button-primary">See Example</a>
+                <h1 class="splash-head">Migraine Diary and Reporting</h1>
+                <div class="splash-subhead">
+                    Log, Search and Visualise your migraines.
+                </div>
+                <div class="splash-icons">
+                    <i class="fa fa-list"></i>
+                    <i class="fa fa-search"></i>
+                    <i class="fa fa-bar-chart"></i>
+                </div>
+                <div class="splash-buttons">
+                    <a href="/example/report" class="button-xlarge pure-button pure-button-primary">Tour</a>
                     <a href="#started" class="button-xlarge pure-button button-error">Get Started</a>
-                </p>
+                </div>
             </div>
         </div>
 
@@ -145,36 +150,26 @@
 
             </div>
 
-            <div class="ribbon content">
-                <a id="started"/>
-                <h2 class="content-head center">Get Started.</h2>
+            <div class="ribbon">
+                <div class="content">
+                    <a id="started"/>
+                    <h2 class="content-head center">Get Started.</h2>
 
-                <div class="pure-g">
-                    <div class="l-box-lrg pure-u-1 pure-u-md-2-5 center">
-                        <a href="{{ login_create_url }}" class="button-xlarge button-error pure-button">Click to login with Google</a>
+                    <div class="pure-g">
+                        <div class="l-box-lrg pure-u-1 pure-u-md-2-5 center">
+                            <a href="{{ login_create_url }}" class="button-xlarge button-error pure-button">Click to login with Google</a>
+                        </div>
 
-                        <div class="center">
-                        <a href="#">Not got a Google account.</a>
+                        <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+                            <h4>Contact Us</h4>
+                            <p>
+                                Migraine.Report is still in development.  If you have any questions please let me know
+                                at <a href="mailto:simon@migraine.report">simon@migraine.report</a>
+                            </p>
+
                         </div>
                     </div>
-
-                    <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
-                        <h4>Contact Us</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                            consequat.
-                        </p>
-
-                        <h4>More Information</h4>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua.
-                        </p>
-                    </div>
                 </div>
-
             </div>
 
             <div class="footer l-box is-center">
