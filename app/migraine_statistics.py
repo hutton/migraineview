@@ -136,6 +136,7 @@ def generate_statistics_from_events(events):
         event['Month'] = event['Start'].strftime('%B')
         event['Year'] = str(event['Start'].year)
         event['MonthYear'] = event['Start'].strftime('%m/%y')
+        event['ShortStartDate'] = event['Start'].strftime('%Y-%m-%d')
 
         weekdays_counter[event['Day']] += 1
         months_counter[event['Month']] += 1

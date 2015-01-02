@@ -14,6 +14,11 @@ window.CalendarReportView = Backbone.View.extend({
     render: function () {
         this.$el.html(this.template(this.model));
 
+        var json_data = this.generateData(this.model.events);
+
+        var firstYear = 2010,
+            lastYear = 2014;
+
         var width = 960,
             height = 136,
             cellSize = 17; // cell size
@@ -30,7 +35,7 @@ window.CalendarReportView = Backbone.View.extend({
             }));
 
         var svg = d3.select(this.$el[0]).selectAll("svg")
-            .data(d3.range(1990, 2011))
+            .data(d3.range(firstYear, lastYear + 1))
             .enter().append("svg")
             .attr("width", width)
             .attr("height", height)
@@ -74,27 +79,25 @@ window.CalendarReportView = Backbone.View.extend({
             .attr("class", "month")
             .attr("d", monthPath);
 
-        d3.csv("/static/javascript/tp/dji.csv", function (error, csv) {
-            var data = d3.nest()
-                .key(function (d) {
-                    return d.Date;
-                })
-                .rollup(function (d) {
-                    return (d[0].Close - d[0].Open) / d[0].Open;
-                })
-                .map(csv);
+//        var data = d3.nest()
+//                .key(function (d) {
+//                    return d.Date;
+//                })
+//                .rollup(function (d) {
+//                    return d[0].Count;
+//                })
+//                .map(json_data);
 
-            rect.filter(function (d) {
-                return d in data;
+        rect.filter(function (d) {
+                return d in json_data;
             })
                 .attr("class", function (d) {
-                    return "day " + color(data[d]);
+                    return "day " + color(json_data[d]);
                 })
                 .select("title")
                 .text(function (d) {
-                    return d + ": " + percent(data[d]);
+                    return d + ": " + percent(json_data[d]);
                 });
-        });
 
         function monthPath(t0) {
             var t1 = new Date(t0.getFullYear(), t0.getMonth() + 1, 0),
@@ -109,6 +112,21 @@ window.CalendarReportView = Backbone.View.extend({
 
         d3.select(self.frameElement).style("height", "2910px");
 
+    },
+
+    generateData: function(events){
+
+        var dates = {};
+
+        _.each(events, function(event){
+            if (event.date in dates){
+                dates[event.date] = dates[event.date] + 1;
+            } else {
+                dates[event.date] = 1;
+            }
+        });
+
+        return dates;
     }
 });
 

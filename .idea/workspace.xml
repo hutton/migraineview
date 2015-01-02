@@ -5,16 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4ea88c3-5bc7-4b67-b3fb-d2fa76a7d74d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/javascript/calendar_report_view.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/javascript/tp/d3.v3.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/static/javascript/tp/dji.csv" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/home.css" afterPath="$PROJECT_DIR$/static/css/home.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/home.html" afterPath="$PROJECT_DIR$/templates/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/home.less" afterPath="$PROJECT_DIR$/static/css/home.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/main.html" afterPath="$PROJECT_DIR$/templates/main.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/more.css" afterPath="$PROJECT_DIR$/static/css/more.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/javascript/stats_view.js" afterPath="$PROJECT_DIR$/static/javascript/stats_view.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/stats_view.less" afterPath="$PROJECT_DIR$/static/css/stats_view.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/javascript/calendar_report_view.js" afterPath="$PROJECT_DIR$/static/javascript/calendar_report_view.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helper.py" afterPath="$PROJECT_DIR$/app/helper.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/migraine_statistics.py" afterPath="$PROJECT_DIR$/app/migraine_statistics.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="migraineview.iws" />
@@ -27,7 +20,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/migraineview$migraineview.coverage" NAME="migraineview Coverage Results" MODIFIED="1420184268875" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
+    <SUITE FILE_PATH="coverage/migraineview$migraineview.coverage" NAME="migraineview Coverage Results" MODIFIED="1420221648485" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -44,28 +37,8 @@
       <file leaf-file-name="main.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-12.875" vertical-offset="7311" max-vertical-offset="8580">
+            <state vertical-scroll-proportion="0.0" vertical-offset="7311" max-vertical-offset="8580">
               <caret line="508" column="26" selection-start-line="508" selection-start-column="26" selection-end-line="508" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="elements.less" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/css/elements.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1305" max-vertical-offset="2430">
-              <caret line="87" column="11" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="11" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="common.less" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/css/common.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="15" max-vertical-offset="2130">
-              <caret line="1" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -74,7 +47,7 @@
       <file leaf-file-name="more.less" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/css/more.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.875" vertical-offset="0" max-vertical-offset="390">
+            <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="390">
               <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
               <folding />
             </state>
@@ -84,18 +57,8 @@
       <file leaf-file-name="stats_view.less" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/css/stats_view.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.041667" vertical-offset="2513" max-vertical-offset="2955">
+            <state vertical-scroll-proportion="-22.875" vertical-offset="2301" max-vertical-offset="2955">
               <caret line="190" column="35" selection-start-line="190" selection-start-column="35" selection-end-line="190" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="pure-overrides.less" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/css/pure-overrides.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="1020">
-              <caret line="19" column="20" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -104,7 +67,7 @@
       <file leaf-file-name="home.less" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/css/home.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.0" vertical-offset="3111" max-vertical-offset="4230">
+            <state vertical-scroll-proportion="0.0" vertical-offset="3375" max-vertical-offset="4230">
               <caret line="225" column="21" selection-start-line="225" selection-start-column="21" selection-end-line="225" selection-end-column="21" />
               <folding />
             </state>
@@ -114,7 +77,7 @@
       <file leaf-file-name="stats_view.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/javascript/stats_view.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4047" max-vertical-offset="4755">
+            <state vertical-scroll-proportion="0.0" vertical-offset="4090" max-vertical-offset="4755">
               <caret line="307" column="0" selection-start-line="307" selection-start-column="0" selection-end-line="307" selection-end-column="0" />
               <folding />
             </state>
@@ -124,20 +87,53 @@
       <file leaf-file-name="calendar_report_view.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/javascript/calendar_report_view.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7058824" vertical-offset="165" max-vertical-offset="1800">
-              <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.6357616" vertical-offset="1182" max-vertical-offset="2070">
+              <caret line="98" column="55" selection-start-line="98" selection-start-column="55" selection-end-line="98" selection-end-column="55" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="account.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/model/account.py">
+      <file leaf-file-name="example.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/example.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="435" max-vertical-offset="1515">
-              <caret line="29" column="65" selection-start-line="29" selection-start-column="65" selection-end-line="29" selection-end-column="65" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="750">
+              <caret line="33" column="38" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
               <folding />
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="migraine_statistics.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/migraine_statistics.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1709" max-vertical-offset="4245">
+              <caret line="138" column="67" selection-start-line="138" selection-start-column="67" selection-end-line="138" selection-end-column="67" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="helper.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/helper.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="704" max-vertical-offset="2475">
+              <caret line="74" column="57" selection-start-line="74" selection-start-column="43" selection-end-line="74" selection-end-column="57" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dji.csv" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/javascript/tp/dji.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="12.777778" vertical-offset="360" max-vertical-offset="78585">
+              <caret line="1" column="46" selection-start-line="1" selection-start-column="38" selection-end-line="1" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+            <state />
           </provider>
         </entry>
       </file>
@@ -181,11 +177,9 @@
         <option value="$PROJECT_DIR$/static/javascript/add_view.js" />
         <option value="$PROJECT_DIR$/app/model/configuration.py" />
         <option value="$PROJECT_DIR$/static/javascript/app.js" />
-        <option value="$PROJECT_DIR$/app/migraine_statistics.py" />
         <option value="$PROJECT_DIR$/app/shared.py" />
         <option value="$PROJECT_DIR$/app/export.py" />
         <option value="$PROJECT_DIR$/app/example.py" />
-        <option value="$PROJECT_DIR$/app/helper.py" />
         <option value="$PROJECT_DIR$/static/css/tp/marketing.css.less" />
         <option value="$PROJECT_DIR$/assets/landing.txt" />
         <option value="$PROJECT_DIR$/app/report.py" />
@@ -204,6 +198,8 @@
         <option value="$PROJECT_DIR$/static/javascript/tp/d3.v3.min.js" />
         <option value="$PROJECT_DIR$/templates/main.html" />
         <option value="$PROJECT_DIR$/static/css/stats_view.less" />
+        <option value="$PROJECT_DIR$/app/helper.py" />
+        <option value="$PROJECT_DIR$/app/migraine_statistics.py" />
         <option value="$PROJECT_DIR$/static/javascript/calendar_report_view.js" />
       </list>
     </option>
@@ -242,7 +238,7 @@
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
   <component name="ProjectReloadState">
-    <option name="STATE" value="0" />
+    <option name="STATE" value="2" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -287,100 +283,6 @@
             <PATH_ELEMENT>
               <option name="myItemId" value="templates" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migraineview" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migraineview" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascript" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migraineview" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migraineview" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascript" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="tp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migraineview" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migraineview" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migraineview" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migraineview" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migraineview" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="migraineview" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="static" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="logo.less" />
-              <option name="myItemType" value="com.intellij.plugins.watcher.projectView.NestingTreeNode" />
             </PATH_ELEMENT>
           </PATH>
           <PATH>
@@ -509,23 +411,6 @@
       <option name="USE_KEYWORD" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="Python.AppEngineServer" factoryName="App Engine server">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="migraineview" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="launchJavascriptDebuger" value="false" />
-      <option name="host" value="127.0.0.1" />
-      <option name="browserUrl" value="" />
-      <option name="additionalOptions" value="" />
-      <method />
-    </configuration>
     <configuration default="true" type="tests" factoryName="Nosetests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -548,6 +433,23 @@
       <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
+    <configuration default="true" type="Python.AppEngineServer" factoryName="App Engine server">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="migraineview" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="host" value="127.0.0.1" />
+      <option name="browserUrl" value="" />
+      <option name="additionalOptions" value="" />
+      <method />
+    </configuration>
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -563,6 +465,9 @@
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
       <option name="PARAMETERS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Unittests">
@@ -586,9 +491,6 @@
       <option name="PUREUNITTEST" value="true" />
       <option name="PARAMS" value="" />
       <option name="USE_PARAM" value="false" />
-      <method />
-    </configuration>
-    <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
     <configuration default="true" type="tests" factoryName="Doctests">
@@ -706,11 +608,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32921812" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25605816" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.37001374" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26009694" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36899862" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3772291" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30949107" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.30864197" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -748,13 +650,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/assets/rollback.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.06912442" vertical-offset="0" max-vertical-offset="434">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/javascript/main_view_base.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="630">
@@ -916,27 +811,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/example.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="750">
-          <caret line="29" column="18" selection-start-line="29" selection-start-column="18" selection-end-line="29" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/migraine_statistics.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3284" max-vertical-offset="4230">
-          <caret line="236" column="28" selection-start-line="236" selection-start-column="28" selection-end-line="236" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/helper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="739" max-vertical-offset="2460">
-          <caret line="75" column="61" selection-start-line="75" selection-start-column="61" selection-end-line="75" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/tp/marketing.css.less">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-123.125" vertical-offset="0" max-vertical-offset="4125">
@@ -1017,24 +891,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="14932" max-vertical-offset="57765">
           <caret line="1005" column="1" selection-start-line="937" selection-start-column="2" selection-end-line="937" selection-end-column="94" />
-          <folding>
-            <marker date="1420185744000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1420185744000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1420185744000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1420185744000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1420185744000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1420185744000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1420185744000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1420185744000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1420185744000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1420185744000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1420185744000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1420185744000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1420185744000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1420185744000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1420185744000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1420185744000" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1042,7 +899,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="458" max-vertical-offset="1110">
           <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1080,16 +936,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/home.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.0" vertical-offset="3111" max-vertical-offset="4230">
+        <state vertical-scroll-proportion="0.0" vertical-offset="3375" max-vertical-offset="4230">
           <caret line="225" column="21" selection-start-line="225" selection-start-column="21" selection-end-line="225" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/javascript/stats_view.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4047" max-vertical-offset="4755">
-          <caret line="307" column="0" selection-start-line="307" selection-start-column="0" selection-end-line="307" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1106,38 +954,80 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="35.276016" vertical-offset="76077" max-vertical-offset="99555">
           <caret line="6631" column="0" selection-start-line="6631" selection-start-column="0" selection-end-line="6631" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.875" vertical-offset="7311" max-vertical-offset="8580">
+        <state vertical-scroll-proportion="0.0" vertical-offset="7311" max-vertical-offset="8580">
           <caret line="508" column="26" selection-start-line="508" selection-start-column="26" selection-end-line="508" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/stats_view.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.041667" vertical-offset="2513" max-vertical-offset="2955">
-          <caret line="190" column="35" selection-start-line="190" selection-start-column="35" selection-end-line="190" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/css/more.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.875" vertical-offset="0" max-vertical-offset="390">
+        <state vertical-scroll-proportion="0.0" vertical-offset="285" max-vertical-offset="390">
           <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/stats_view.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.875" vertical-offset="2301" max-vertical-offset="2955">
+          <caret line="190" column="35" selection-start-line="190" selection-start-column="35" selection-end-line="190" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/javascript/stats_view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="4047" max-vertical-offset="4755">
+          <caret line="307" column="0" selection-start-line="307" selection-start-column="0" selection-end-line="307" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/example.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="72" max-vertical-offset="750">
+          <caret line="33" column="38" selection-start-line="33" selection-start-column="38" selection-end-line="33" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/helper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="704" max-vertical-offset="2475">
+          <caret line="74" column="57" selection-start-line="74" selection-start-column="43" selection-end-line="74" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/javascript/tp/dji.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="12.777778" vertical-offset="360" max-vertical-offset="78585">
+          <caret line="1" column="46" selection-start-line="1" selection-start-column="38" selection-end-line="1" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/migraine_statistics.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1709" max-vertical-offset="4245">
+          <caret line="138" column="67" selection-start-line="138" selection-start-column="67" selection-end-line="138" selection-end-column="67" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/static/javascript/calendar_report_view.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7058824" vertical-offset="165" max-vertical-offset="1800">
-          <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.6357616" vertical-offset="1182" max-vertical-offset="2070">
+          <caret line="98" column="55" selection-start-line="98" selection-start-column="55" selection-end-line="98" selection-end-column="55" />
           <folding />
         </state>
       </provider>
