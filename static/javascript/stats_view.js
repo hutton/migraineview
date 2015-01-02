@@ -293,19 +293,18 @@ window.StatisticsView = window.MainViewBase.extend({
         this.statsListEl.empty();
 
         this.overviewView = new OverviewView({model: this.model});
-
         this.statsListEl.append(this.overviewView.render().el);
 
-        this.daysOfWeekViewBarView = new DaysOfWeekBarView({model: this.model.daysOfWeek});
+        this.calendarReportView = new CalendarReportView({model: this.model});
+        this.statsListEl.append(this.calendarReportView.el);
 
+        this.daysOfWeekViewBarView = new DaysOfWeekBarView({model: this.model.daysOfWeek});
         this.statsListEl.append(this.daysOfWeekViewBarView.el);
 
         this.monthsOfYearBarView = new MonthsOfYearBarView({model: {'all' : this.model.monthsOfYear.monthsData, 'byYear' : this.model.monthsOfYear.monthsDataByYear}});
-
         this.statsListEl.append(this.monthsOfYearBarView.el);
 
         this.hoursOfDayRadarView = new RadarChartView({model: this.model.hoursOfDay});
-
         this.statsListEl.append(this.hoursOfDayRadarView.el);
 
         window.dispatchEvent(new Event('resize'));

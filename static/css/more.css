@@ -4234,6 +4234,49 @@ input[type=date] {
   float: right;
   text-align: right;
 }
+/**************** Calendar *********************/
+.day {
+  fill: #fff;
+  stroke: #ccc;
+}
+.month {
+  fill: none;
+  stroke: #000;
+  stroke-width: 2px;
+}
+.RdYlGn .q0-11 {
+  fill: #a50026;
+}
+.RdYlGn .q1-11 {
+  fill: #d73027;
+}
+.RdYlGn .q2-11 {
+  fill: #f46d43;
+}
+.RdYlGn .q3-11 {
+  fill: #fdae61;
+}
+.RdYlGn .q4-11 {
+  fill: #fee08b;
+}
+.RdYlGn .q5-11 {
+  fill: #ffffbf;
+}
+.RdYlGn .q6-11 {
+  fill: #d9ef8b;
+}
+.RdYlGn .q7-11 {
+  fill: #a6d96a;
+}
+.RdYlGn .q8-11 {
+  fill: #66bd63;
+}
+.RdYlGn .q9-11 {
+  fill: #1a9850;
+}
+.RdYlGn .q10-11 {
+  fill: #006837;
+}
 #list-search {
   text-align: center;
 }
