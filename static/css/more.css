@@ -4236,22 +4236,22 @@ input[type=date] {
 }
 /**************** Calendar *********************/
 .day {
-  fill: #fff;
-  stroke: #ccc;
+  stroke: #eeeeee;
+  fill: transparent;
 }
 .month {
-  fill: none;
-  stroke: #000;
+  fill: transparent;
+  stroke: #cccccc;
   stroke-width: 2px;
 }
 .RdYlGn .q0-11 {
-  fill: #a50026;
+  fill: rgba(151, 187, 205, 0.3);
 }
 .RdYlGn .q1-11 {
-  fill: #d73027;
+  fill: rgba(151, 187, 205, 0.4);
 }
 .RdYlGn .q2-11 {
-  fill: #f46d43;
+  fill: rgba(151, 187, 205, 0.6);
 }
 .RdYlGn .q3-11 {
   fill: #fdae61;

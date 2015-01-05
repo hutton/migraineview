@@ -11,7 +11,13 @@ window.CalendarReportView = Backbone.View.extend({
 
     template: _.template($('#calendar-report-view-template').html()),
 
+    chartWidth: 960,
+
+    chartHeight: 136,
+
     render: function () {
+        var that = this;
+
         this.$el.html(this.template(this.model));
 
         var json_data = this.generateData(this.model.events);
@@ -19,9 +25,7 @@ window.CalendarReportView = Backbone.View.extend({
         var firstYear = 2010,
             lastYear = 2014;
 
-        var width = 960,
-            height = 136,
-            cellSize = 17; // cell size
+        var cellSize = 17; // cell size
 
         var day = d3.time.format("%w"),
             week = d3.time.format("%U"),
@@ -29,7 +33,7 @@ window.CalendarReportView = Backbone.View.extend({
             format = d3.time.format("%Y-%m-%d");
 
         var color = d3.scale.quantize()
-            .domain([-.05, .05])
+            .domain([0, 10])
             .range(d3.range(11).map(function (d) {
                 return "q" + d + "-11";
             }));
@@ -37,11 +41,13 @@ window.CalendarReportView = Backbone.View.extend({
         var svg = d3.select(this.$el[0]).selectAll("svg")
             .data(d3.range(firstYear, lastYear + 1))
             .enter().append("svg")
-            .attr("width", width)
-            .attr("height", height)
+            .attr("width", this.chartWidth)
+            .attr("height", this.chartHeight)
+            .attr("viewBox", "0 0 " + this.chartWidth + " " + this.chartHeight)
+            .attr("preserveAspectRatio", "xMidYMid")
             .attr("class", "RdYlGn")
             .append("g")
-            .attr("transform", "translate(" + ((width - cellSize * 53) / 2) + "," + (height - cellSize * 7 - 1) + ")");
+            .attr("transform", "translate(" + ((this.chartWidth - cellSize * 53) / 2) + "," + (this.chartHeight - cellSize * 7 - 1) + ")");
 
         svg.append("text")
             .attr("transform", "translate(-6," + cellSize * 3.5 + ")rotate(-90)")
@@ -112,6 +118,29 @@ window.CalendarReportView = Backbone.View.extend({
 
         d3.select(self.frameElement).style("height", "2910px");
 
+        this.calendarsEl = this.$el.find("svg");
+
+        this.bindResize();
+
+        _.delay(function(){
+            that.doResize();
+        }, 100);
+    },
+
+    bindResize: function(){
+        var that = this;
+
+        $(window).on("resize", function() {
+            that.doResize();
+        });
+    },
+
+    doResize: function(){
+        var targetWidth = $("#stat-sections-container > .stat-section").width();
+        var aspect = this.chartWidth / this.chartHeight;
+
+        this.calendarsEl.attr("width", targetWidth);
+        this.calendarsEl.attr("height", targetWidth / aspect);
     },
 
     generateData: function(events){
