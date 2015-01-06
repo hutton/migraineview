@@ -1,5 +1,11 @@
-Landing page
-Logo
+- .month fill none
+- Dark text on buttons
+.calendar-report-buttons > div.selected {
+  background: rgba(0, 0, 0, 0.10);
+  opacity: 0.9; // from 0.8
+}
+border: 1px solid rgba(0, 0, 0, 0.15);
+
 Help banners
 Example banners
 About page
@@ -19,6 +25,8 @@ Distribution by Quarter (Polar Area chart next to month frequency)
 
 Done
 ====
+Landing page
+Logo
 Get all add tab working
 Add share links
 Add .ics export
