@@ -7,38 +7,60 @@ window.CalendarReportView = Backbone.View.extend({
         this.render();
     },
 
+    events: {
+        "click .calendar-report-12months":      "on12Months",
+        "click .calendar-report-all":           "onAll",
+        "click .calendar-report-all-stacked":   "onAllStacked"
+    },
+
     className: 'stat-section',
 
     template: _.template($('#calendar-report-view-template').html()),
 
-    chartWidth: 960,
+    chartWidth: 1024,
 
-    chartHeight: 136,
+    chartHeight: 145,
 
     render: function () {
         var that = this;
 
         this.$el.html(this.template(this.model));
 
+        this.calendarReportAllEl = this.$el.find('.calendar-report > .calendar-report-all');
+        this.calendarReportLast12MonthsEl = this.$el.find('.calendar-report > .calendar-report-last12months');
+
+        this.renderAllCalendarReport();
+        this.renderLast12MonthsCalendarReport();
+
+        this.bindResize();
+
+        _.delay(function(){
+            that.doResize();
+        }, 100);
+    },
+
+    cellSize: 18,
+
+    color: d3.scale.quantize()
+            .domain([0, 10])
+            .range(d3.range(11).map(function (d) {
+                return "q" + d + "-11";
+            })),
+
+    renderAllCalendarReport: function(){
+        var that = this;
+
         var json_data = this.generateData(this.model.events);
 
-        var firstYear = 2010,
-            lastYear = 2014;
-
-        var cellSize = 17; // cell size
+        var firstYear = this.model.firstYear,
+            lastYear = this.model.thisYear;
 
         var day = d3.time.format("%w"),
             week = d3.time.format("%U"),
             percent = d3.format(".1%"),
             format = d3.time.format("%Y-%m-%d");
 
-        var color = d3.scale.quantize()
-            .domain([0, 10])
-            .range(d3.range(11).map(function (d) {
-                return "q" + d + "-11";
-            }));
-
-        var svg = d3.select(this.$el[0]).selectAll("svg")
+        var svg = d3.select(this.calendarReportAllEl[0]).selectAll("svg")
             .data(d3.range(firstYear, lastYear + 1))
             .enter().append("svg")
             .attr("width", this.chartWidth)
@@ -47,10 +69,10 @@ window.CalendarReportView = Backbone.View.extend({
             .attr("preserveAspectRatio", "xMidYMid")
             .attr("class", "RdYlGn")
             .append("g")
-            .attr("transform", "translate(" + ((this.chartWidth - cellSize * 53) / 2) + "," + (this.chartHeight - cellSize * 7 - 1) + ")");
+            .attr("transform", "translate(" + ((this.chartWidth - that.cellSize * 53) / 2) + "," + (this.chartHeight - that.cellSize * 7 - 1) + ")");
 
         svg.append("text")
-            .attr("transform", "translate(-6," + cellSize * 3.5 + ")rotate(-90)")
+            .attr("transform", "translate(-6," + that.cellSize * 3.5 + ")rotate(-90)")
             .style("text-anchor", "middle")
             .text(function (d) {
                 return d;
@@ -62,13 +84,13 @@ window.CalendarReportView = Backbone.View.extend({
             })
             .enter().append("rect")
             .attr("class", "day")
-            .attr("width", cellSize)
-            .attr("height", cellSize)
+            .attr("width", that.cellSize)
+            .attr("height", that.cellSize)
             .attr("x", function (d) {
-                return week(d) * cellSize;
+                return week(d) * that.cellSize;
             })
             .attr("y", function (d) {
-                return day(d) * cellSize;
+                return day(d) * that.cellSize;
             })
             .datum(format);
 
@@ -85,20 +107,11 @@ window.CalendarReportView = Backbone.View.extend({
             .attr("class", "month")
             .attr("d", monthPath);
 
-//        var data = d3.nest()
-//                .key(function (d) {
-//                    return d.Date;
-//                })
-//                .rollup(function (d) {
-//                    return d[0].Count;
-//                })
-//                .map(json_data);
-
         rect.filter(function (d) {
                 return d in json_data;
             })
                 .attr("class", function (d) {
-                    return "day " + color(json_data[d]);
+                    return "day " + that.color(json_data[d]);
                 })
                 .select("title")
                 .text(function (d) {
@@ -109,22 +122,18 @@ window.CalendarReportView = Backbone.View.extend({
             var t1 = new Date(t0.getFullYear(), t0.getMonth() + 1, 0),
                 d0 = +day(t0), w0 = +week(t0),
                 d1 = +day(t1), w1 = +week(t1);
-            return "M" + (w0 + 1) * cellSize + "," + d0 * cellSize
-                + "H" + w0 * cellSize + "V" + 7 * cellSize
-                + "H" + w1 * cellSize + "V" + (d1 + 1) * cellSize
-                + "H" + (w1 + 1) * cellSize + "V" + 0
-                + "H" + (w0 + 1) * cellSize + "Z";
+            return "M" + (w0 + 1) * that.cellSize + "," + d0 * that.cellSize
+                + "H" + w0 * that.cellSize + "V" + 7 * that.cellSize
+                + "H" + w1 * that.cellSize + "V" + (d1 + 1) * that.cellSize
+                + "H" + (w1 + 1) * that.cellSize + "V" + 0
+                + "H" + (w0 + 1) * that.cellSize + "Z";
         }
 
-        d3.select(self.frameElement).style("height", "2910px");
-
         this.calendarsEl = this.$el.find("svg");
+    },
 
-        this.bindResize();
+    renderLast12MonthsCalendarReport: function(){
 
-        _.delay(function(){
-            that.doResize();
-        }, 100);
     },
 
     bindResize: function(){
@@ -156,6 +165,32 @@ window.CalendarReportView = Backbone.View.extend({
         });
 
         return dates;
+    },
+
+    on12Months: function(event){
+        this.calendarReportLast12MonthsEl.show();
+        this.calendarReportAllEl.hide();
+
+        this.$el.find('.calendar-report-buttons > div').removeClass('selected');
+        $(event.target).addClass('selected');
+    },
+
+    onAll: function(event){
+        this.calendarReportLast12MonthsEl.hide();
+        this.calendarReportAllEl.show();
+        this.calendarReportAllEl.removeClass("stacked");
+
+        this.$el.find('.calendar-report-buttons > div').removeClass('selected');
+        $(event.target).addClass('selected');
+    },
+
+    onAllStacked: function(event){
+        this.calendarReportLast12MonthsEl.hide();
+        this.calendarReportAllEl.show();
+        this.calendarReportAllEl.addClass("stacked");
+
+        this.$el.find('.calendar-report-buttons > div').removeClass('selected');
+        $(event.target).addClass('selected');
     }
 });
 

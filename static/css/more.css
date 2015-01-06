@@ -4235,14 +4235,54 @@ input[type=date] {
   text-align: right;
 }
 /**************** Calendar *********************/
+.calendar-report-buttons > div {
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 3px 15px;
+  opacity: 0.5;
+  margin: 0px;
+  font-size: 90%;
+  cursor: pointer;
+  display: inline;
+  position: relative;
+}
+.calendar-report-buttons > div:hover {
+  opacity: 0.7;
+  background: rgba(0, 0, 0, 0.02);
+}
+.calendar-report-buttons > div:nth-child(1) {
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+  left: 5px;
+  border-right: none;
+}
+.calendar-report-buttons > div:nth-child(3) {
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  right: 5px;
+  border-left: none;
+}
+.calendar-report-buttons > div.selected {
+  background: rgba(0, 0, 0, 0.15);
+  opacity: 0.7;
+}
+.stacked > svg {
+  position: absolute;
+}
+.stacked > svg:last-child {
+  position: relative;
+}
+.stacked > svg text {
+  display: none;
+}
 .day {
   stroke: #eeeeee;
   fill: transparent;
 }
 .month {
   fill: transparent;
-  stroke: #cccccc;
-  stroke-width: 2px;
+  stroke: #bbb;
+  stroke-width: 1px;
 }
 .RdYlGn .q0-11 {
   fill: rgba(151, 187, 205, 0.3);

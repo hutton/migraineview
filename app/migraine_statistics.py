@@ -238,6 +238,8 @@ def generate_statistics_from_events(events):
     json_events = build_json_events(events)
 
     response = {'overview': overview,
+                'firstYear': int(first_date['Start'].strftime("%Y")),
+                'thisYear': int(datetime.datetime.now().strftime("%Y")),
                 'daysOfWeek': days_of_week_response,
                 'monthsOfYear': months_of_year_response,
                 'hoursOfDay': hours_data,
