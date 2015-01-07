@@ -61,6 +61,7 @@ window.CalendarReportView = Backbone.View.extend({
             week = d3.time.format("%U"),
             percent = d3.format(".1%"),
             month = d3.time.format("%b"),
+            long_date = d3.time.format("%A %d %B %Y"),
             format = d3.time.format("%Y-%m-%d");
 
         var svg = d3.select(this.calendarReportAllEl[0]).selectAll("svg")
@@ -82,6 +83,14 @@ window.CalendarReportView = Backbone.View.extend({
                 return d;
             });
 
+        svg.append("text")
+            .attr("transform", "translate(-12," + that.cellSize * 3.5 + ")rotate(-90)")
+            .style("text-anchor", "middle")
+            .attr("class", "year-stacked")
+            .text(function (d) {
+                return firstYear + " - " + lastYear;
+            });
+
         var rect = svg.selectAll(".day")
             .data(function (d) {
                 return d3.time.days(new Date(d, 0, 1), new Date(d + 1, 0, 1));
@@ -123,22 +132,31 @@ window.CalendarReportView = Backbone.View.extend({
                 return month(d);
             });
 
+        rect.filter(function (d) {
+                return d in that.calendarData;
+            })
+                .attr("class", function (d) {
+                    return "day " + that.color(that.calendarData[d][0]);
+                })
+                .select("title")
+                .text(function (d) {
+                    var date = format.parse(d);
+                    var text = long_date(date);
+
+                    if (that.calendarData[d][1].length > 0){
+                        text += "\n";
+                        text += "\n";
+                        text += that.calendarData[d][1];
+                    }
+
+                    return text;
+                });
+
         function monthTextTranslate(t0){
             var w0 = +week(t0);
 
             return "translate(" + (((w0 + (day(t0) == 0 ? 0 : 1)) * that.cellSize) + 2) + ", -3)";
         }
-
-        rect.filter(function (d) {
-                return d in that.calendarData;
-            })
-                .attr("class", function (d) {
-                    return "day " + that.color(that.calendarData[d]);
-                })
-                .select("title")
-                .text(function (d) {
-                    return d + ": " + percent(that.calendarData[d]);
-                });
 
         function monthPath(t0) {
             var t1 = new Date(t0.getFullYear(), t0.getMonth() + 1, 0),
@@ -155,17 +173,16 @@ window.CalendarReportView = Backbone.View.extend({
     renderLast12MonthsCalendarReport: function(){
         var that = this;
 
-        var firstYear = this.model.firstYear,
-            lastYear = this.model.thisYear;
+        var lastDate = new Date();
+        var firstDate = GetAYearAgoOnSunday(new Date());
 
         var day = d3.time.format("%w"),
-            week = d3.time.format("%U"),
-            percent = d3.format(".1%"),
             month = d3.time.format("%b"),
+            long_date = d3.time.format("%A %d %B %Y"),
             format = d3.time.format("%Y-%m-%d");
 
         var svg = d3.select(this.calendarReportLast12MonthsEl[0]).selectAll("svg")
-            .data(d3.range(firstYear, lastYear + 1))
+            .data(d3.range(lastDate.getFullYear(), lastDate.getFullYear() + 1))
             .enter().append("svg")
             .attr("width", this.chartWidth)
             .attr("height", this.chartHeight)
@@ -176,23 +193,23 @@ window.CalendarReportView = Backbone.View.extend({
             .attr("transform", "translate(" + ((this.chartWidth - that.cellSize * 53) / 2) + "," + (this.chartHeight - that.cellSize * 7 - 1) + ")");
 
         svg.append("text")
-            .attr("transform", "translate(-6," + that.cellSize * 3.5 + ")rotate(-90)")
+            .attr("transform", "translate(-12," + that.cellSize * 3.5 + ")rotate(-90)")
             .style("text-anchor", "middle")
             .attr("class", "year")
             .text(function (d) {
-                return d;
+                return firstDate.getFullYear() + " - " + lastDate.getFullYear();
             });
 
         var rect = svg.selectAll(".day")
             .data(function (d) {
-                return d3.time.days(new Date(d, 0, 1), new Date(d + 1, 0, 1));
+                return d3.time.days(firstDate, lastDate);
             })
             .enter().append("rect")
             .attr("class", "day")
             .attr("width", that.cellSize)
             .attr("height", that.cellSize)
-            .attr("x", function (d) {
-                return week(d) * that.cellSize;
+            .attr("x", function (d, n) {
+                return Math.floor(n / 7) * that.cellSize;
             })
             .attr("y", function (d) {
                 return day(d) * that.cellSize;
@@ -204,17 +221,9 @@ window.CalendarReportView = Backbone.View.extend({
                 return d;
             });
 
-        svg.selectAll(".month")
-            .data(function (d) {
-                return d3.time.months(new Date(d, 0, 1), new Date(d + 1, 0, 1));
-            })
-            .enter().append("path")
-            .attr("class", "month")
-            .attr("d", monthPath);
-
         svg.selectAll(".month-text")
             .data(function (d) {
-                return d3.time.months(new Date(d, 0, 1), new Date(d + 1, 0, 1));
+                return d3.time.months(new Date(firstDate.getFullYear(), firstDate.getMonth(), 0), lastDate);
             })
             .enter().append("text")
             .style("text-anchor", "left")
@@ -224,34 +233,56 @@ window.CalendarReportView = Backbone.View.extend({
                 return month(d);
             });
 
-        function monthTextTranslate(t0){
-            var w0 = +week(t0);
-
-            return "translate(" + (((w0 + (day(t0) == 0 ? 0 : 1)) * that.cellSize) + 2) + ", -3)";
-        }
-
         rect.filter(function (d) {
                 return d in that.calendarData;
             })
                 .attr("class", function (d) {
-                    return "day " + that.color(that.calendarData[d]);
+                    return "day " + that.color(that.calendarData[d][0]);
                 })
                 .select("title")
                 .text(function (d) {
-                    return d + ": " + percent(that.calendarData[d]);
+                    var date = format.parse(d);
+                    var text = long_date(date);
+
+                    if (that.calendarData[d][1].length > 0){
+                        text += "\n";
+                        text += "\n";
+                        text += that.calendarData[d][1];
+                    }
+
+                    return text;
                 });
 
-        function monthPath(t0) {
-            var t1 = new Date(t0.getFullYear(), t0.getMonth() + 1, 0),
-                d0 = +day(t0), w0 = +week(t0),
-                d1 = +day(t1), w1 = +week(t1);
-            return "M" + (w0 + 1) * that.cellSize + "," + d0 * that.cellSize
-                + "H" + w0 * that.cellSize + "V" + 7 * that.cellSize
-                + "H" + w1 * that.cellSize + "V" + (d1 + 1) * that.cellSize
-                + "H" + (w1 + 1) * that.cellSize + "V" + 0
-                + "H" + (w0 + 1) * that.cellSize + "Z";
+        function GetAYearAgoOnSunday(date){
+            var yearAgo = new Date(date.setDate(date.getDate()-365));
+
+            if (yearAgo.getDay() !== 0){
+                yearAgo = new Date(yearAgo.setDate(yearAgo.getDate()-yearAgo.getDay()));
+            }
+
+            return yearAgo;
         }
 
+        function weeksBetween(date1, date2){
+           var ONE_WEEK = 1000 * 60 * 60 * 24 * 7;
+
+            var date1_ms = date1.getTime();
+            var date2_ms = date2.getTime();
+
+            var difference_ms = Math.abs(date1_ms - date2_ms);
+
+            return Math.round(difference_ms/ONE_WEEK);
+        }
+
+        function monthTextTranslate(t0, n){
+            if (n == 0){
+                return "translate(0, -3)";
+            }
+
+            var weeksSinceStart = weeksBetween(firstDate, t0) - 1;
+
+            return "translate(" + (((weeksSinceStart + (day(t0) == 0 ? 0 : 1)) * that.cellSize) + 2) + ", -3)";
+        }
     },
 
     bindResize: function(){
@@ -276,9 +307,9 @@ window.CalendarReportView = Backbone.View.extend({
 
         _.each(events, function(event){
             if (event.date in dates){
-                dates[event.date] = dates[event.date] + 1;
+                dates[event.date] = [dates[event.date][0] + 1, dates[event.date][0] + "\n" + event.comment];
             } else {
-                dates[event.date] = 1;
+                dates[event.date] = [1, event.comment];
             }
         });
 

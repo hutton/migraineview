@@ -167,10 +167,14 @@
 }
 
 /**************** Calendar *********************/
+.calendar-report-buttons{
+    margin-bottom: 20px;
+}
+
  .calendar-report-buttons > div{
     background: transparent;
      border: 1px solid rgba(0, 0, 0, 0.15);
-     padding: 3px 15px;
+     padding: 4px 11px;
      opacity: 0.8;
      margin: 0px;
      font-size: 90%;
@@ -212,7 +216,15 @@
 }
 
 svg{
-    margin: 20px 0px;
+    margin: 10px 0px;
+}
+
+.year-stacked{
+    display: none;
+}
+
+.stacked svg:last-child .year-stacked{
+    display: block;
 }
 
 .stacked > svg{
@@ -246,6 +258,12 @@ svg{
     stroke: #bbb;
     stroke-width: 1px;
 }
+
+.stacked > svg .month {
+    display: none;
+    stroke: none;
+}
+
 
 .RdYlGn .q0-11{fill:rgba(151,187,205,0.3)}
 .RdYlGn .q1-11{fill:rgba(151,187,205,0.4)}

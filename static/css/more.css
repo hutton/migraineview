@@ -1686,7 +1686,7 @@ The content `<div>` is where all your content goes.
 */
 .content {
   margin: 0 auto;
-  padding: 0 1.5em;
+  padding: 0 1em;
   max-width: 1024px;
   margin-bottom: 50px;
   line-height: 1.6em;
@@ -4235,10 +4235,13 @@ input[type=date] {
   text-align: right;
 }
 /**************** Calendar *********************/
+.calendar-report-buttons {
+  margin-bottom: 20px;
+}
 .calendar-report-buttons > div {
   background: transparent;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  padding: 3px 15px;
+  padding: 4px 11px;
   opacity: 0.8;
   margin: 0px;
   font-size: 90%;
@@ -4274,7 +4277,13 @@ input[type=date] {
   opacity: 0.7;
 }
 svg {
-  margin: 20px 0px;
+  margin: 10px 0px;
+}
+.year-stacked {
+  display: none;
+}
+.stacked svg:last-child .year-stacked {
+  display: block;
 }
 .stacked > svg {
   position: absolute;
@@ -4299,6 +4308,10 @@ svg {
   fill: none;
   stroke: #bbb;
   stroke-width: 1px;
+}
+.stacked > svg .month {
+  display: none;
+  stroke: none;
 }
 .RdYlGn .q0-11 {
   fill: rgba(151, 187, 205, 0.3);
