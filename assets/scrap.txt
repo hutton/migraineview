@@ -1,16 +1,16 @@
-<svg id="chart" width="960" height="500"
-  viewBox="0 0 960 500"
-  preserveAspectRatio="xMidYMid">
-</svg>
+function days_between(date1, date2) {
 
+    // The number of milliseconds in one day
+    var ONE_DAY = 1000 * 60 * 60 * 24
 
-var aspect = 960 / 500,
-    chart = $("#chart");
-$(window).on("resize", function() {
-    var targetWidth = chart.parent().width();
-    chart.attr("width", targetWidth);
-    chart.attr("height", targetWidth / aspect);
-});
+    // Convert both dates to milliseconds
+    var date1_ms = date1.getTime()
+    var date2_ms = date2.getTime()
 
+    // Calculate the difference in milliseconds
+    var difference_ms = Math.abs(date1_ms - date2_ms)
 
-http://jsfiddle.net/shawnbot/BJLe6/
+    // Convert back to days and return
+    return Math.round(difference_ms/ONE_DAY)
+
+}
