@@ -4168,14 +4168,16 @@ input[type=date] {
   font-size: 20%;
   font-weight: 400;
   line-height: 1.2em;
-  opacity: 0.4;
+  opacity: 0.6;
   display: inline-block;
-  left: -20px;
+  left: -10px;
+  width: 0px;
+  position: relative;
 }
 .description-item {
-  font-size: 130%;
+  font-size: 120%;
   line-height: 1.5em;
-  opacity: 0.6;
+  opacity: 0.4;
   padding: 10px;
   text-align: center;
 }
@@ -4254,13 +4256,11 @@ input[type=date] {
 .report-buttons > div:first-child {
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
-  left: 5px;
   border-right: none;
 }
 .report-buttons > div:last-child {
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  right: 5px;
   border-left: none;
 }
 .report-buttons > div.selected {
@@ -4343,6 +4343,43 @@ svg {
 }
 .RdYlGn .q10-11 {
   fill: #006837;
+}
+/**** Attack gaps **********/
+.domain {
+  fill: none;
+  stroke: black;
+  shape-rendering: crispEdges;
+  stroke-width: 0;
+}
+.bar rect {
+  stroke: #fff;
+  shape-rendering: crispEdges;
+}
+.bar rect.background {
+  fill: #eee;
+}
+.bar rect.percent {
+  fill: rgba(151, 187, 205, 0.3);
+  stroke: rgba(151, 187, 205, 0.3);
+}
+.bar text {
+  font-size: 12px;
+  fill: #333;
+}
+.axis line {
+  stroke: #ccc;
+  stroke-width: 1;
+}
+line.line {
+  stroke: #777;
+  stroke-width: 1;
+}
+line.median {
+  stroke: #777;
+  stroke-width: 1;
+}
+.lineTitle {
+  font-size: 12px;
 }
 #list-search {
   text-align: center;
