@@ -72,10 +72,20 @@
 }
 
 .stat-section-item > div.count{
-    font-size: 600%;
+    font-size: 400%;
     font-weight: 100;
     line-height: 1.2em;
     opacity: 0.6;
+    position: relative;
+}
+
+.stat-section-item > div.count > span{
+    font-size: 20%;
+    font-weight: 400;
+    line-height: 1.2em;
+    opacity: 0.4;
+    display: inline-block;
+    left: -20px;
 }
 
 .description-item{
@@ -83,7 +93,7 @@
     line-height: 1.5em;
     opacity: 0.6;
     padding: 10px;
-    text-align: justify;
+    text-align: center;
 }
 
 .description-item span{
@@ -126,20 +136,6 @@
     background: rgba(0,0,0,0.15);
 }
 
-.graph-mode > span{
-    margin: 0px 10px;
-    cursor: pointer;
-    opacity: 0.7;
-    font-size: 90%;
-    padding: 1px 10px;
-    border-radius: 10px;
-}
-
-.graph-mode > span:hover{
-    opacity: 0.9;
-
-}
-
 #overview-trend{
     margin-bottom: 50px;
 }
@@ -171,7 +167,7 @@
     margin-bottom: 20px;
 }
 
- .calendar-report-buttons > div{
+ .report-buttons > div{
     background: transparent;
      border: 1px solid rgba(0, 0, 0, 0.15);
      padding: 4px 11px;
@@ -182,26 +178,26 @@
      display: inline;
      position: relative;
 }
-.calendar-report-buttons > div:hover {
+.report-buttons > div:hover {
     opacity: 0.7;
     background: rgba(0, 0, 0, 0.02);
 }
 
-.calendar-report-buttons > div:nth-child(1) {
+.report-buttons > div:first-child {
     border-top-left-radius: 20px;
     border-bottom-left-radius: 20px;
     left: 5px;
     border-right: none;
 }
 
-.calendar-report-buttons > div:nth-child(3) {
+.report-buttons > div:last-child {
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
     right: 5px;
      border-left: none;
 }
 
-.calendar-report-buttons > div.selected{
+.report-buttons > div.selected{
      background: rgba(0, 0, 0, 0.1);
      opacity: 0.9;
 }

@@ -2,68 +2,6 @@
  * Created by simonhutton on 03/09/2014.
  */
 
-window.OverviewView = Backbone.View.extend({
-    initialize: function () {
-    },
-
-    template: _.template($('#overview-view-template').html()),
-
-    render: function(){
-        this.$el.html(this.template(this.model));
-
-        this.chartEl = this.$el.find('.year-trend-chart');
-
-        var ctx = this.chartEl.get(0).getContext("2d");
-
-        var data = {
-            labels: this.model.yearlyTrend.keys,
-            datasets: [
-            {
-                label: "Uploads",
-                fillColor: "rgba(151,187,205,0.15)",
-                strokeColor: "rgba(151,187,205,0.8)",
-                highlightFill: "rgba(151,187,205,0.75)",
-                highlightStroke: "rgba(151,187,205,1)",
-                data: this.model.yearlyTrend.frequencies[0]
-            }
-        ]};
-
-        this.yearTrendChart = new Chart(ctx).Line(data, {responsive: true,
-                                  maintainAspectRatio: false});
-
-        this.chartEl = this.$el.find('.overview-trend-chart');
-
-        var ctx = this.chartEl.get(0).getContext("2d");
-
-        var data = {
-            labels: this.model.monthYears.keys,
-            datasets: [
-            {
-                label: "Uploads",
-                fillColor: "rgba(220,220,220,0.5)",
-                strokeColor: "rgba(220,220,220,0.8)",
-                highlightFill: "rgba(220,220,220,0.75)",
-                highlightStroke: "rgba(220,220,220,1)",
-                data: this.model.monthYears.frequencies[0]
-            }
-        ]};
-
-        this.monthYearChart = new Chart(ctx).Bar(data,
-            {
-                barValueSpacing: false,
-                scaleShowGridLines: false,
-                barShowStroke: false,
-                showScale: false,
-                responsive: true,
-                maintainAspectRatio: false
-            });
-
-        return this;
-    },
-
-    className: 'stat-section'
-});
-
 window.MonthsOfYearBarView = Backbone.View.extend({
     initialize: function () {
         this.render();
@@ -127,7 +65,7 @@ window.MonthsOfYearBarView = Backbone.View.extend({
         this.$el.find('.by-year-chart').fadeOut();
         this.$el.find('.all-chart').removeClass('faded');
 
-        this.$el.find('.graph-mode > span').removeClass('selected');
+        this.$el.find('.graph-mode > div').removeClass('selected');
         $(event.target).addClass('selected');
     },
 
@@ -135,7 +73,7 @@ window.MonthsOfYearBarView = Backbone.View.extend({
         this.$el.find('.by-year-chart').fadeIn();
         this.$el.find('.all-chart').addClass('faded');
 
-        this.$el.find('.graph-mode > span').removeClass('selected');
+        this.$el.find('.graph-mode > div').removeClass('selected');
         $(event.target).addClass('selected');
     }
 });
@@ -203,7 +141,7 @@ window.DaysOfWeekBarView = Backbone.View.extend({
         this.$el.find('.by-year-chart').fadeOut();
         this.$el.find('.all-chart').removeClass('faded');
 
-        this.$el.find('.graph-mode > span').removeClass('selected');
+        this.$el.find('.graph-mode > div').removeClass('selected');
         $(event.target).addClass('selected');
     },
 
@@ -211,7 +149,7 @@ window.DaysOfWeekBarView = Backbone.View.extend({
         this.$el.find('.by-year-chart').fadeIn();
         this.$el.find('.all-chart').addClass('faded');
 
-        this.$el.find('.graph-mode > span').removeClass('selected');
+        this.$el.find('.graph-mode > div').removeClass('selected');
         $(event.target).addClass('selected');
     }
 });

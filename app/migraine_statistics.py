@@ -60,6 +60,22 @@ def find_average_days_between_event(events):
     return average_days_between_event
 
 
+def find_time_between_attacks(events):
+    times = []
+
+    previous_start = None
+
+    for event in events:
+        if previous_start:
+            times.append((event['Start'] - previous_start).total_seconds() / (60 * 60))
+
+        previous_start = event['Start']
+
+    times = sorted(times)
+
+    return times
+
+
 def add_months(source_datetime, months):
     month = source_datetime.month - 1 + months
     year = source_datetime.year + month / 12
@@ -88,12 +104,12 @@ def seconds_to_hours(seconds):
 
 def timedelta_to_text(delta):
     if delta.days > 14:
-        return str(delta.days) + " days"
+        return str(delta.days) + " <span>days</span>"
 
     if delta.days > 2:
-        return str(delta.days) + " days " + seconds_to_hours(delta.seconds) + " hours"
+        return str(delta.days) + " <span>days " + seconds_to_hours(delta.seconds) + " hours</span>"
 
-    return str((delta.days * 24) + seconds_to_hours(delta.seconds)) + " hours"
+    return str((delta.days * 24) + seconds_to_hours(delta.seconds)) + " <span>hours</span>"
 
 
 def find_most_and_least_frequent(keys, frequencies):
@@ -130,6 +146,8 @@ def generate_statistics_from_events(events):
     previous_start = None
 
     finding_gaps = True #len(events) > 10
+
+    events = sorted(events, key=lambda event: event.get('Start'))
 
     for event in events:
         event['Day'] = event['Start'].strftime('%A')
@@ -220,8 +238,11 @@ def generate_statistics_from_events(events):
                                for year in years]}
     average_days_between_event = find_average_days_between_event(events)
 
+    time_between_attacks = find_time_between_attacks(events)
+
     overview = {'totalEvents': len(events),
-                'averageTimeBetweenEvent': "{:.0f} days".format(average_days_between_event),
+                'averageTimeBetweenEvent': "{:.0f}".format(average_days_between_event) + " <span>days</span>",
+                'timeBetweenAttacks': time_between_attacks,
                 'firstDate': first_date['Start'].strftime("%B") + " " + first_date['Start'].strftime("%Y"),
                 'lastDate': last_date['Start'].strftime("%B") + " " + last_date['Start'].strftime("%Y"),
                 'longestGap': longest_gap_text,

@@ -47,7 +47,7 @@
                     <li><a href="{{ logout_url }}">Log out ({{ user.name }})</a></li>
                     {% else %}
                     <li><a href="/example/report">Tour</a></li>
-                    <li><a href="/about">About</a></li>
+                    <li><a href="#about">About</a></li>
                     <li><a href="{{ login_url }}">Log in</a></li>
                     {% endif %}
                 </ul>
@@ -151,8 +151,8 @@
             </div>
 
             <div class="ribbon">
+                <a id="started"/>
                 <div class="content">
-                    <a id="started"/>
                     <h2 class="content-head center">Get Started.</h2>
 
                     <div class="pure-g">
@@ -171,6 +171,37 @@
                     </div>
                 </div>
             </div>
+
+
+            <div class="content">
+                <a id="about"/>
+                <h2 class="content-head center">About.</h2>
+
+                <div class="pure-g">
+                    <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
+                        <div>
+                            <h3 class="content-subhead">
+                                Migraine Report
+                            </h3>
+                            <p>
+                                View beautifully visualisations of your migraine data, immediately see patterns when attacks occur.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-2">
+                        <div>
+                            <h3 class="content-subhead">
+                                Me
+                            </h3>
+                            <p>
+                                Import existing migraine data from spreadsheets (.xls, .xlsx, .csv) or calendar exports (.ics).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
 
             <div class="footer l-box is-center">
                 Made in London - Copyright 2015
