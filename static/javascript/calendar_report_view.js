@@ -260,6 +260,8 @@ window.CalendarReportView = Backbone.View.extend({
                 yearAgo = new Date(yearAgo.setDate(yearAgo.getDate()-yearAgo.getDay()));
             }
 
+            yearAgo.setHours(0,0,0,0);
+
             return yearAgo;
         }
 
