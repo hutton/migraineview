@@ -4131,6 +4131,10 @@ input[type=date] {
   font-size: 120%;
   margin: 20px 0px;
 }
+.stat-section-sub-heading {
+  text-align: left;
+  opacity: 0.8;
+}
 .stat-section-item-container {
   margin-left: auto;
   margin-right: auto;
@@ -4353,7 +4357,6 @@ svg {
 }
 .bar rect {
   stroke: #fff;
-  shape-rendering: crispEdges;
 }
 .bar rect.background {
   fill: #eee;
@@ -4373,13 +4376,11 @@ svg {
 line.line {
   stroke: #777;
   stroke-width: 1;
-}
-line.median {
-  stroke: #777;
-  stroke-width: 1;
+  opacity: 0.6;
 }
 .lineTitle {
   font-size: 12px;
+  opacity: 0.6;
 }
 #list-search {
   text-align: center;

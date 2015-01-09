@@ -441,7 +441,7 @@
                     <div class="stat-section-item">
                         <div class="count"><%= overview.timeSinceLastAttack %></div>
                         <div class="description-item">
-                            Since last attack
+                            <%= overview.timeSinceLastAttackLabel %>
                         </div>
                     </div>
                 </div>
@@ -449,7 +449,7 @@
                     <div class="stat-section-item">
                         <div class="count"><%= overview.averageTimeBetweenEvent %></div>
                         <div class="description-item">
-                            Average time between attacks
+                            <%= overview.averageTimeBetweenEventLabel %>
                         </div>
                     </div>
                 </div>
@@ -544,7 +544,7 @@
             <div class="pure-u-1-1">
                 <div class="calendar-report">
                     <div class="calendar-report-buttons report-buttons">
-                        <div class="calendar-report-12months selected">Last 12 Months</div><div class="calendar-report-all">All</div><div class="calendar-report-all-stacked">Year-On-Year</div>
+                        <div class="calendar-report-12months selected">Last 12 Months</div><div class="calendar-report-all-stacked">Year-On-Year</div><div class="calendar-report-all">All</div>
                     </div>
                     <div class="calendar-report-last12months">
                     </div>
@@ -558,6 +558,7 @@
     <script type="text/template" id="attack-gap-view-template">
         <div class="pure-g stat-section-full-width-item">
             <div class="pure-u-1-1">
+                <div class="stat-section-sub-heading">Time Between Attacks</div>
                 <div class="attack-gap-report">
                 </div>
             </div>

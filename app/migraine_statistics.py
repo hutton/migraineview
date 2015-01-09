@@ -79,7 +79,9 @@ def find_time_between_attacks(events):
 def find_time_since_last_attack(events):
     last_event = events[-1:]
 
-    return timedelta_to_text(datetime.datetime.now() - last_event[0]['Start'])
+    delta = datetime.datetime.now() - last_event[0]['Start']
+
+    return delta.days, "Days since last attack"
 
 
 def add_months(source_datetime, months):
@@ -246,11 +248,13 @@ def generate_statistics_from_events(events):
 
     time_between_attacks = find_time_between_attacks(events)
 
-    time_since_last_attack = find_time_since_last_attack(events)
+    time_since_last_attack, time_since_last_attack_label = find_time_since_last_attack(events)
 
     overview = {'totalEvents': len(events),
                 'timeSinceLastAttack': time_since_last_attack,
-                'averageTimeBetweenEvent': "{:.0f}".format(average_days_between_event) + " <span>days</span>",
+                'timeSinceLastAttackLabel': time_since_last_attack_label,
+                'averageTimeBetweenEvent': "{:.0f}".format(average_days_between_event),
+                'averageTimeBetweenEventLabel': "Average days between attacks",
                 'timeBetweenAttacks': time_between_attacks,
                 'firstDate': first_date['Start'].strftime("%B") + " " + first_date['Start'].strftime("%Y"),
                 'lastDate': last_date['Start'].strftime("%B") + " " + last_date['Start'].strftime("%Y"),
