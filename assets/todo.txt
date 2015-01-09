@@ -3,6 +3,7 @@
   - Add axis label
   - Make axis ticks smaller
   - Add hover over tooltips
+- Add SimpleAuth (https://github.com/crhym3/simpleauth)
 Help banners
 Example banners
 About page
