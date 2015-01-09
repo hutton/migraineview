@@ -4040,6 +4040,12 @@ h4 {
 .content p {
   margin: 30px auto;
   max-width: 600px;
+  font-size: 120%;
+  line-height: 1.7em;
+  opacity: 0.8;
+}
+a {
+  color: #1f8dd6;
 }
 .loading-message {
   font-size: 160%;
@@ -4120,9 +4126,6 @@ input[type=date] {
   background: #70a5da;
   color: white;
 }
-.stat-section {
-  margin: 20px 0px;
-}
 .date-range {
   float: right;
 }
@@ -4146,7 +4149,7 @@ input[type=date] {
 }
 .stat-section-full-width-item {
   padding: 10px;
-  margin: 10px auto 10px auto;
+  margin: 40px auto;
   text-align: center;
 }
 .stat-section-item > div {
@@ -4354,6 +4357,13 @@ svg {
   stroke: black;
   shape-rendering: crispEdges;
   stroke-width: 0;
+}
+.x-axis-bottom text {
+  opacity: 0.6;
+  font-size: 80%;
+}
+.x-axis-bottom-label {
+  opacity: 0.6;
 }
 .bar rect {
   stroke: #fff;

@@ -2,6 +2,7 @@
 @import "progress.less";
 
 @border-color: rgba(0,0,0,0.2);
+@link-color: #1f8dd6;
 
 input, select {
     -webkit-appearance: none;
@@ -108,6 +109,13 @@ h4{
 .content p{
     margin: 30px auto;
     max-width: 600px;
+    font-size: 120%;
+    line-height: 1.7em;
+    opacity: 0.8;
+}
+
+a {
+    color: @link-color;
 }
 
 .loading-message{

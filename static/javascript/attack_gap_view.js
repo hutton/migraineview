@@ -26,13 +26,14 @@ window.AttackGapView = Backbone.View.extend({
         var data = this.model.overview.timeBetweenAttacks;
         var line_data = [[this.model.overview.timeSinceLastAttack, "Last attack"], [this.model.overview.averageTimeBetweenEvent, "Average"]];
 
-        var margin = {top: 30, right: 10, bottom: 30, left: 10}
+        var margin = {top: 30, right: 10, bottom: 50, left: 10}
             , width = this.chartWidth
             , width = width - margin.left - margin.right
             , height = 200
             , percent = d3.format('%');
 
         this.margin = margin;
+        this.height = height;
 
         // scales and axes
         this.xPos = d3.scale.linear()
@@ -68,9 +69,15 @@ window.AttackGapView = Backbone.View.extend({
         // add top and bottom axes
 
         this.chart.append('g')
-            .attr('class', 'x axis bottom')
+            .attr('class', 'x-axis-bottom')
             .attr('transform', 'translate(0,' + height + ')')
             .call(this.xAxis.orient('bottom'));
+
+        this.chart.append('text')
+            .attr('class', 'x-axis-bottom-label')
+            .style("text-anchor", "middle")
+            .attr('transform', 'translate(' + width / 2 + ',' + (height + 20) + ')')
+            .text("Days");
 
         var bars = this.chart.selectAll('.bar')
             .data(data)
@@ -158,7 +165,11 @@ window.AttackGapView = Backbone.View.extend({
             });
 
         // update axes
-        this.chart.select('.x.axis.bottom').call(this.xAxis.orient('bottom'));
+        this.chart.select('.x-axis-bottom').call(this.xAxis.orient('bottom'));
+
+        this.chart.selectAll('.x-axis-bottom-label')
+            .attr('transform', 'translate(' + width / 2 + ',' + (this.height + 40) + ')')
+
     }
 
 });

@@ -3518,6 +3518,12 @@ h4 {
 .content p {
   margin: 30px auto;
   max-width: 600px;
+  font-size: 120%;
+  line-height: 1.7em;
+  opacity: 0.8;
+}
+a {
+  color: #1f8dd6;
 }
 .loading-message {
   font-size: 160%;
@@ -3772,6 +3778,10 @@ body {
 .ribbon {
   background: #2d3e50;
   color: #aaa;
+}
+.feedback {
+  text-align: center;
+  margin: 80px auto;
 }
 .footer {
   background: #111;
