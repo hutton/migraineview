@@ -143,3 +143,17 @@ class AuthHandler(BaseRequestHandler, SimpleAuthHandler):
         See example/secrets.py.template
         """
         return secrets.AUTH_CONFIG[provider]
+
+    def _get_optional_params_for(self, provider):
+        """Returns optional parameters for auth init requests."""
+        return secrets.AUTH_OPTIONAL_PARAMS.get(provider)
+		
+    def _to_user_model_attrs(self, data, attrs_map):
+        """Get the needed information from the provider dataset."""
+        user_attrs = {}
+        
+        for k, v in attrs_map.iteritems():
+            attr = (v, data.get(k)) if isinstance(v, str) else v(data.get(k))
+            user_attrs.setdefault(*attr)
+
+        return user_attrs
