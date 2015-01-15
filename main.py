@@ -29,7 +29,7 @@ from app.services import Stats, ClearAllEvents
 from app.shared import Shared
 from app.upload import Upload
 
-from secrets import SESSION_KEY
+from app.secrets import SESSION_KEY
 
 class Main(BaseRequestHandler):
     def get(self):
