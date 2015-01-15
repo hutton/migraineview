@@ -29,6 +29,7 @@ from app.services import Stats, ClearAllEvents
 from app.shared import Shared
 from app.upload import Upload
 
+from secrets import SESSION_KEY
 
 class Main(BaseRequestHandler):
     def get(self):
@@ -70,6 +71,15 @@ class CreateAccount(webapp2.RequestHandler):
         else:
             self.redirect('/')
 
+app_config = {
+  'webapp2_extras.sessions': {
+    'cookie_name': '_simpleauth_sess',
+    'secret_key': SESSION_KEY
+  },
+  'webapp2_extras.auth': {
+    'user_attributes': []
+  }
+}
 
 app = webapp2.WSGIApplication([webapp2.Route('/auth/<provider>',
                                              handler='app.authentication.AuthHandler:_simple_auth', name='auth_login'),
@@ -86,4 +96,4 @@ app = webapp2.WSGIApplication([webapp2.Route('/auth/<provider>',
                                ('/shared/.*', Shared),
                                ('/create', CreateAccount),
                                ('/(report|options|add|list)', Report)
-                              ], debug=True)
+                              ], config=app_config, debug=True)
