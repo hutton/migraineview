@@ -73,7 +73,7 @@ class CreateAccount(webapp2.RequestHandler):
 
 app_config = {
   'webapp2_extras.sessions': {
-    'cookie_name': '_simpleauth_sess',
+    'cookie_name': '_migraine_report_sess',
     'secret_key': SESSION_KEY
   },
   'webapp2_extras.auth': {
