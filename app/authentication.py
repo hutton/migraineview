@@ -11,6 +11,10 @@ from webapp2_extras import auth, sessions
 
 __author__ = 'simonhutton'
 
+DEFAULT_AVATAR_URL = '/img/missing-avatar.png'
+FACEBOOK_AVATAR_URL = 'https://graph.facebook.com/{0}/picture?type=large'
+FOURSQUARE_USER_LINK = 'http://foursquare.com/user/{0}'
+
 
 class BaseRequestHandler(webapp2.RequestHandler):
     def dispatch(self):
@@ -51,56 +55,56 @@ class BaseRequestHandler(webapp2.RequestHandler):
 
 class AuthHandler(BaseRequestHandler, SimpleAuthHandler):
     """Authentication handler for all kinds of auth."""
-    
+
     USER_ATTRS = {
-    'facebook': {
-      'id': lambda id: ('avatar_url', FACEBOOK_AVATAR_URL.format(id)),
-      'name': 'name',
-      'link': 'link'
-    },
-    'google': {
-      'picture': 'avatar_url',
-      'name': 'name',
-      'profile': 'link'
-    },
-    'googleplus': {
-      'image': lambda img: ('avatar_url', img.get('url', DEFAULT_AVATAR_URL)),
-      'displayName': 'name',
-      'url': 'link'
-    },
-    'windows_live': {
-      'avatar_url': 'avatar_url',
-      'name': 'name',
-      'link': 'link'
-    },
-    'twitter': {
-      'profile_image_url': 'avatar_url',
-      'screen_name': 'name',
-      'link': 'link'
-    },
-    'linkedin': {
-      'picture-url': 'avatar_url',
-      'first-name': 'name',
-      'public-profile-url': 'link'
-    },
-    'linkedin2': {
-      'picture-url': 'avatar_url',
-      'first-name': 'name',
-      'public-profile-url': 'link'
-    },
-    'foursquare': {
-      'photo': lambda photo: ('avatar_url', photo.get('prefix') + '100x100'\
-                                          + photo.get('suffix')),
-      'firstName': 'firstName',
-      'lastName': 'lastName',
-      'contact': lambda contact: ('email', contact.get('email')),
-      'id': lambda id: ('link', FOURSQUARE_USER_LINK.format(id))
-    },
-    'openid': {
-      'id': lambda id: ('avatar_url', DEFAULT_AVATAR_URL),
-      'nickname': 'name',
-      'email': 'link'
-    }
+        'facebook': {
+            'id': lambda id: ('avatar_url', FACEBOOK_AVATAR_URL.format(id)),
+            'name': 'name',
+            'link': 'link'
+        },
+        'google': {
+            'picture': 'avatar_url',
+            'name': 'name',
+            'profile': 'link'
+        },
+        'googleplus': {
+            'image': lambda img: ('avatar_url', img.get('url', DEFAULT_AVATAR_URL)),
+            'displayName': 'name',
+            'url': 'link'
+        },
+        'windows_live': {
+            'avatar_url': 'avatar_url',
+            'name': 'name',
+            'link': 'link'
+        },
+        'twitter': {
+            'profile_image_url': 'avatar_url',
+            'screen_name': 'name',
+            'link': 'link'
+        },
+        'linkedin': {
+            'picture-url': 'avatar_url',
+            'first-name': 'name',
+            'public-profile-url': 'link'
+        },
+        'linkedin2': {
+            'picture-url': 'avatar_url',
+            'first-name': 'name',
+            'public-profile-url': 'link'
+        },
+        'foursquare': {
+            'photo': lambda photo: ('avatar_url', photo.get('prefix') + '100x100' \
+                                    + photo.get('suffix')),
+            'firstName': 'firstName',
+            'lastName': 'lastName',
+            'contact': lambda contact: ('email', contact.get('email')),
+            'id': lambda id: ('link', FOURSQUARE_USER_LINK.format(id))
+        },
+        'openid': {
+            'id': lambda id: ('avatar_url', DEFAULT_AVATAR_URL),
+            'nickname': 'name',
+            'email': 'link'
+        }
     }
 
     def _on_signin(self, data, auth_info, provider, extra=None):
@@ -166,7 +170,7 @@ class AuthHandler(BaseRequestHandler, SimpleAuthHandler):
         # User(**data).put()
         #
         # 3. sign in the user
-        #    self.session['_user_id'] = auth_id
+        # self.session['_user_id'] = auth_id
         #
         # 4. redirect somewhere, e.g. self.redirect('/profile')
         #
@@ -202,7 +206,7 @@ class AuthHandler(BaseRequestHandler, SimpleAuthHandler):
     def _to_user_model_attrs(self, data, attrs_map):
         """Get the needed information from the provider dataset."""
         user_attrs = {}
-        
+
         for k, v in attrs_map.iteritems():
             attr = (v, data.get(k)) if isinstance(v, str) else v(data.get(k))
             user_attrs.setdefault(*attr)
