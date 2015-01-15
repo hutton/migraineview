@@ -21,8 +21,8 @@ LINKEDIN_SECRET = 'consumer secret / client secret'
 
 # https://manage.dev.live.com/AddApplication.aspx
 # https://manage.dev.live.com/Applications/Index
-WL_CLIENT_ID = 'client id'
-WL_CLIENT_SECRET = 'client secret'
+WL_CLIENT_ID = '000000004013D168'
+WL_CLIENT_SECRET = 'EQ9ha4qbBAVzre23oeC42oXAMW7MLprd'
 
 # https://dev.twitter.com/apps
 TWITTER_CONSUMER_KEY = 'oauth1.0a consumer key'
