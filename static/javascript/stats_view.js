@@ -235,7 +235,6 @@ window.StatisticsView = window.MainViewBase.extend({
 
         this.attackGapView = new AttackGapView({model: this.model});
         this.statsListEl.append(this.attackGapView.el);
-        this.attackGapView.resize();
 
         this.calendarReportView = new CalendarReportView({model: this.model});
         this.statsListEl.append(this.calendarReportView.el);

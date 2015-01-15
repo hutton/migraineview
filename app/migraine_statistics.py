@@ -111,13 +111,10 @@ def seconds_to_hours(seconds):
 
 
 def timedelta_to_text(delta):
-    if delta.days > 14:
+    if delta.days > 2:
         return str(delta.days) + " <span>days</span>"
 
-    if delta.days > 2:
-        return str(delta.days) + " <span>days " + seconds_to_hours(delta.seconds) + " hours</span>"
-
-    return str((delta.days * 24) + seconds_to_hours(delta.seconds)) + " <span>hours</span>"
+    return str(int(seconds_to_hours(delta.total_seconds()))) + " <span>hours</span>"
 
 
 def find_most_and_least_frequent(keys, frequencies):
@@ -254,7 +251,7 @@ def generate_statistics_from_events(events):
                 'timeSinceLastAttack': time_since_last_attack,
                 'timeSinceLastAttackLabel': time_since_last_attack_label,
                 'averageTimeBetweenEvent': "{:.0f}".format(average_days_between_event),
-                'averageTimeBetweenEventLabel': "Average days between attacks",
+                'averageTimeBetweenEventLabel': "Days average between attacks",
                 'timeBetweenAttacks': time_between_attacks,
                 'firstDate': first_date['Start'].strftime("%B") + " " + first_date['Start'].strftime("%Y"),
                 'lastDate': last_date['Start'].strftime("%B") + " " + last_date['Start'].strftime("%Y"),

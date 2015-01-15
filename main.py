@@ -19,6 +19,7 @@ import os
 from google.appengine.api import users
 from google.appengine.ext.webapp import template
 import webapp2
+from app.authentication import BaseRequestHandler
 from app.example import Example
 from app.export import Export
 from app.model.account import Account
@@ -29,17 +30,24 @@ from app.shared import Shared
 from app.upload import Upload
 
 
-class Main(webapp2.RequestHandler):
+class Main(BaseRequestHandler):
     def get(self):
 
-        user = Account.get_account()
-
-        if user:
-            template_values = {'user': {'name': user.nickname},
-                               'logout_url': users.create_logout_url('/')}
+        if self.logged_in:
+            template_values = {'user': {'name': self.current_user},
+                               'logout_url': '/logout'}
         else:
             template_values = {'user': None,
-                               'login_url': users.create_login_url('/report')}
+                                           'login_url': users.create_login_url('/report')}
+
+        # user = Account.get_account()
+        #
+        # if user:
+        #     template_values = {'user': {'name': user.nickname},
+        #                        'logout_url': users.create_logout_url('/')}
+        # else:
+        #     template_values = {'user': None,
+        #                        'login_url': users.create_login_url('/report')}
 
         template_values['login_create_url'] = users.create_login_url('/create')
 
@@ -63,16 +71,19 @@ class CreateAccount(webapp2.RequestHandler):
             self.redirect('/')
 
 
-app = webapp2.WSGIApplication([
-                                  ('/', Main),
-                                  ('/upload', Upload),
-                                  ('/uploaded/.*', Uploaded),
-                                  ('/example/.*', Example),
-                                  ('/service/stats', Stats),
-                                  ('/service/clearAllEvents', ClearAllEvents),
-                                  ('/export/.*', Export),
-                                  ('/report/add', ReportAdd),
-                                  ('/shared/.*', Shared),
-                                  ('/create', CreateAccount),
-                                  ('/(report|options|add|list)', Report)
+app = webapp2.WSGIApplication([webapp2.Route('/auth/<provider>',
+                                             handler='app.authentication.AuthHandler:_simple_auth', name='auth_login'),
+                               webapp2.Route('/auth/<provider>/callback',
+                                             handler='app.authentication.AuthHandler:_auth_callback', name='auth_callback'),
+                               ('/', Main),
+                               ('/upload', Upload),
+                               ('/uploaded/.*', Uploaded),
+                               ('/example/.*', Example),
+                               ('/service/stats', Stats),
+                               ('/service/clearAllEvents', ClearAllEvents),
+                               ('/export/.*', Export),
+                               ('/report/add', ReportAdd),
+                               ('/shared/.*', Shared),
+                               ('/create', CreateAccount),
+                               ('/(report|options|add|list)', Report)
                               ], debug=True)
