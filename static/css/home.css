@@ -3546,9 +3546,25 @@ a {
   margin-bottom: 100px;
 }
 .popup-background {
-  background-position: center center;
-  background-size: cover;
-  background: radial-gradient(ellipse at center, #1f8dd6 0%, #1b1d3d 86%, #040820 100%);
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background: rgba(0, 0, 0, 0.25);
+  text-align: center;
+  z-index: 100;
+}
+.popup {
+  border-radius: 4px;
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.3);
+  background: white;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  margin-top: 60px;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
@@ -3635,6 +3651,13 @@ a {
   -o-transform: translate(-10px, -10px);
   -ms-transform: translate(-10px, -10px);
   transform: translate(-10px, -10px);
+}
+.logon-provider > a {
+  width: 200px;
+  margin: 10px;
+}
+.logon-provider > a > i {
+  margin-right: 10px;
 }
 body {
   font-size: 12px;

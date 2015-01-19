@@ -48,7 +48,7 @@
                     {% else %}
                     <li><a href="/example/report">Tour</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="{{ login_url }}">Log in</a></li>
+                    <li><a id="login-link" href="#">Login</a></li>
                     {% endif %}
                 </ul>
             </div>
@@ -229,15 +229,15 @@
         <!--
     Login
     -->
-    <div class="popup-background" id="logon">
+    <div class="popup-background" id="logon" style="display: none;">
         <div class="popup">
-           <div class="title">Use one of these providers to logon</div>
+           <div class="popup-title">Use one of these providers to logon</div>
             <div>
                 <div class="logon-provider">
-                    <a href="/auth/googleplus?destination_url=/report" class="button-xlarge button-error pure-button">Google</a>
+                    <a href="/auth/googleplus?destination_url=/report" class="button-xlarge button-error pure-button"><i class="fa fa-google-plus-square"></i> Google</a>
                 </div>
                 <div class="logon-provider">
-                    <a href="/auth/windows_live?destination_url=/report" class="button-xlarge button-secondary pure-button">Windows Live</a>
+                    <a href="/auth/windows_live?destination_url=/report" class="button-xlarge button-secondary pure-button"><i class="fa fa-windows"></i>Windows Live</a>
                 </div>
                 <div class="logon-provider">
                     <a href="{{ login_url }}" class="button-xlarge pure-button">Debug</a>
@@ -254,12 +254,28 @@
           $('.splash-container').css('height', windowsHeight + 'px');
         }
 
+        function showLogin(){
+            $("#logon").fadeIn('fast');
+        }
+
+        function hideLogin(){
+            $("#logon").fadeOut('fast');
+        }
+
         $(document).ready(function(){
           setDimensions();
 
           //when resizing the site, we adjust the heights of the sections
           $(window).resize(function() {
             setDimensions();
+          });
+
+          $('#login-link').click(function(){
+              showLogin();
+          });
+
+          $('#logon').click(function(){
+              hideLogin();
           });
         });
 

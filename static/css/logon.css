@@ -1,0 +1,7 @@
+.logon-provider > a {
+  width: 200px;
+  margin: 10px;
+}
+.logon-provider > a > i {
+  margin-right: 10px;
+}

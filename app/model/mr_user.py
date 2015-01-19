@@ -33,6 +33,8 @@ class User(Webapp2User):
             return None
 
     def get_username(self):
+        if hasattr(self, 'name'):
+            return self.name
 
         return 'Not set'
 

@@ -160,7 +160,23 @@ a {
   margin-bottom: 100px;
 }
 .popup-background {
-  background-position: center center;
-  background-size: cover;
-  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.11) 0%, rgba(0, 0, 0, 0.11) 86%, rgba(0, 0, 0, 0.01) 100%);
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background: rgba(0, 0, 0, 0.25);
+  text-align: center;
+  z-index: 100;
+}
+.popup {
+  border-radius: 4px;
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.3);
+  background: white;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  margin-top: 60px;
 }

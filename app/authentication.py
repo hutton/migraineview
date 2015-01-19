@@ -79,11 +79,13 @@ class BaseRequestHandler(webapp2.RequestHandler):
             if all_users:
                 return all_users[0]
             else:
+                _attrs = {}
 
-                ok, user = User.create_user("debug:" + user.user_id(),
-                                            unique_properties=['share_report_key', 'share_report_and_list_key'],
-                                            share_report_key=generate_string(8),
-                                            share_report_and_list_key=generate_string(7))
+                _attrs['name'] = users.get_current_user().nickname()
+                _attrs['share_report_key'] = generate_string(8)
+                _attrs['share_report_and_list_key'] = generate_string(7)
+
+                ok, user = User.create_user("debug:" + user.user_id(), **_attrs)
 
                 return user
 
