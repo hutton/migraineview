@@ -3545,6 +3545,11 @@ a {
 .section-content {
   margin-bottom: 100px;
 }
+.popup-background {
+  background-position: center center;
+  background-size: cover;
+  background: radial-gradient(ellipse at center, #1f8dd6 0%, #1b1d3d 86%, #040820 100%);
+}
 /*---------------------------------------------------
     LESS Elements 0.9
   ---------------------------------------------------

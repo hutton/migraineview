@@ -4067,6 +4067,11 @@ a {
 .section-content {
   margin-bottom: 100px;
 }
+.popup-background {
+  background-position: center center;
+  background-size: cover;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.11) 0%, rgba(0, 0, 0, 0.11) 86%, rgba(0, 0, 0, 0.01) 100%);
+}
 input[type=date] {
   min-width: 160px;
   min-height: 42px;

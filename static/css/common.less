@@ -142,3 +142,14 @@ a {
     margin-bottom: 100px;
 }
 
+@splash-start: rgba(0, 0, 0, 0.11);
+@splash-middle: rgba(0, 0, 0, 0.11);
+@splash-end: rgba(0, 0, 0, 0.01);
+
+.popup-background{
+	background-position: center center;
+	background-size: cover;
+
+    background: radial-gradient(ellipse at center, @splash-start 0%, @splash-middle 86%, @splash-end 100%);
+}
+

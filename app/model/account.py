@@ -1,5 +1,6 @@
 from google.appengine.api import users
 from google.appengine.ext import db
+from google.appengine.ext.ndb import Query
 from app.helper import generate_string
 from app.model.attack import Attack
 
@@ -78,7 +79,7 @@ class Account(db.Model):
 
 
     def get_attacks(self):
-        query = db.Query(Attack)
+        query = Query(Attack)
         query.ancestor(self)
         query.order('start_time')
 

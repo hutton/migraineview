@@ -1,12 +1,12 @@
-from google.appengine.ext import db
+from google.appengine.ext.ndb import Model, DateTimeProperty, IntegerProperty, TextProperty
 
 __author__ = 'simonhutton'
 
 
-class Attack(db.Model):
-    start_time = db.DateTimeProperty()
-    duration = db.IntegerProperty()
-    comment = db.TextProperty()
+class Attack(Model):
+    start_time = DateTimeProperty()
+    duration = IntegerProperty()
+    comment = TextProperty()
 
-    start_text = db.TextProperty()
-    duration_text = db.TextProperty()
+    start_text = TextProperty()
+    duration_text = TextProperty()

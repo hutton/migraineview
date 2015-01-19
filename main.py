@@ -23,6 +23,7 @@ from app.authentication import BaseRequestHandler
 from app.example import Example
 from app.export import Export
 from app.model.account import Account
+from app.model.mr_user import User
 
 from app.report import Report, ReportAdd
 from app.services import Stats, ClearAllEvents
@@ -35,8 +36,8 @@ class Main(BaseRequestHandler):
     def get(self):
 
         if self.logged_in:
-            template_values = {'user': {'name': self.current_user},
-                               'logout_url': '/logout'}
+            template_values = {'user': {'name': self.current_user.get_username()},
+                               'logout_url': self.get_logout()}
         else:
             template_values = {'user': None,
                                            'login_url': users.create_login_url('/report')}
@@ -61,15 +62,15 @@ class Uploaded(webapp2.RequestHandler):
         self.redirect('/')
 
 
-class CreateAccount(webapp2.RequestHandler):
-    def get(self):
-
-        acc = Account.get_or_create_account()
-
-        if acc:
-            self.redirect('/add')
-        else:
-            self.redirect('/')
+# class CreateAccount(webapp2.RequestHandler):
+#     def get(self):
+#
+#         acc = Account.get_or_create_account()
+#
+#         if acc:
+#             self.redirect('/add')
+#         else:
+#             self.redirect('/')
 
 app_config = {
   'webapp2_extras.sessions': {
@@ -77,7 +78,8 @@ app_config = {
     'secret_key': SESSION_KEY
   },
   'webapp2_extras.auth': {
-    'user_attributes': []
+    'user_model': User,
+    'user_attributes': ['share_report_key', 'share_report_and_list_key']
   }
 }
 
@@ -85,6 +87,7 @@ app = webapp2.WSGIApplication([webapp2.Route('/auth/<provider>',
                                              handler='app.authentication.AuthHandler:_simple_auth', name='auth_login'),
                                webapp2.Route('/auth/<provider>/callback',
                                              handler='app.authentication.AuthHandler:_auth_callback', name='auth_callback'),
+                               webapp2.Route('/logout', handler='app.authentication.AuthHandler:logout', name='logout'),
                                ('/', Main),
                                ('/upload', Upload),
                                ('/uploaded/.*', Uploaded),
@@ -94,6 +97,5 @@ app = webapp2.WSGIApplication([webapp2.Route('/auth/<provider>',
                                ('/export/.*', Export),
                                ('/report/add', ReportAdd),
                                ('/shared/.*', Shared),
-                               ('/create', CreateAccount),
                                ('/(report|options|add|list)', Report)
                               ], config=app_config, debug=True)

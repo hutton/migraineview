@@ -5,6 +5,7 @@ from google.appengine.api import users
 from google.appengine.ext import db
 from google.appengine.ext.webapp import template
 import webapp2
+from app.authentication import BaseRequestHandler
 from app.migraine_statistics import generate_statistics_from_events
 from app.model import attack, account
 from app.model.account import Account
@@ -13,7 +14,7 @@ from app.upload import create_start_text, create_duration_text
 __author__ = 'simonhutton'
 
 
-class Report(webapp2.RequestHandler):
+class Report(BaseRequestHandler):
 
     def show_main(self, acc):
 
@@ -27,7 +28,7 @@ class Report(webapp2.RequestHandler):
 
         response['share_report'] = acc.share_report_key
         response['share_report_and_list'] = acc.share_report_and_list_key
-        response['logout_url'] = users.create_logout_url('/')
+        response['logout_url'] = self.get_logout()
         response['show_logout'] = True
         response['show_add'] = True
         response['show_options'] = True
@@ -38,26 +39,24 @@ class Report(webapp2.RequestHandler):
 
     def get(self, object):
 
-        acc = account.Account.get_account()
-
-        if acc:
-            self.show_main(acc)
+        if self.logged_in:
+            self.show_main(self.current_user)
         else:
             self.redirect('/')
 
 
-class ReportAdd(webapp2.RequestHandler):
+class ReportAdd(BaseRequestHandler):
     def post(self):
 
-        acc = Account.get_account()
+        if self.logged_in:
+            user = self.current_user;
 
-        if acc:
             started = datetime.datetime.strptime(self.request.POST['started'], "%Y-%m-%d %H:%M")
             ended = datetime.datetime.strptime(self.request.POST['ended'], "%Y-%m-%d %H:%M")
 
             duration_delta = ended - started
 
-            new_attack = attack.Attack(parent=acc)
+            new_attack = attack.Attack(parent=user.key)
 
             new_attack.start_time = started
             new_attack.duration = duration_delta.seconds
@@ -66,7 +65,7 @@ class ReportAdd(webapp2.RequestHandler):
             new_attack.start_text = create_start_text(started)
             new_attack.duration_text = create_duration_text(duration_delta.seconds)
 
-            db.put(new_attack)
+            new_attack.put()
 
             self.response.out.write({'message': "One attack created"})
             self.response.status = 200

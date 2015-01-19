@@ -1,6 +1,10 @@
 import logging
 import sys
+from google.appengine.api import users
+from google.appengine.ext import db
 import webob
+from app.helper import generate_string
+from app.model.mr_user import User
 
 sys.path.insert(0, 'libs')
 
@@ -8,6 +12,7 @@ import webapp2
 from app import secrets
 from libs.simpleauth import SimpleAuthHandler
 from webapp2_extras import auth, sessions
+import webob.multidict
 
 __author__ = 'simonhutton'
 
@@ -41,16 +46,48 @@ class BaseRequestHandler(webapp2.RequestHandler):
     def current_user(self):
         """Returns currently logged in user"""
         user_dict = self.auth.get_user_by_session()
-        return self.auth.store.user_model.get_by_id(user_dict['user_id'])
+
+        if self.auth.get_user_by_session() is not None:
+            return self.auth.store.user_model.get_by_id(user_dict['user_id'])
+        elif users.get_current_user() is not None:
+            return self.get_debug_user()
+
+        return None
 
     @webapp2.cached_property
     def logged_in(self):
         """Returns true if a user is currently logged in, false otherwise"""
-        return self.auth.get_user_by_session() is not None
+        return self.auth.get_user_by_session() is not None or users.get_current_user() is not None
 
     def head(self, *args):
         """Head is used by Twitter. If not there the tweet button shows 0"""
         pass
+
+    def get_logout(self):
+        if self.auth.get_user_by_session() is not None:
+            return '/logout'
+        elif users.get_current_user() is not None:
+            return users.create_logout_url('/')
+
+    def get_debug_user(self):
+        user = users.get_current_user()
+
+        if user:
+            query = User.gql("WHERE auth_ids = :auth_ids", auth_ids="debug:" + user.user_id())
+            all_users = query.fetch(1)
+
+            if all_users:
+                return all_users[0]
+            else:
+
+                ok, user = User.create_user("debug:" + user.user_id(),
+                                            unique_properties=['share_report_key', 'share_report_and_list_key'],
+                                            share_report_key=generate_string(8),
+                                            share_report_and_list_key=generate_string(7))
+
+                return user
+
+        return None
 
 
 class AuthHandler(BaseRequestHandler, SimpleAuthHandler):
@@ -152,7 +189,12 @@ class AuthHandler(BaseRequestHandler, SimpleAuthHandler):
 
             else:
                 logging.debug('Creating a brand new user')
+
+                _attrs['share_report_key'] = generate_string(8)
+                _attrs['share_report_and_list_key'] = generate_string(7)
+
                 ok, user = self.auth.store.user_model.create_user(auth_id, **_attrs)
+
                 if ok:
                     self.auth.set_session(self.auth.store.user_to_dict(user))
 
@@ -161,24 +203,11 @@ class AuthHandler(BaseRequestHandler, SimpleAuthHandler):
         self.session.add_flash(auth_info, 'auth_info')
         self.session.add_flash({'extra': extra}, 'extra')
 
-        # Possible flow:
-        #
-        # 1. check whether user exist, e.g.
-        # User.get_by_auth_id(auth_id)
-        #
-        # 2. create a new user if it doesn't
-        # User(**data).put()
-        #
-        # 3. sign in the user
-        # self.session['_user_id'] = auth_id
-        #
-        # 4. redirect somewhere, e.g. self.redirect('/profile')
-        #
-        # See more on how to work the above steps here:
-        # http://webapp-improved.appspot.com/api/webapp2_extras/auth.html
-        # http://code.google.com/p/webapp-improved/issues/detail?id=20
-
         destination_url = '/report'
+
+        if extra is not None:
+            params = webob.multidict.MultiDict(extra)
+            destination_url = str(params.get('destination_url', '/report'))
 
         return self.redirect(destination_url)
 
