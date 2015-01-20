@@ -565,6 +565,8 @@
         </div>
     </script>
 
+
+    {% if web_debug %}
     <script src="/static/javascript/tp/jquery-2.1.1.js" language="javascript" type="text/javascript"></script>
     <script src="/static/javascript/tp/Chart.min.js" language="javascript" type="text/javascript"></script>
     <script src="/static/javascript/tp/underscore.js" language="javascript" type="text/javascript"></script>
@@ -591,6 +593,9 @@
     <script src="/static/javascript/export_view.js" language="javascript" type="text/javascript"></script>
 
     <script src="/static/javascript/app.js" language="javascript" type="text/javascript"></script>
+    {% else %}
+    <script src="/static/javascript/min/all-min.js" language="javascript" type="text/javascript"></script>
+    {% endif %}
 
     <script>
         $(document).ready(function(){

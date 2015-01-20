@@ -178,7 +178,7 @@ class AuthHandler(BaseRequestHandler, SimpleAuthHandler):
             # then, create a new user if nobody's signed in,
             # otherwise add this auth_id to currently logged in user.
 
-            if self.logged_in:
+            if self.auth.get_user_by_session() is not None:
                 logging.debug('Updating currently logged in user')
 
                 u = self.current_user

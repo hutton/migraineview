@@ -231,7 +231,7 @@
     -->
     <div class="popup-background" id="logon" style="display: none;">
         <div class="popup">
-           <div class="popup-title">Use one of these providers to logon</div>
+           <div class="popup-title">Login with any of these services</div>
             <div>
                 <div class="logon-provider">
                     <a href="/auth/googleplus?destination_url=/report" class="button-xlarge button-error pure-button"><i class="fa fa-google-plus-square"></i> Google</a>
@@ -240,8 +240,10 @@
                     <a href="/auth/windows_live?destination_url=/report" class="button-xlarge button-secondary pure-button"><i class="fa fa-windows"></i>Windows Live</a>
                 </div>
                 <div class="logon-provider">
-                    <a href="{{ login_url }}" class="button-xlarge pure-button">Debug</a>
+                    <a href="{{ login_url }}" class="button-xlarge pure-button">Debug Login</a>
                 </div>
+
+                <button class="popup-close button-large pure-button">Close</button>
             </div>
         </div>
     </div>

@@ -40,16 +40,7 @@ class Main(BaseRequestHandler):
                                'logout_url': self.get_logout()}
         else:
             template_values = {'user': None,
-                                           'login_url': users.create_login_url('/report')}
-
-        # user = Account.get_account()
-        #
-        # if user:
-        #     template_values = {'user': {'name': user.nickname},
-        #                        'logout_url': users.create_logout_url('/')}
-        # else:
-        #     template_values = {'user': None,
-        #                        'login_url': users.create_login_url('/report')}
+                               'login_url': users.create_login_url('/report')}
 
         template_values['login_create_url'] = users.create_login_url('/create')
 

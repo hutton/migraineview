@@ -3556,15 +3556,22 @@ a {
   z-index: 100;
 }
 .popup {
-  border-radius: 4px;
+  border-radius: 8px;
   box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.3);
   background: white;
   padding: 20px;
   margin-left: auto;
   margin-right: auto;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.4);
   display: inline-block;
   margin-top: 60px;
+}
+.popup-title {
+  font-size: 110%;
+  margin-bottom: 10px;
+}
+.popup-close {
+  margin-top: 10px;
 }
 /*---------------------------------------------------
     LESS Elements 0.9

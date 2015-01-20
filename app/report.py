@@ -9,6 +9,7 @@ from app.authentication import BaseRequestHandler
 from app.migraine_statistics import generate_statistics_from_events
 from app.model import attack, account
 from app.model.account import Account
+from app.model.configuration import Configuration
 from app.upload import create_start_text, create_duration_text
 
 __author__ = 'simonhutton'
@@ -26,6 +27,7 @@ class Report(BaseRequestHandler):
             if len(attacks) > 0:
                 response['data'] = simplejson.dumps(generate_statistics_from_events(attacks))
 
+        response['web_debug'] = Configuration.get_instance().web_debug
         response['share_report'] = acc.share_report_key
         response['share_report_and_list'] = acc.share_report_and_list_key
         response['logout_url'] = self.get_logout()

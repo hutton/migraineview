@@ -4,6 +4,7 @@ from app.helper import create_start_text, create_duration_text
 from app.migraine_statistics import json_to_events, generate_statistics_from_events
 from google.appengine._internal.django.utils import simplejson
 from google.appengine.ext.webapp import template
+from app.model.configuration import Configuration
 
 
 __author__ = 'simonhutton'
@@ -33,6 +34,7 @@ class Example(webapp2.RequestHandler):
 
         response = generate_statistics_from_events(events)
 
+        response['web_debug'] = Configuration.get_instance().web_debug
         response['show_logout'] = False
         response['share_report'] = "example_report"
         response['share_report_and_list'] = "example_report_and_list"
