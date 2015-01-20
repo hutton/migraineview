@@ -1,6 +1,7 @@
 import sys
 from datetime import timedelta
 import webapp2
+from app.authentication import BaseRequestHandler
 from app.example import Example
 from app.helper import generate_string
 from app.model.account import Account
@@ -66,7 +67,7 @@ def generate_ics_output(attacks, unique_id):
     return result
 
 
-class Export(webapp2.RequestHandler):
+class Export(BaseRequestHandler):
 
     def get(self):
 
@@ -74,11 +75,9 @@ class Export(webapp2.RequestHandler):
             attacks = Example.get_example_attacks()
             uid = generate_string(6)
         else:
-            acc = Account.get_account()
-
-            if acc:
-                attacks = acc.get_attacks_as_dict()
-                uid = acc.share_report_and_list_key
+            if self.logged_in:
+                attacks = self.current_user.get_attacks_as_dict()
+                uid = self.current_user.share_report_and_list_key
 
         if attacks:
             self.response.headers['Content-Transfer-Encoding'] = 'binary'

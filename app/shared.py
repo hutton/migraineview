@@ -6,6 +6,7 @@ import webapp2
 from app.example import Example
 from app.migraine_statistics import generate_statistics_from_events
 from app.model.account import Account
+from app.model.mr_user import User
 
 __author__ = 'simonhutton'
 
@@ -24,7 +25,7 @@ class Shared(webapp2.RequestHandler):
 
             if len(shared_link) == 7:
                 # Report with List
-                acc = Account.get_account_from_share_link_report_and_list(shared_link)
+                acc = User.get_account_from_share_link_report_and_list(shared_link)
 
                 response['show_list'] = True
 
@@ -32,7 +33,7 @@ class Shared(webapp2.RequestHandler):
 
             if len(shared_link) == 8:
                 # Report only
-                acc = Account.get_account_from_share_link_report_only(shared_link)
+                acc = User.get_account_from_share_link_report_only(shared_link)
 
                 response['show_list'] = False
 

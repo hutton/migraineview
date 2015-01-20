@@ -122,7 +122,10 @@ window.AddView = window.MainViewBase.extend({
             var data = jQuery.parseJSON(response);
 
             that.showUploadedFinished(data);
-        }).fail(function (data) {
+        }).fail(function (response) {
+
+            var data = jQuery.parseJSON(response.responseText);
+            that.showUploadedFinished(data);
         });
     },
 

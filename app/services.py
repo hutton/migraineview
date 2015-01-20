@@ -1,5 +1,5 @@
 from google.appengine._internal.django.utils import simplejson
-from google.appengine.ext import db
+from google.appengine.ext import ndb
 import webapp2
 from app.authentication import BaseRequestHandler
 from app.migraine_statistics import generate_statistics_from_events
@@ -32,7 +32,7 @@ class ClearAllEvents(BaseRequestHandler):
             user = self.current_user;
             attacks = user.get_attacks()
 
-            db.delete(attacks)
+            ndb.delete_multi(attacks)
 
             self.response.out.write(simplejson.dumps({}))
         else:
