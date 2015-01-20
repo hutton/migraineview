@@ -200,11 +200,6 @@ class AuthHandler(BaseRequestHandler, SimpleAuthHandler):
                 if ok:
                     self.auth.set_session(self.auth.store.user_to_dict(user))
 
-        # Remember auth data during redirect, just for this demo. You wouldn't
-        # normally do this.
-        self.session.add_flash(auth_info, 'auth_info')
-        self.session.add_flash({'extra': extra}, 'extra')
-
         destination_url = '/report'
 
         if extra is not None:
