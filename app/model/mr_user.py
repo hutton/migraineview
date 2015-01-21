@@ -10,6 +10,27 @@ __author__ = 'simonhutton'
 
 class User(Webapp2User):
 
+    PROVIDER_LOOKUP = {
+        'facebook': {
+            'name': 'Facebook'
+        },
+        'googleplus': {
+            'name': 'Google+',
+        },
+        'windows_live': {
+            'name': 'Windows Live'
+        },
+        'twitter': {
+            'name': 'Twitter'
+        },
+        'linkedin': {
+            'name': 'LinkedIn'
+        },
+        'linkedin2': {
+            'name': 'LinkedIn'
+        }
+    }
+
     @staticmethod
     def get_account_from_share_link_report_and_list(key):
 
@@ -31,6 +52,12 @@ class User(Webapp2User):
             return accounts[0]
         else:
             return None
+
+    def provider_name(self):
+        if self.provider in self.PROVIDER_LOOKUP:
+            return self.PROVIDER_LOOKUP[self.provider]['name']
+
+        return self.provider
 
     def get_username(self):
         if hasattr(self, 'name'):

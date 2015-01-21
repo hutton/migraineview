@@ -22,6 +22,7 @@ FOURSQUARE_USER_LINK = 'http://foursquare.com/user/{0}'
 
 
 class BaseRequestHandler(webapp2.RequestHandler):
+
     def dispatch(self):
         # Get a session store for this request.
         self.session_store = sessions.get_store(request=self.request)
@@ -84,6 +85,7 @@ class BaseRequestHandler(webapp2.RequestHandler):
                 _attrs['name'] = users.get_current_user().nickname()
                 _attrs['share_report_key'] = generate_string(8)
                 _attrs['share_report_and_list_key'] = generate_string(7)
+                _attrs['provider'] = "debug"
 
                 ok, user = User.create_user("debug:" + user.user_id(), **_attrs)
 
@@ -170,6 +172,9 @@ class AuthHandler(BaseRequestHandler, SimpleAuthHandler):
             # In a real app you could compare _attrs with user's properties fetched
             # from the datastore and update local user in case something's changed.
             user.populate(**_attrs)
+
+            user.provider = provider
+
             user.put()
             self.auth.set_session(self.auth.store.user_to_dict(user))
 
@@ -194,6 +199,7 @@ class AuthHandler(BaseRequestHandler, SimpleAuthHandler):
 
                 _attrs['share_report_key'] = generate_string(8)
                 _attrs['share_report_and_list_key'] = generate_string(7)
+                _attrs['provider'] = provider
 
                 ok, user = self.auth.store.user_model.create_user(auth_id, **_attrs)
 

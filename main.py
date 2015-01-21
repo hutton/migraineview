@@ -70,7 +70,7 @@ app_config = {
   },
   'webapp2_extras.auth': {
     'user_model': User,
-    'user_attributes': ['share_report_key', 'share_report_and_list_key']
+    'user_attributes': ['share_report_key', 'share_report_and_list_key', 'provider']
   }
 }
 
@@ -88,5 +88,5 @@ app = webapp2.WSGIApplication([webapp2.Route('/auth/<provider>',
                                ('/export/.*', Export),
                                ('/report/add', ReportAdd),
                                ('/shared/.*', Shared),
-                               ('/(report|options|add|list)', Report)
+                               ('/(report|account|add|list)', Report)
                               ], config=app_config, debug=True)

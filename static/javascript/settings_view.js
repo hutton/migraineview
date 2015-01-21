@@ -5,19 +5,35 @@
 
 window.SettingsView = window.MainViewBase.extend({
     initialize: function () {
+        var that = this;
+        $('#clear-all-cancel').click(function(){
+            that.hideClearAllPopup();
+        });
     },
 
     el: $('#settings-view'),
 
     settingsButtonsMessageEl: $('#settings-buttons-message'),
 
+    clearAllAttacksPopupEl: $('#clear-all-attacks-popup'),
+
     events: {
-        "click #settings-clear-all":  "settingsClearAll"
+        "click #settings-clear-all":  "showClearAllPopup",
+        "click #clear-all-cancel":   "hideClearAllPopup",
+        "click #clear-all-yes":   "settingsClearAll"
     },
 
     render: function(){
 
         return this;
+    },
+
+    showClearAllPopup: function(){
+        this.clearAllAttacksPopupEl.fadeIn('fast');
+    },
+
+    hideClearAllPopup: function(){
+        this.clearAllAttacksPopupEl.fadeOut('fast');
     },
 
     settingsClearAll: function(){

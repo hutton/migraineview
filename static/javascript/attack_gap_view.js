@@ -9,7 +9,7 @@ window.AttackGapView = Backbone.View.extend({
         this.chartWidth = 1024;
         this.chartHeight = 145;
         this.height = 200;
-        this.margin = {top: 30, right: 10, bottom: 50, left: 10};
+        this.margin = {top: 30, right: 30, bottom: 50, left: 30};
         this.width = this.chartWidth - (20 /*this.margin.left + this.margin.right*/);
         this.percent = d3.format('%');
         this.initialised = false;
@@ -42,7 +42,7 @@ window.AttackGapView = Backbone.View.extend({
         // scales and axes
         this.xPos = d3.scale.linear()
             .range([0, this.width])
-            .domain([0, d3.max(data)]); // hard-coding this because I know the data
+            .domain([0, d3.max([d3.max(data), this.model.overview.timeSinceLastAttack])]); // hard-coding this because I know the data
 
         var y = d3.scale.ordinal();
 
