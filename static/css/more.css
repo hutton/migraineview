@@ -3906,6 +3906,9 @@ Hides the menu at `48em`, but modify this based on your app's needs.
 .button-xlarge {
   font-size: 125%;
 }
+.pure-control-group > span {
+  vertical-align: middle;
+}
 /*---------------------------------------------------
     LESS Elements 0.9
   ---------------------------------------------------
@@ -4105,9 +4108,6 @@ input[type=date] {
 #add-duration-group-container {
   min-height: 40px;
   padding-top: 7px;
-}
-#add-duration-group > label {
-  margin-top: -2px;
 }
 #add-comment-text {
   width: 320px;
@@ -4477,6 +4477,9 @@ line.line {
 }
 #list-table td span {
   background: yellow;
+}
+#settings-buttons-message {
+  margin: 20px 0px;
 }
 #settings-buttons {
   text-align: center;

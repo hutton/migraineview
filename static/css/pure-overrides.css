@@ -69,3 +69,6 @@
 .button-xlarge {
   font-size: 125%;
 }
+.pure-control-group > span {
+  vertical-align: middle;
+}

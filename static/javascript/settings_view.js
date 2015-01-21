@@ -9,6 +9,8 @@ window.SettingsView = window.MainViewBase.extend({
 
     el: $('#settings-view'),
 
+    settingsButtonsMessageEl: $('#settings-buttons-message'),
+
     events: {
         "click #settings-clear-all":  "settingsClearAll"
     },
@@ -19,12 +21,33 @@ window.SettingsView = window.MainViewBase.extend({
     },
 
     settingsClearAll: function(){
+        var that = this;
+
         $.ajax({
             url: "/service/clearAllEvents"
         }).done(function(response) {
 
-            App.dataChanged();
-        });
+            var data = jQuery.parseJSON(response);
 
+            that.showButtonFinished(data);
+
+            App.dataChanged();
+        }).fail(function (response) {
+
+            var data = jQuery.parseJSON(response.responseText);
+            that.showButtonFinished(data);
+        });
+    },
+
+    showButtonFinished: function(data){
+        var that = this;
+
+        this.settingsButtonsMessageEl.show();
+
+        this.settingsButtonsMessageEl.html(data.message);
+
+        _.delay(function(){
+            that.settingsButtonsMessageEl.fadeOut()
+        }, 5000);
     }
 });

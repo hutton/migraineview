@@ -17,24 +17,25 @@ __author__ = 'simonhutton'
 
 class Report(BaseRequestHandler):
 
-    def show_main(self, acc):
+    def show_main(self, user):
 
         response = {}
 
         if "report" in self.request.uri or "list" in self.request.uri:
-            attacks = acc.get_attacks_as_dict()
+            attacks = user.get_attacks_as_dict()
 
             if len(attacks) > 0:
                 response['data'] = simplejson.dumps(generate_statistics_from_events(attacks))
 
         response['web_debug'] = Configuration.get_instance().web_debug
-        response['share_report'] = acc.share_report_key
-        response['share_report_and_list'] = acc.share_report_and_list_key
+        response['share_report'] = user.share_report_key
+        response['share_report_and_list'] = user.share_report_and_list_key
         response['logout_url'] = self.get_logout()
         response['show_logout'] = True
         response['show_add'] = True
         response['show_options'] = True
         response['show_list'] = True
+        response['user'] = user
 
         path = os.path.join(os.path.join(os.path.dirname(__file__), 'html'), '../../templates/main.html')
         self.response.out.write(template.render(path, response))

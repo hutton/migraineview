@@ -4,6 +4,8 @@
 
 window.AttackGapView = Backbone.View.extend({
     initialize: function () {
+        _.bindAll(this, "resize");
+
         this.chartWidth = 1024;
         this.chartHeight = 145;
         this.height = 200;

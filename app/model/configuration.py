@@ -1,5 +1,6 @@
 import datetime
-from google.appengine.ext.ndb import Model, DateTimeProperty, IntegerProperty, TextProperty, BooleanProperty
+from google.appengine.ext.ndb import Model, DateTimeProperty, IntegerProperty, TextProperty, BooleanProperty, \
+    StringProperty
 
 __author__ = 'simonhutton'
 
@@ -11,7 +12,7 @@ class Configuration(Model):
     _INSTANCE_AGE = None
 
     web_debug = BooleanProperty()
-
+    public_stripe_key = StringProperty()
 
     @classmethod
     def get_instance(cls):
@@ -19,7 +20,8 @@ class Configuration(Model):
         if not cls._INSTANCE or cls._INSTANCE_AGE + cls.CACHE_TIME < now:
             cls._INSTANCE = cls.get_or_insert('config')
 
-            if not cls._INSTANCE.web_debug:
+            if not cls._INSTANCE.public_stripe_key:
+                cls._INSTANCE.public_stripe_key = 'public key'
                 cls._INSTANCE.web_debug = True
 
                 cls._INSTANCE.put()

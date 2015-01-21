@@ -50,7 +50,7 @@
 
                         {% if show_options %}
                         <!--<li class="menu-item-divided"><a id="export-toggle" href="#"><i class="fa fa-share-square-o"></i> Export</a></li>-->
-                        <li class="menu-item-divided"><a id="settings-toggle" href="#"><i class="fa fa-cog"></i> Options</a></li>
+                        <li class="menu-item-divided"><a id="settings-toggle" href="#"><i class="fa fa-user"></i> Account</a></li>
                         {% endif %}
 
                         {% if show_logout %}
@@ -332,10 +332,27 @@
                 {% if show_options %}
                 <div id="settings-view" style="display: none;">
                     <div>
-                        <h2 class="title">Options</h2>
+                        <h2 class="title">Account</h2>
                     </div>
                     <div id="settings-container" class="content narrow">
                         <div class="stat-section-title">
+                            Account
+                        </div>
+                        <div class="section-content">
+                            <form class="pure-form pure-form-aligned">
+                                <fieldset>
+                                    <div class="pure-control-group">
+                                        <label for="started">Name</label>
+                                        <span>{{ user.name }}</span>
+                                    </div>
+                                </fieldset>
+                            </form>
+                            <div id="settings-buttons">
+                                <button id="settings-clear-all" class="button-error pure-button">Clear all attacks...</button>
+                                <div id="settings-buttons-message"></div>
+                            </div>
+                        </div>
+                         <div class="stat-section-title">
                             Share
                         </div>
                         <div class="section-content">
@@ -375,15 +392,7 @@
                             </div>
                         </div>
 
-                        <div class="stat-section-title">
-                            Account
-                        </div>
-                        <div class="section-content">
-                            <div id="settings-buttons">
-                                <button id="settings-clear-all" class="button-error pure-button">Clear all attacks</button>
-                            </div>
-                        </div>
-                    </div>
+                   </div>
                 </div>
                 {% endif %}
 

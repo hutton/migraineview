@@ -96,7 +96,7 @@ window.App = Backbone.View.extend({
     },
 
     showSettings: function(event){
-        this.Routes.navigate(this.getCurrentBase() + '/options', {trigger: true});
+        this.Routes.navigate(this.getCurrentBase() + '/account', {trigger: true});
 
         event.preventDefault();
     },
@@ -151,12 +151,12 @@ window.Workspace = Backbone.Router.extend({
         ":base/report":         "statistics",
         ":base/list":           "list",
         ":base/add":            "add",
-        ":base/options":        "options",
+        ":base/account":        "options",
         ":base/export":         "export",
         "report":               "statistics",
         "list":                 "list",
         "add":                  "add",
-        "options":              "options",
+        "account":              "options",
         "export":               "export",
         "shared/:base/report":  "statistics",
         "shared/:base/list":    "list"

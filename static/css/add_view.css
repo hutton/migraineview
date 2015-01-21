@@ -9,9 +9,6 @@ input[type=date] {
   min-height: 40px;
   padding-top: 7px;
 }
-#add-duration-group > label {
-  margin-top: -2px;
-}
 #add-comment-text {
   width: 320px;
   height: 120px;
