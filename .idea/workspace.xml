@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4ea88c3-5bc7-4b67-b3fb-d2fa76a7d74d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/simpleauth/handler.py" afterPath="$PROJECT_DIR$/libs/simpleauth/handler.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/home.html" afterPath="$PROJECT_DIR$/templates/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/secrets.py" afterPath="$PROJECT_DIR$/app/secrets.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="migraineview.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -33,11 +32,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="home.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="home.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6308725" vertical-offset="3378" max-vertical-offset="4605">
-              <caret line="244" column="0" selection-start-line="244" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
+            <state vertical-scroll-proportion="-10.5" vertical-offset="3378" max-vertical-offset="4605">
+              <caret line="242" column="49" selection-start-line="242" selection-start-column="49" selection-end-line="242" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -116,11 +115,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="handler.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="handler.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/libs/simpleauth/handler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="6469" max-vertical-offset="9270">
-              <caret line="456" column="34" selection-start-line="456" selection-start-column="34" selection-end-line="456" selection-end-column="34" />
+            <state vertical-scroll-proportion="0.2520661" vertical-offset="1588" max-vertical-offset="9270">
+              <caret line="120" column="37" selection-start-line="120" selection-start-column="17" selection-end-line="120" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -197,9 +196,9 @@
         <option value="$PROJECT_DIR$/app/model/mr_user.py" />
         <option value="$PROJECT_DIR$/templates/main.html" />
         <option value="$PROJECT_DIR$/static/javascript/settings_view.js" />
+        <option value="$PROJECT_DIR$/templates/home.html" />
         <option value="$PROJECT_DIR$/app/secrets.py" />
         <option value="$PROJECT_DIR$/libs/simpleauth/handler.py" />
-        <option value="$PROJECT_DIR$/templates/home.html" />
       </list>
     </option>
   </component>
@@ -1124,6 +1123,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.5" vertical-offset="3378" max-vertical-offset="4605">
+          <caret line="242" column="49" selection-start-line="242" selection-start-column="49" selection-end-line="242" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/secrets.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="960">
@@ -1134,16 +1141,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/libs/simpleauth/handler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6469" max-vertical-offset="9270">
-          <caret line="456" column="34" selection-start-line="456" selection-start-column="34" selection-end-line="456" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6308725" vertical-offset="3378" max-vertical-offset="4605">
-          <caret line="244" column="0" selection-start-line="244" selection-start-column="0" selection-end-line="244" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.2520661" vertical-offset="1588" max-vertical-offset="9270">
+          <caret line="120" column="37" selection-start-line="120" selection-start-column="17" selection-end-line="120" selection-end-column="37" />
           <folding />
         </state>
       </provider>
