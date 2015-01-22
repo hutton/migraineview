@@ -463,6 +463,7 @@ class SimpleAuthHandler(object):
     """
     resp = self._oauth2_request('https://graph.facebook.com/me?{0}',
                                 auth_info['access_token'])
+
     return json.loads(resp)
 
   def _get_foursquare_user_info(self, auth_info, key=None, secret=None):
