@@ -23,6 +23,7 @@ from app.authentication import BaseRequestHandler
 from app.example import Example
 from app.export import Export
 from app.model.account import Account
+from app.model.configuration import Configuration
 from app.model.mr_user import User
 
 from app.report import Report, ReportAdd
@@ -43,6 +44,7 @@ class Main(BaseRequestHandler):
                                'login_url': users.create_login_url('/report')}
 
         template_values['login_create_url'] = users.create_login_url('/create')
+        template_values['debug_login'] = Configuration.get_instance().debug_login
 
         path = os.path.join(os.path.join(os.path.dirname(__file__), 'html'), '../templates/home.html')
         self.response.out.write(template.render(path, template_values))

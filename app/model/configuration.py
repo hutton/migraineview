@@ -12,6 +12,7 @@ class Configuration(Model):
     _INSTANCE_AGE = None
 
     web_debug = BooleanProperty()
+    debug_login = BooleanProperty()
     public_stripe_key = StringProperty()
 
     @classmethod
@@ -23,6 +24,7 @@ class Configuration(Model):
             if not cls._INSTANCE.public_stripe_key:
                 cls._INSTANCE.public_stripe_key = 'public key'
                 cls._INSTANCE.web_debug = True
+                cls._INSTANCE.debug_login = True
 
                 cls._INSTANCE.put()
 

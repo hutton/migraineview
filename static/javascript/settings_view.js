@@ -5,10 +5,6 @@
 
 window.SettingsView = window.MainViewBase.extend({
     initialize: function () {
-        var that = this;
-        $('#clear-all-cancel').click(function(){
-            that.hideClearAllPopup();
-        });
     },
 
     el: $('#settings-view'),
@@ -16,6 +12,8 @@ window.SettingsView = window.MainViewBase.extend({
     settingsButtonsMessageEl: $('#settings-buttons-message'),
 
     clearAllAttacksPopupEl: $('#clear-all-attacks-popup'),
+
+    yesButton: $('#clear-all-yes'),
 
     events: {
         "click #settings-clear-all":  "showClearAllPopup",
@@ -30,6 +28,7 @@ window.SettingsView = window.MainViewBase.extend({
 
     showClearAllPopup: function(){
         this.clearAllAttacksPopupEl.fadeIn('fast');
+        this.yesButton.removeClass('pure-button-disabled');
     },
 
     hideClearAllPopup: function(){
@@ -39,20 +38,25 @@ window.SettingsView = window.MainViewBase.extend({
     settingsClearAll: function(){
         var that = this;
 
-        $.ajax({
-            url: "/service/clearAllEvents"
-        }).done(function(response) {
+        if (!this.yesButton.hasClass('pure-button-disabled')){
+            this.yesButton.addClass('pure-button-disabled');
 
-            var data = jQuery.parseJSON(response);
+            $.ajax({
+                url: "/service/clearAllEvents"
+            }).done(function(response) {
 
-            that.showButtonFinished(data);
+                var data = jQuery.parseJSON(response);
 
-            App.dataChanged();
-        }).fail(function (response) {
+                that.showButtonFinished(data);
+                that.hideClearAllPopup();
 
-            var data = jQuery.parseJSON(response.responseText);
-            that.showButtonFinished(data);
-        });
+                App.dataChanged();
+            }).fail(function (response) {
+
+                var data = jQuery.parseJSON(response.responseText);
+                that.showButtonFinished(data);
+            });
+        }
     },
 
     showButtonFinished: function(data){

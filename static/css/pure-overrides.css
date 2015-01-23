@@ -72,3 +72,8 @@
 .pure-control-group > span {
   vertical-align: middle;
 }
+.pure-form-aligned .pure-control-group label {
+  font-style: italic;
+  opacity: 0.6;
+  padding-right: 4px;
+}

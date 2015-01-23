@@ -157,7 +157,7 @@ a {
   margin-left: 220px;
 }
 .section-content {
-  margin-bottom: 100px;
+  margin: 50px 0px;
 }
 .popup-background {
   position: fixed;
@@ -186,4 +186,8 @@ a {
 }
 .popup-close {
   margin-top: 10px;
+}
+.popup-buttons > button {
+  margin: 10px 10px 0px 10px;
+  min-width: 80px;
 }

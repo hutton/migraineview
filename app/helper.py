@@ -71,7 +71,11 @@ def date_to_datetime(date):
 def build_json_events(events):
     json_events = []
 
-    for event in events:
+    reversed_events = events
+
+    reversed_events.reverse()
+
+    for event in reversed_events:
         json_events.append({'date': event['ShortStartDate'],
                             'start': event['StartText'],
                             'duration': event['DurationText'],

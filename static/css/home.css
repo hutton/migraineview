@@ -3384,6 +3384,14 @@ striping:
 .button-xlarge {
   font-size: 125%;
 }
+.pure-control-group > span {
+  vertical-align: middle;
+}
+.pure-form-aligned .pure-control-group label {
+  font-style: italic;
+  opacity: 0.6;
+  padding-right: 4px;
+}
 /*---------------------------------------------------
     LESS Elements 0.9
   ---------------------------------------------------
@@ -3543,7 +3551,7 @@ a {
   margin-left: 220px;
 }
 .section-content {
-  margin-bottom: 100px;
+  margin: 50px 0px;
 }
 .popup-background {
   position: fixed;
@@ -3572,6 +3580,10 @@ a {
 }
 .popup-close {
   margin-top: 10px;
+}
+.popup-buttons > button {
+  margin: 10px 10px 0px 10px;
+  min-width: 80px;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
@@ -3668,6 +3680,24 @@ a {
 }
 body {
   font-size: 12px;
+}
+.button-google {
+  color: white;
+  background: #ca3c3c;
+  /* this is a maroon */
+
+}
+.button-windows {
+  color: white;
+  background: #42b8dd;
+  /* this is a light blue */
+
+}
+.button-facebook {
+  color: white;
+  background: #14105b;
+  /* this is a light blue */
+
 }
 /********* MENU STYLES  ***********/
 #header-home-link {

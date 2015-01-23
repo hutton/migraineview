@@ -3909,6 +3909,11 @@ Hides the menu at `48em`, but modify this based on your app's needs.
 .pure-control-group > span {
   vertical-align: middle;
 }
+.pure-form-aligned .pure-control-group label {
+  font-style: italic;
+  opacity: 0.6;
+  padding-right: 4px;
+}
 /*---------------------------------------------------
     LESS Elements 0.9
   ---------------------------------------------------
@@ -4068,7 +4073,7 @@ a {
   margin-left: 220px;
 }
 .section-content {
-  margin-bottom: 100px;
+  margin: 50px 0px;
 }
 .popup-background {
   position: fixed;
@@ -4097,6 +4102,10 @@ a {
 }
 .popup-close {
   margin-top: 10px;
+}
+.popup-buttons > button {
+  margin: 10px 10px 0px 10px;
+  min-width: 80px;
 }
 input[type=date] {
   min-width: 160px;
@@ -4160,7 +4169,6 @@ input[type=date] {
 .stat-section-title {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   font-size: 120%;
-  margin: 20px 0px;
 }
 .stat-section-sub-heading {
   text-align: left;

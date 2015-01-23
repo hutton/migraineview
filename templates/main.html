@@ -346,15 +346,11 @@
                                         <span>{{ user.name }}</span>
                                     </div>
                                     <div class="pure-control-group">
-                                        <label>Account Provider</label>
+                                        <label>Identity Provider</label>
                                         <span>{{ user.provider_name }}</span>
                                     </div>
                                 </fieldset>
                             </form>
-                            <div id="settings-buttons">
-                                <button id="settings-clear-all" class="button-error pure-button">Clear all attacks...</button>
-                                <div id="settings-buttons-message"></div>
-                            </div>
                         </div>
                          <div class="stat-section-title">
                             Share
@@ -395,8 +391,26 @@
                                 </a>
                             </div>
                         </div>
-
+                        <div class="stat-section-title">
+                            Clear Data
+                        </div>
+                        <div class="section-content">
+                            <div id="settings-buttons">
+                                <button id="settings-clear-all" class="button-error button-large pure-button">Delete all data...</button>
+                                <div id="settings-buttons-message"></div>
+                            </div>
+                        </div>
                    </div>
+                    <div class="popup-background" id="clear-all-attacks-popup" style="display: none;">
+                        <div class="popup">
+                           <div class="popup-title">Delete all data.<br/>Are you sure?</div>
+                            <div class="popup-buttons">
+                                <button id="clear-all-cancel" class="pure-button">Cancel</button>
+                                <button id="clear-all-yes" class="button-error pure-button">Yes</button>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
                 {% endif %}
 
@@ -412,15 +426,6 @@
                     </div>
                 </div>
                 {% endif %}
-            </div>
-        </div>
-    </div>
-    <div class="popup-background" id="clear-all-attacks-popup" style="display: none;">
-        <div class="popup">
-           <div class="popup-title">Remove all your attack data?</div>
-            <div>
-                <button id="clear-all-cancel" class="button-large pure-button">Cancel</button>
-                <button id="clear-all-yes" class="button-large button-error pure-button">Yes</button>
             </div>
         </div>
     </div>
