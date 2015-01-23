@@ -3387,10 +3387,12 @@ striping:
 .pure-control-group > span {
   vertical-align: middle;
 }
+.pure-form-aligned .pure-control-group {
+  margin-bottom: 1.5em;
+}
 .pure-form-aligned .pure-control-group label {
-  font-style: italic;
-  opacity: 0.6;
-  padding-right: 4px;
+  opacity: 0.5;
+  font-weight: bold;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
@@ -3683,21 +3685,15 @@ body {
 }
 .button-google {
   color: white;
-  background: #ca3c3c;
-  /* this is a maroon */
-
+  background: #dd4b39;
 }
 .button-windows {
   color: white;
-  background: #42b8dd;
-  /* this is a light blue */
-
+  background: #00bcf2;
 }
 .button-facebook {
   color: white;
-  background: #14105b;
-  /* this is a light blue */
-
+  background: #3b5998;
 }
 /********* MENU STYLES  ***********/
 #header-home-link {

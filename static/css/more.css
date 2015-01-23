@@ -3909,10 +3909,12 @@ Hides the menu at `48em`, but modify this based on your app's needs.
 .pure-control-group > span {
   vertical-align: middle;
 }
+.pure-form-aligned .pure-control-group {
+  margin-bottom: 1.5em;
+}
 .pure-form-aligned .pure-control-group label {
-  font-style: italic;
-  opacity: 0.6;
-  padding-right: 4px;
+  opacity: 0.5;
+  font-weight: bold;
 }
 /*---------------------------------------------------
     LESS Elements 0.9
@@ -4114,7 +4116,7 @@ input[type=date] {
 #single-upload-form {
   margin: 50px 0px 0px 0px;
 }
-#add-duration-group-container {
+.add-duration-group-container {
   min-height: 40px;
   padding-top: 7px;
 }
@@ -4465,6 +4467,10 @@ line.line {
 }
 #list-table th:nth-child(2) {
   text-align: center;
+}
+#list-table tr:hover {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.03);
 }
 #list-table td {
   vertical-align: middle;

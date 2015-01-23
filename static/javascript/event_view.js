@@ -12,10 +12,18 @@ window.EventView = Backbone.View.extend({
 
     template: _.template($('#event-view-template').html()),
 
+    events: {
+        "click":        "showDetails"
+    },
+
     render: function(){
         this.$el.html(this.template(this.model.toJSON()));
 
         return this;
+    },
+
+    showDetails: function(){
+        window.App.eventsView.showDetails(this.model);
     },
 
     changed: function(){

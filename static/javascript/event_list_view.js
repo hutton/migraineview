@@ -23,6 +23,8 @@ window.EventListView = window.MainViewBase.extend({
 
     listSearchInputClearEl: $('#list-search-input-clear'),
 
+    listDetailsPopupEl: $('#list-details-popup'),
+
     events: {
         "input #list-search-input": "searchInputChanged",
         "click #list-search-input-clear": "clearInputClicked"
@@ -110,5 +112,9 @@ window.EventListView = window.MainViewBase.extend({
         this.listSearchInputEl.val("");
         this.listSearchInputEl.focus();
         this.searchInputChanged();
+    },
+
+    showDetails: function(model){
+        this.listDetailsPopupEl.fadeIn('fast');
     }
 });

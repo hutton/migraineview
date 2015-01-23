@@ -36,6 +36,10 @@
 #list-table th:nth-child(2) {
   text-align: center;
 }
+#list-table tr:hover {
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.03);
+}
 #list-table td {
   vertical-align: middle;
 }
