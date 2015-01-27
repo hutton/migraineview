@@ -23,14 +23,14 @@ window.EventListView = window.MainViewBase.extend({
 
     listSearchInputClearEl: $('#list-search-input-clear'),
 
-    listDetailsPopupEl: $('#list-details-popup'),
-
     events: {
         "input #list-search-input": "searchInputChanged",
         "click #list-search-input-clear": "clearInputClicked"
     },
 
     render: function(){
+        this.editAttackView = new EditAttackView();
+
         if (this.collection.models.length > 0){
             this.showAttacks();
         } else {
@@ -115,6 +115,6 @@ window.EventListView = window.MainViewBase.extend({
     },
 
     showDetails: function(model){
-        this.listDetailsPopupEl.fadeIn('fast');
+        this.editAttackView.show(model);
     }
 });

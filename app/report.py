@@ -75,3 +75,32 @@ class ReportAdd(BaseRequestHandler):
 
         else:
             self.redirect('/')
+
+
+class ReportEdit(BaseRequestHandler):
+    def post(self):
+
+        if self.logged_in:
+            user = self.current_user;
+
+            started = datetime.datetime.strptime(self.request.POST['started'], "%Y-%m-%d %H:%M")
+            ended = datetime.datetime.strptime(self.request.POST['ended'], "%Y-%m-%d %H:%M")
+
+            duration_delta = ended - started
+
+            # new_attack = attack.Attack(parent=user.key)
+            #
+            # new_attack.start_time = started
+            # new_attack.duration = duration_delta.seconds
+            # new_attack.comment = self.request.POST['comment']
+            #
+            # new_attack.start_text = create_start_text(started)
+            # new_attack.duration_text = create_duration_text(duration_delta.seconds)
+            #
+            # new_attack.put()
+
+            self.response.out.write({'message': "One attack created"})
+            self.response.status = 200
+
+        else:
+            self.redirect('/')

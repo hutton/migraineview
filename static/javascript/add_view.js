@@ -4,8 +4,6 @@
 
 window.AddView = window.MainViewBase.extend({
     initialize: function () {
-        $("input[type='date']").val(new Date().toDateInputValue());
-
         var that = this;
 
         this.tests = {
@@ -31,12 +29,7 @@ window.AddView = window.MainViewBase.extend({
     },
 
     events: {
-        "click #single-upload-form-button":     "addSingleAttack",
-        "change #started":                     "datesChanged",
-        "change #started-time":                "datesChanged",
-        "change #ended":                       "datesChanged",
-        "change #ended-time":                  "datesChanged",
-        "input #add-comment-text":             "datesChanged"
+        "click #single-upload-form-button":     "addSingleAttack"
     },
 
     el: $('#add-view'),
@@ -49,35 +42,20 @@ window.AddView = window.MainViewBase.extend({
 
     uploadedMessage: $('#add-uploaded-message'),
 
-    durationGroupEl: $('#add-duration-group'),
-
     uploadContainer: $('.upload-container'),
 
     uploadingProgress: $('#uploading-message > .progress > span'),
 
     singleUploadFormEl: $('#single-upload-form'),
 
-    startedEL: $('#started'),
-
-    startedTimeEL: $('#started-time'),
-
-    endedEL: $('#ended'),
-
-    endedTimeEL: $('#ended-time'),
-
-    commentEL: $('#add-comment-text'),
-
-    durationLabelEl: $('#add-duration-group > label'),
-
-    durationValueEl: $('#add-duration-group > span'),
-
-    addMessageLabelEl: $('#add-message-label'),
-
     singleUploadFormButtonEl: $('#single-upload-form-button'),
 
-    render: function(){
+    singleUploadAttackViewContainer: $('#single-upload-attack-view-container'),
 
-        this.datesChanged();
+    render: function(){
+        this.attackView = new AttackView();
+
+        this.singleUploadAttackViewContainer.append(this.attackView.$el);
 
         return this;
     },
@@ -181,20 +159,14 @@ window.AddView = window.MainViewBase.extend({
 
         var that = this;
 
-        var start = this.startedEL.val();
-        var started_time = this.startedTimeEL.val();
-        var end = this.endedEL.val();
-        var end_time = this.endedTimeEL.val();
-
-        var started_send = start + " " + started_time;
-        var ended_send = end + " " + end_time;
-
-        var commentEL = this.commentEL.val();
+        var started_send = this.attackView.getStarted();
+        var ended_send = this.attackView.getEnded();
+        var commentEL = this.attackView.commentEL.val();
 
         if (!this.singleUploadFormButtonEl.hasClass('pure-button-disabled')) {
             this.singleUploadFormButtonEl.addClass('pure-button-disabled');
 
-            this.addMessageLabelEl.html("Saving attack...");
+            this.attackView.addMessageLabelEl.html("Saving attack...");
 
             $.ajax({
                 type: "POST",
@@ -206,79 +178,24 @@ window.AddView = window.MainViewBase.extend({
                 }
             }).done(function (response) {
                 that.singleUploadFormButtonEl.removeClass('pure-button-disabled');
-                that.addMessageLabelEl.html("Attack logged.");
+                that.attackView.addMessageLabelEl.html("Attack logged.");
 
                 _.delay(function(){
-                    that.addMessageLabelEl.html("");
+                    that.attackView.addMessageLabelEl.html("");
                 }, 2500);
 
                 App.dataChanged();
 
             }).fail(function (data) {
-                that.addMessageLabelEl.html("Failed to log attack.");
+                that.attackView.addMessageLabelEl.html("Failed to log attack.");
 
                 that.singleUploadFormButtonEl.removeClass('pure-button-disabled');
             });
         }
-
     },
 
     singleUploadFinished: function(){
         App.dataChanged();
     },
 
-    datesChanged: function(){
-        var start = this.startedEL.val();
-        var started_time = this.startedTimeEL.val();
-        var end = this.endedEL.val();
-        var ended_time = this.endedTimeEL.val();
-
-        var started = new Date(start + "T" + started_time);
-        var ended = new Date(end + "T" + ended_time);
-
-        var text = this.commentEL.val();
-
-        if (text == "" || started >= ended) {
-            this.singleUploadFormButtonEl.addClass('pure-button-disabled');
-        } else {
-            this.singleUploadFormButtonEl.removeClass('pure-button-disabled');
-        }
-
-        if (started >= ended){
-            this.durationGroupEl.show();
-            this.durationLabelEl.html("");
-            this.durationValueEl.html("Select a valid duration");
-        } else {
-
-            var timeDiff = Math.abs(ended.getTime() - started.getTime());
-            var diffHours = timeDiff / (1000 * 60);
-
-            var hours = Math.floor(diffHours/60);
-            var minutes = diffHours % 60;
-
-            var result = "";
-
-            if (hours == 1){
-                result = "1 hour ";
-            } else if (hours > 1){
-                result = hours + " hours ";
-            }
-
-            if (minutes == 1){
-                result += "1 minute";
-            } else if (minutes > 1){
-                result += minutes + " minutes";
-            }
-
-            if (result == ""){
-                this.durationGroupEl.hide();
-                this.durationLabelEl.html("");
-            } else {
-                this.durationGroupEl.show();
-                this.durationLabelEl.html("Duration");
-
-                this.durationValueEl.html(result);
-            }
-        }
-    }
 });

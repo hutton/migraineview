@@ -35,3 +35,9 @@ input[type=date] {
 #add-status-panel {
   text-align: center;
 }
+#attack-details-popup .popup {
+  text-align: left;
+}
+#attack-details-popup .pure-form-aligned .pure-control-group label {
+  width: 7em;
+}

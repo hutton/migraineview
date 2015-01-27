@@ -1,0 +1,1 @@
+window.AttackView=Backbone.View.extend({initialize:function(){},template:_.template($("#attack-view-template").html())});
