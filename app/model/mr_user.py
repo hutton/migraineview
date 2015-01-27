@@ -74,7 +74,10 @@ class User(Webapp2User):
     def get_attacks_as_dict(self):
         attacks = self.get_attacks()
 
-        return [{'Start': attack.start_time, 'Duration': attack.duration, 'Comment': attack.comment,
+        return [{'Id': str(attack.key.id()),
+                 'Start': attack.start_time,
+                 'Duration': attack.duration,
+                 'Comment': attack.comment,
                  'StartText': attack.start_text,
                  'DurationText': attack.duration_text} for attack in
                 attacks]

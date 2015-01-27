@@ -76,7 +76,8 @@ def build_json_events(events):
     reversed_events.reverse()
 
     for event in reversed_events:
-        json_events.append({'date': event['ShortStartDate'],
+        json_events.append({'id': event['Id'],
+                            'date': event['ShortStartDate'],
                             'start_text': event['StartText'],
                             'duration_text': event['DurationText'],
                             'start': event['Start'].strftime('%Y-%m-%d %H:%M'),

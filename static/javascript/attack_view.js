@@ -30,7 +30,7 @@ window.AttackView = Backbone.View.extend({
         this.commentEL = this.$el.find('#add-comment-text');
         this.durationLabelEl = this.$el.find('#add-duration-group > label');
         this.durationValueEl = this.$el.find('#add-duration-group > span');
-        this.singleUploadFormButtonEl = this.$el.find('#single-upload-form-button');
+        this.submitButtonEl = this.$el.find('#submit-button');
         this.addMessageLabelEl = this.$el.find('#add-message-label');
 
         this.datesChanged();
@@ -91,9 +91,9 @@ window.AttackView = Backbone.View.extend({
         var text = this.commentEL.val();
 
         if (text == "" || started >= ended) {
-            this.singleUploadFormButtonEl.addClass('pure-button-disabled');
+            this.submitButtonEl.addClass('pure-button-disabled');
         } else {
-            this.singleUploadFormButtonEl.removeClass('pure-button-disabled');
+            this.submitButtonEl.removeClass('pure-button-disabled');
         }
 
         if (started >= ended){

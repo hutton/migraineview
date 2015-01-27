@@ -9,7 +9,7 @@ window.EditAttackView = Backbone.View.extend({
     popupEl: $('#attack-details-popup'),
 
     events: {
-        "click #single-upload-form-button":     "editAttack",
+        "click #submit-button":     "editAttack",
         "click":  "closePopup"
     },
 
@@ -24,6 +24,7 @@ window.EditAttackView = Backbone.View.extend({
     },
 
     show: function(model){
+        this.model = model;
 
         this.popupEl.fadeIn('fast');
 
@@ -38,17 +39,17 @@ window.EditAttackView = Backbone.View.extend({
         }
     },
 
-    editAttack: function(){
+    editAttack: function(e){
         e.preventDefault();
 
         var that = this;
 
         var started_send = this.attackView.getStarted();
         var ended_send = this.attackView.getEnded();
-        var commentEL = this.attackView.commentEL.val();
+        var comment = this.attackView.commentEL.val();
 
-        if (!this.singleUploadFormButtonEl.hasClass('pure-button-disabled')) {
-            this.singleUploadFormButtonEl.addClass('pure-button-disabled');
+        if (!this.attackView.submitButtonEl.hasClass('pure-button-disabled')) {
+            this.attackView.submitButtonEl.addClass('pure-button-disabled');
 
             this.attackView.addMessageLabelEl.html("Saving attack...");
 
@@ -56,24 +57,30 @@ window.EditAttackView = Backbone.View.extend({
                 type: "POST",
                 url: "/report/edit",
                 data: {
+                    id: this.model.get("id"),
                     started: started_send,
                     ended: ended_send,
-                    comment: commentEL
+                    comment: comment
                 }
             }).done(function (response) {
-                that.singleUploadFormButtonEl.removeClass('pure-button-disabled');
+                that.attackView.submitButtonEl.removeClass('pure-button-disabled');
                 that.attackView.addMessageLabelEl.html("Attack updated.");
 
                 _.delay(function(){
                     that.attackView.addMessageLabelEl.html("");
                 }, 2500);
 
-                App.dataChanged();
+
+                if (that.attackView.getStarted() != that.model.get('start')){
+                    App.dataChanged();
+                } else {
+                    that.model.set({'comment': comment});
+                }
 
             }).fail(function (data) {
                 that.attackView.addMessageLabelEl.html("Failed to update attack.");
 
-                that.singleUploadFormButtonEl.removeClass('pure-button-disabled');
+                that.attackView.submitButtonEl.removeClass('pure-button-disabled');
             });
         }
 

@@ -1,14 +1,12 @@
 import os
 import datetime
 from google.appengine._internal.django.utils import simplejson
-from google.appengine.api import users
-from google.appengine.ext import db
 from google.appengine.ext.webapp import template
 import webapp2
 from app.authentication import BaseRequestHandler
 from app.migraine_statistics import generate_statistics_from_events
 from app.model import attack, account
-from app.model.account import Account
+from app.model.attack import Attack
 from app.model.configuration import Configuration
 from app.upload import create_start_text, create_duration_text
 
@@ -83,24 +81,29 @@ class ReportEdit(BaseRequestHandler):
         if self.logged_in:
             user = self.current_user;
 
+            id = int(self.request.POST['id'])
             started = datetime.datetime.strptime(self.request.POST['started'], "%Y-%m-%d %H:%M")
             ended = datetime.datetime.strptime(self.request.POST['ended'], "%Y-%m-%d %H:%M")
 
             duration_delta = ended - started
 
-            # new_attack = attack.Attack(parent=user.key)
-            #
-            # new_attack.start_time = started
-            # new_attack.duration = duration_delta.seconds
-            # new_attack.comment = self.request.POST['comment']
-            #
-            # new_attack.start_text = create_start_text(started)
-            # new_attack.duration_text = create_duration_text(duration_delta.seconds)
-            #
-            # new_attack.put()
+            found_attack = Attack.get_by_id(id, parent=user.key)
 
-            self.response.out.write({'message': "One attack created"})
-            self.response.status = 200
+            if found_attack:
+                found_attack.start_time = started
+                found_attack.duration = duration_delta.seconds
+                found_attack.comment = self.request.POST['comment']
+
+                found_attack.start_text = create_start_text(started)
+                found_attack.duration_text = create_duration_text(duration_delta.seconds)
+
+                found_attack.put()
+
+                self.response.out.write({'message': "Attack updated."})
+                self.response.status = 200
+            else:
+                self.response.out.write({'message': "Attack not found."})
+                self.response.status = 404
 
         else:
             self.redirect('/')

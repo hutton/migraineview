@@ -37,11 +37,11 @@ window.EventView = Backbone.View.extend({
             var filter = this.model.get('filter');
 
             if (filter.length > 0) {
-                modelDict.start = replaceAll(modelDict.start, "<br/>", "º");
-                modelDict.start = replaceAll(modelDict.start, filter, "<span>" + filter + "</span>");
-                modelDict.start = replaceAll(modelDict.start, "º", "<br/>");
+                modelDict.start_text = replaceAll(modelDict.start_text, "<br/>", "º");
+                modelDict.start_text = replaceAll(modelDict.start_text, filter, "<span>" + filter + "</span>");
+                modelDict.start_text = replaceAll(modelDict.start_text, "º", "<br/>");
 
-                modelDict.duration = replaceAll(modelDict.duration, filter, "<span>" + filter + "</span>");
+                modelDict.duration_text = replaceAll(modelDict.duration_text, filter, "<span>" + filter + "</span>");
                 modelDict.comment = replaceAll(modelDict.comment, filter, "<span>" + filter + "</span>");
             }
 

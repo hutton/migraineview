@@ -29,7 +29,7 @@ window.AddView = window.MainViewBase.extend({
     },
 
     events: {
-        "click #single-upload-form-button":     "addSingleAttack"
+        "click #submit-button":     "addSingleAttack"
     },
 
     el: $('#add-view'),
@@ -48,7 +48,7 @@ window.AddView = window.MainViewBase.extend({
 
     singleUploadFormEl: $('#single-upload-form'),
 
-    singleUploadFormButtonEl: $('#single-upload-form-button'),
+    submitButtonEl: $('#submit-button'),
 
     singleUploadAttackViewContainer: $('#single-upload-attack-view-container'),
 
