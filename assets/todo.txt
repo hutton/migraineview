@@ -12,6 +12,7 @@
 - Upload of xlsx
 - Download of xlsx
 - Check report amount of data before showing.
+- Add email alerts
 ^^^^^^^^^^^^^^
 Before release
 
