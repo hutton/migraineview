@@ -3446,28 +3446,22 @@ select {
   border-radius: 0;
 }
 @font-face {
-  font-family: 'Open Sans Light';
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  src: local('Roboto Thin'), local('Roboto-Thin'), url('/static/fonts/roboto-thin.woff2') format('woff2'), url('/static/fonts/roboto-thin.woff') format('woff');
+}
+@font-face {
+  font-family: 'Roboto';
   font-style: normal;
   font-weight: 300;
-  src: local('Open Sans Light'), local('OpenSans-Light'), url('/static/fonts/opensans-light.wof') format('woff');
+  src: local('Roboto Light'), local('Roboto-Light'), url('/static/fonts/roboto-light.woff2') format('woff2'), url('/static/fonts/roboto-light.woff') format('woff');
 }
 @font-face {
   font-family: 'Roboto';
   font-style: normal;
   font-weight: 400;
-  src: local('Roboto Regular'), local('Roboto-Regular'), url('/static/fonts/roboto-normal.wof') format('woff');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 100;
-  src: local('Roboto Thin'), local('Roboto-Thin'), url('/static/fonts/roboto-thin.wof') format('woff');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Roboto Light'), local('Roboto-Thin'), url('/static/fonts/roboto-light.wof') format('woff');
+  src: local('Roboto'), local('Roboto-Regular'), url('/static/fonts/roboto-regular.woff2') format('woff2'), url('/static/fonts/roboto-regular.woff') format('woff');
 }
 /********************* Globals ********************/
 body {
@@ -3752,7 +3746,6 @@ body {
 .splash-container {
   background-position: center center;
   background-size: cover;
-  background-image: linear-gradient(transparent, rgba(0, 0, 0, 0) 40%, rgba(0, 0, 0, 0.04));
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .splash {
@@ -3839,6 +3832,17 @@ body {
 .ribbon {
   background: #2d3e50;
   color: #aaa;
+}
+p.register-title {
+  margin: 0px 50px 20px;
+}
+p.register-footer {
+  font-size: 90%;
+  margin: 10px 50px 0px;
+  opacity: 0.4;
+}
+p.register-text {
+  margin: 20px 20px 40px;
 }
 .feedback {
   text-align: center;
