@@ -3,6 +3,7 @@
 
 - Finish edit/delete
 - Example banners
+- Update example data
 - Upload of xlsx
 - Download of xlsx
 - Getting Started tidy up.
