@@ -1,12 +1,8 @@
-- Formatting on homepage (about)
-- Gaps graph
-  - Add axis label
-  - Make axis ticks smaller
-  - Add hover over tooltips
-- Add SimpleAuth (https://github.com/crhym3/simpleauth)
+- Menu background #2a2d33
+    - rgba(255, 255, 255, 0.1)
+
 Help banners
 Example banners
-About page
 
 
 Fix upload tz problem
@@ -23,6 +19,13 @@ Distribution by Quarter (Polar Area chart next to month frequency)
 
 Done
 ====
+- About page
+- Formatting on homepage (about)
+- Gaps graph
+  - Add axis label
+  - Make axis ticks smaller
+  - Add hover over tooltips
+- Add SimpleAuth (https://github.com/crhym3/simpleauth)
 - .month fill none
 - Dark text on buttons
 Landing page
