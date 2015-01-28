@@ -1,6 +1,7 @@
 - Menu background #2a2d33
     - rgba(255, 255, 255, 0.1)
 - Finish edit/delete
+- #menu a -> outline: none;
 - Example banners
     - background-color: #fcf8e3;    border-color: #faebcc; #color: 8a6d3b; //yellow
     - color: #31708f; background-color: #d9edf7; border-color: #bce8f1; // blue
