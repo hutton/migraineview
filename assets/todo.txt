@@ -2,12 +2,12 @@
     - rgba(255, 255, 255, 0.1)
 - Finish edit/delete
 - Example banners
+- Screenshots on homepage
+- Getting Started tidy up.
 - Update example data
 - Upload of xlsx
 - Download of xlsx
-- Getting Started tidy up.
 - Check report amount of data before showing.
-- Screenshots on homepage
 ^^^^^^^^^^^^^^
 Before release
 
