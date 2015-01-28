@@ -1,6 +1,5 @@
 - Menu background #2a2d33
     - rgba(255, 255, 255, 0.1)
-
 - Finish edit/delete
 - Example banners
 - Update example data
