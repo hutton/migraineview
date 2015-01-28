@@ -1,7 +1,6 @@
 
 window.AttackView = Backbone.View.extend({
     initialize: function () {
-        this.render();
     },
 
     events: {
@@ -12,13 +11,10 @@ window.AttackView = Backbone.View.extend({
         "input #add-comment-text":             "datesChanged"
     },
 
-    render: function(){
+    attributes: {},
 
-        var attributes = {
-
-            };
-
-        this.$el.html(this.template(attributes));
+    render: function(){        
+        this.$el.html(this.template(this.attributes));
 
         this.$el.find("input[type='date']").val(new Date().toDateInputValue());
 
@@ -55,11 +51,25 @@ window.AttackView = Backbone.View.extend({
         return start + " " + started_time;
     },
 
+    getStartedDate: function(){
+        var start = this.startedEL.val();
+        var started_time = this.startedTimeEL.val();
+
+        return new Date(start + "T" + started_time);
+    },
+
     getEnded: function(){
         var end = this.endedEL.val();
         var end_time = this.endedTimeEL.val();
 
         return end + " " + end_time;
+    },
+
+    getEndedDate: function(){
+        var end = this.endedEL.val();
+        var end_time = this.endedTimeEL.val();
+
+        return new Date(end + "T" + end_time);
     },
 
     setModel: function(model){
@@ -80,13 +90,8 @@ window.AttackView = Backbone.View.extend({
     },
 
     datesChanged: function(){
-        var start = this.startedEL.val();
-        var started_time = this.startedTimeEL.val();
-        var end = this.endedEL.val();
-        var ended_time = this.endedTimeEL.val();
-
-        var started = new Date(start + "T" + started_time);
-        var ended = new Date(end + "T" + ended_time);
+        var started = this.getStartedDate();
+        var ended = this.getEndedDate();
 
         var text = this.commentEL.val();
 

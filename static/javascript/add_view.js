@@ -54,8 +54,9 @@ window.AddView = window.MainViewBase.extend({
 
     render: function(){
         this.attackView = new AttackView();
+        this.attackView.attributes['submit_button'] = "Add";
 
-        this.singleUploadAttackViewContainer.append(this.attackView.$el);
+        this.singleUploadAttackViewContainer.append(this.attackView.render().$el);
 
         return this;
     },

@@ -18,7 +18,10 @@ window.EditAttackView = Backbone.View.extend({
     render: function(){
         this.attackView = new AttackView();
 
-        this.attackViewContainer.append(this.attackView.$el);
+        this.attackView.attributes['submit_button'] = "Update";
+        this.attackViewContainer.empty();
+
+        this.attackViewContainer.append(this.attackView.render().$el);
 
         return this;
     },
@@ -35,8 +38,12 @@ window.EditAttackView = Backbone.View.extend({
         var target = $(event.target);
 
         if (target.hasClass('popup-background')){
-            this.popupEl.fadeOut('fast');
+            this.hide();
         }
+    },
+
+    hide: function(){
+        this.popupEl.fadeOut('fast');
     },
 
     editAttack: function(e){
@@ -67,12 +74,16 @@ window.EditAttackView = Backbone.View.extend({
                 that.attackView.addMessageLabelEl.html("Attack updated.");
 
                 _.delay(function(){
+                    that.hide();
                     that.attackView.addMessageLabelEl.html("");
-                }, 2500);
+                }, 600);
 
+                var durationSeconds = (that.attackView.getEndedDate() - that.attackView.getStartedDate()) / 1000;
 
-                if (that.attackView.getStarted() != that.model.get('start')){
+                if (that.attackView.getStarted() != that.model.get('start') ||
+                    durationSeconds != that.model.get('duration')){
                     App.dataChanged();
+                    App.refreshData();
                 } else {
                     that.model.set({'comment': comment});
                 }

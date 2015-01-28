@@ -34,15 +34,17 @@ window.EventView = Backbone.View.extend({
 
             var modelDict = this.model.toJSON();
 
-            var filter = this.model.get('filter');
+            if (this.model.get('filtered')){
+                var filter = this.model.get('filter');
 
-            if (filter.length > 0) {
-                modelDict.start_text = replaceAll(modelDict.start_text, "<br/>", "º");
-                modelDict.start_text = replaceAll(modelDict.start_text, filter, "<span>" + filter + "</span>");
-                modelDict.start_text = replaceAll(modelDict.start_text, "º", "<br/>");
+                if (filter.length > 0) {
+                    modelDict.start_text = replaceAll(modelDict.start_text, "<br/>", "º");
+                    modelDict.start_text = replaceAll(modelDict.start_text, filter, "<span>" + filter + "</span>");
+                    modelDict.start_text = replaceAll(modelDict.start_text, "º", "<br/>");
 
-                modelDict.duration_text = replaceAll(modelDict.duration_text, filter, "<span>" + filter + "</span>");
-                modelDict.comment = replaceAll(modelDict.comment, filter, "<span>" + filter + "</span>");
+                    modelDict.duration_text = replaceAll(modelDict.duration_text, filter, "<span>" + filter + "</span>");
+                    modelDict.comment = replaceAll(modelDict.comment, filter, "<span>" + filter + "</span>");
+                }
             }
 
             var currentHtml = this.template(modelDict);
