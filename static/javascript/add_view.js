@@ -164,8 +164,8 @@ window.AddView = window.MainViewBase.extend({
         var ended_send = this.attackView.getEnded();
         var commentEL = this.attackView.commentEL.val();
 
-        if (!this.singleUploadFormButtonEl.hasClass('pure-button-disabled')) {
-            this.singleUploadFormButtonEl.addClass('pure-button-disabled');
+        if (!this.attackView.submitButtonEl.hasClass('pure-button-disabled')) {
+            this.attackView.submitButtonEl.addClass('pure-button-disabled');
 
             this.attackView.addMessageLabelEl.html("Saving attack...");
 
@@ -178,7 +178,7 @@ window.AddView = window.MainViewBase.extend({
                     comment: commentEL
                 }
             }).done(function (response) {
-                that.singleUploadFormButtonEl.removeClass('pure-button-disabled');
+                that.attackView.submitButtonEl.removeClass('pure-button-disabled');
                 that.attackView.addMessageLabelEl.html("Attack logged.");
 
                 _.delay(function(){
@@ -190,7 +190,7 @@ window.AddView = window.MainViewBase.extend({
             }).fail(function (data) {
                 that.attackView.addMessageLabelEl.html("Failed to log attack.");
 
-                that.singleUploadFormButtonEl.removeClass('pure-button-disabled');
+                that.attackView.submitButtonEl.removeClass('pure-button-disabled');
             });
         }
     },
