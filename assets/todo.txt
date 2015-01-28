@@ -1,24 +1,22 @@
 - Menu background #2a2d33
     - rgba(255, 255, 255, 0.1)
 
-Help banners
-Example banners
-
-
-Fix upload tz problem
-Upload of xlsx
-
-
-Stats
-=====
-Graph of time between attacks
-D3 calendar view
-Days since last attack
-Distribution by Quarter (Polar Area chart next to month frequency)
+- Finish edit/delete
+- Example banners
+- Upload of xlsx
+- Download of xlsx
+- Getting Started tidy up.
+- Check report amount of data before showing.
+- Screenshots on homepage
+^^^^^^^^^^^^^^
+Before release
 
 
 Done
 ====
+- Graph of time between attacks
+- D3 calendar view
+- Days since last attack
 - About page
 - Formatting on homepage (about)
 - Gaps graph
