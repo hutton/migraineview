@@ -1,13 +1,7 @@
-- Menu background #2a2d33
-    - rgba(255, 255, 255, 0.1)
 - Finish edit/delete
-- #menu a -> outline: none;
-- Register, Sign In, Sign Out
 - Example banners
     - background-color: #fcf8e3;    border-color: #faebcc; #color: 8a6d3b; //yellow
     - color: #31708f; background-color: #d9edf7; border-color: #bce8f1; // blue
-- Screenshots on homepage
-- Getting Started tidy up.
 - Update example data
 - Upload of xlsx
 - Download of xlsx
@@ -19,6 +13,12 @@ Before release
 
 Done
 ====
+- Getting Started tidy up.
+- Screenshots on homepage
+- #menu a -> outline: none;
+- Register, Sign In, Sign Out
+- Menu background #2a2d33
+    - rgba(255, 255, 255, 0.1)
 - Graph of time between attacks
 - D3 calendar view
 - Days since last attack
