@@ -142,6 +142,10 @@ window.AttackGapView = Backbone.View.extend({
         var that = this;
         var width = parseInt(d3.select(this.reportEl[0]).style('width'), 10) - this.margin.left - this.margin.right;
 
+        if (isNaN(width)){
+            return;
+        }
+
         // resize the chart
         this.xPos.range([0, width]);
         d3.select(this.chart.node().parentNode)
