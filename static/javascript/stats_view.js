@@ -248,12 +248,18 @@ window.StatisticsView = window.MainViewBase.extend({
         this.hoursOfDayRadarView = new RadarChartView({model: this.model.hoursOfDay});
         this.statsListEl.append(this.hoursOfDayRadarView.el);
 
-        $(window).trigger("resize");
-//        window.dispatchEvent(new Event('resize'));
+        this.triggerResize();
     },
 
     onShow: function(){
-        $(window).trigger("resize");
-//        window.dispatchEvent(new Event('resize'));
+        this.triggerResize();
+    },
+
+    triggerResize: function(){
+        try{
+            window.dispatchEvent(new Event('resize'));
+        } catch (err){
+
+        }
     }
 });

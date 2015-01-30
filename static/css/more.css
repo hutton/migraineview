@@ -4147,8 +4147,10 @@ input[type=date] {
 #add-status-panel-container {
   height: 100px;
 }
-#add-message-label {
-  margin-left: 20px;
+#add-message-label-container {
+  text-align: center;
+  height: 8px;
+  margin-top: -12px;
 }
 #add-status-panel {
   text-align: center;

@@ -55,7 +55,15 @@ window.AttackView = Backbone.View.extend({
         var start = this.startedEL.val();
         var started_time = this.startedTimeEL.val();
 
-        return new Date(start + "T" + started_time);
+        return this.convertDateToUTC(new Date(start + "T" + started_time));
+    },
+
+    createDateAsUTC: function (date) {
+        return new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate(), date.getHours(), date.getMinutes(), date.getSeconds()));
+    },
+
+    convertDateToUTC: function (date) {
+        return new Date(date.getUTCFullYear(), date.getUTCMonth(), date.getUTCDate(), date.getUTCHours(), date.getUTCMinutes(), date.getUTCSeconds());
     },
 
     getEnded: function(){
@@ -75,7 +83,7 @@ window.AttackView = Backbone.View.extend({
     setModel: function(model){
         this.model = model;
 
-        var started_date = new Date(model.get('start').replace(" ", "T"));
+        var started_date = this.createDateAsUTC(new Date(model.get('start').replace(" ", "T")));
         var ended_date = new Date(started_date.getTime() + (model.get('duration') * 1000));
 
         this.startedEL.val(this.dateToShortDate(started_date));

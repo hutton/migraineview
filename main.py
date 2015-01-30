@@ -26,7 +26,7 @@ from app.model.account import Account
 from app.model.configuration import Configuration
 from app.model.mr_user import User
 
-from app.report import Report, ReportAdd, ReportEdit
+from app.report import Report, ReportAdd, ReportEdit, ReportDelete
 from app.services import Stats, ClearAllEvents
 from app.shared import Shared
 from app.upload import Upload
@@ -90,6 +90,7 @@ app = webapp2.WSGIApplication([webapp2.Route('/auth/<provider>',
                                ('/export/.*', Export),
                                ('/report/add', ReportAdd),
                                ('/report/edit', ReportEdit),
+                               ('/report/delete', ReportDelete),
                                ('/shared/.*', Shared),
                                ('/(report|account|add|list)', Report)
                               ], config=app_config, debug=True)

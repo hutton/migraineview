@@ -596,6 +596,9 @@
                     <textarea name="comment" id="add-comment-text" placeholder="What happened?  What you ate, what you were doing, what treatment, how you felt, the weather."></textarea>
                 </div>
 
+                <div id="add-message-label-container">
+                    <Label id="add-message-label"></Label>
+                </div>
                 <div class="pure-controls">
                     <button id="submit-button" type="submit" class="pure-button pure-button-primary"><%= submit_button %></button>
                     <% if (show_cancel){ %>
@@ -604,9 +607,6 @@
                     <% if (show_delete){ %>
                     <button id="delete-button" type="submit" class="pure-button button-error"><i class="fa fa-trash"></i><span>Sure?</span></button>
                     <% } %>
-
-
-                    <Label id="add-message-label"></Label>
                 </div>
             </fieldset>
         </form>

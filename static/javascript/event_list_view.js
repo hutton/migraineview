@@ -5,6 +5,7 @@
 
 window.EventListView = window.MainViewBase.extend({
     initialize: function () {
+        this.editAttackView = new EditAttackView();
     },
 
     el: $('#event_list_container'),
@@ -29,8 +30,6 @@ window.EventListView = window.MainViewBase.extend({
     },
 
     render: function(){
-        this.editAttackView = new EditAttackView();
-
         if (this.collection.models.length > 0){
             this.showAttacks();
         } else {

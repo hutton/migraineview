@@ -1,6 +1,7 @@
 import os
 import datetime
 from google.appengine._internal.django.utils import simplejson
+from google.appengine.ext import ndb
 from google.appengine.ext.webapp import template
 import webapp2
 from app.authentication import BaseRequestHandler
@@ -107,3 +108,27 @@ class ReportEdit(BaseRequestHandler):
 
         else:
             self.redirect('/')
+
+class ReportDelete(BaseRequestHandler):
+    def post(self):
+
+        if self.logged_in:
+            user = self.current_user;
+
+            id = int(self.request.POST['id'])
+
+            found_attack = Attack.get_by_id(id, parent=user.key)
+
+            if found_attack:
+                found_attack.key.delete()
+
+                self.response.out.write({'message': "Attack deleted."})
+                self.response.status = 200
+            else:
+                self.response.out.write({'message': "Attack not found."})
+                self.response.status = 404
+
+        else:
+            self.redirect('/')
+
+

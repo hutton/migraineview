@@ -113,10 +113,44 @@ window.EditAttackView = Backbone.View.extend({
     deleteAttack: function(event){
         event.preventDefault();
 
+        var that = this;
+
         if (this.deleteButton.hasClass('delete-sure')){
-            // do Delete
+            if (!this.deleteButton.hasClass('pure-button-disabled')) {
+                this.deleteButton.addClass('pure-button-disabled');
+
+                this.attackView.addMessageLabelEl.html("Removing attack...");
+
+                $.ajax({
+                    type: "POST",
+                    url: "/report/delete",
+                    data: {
+                        id: this.model.get("id")
+                    }
+                }).done(function (response) {
+                    that.deleteButton.removeClass('pure-button-disabled');
+                    that.attackView.addMessageLabelEl.html("Attack deleted.");
+
+                    _.delay(function(){
+                        that.hide();
+                        that.attackView.addMessageLabelEl.html("");
+                    }, 600);
+
+                    App.dataChanged();
+                    App.refreshData();
+
+                }).fail(function (data) {
+                    that.attackView.addMessageLabelEl.html("Failed to delete attack.");
+
+                    that.deleteButton.removeClass('pure-button-disabled');
+                });
+            }
         } else {
             this.deleteButton.addClass('delete-sure');
+
+            _.delay(function(){
+                that.deleteButton.removeClass('delete-sure');
+            }, 4000);
         }
     }
 });
