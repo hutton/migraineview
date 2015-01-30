@@ -3689,6 +3689,9 @@ body {
   color: white;
   background: #3b5998;
 }
+.pure-menu-horizontal li {
+  min-width: 92px;
+}
 /********* MENU STYLES  ***********/
 #header-home-link {
   position: relative;
@@ -3800,6 +3803,9 @@ body {
 .splash-buttons > a {
   min-width: 120px;
   margin: 10px;
+}
+#get-started-button > i {
+  margin-left: 3px;
 }
 #hero-image {
   margin: 0px auto 20px;

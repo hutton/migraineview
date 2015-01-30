@@ -38,6 +38,23 @@ input[type=date]{
     margin: 0px 10px;
 }
 
+#cancel-button{
+    margin-left: 10px;
+}
+
+#delete-button{
+    float: right;
+}
+
+#delete-button > span{
+    display: none;
+    margin-left: 5px;
+}
+
+#delete-button.delete-sure > span{
+    display: inline-block;
+}
+
 #add-status-panel-container{
     height: 100px;
 }
@@ -58,8 +75,10 @@ input[type=date]{
     width: 7em;
 }
 
-#attack-details-popup .pure-form-aligned .pure-controls{
-    margin-left: 8em;
+@media (min-width: 48em) {
+    #attack-details-popup .pure-form-aligned .pure-controls {
+        margin-left: 8em;
+    }
 }
 
 

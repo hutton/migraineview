@@ -42,9 +42,9 @@
 
                 <ul>
                     {% if user %}
-                    <li><a href="/report">Report</a></li>
                     <li><a href="#about">About</a></li>
-                    <li><a href="{{ logout_url }}">Sign Out ({{ user.name }})</a></li>
+                    <li><a href="{{ logout_url }}">Sign Out</a></li>
+                    <li><a href="/report">Go to your report <i class="fa fa-arrow-right"></i></a></li>
                     {% else %}
                     <li><a href="/example/report">Tour</a></li>
                     <li><a href="#about">About</a></li>
@@ -58,12 +58,12 @@
             <div class="splash">
                 <h1 class="splash-head">Migraine Report</h1>
                 <div class="splash-subhead">
-                    Log, Search and Visualise your migraines.
+                    Log, Search and Visualise your Migraines.
                 </div>
 
                 <div class="splash-buttons">
                     <a href="/example/report" class="button-xlarge pure-button pure-button-primary">Tour</a>
-                    <a href="#started" class="button-xlarge pure-button button-error">Get Started</a>
+                    <a id="get-started-button" href="#started" class="button-xlarge pure-button button-error">Get Started <i class="fa fa-arrow-circle-o-right"></i></a>
                 </div>
                 <img id="hero-image" class="pure-img" src="/static/images/report1.png">
                 <!--<div class="splash-icons">-->
@@ -155,7 +155,7 @@
             <div class="ribbon">
                 <a id="started"></a>
                 <div class="content">
-                    <h2 class="content-head center">Get Started</h2>
+                    <h2 class="content-head center">Get Started - It's Free!</h2>
 
                     <div class="pure-g">
                         <div id="logon-provider-list" class="l-box-lrg pure-u-1 pure-u-md-2-5 center">

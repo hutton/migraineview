@@ -10,6 +10,8 @@ window.EditAttackView = Backbone.View.extend({
 
     events: {
         "click #submit-button":     "editAttack",
+        "click #cancel-button":     "cancel",
+        "click #delete-button":     "deleteAttack",
         "click":  "closePopup"
     },
 
@@ -19,9 +21,14 @@ window.EditAttackView = Backbone.View.extend({
         this.attackView = new AttackView();
 
         this.attackView.attributes['submit_button'] = "Update";
+        this.attackView.attributes['show_cancel'] = true;
+        this.attackView.attributes['show_delete'] = true;
+
         this.attackViewContainer.empty();
 
         this.attackViewContainer.append(this.attackView.render().$el);
+
+        this.deleteButton = this.$el.find('#delete-button');
 
         return this;
     },
@@ -32,6 +39,7 @@ window.EditAttackView = Backbone.View.extend({
         this.popupEl.fadeIn('fast');
 
         this.attackView.setModel(model);
+        this.deleteButton.removeClass('delete-sure');
     },
 
     closePopup: function(event){
@@ -94,6 +102,21 @@ window.EditAttackView = Backbone.View.extend({
                 that.attackView.submitButtonEl.removeClass('pure-button-disabled');
             });
         }
+    },
 
+    cancel: function(event){
+        event.preventDefault();
+
+        this.hide();
+    },
+
+    deleteAttack: function(event){
+        event.preventDefault();
+
+        if (this.deleteButton.hasClass('delete-sure')){
+            // do Delete
+        } else {
+            this.deleteButton.addClass('delete-sure');
+        }
     }
 });

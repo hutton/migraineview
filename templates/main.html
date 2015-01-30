@@ -597,7 +597,16 @@
                 </div>
 
                 <div class="pure-controls">
-                    <button id="submit-button" type="submit" class="pure-button pure-button-primary"><%= submit_button %></button> <Label id="add-message-label"></Label>
+                    <button id="submit-button" type="submit" class="pure-button pure-button-primary"><%= submit_button %></button>
+                    <% if (show_cancel){ %>
+                        <button id="cancel-button" type="submit" class="pure-button">Cancel</button>
+                    <% } %>
+                    <% if (show_delete){ %>
+                    <button id="delete-button" type="submit" class="pure-button button-error"><i class="fa fa-trash"></i><span>Sure?</span></button>
+                    <% } %>
+
+
+                    <Label id="add-message-label"></Label>
                 </div>
             </fieldset>
         </form>

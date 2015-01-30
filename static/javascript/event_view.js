@@ -34,7 +34,7 @@ window.EventView = Backbone.View.extend({
 
             var modelDict = this.model.toJSON();
 
-            if (this.model.get('filtered')){
+            if (!this.model.get('filtered')){
                 var filter = this.model.get('filter');
 
                 if (filter.length > 0) {
