@@ -657,7 +657,12 @@
             window.App.loadData({{ data|safe }});
             {% endif %}
 
-            Backbone.history.start({pushState: true});
+            var enablePushState = true;
+
+            // Disable for older browsers
+            var pushState = !!(enablePushState && window.history && window.history.pushState);
+            
+            Backbone.history.start({pushState: pushState});
         });
 
     </script>
