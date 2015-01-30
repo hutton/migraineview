@@ -125,7 +125,7 @@ window.CalendarReportView = Backbone.View.extend({
                 return d3.time.months(new Date(d, 0, 1), new Date(d + 1, 0, 1));
             })
             .enter().append("text")
-            .style("text-anchor", "left")
+            .style("text-anchor", "start")
             .attr("class", "month-text")
             .attr("transform", monthTextTranslate)
             .text(function (d) {
@@ -226,7 +226,7 @@ window.CalendarReportView = Backbone.View.extend({
                 return d3.time.months(new Date(firstDate.getFullYear(), firstDate.getMonth(), 0), lastDate);
             })
             .enter().append("text")
-            .style("text-anchor", "left")
+            .style("text-anchor", "start")
             .attr("class", "month-text")
             .attr("transform", monthTextTranslate)
             .text(function (d) {
