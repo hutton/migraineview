@@ -1,28 +1,18 @@
-Use any of these identity providers to login and create an account.
+List - Example Only
+See a full list of your attacks and instantly search them.  You can also edit or delete your attacks here.
 
-If you would like other authentication options please let us know.
+Report - Example Only
+See insightful statistics about the frequency and correlation of your attacks; find patterns in the many visualisations.
 
-We use trusted third parties for authentication; this means you can use your existing Google, Microsoft Live (Hotmail) or Facebook accounts to login without having to create a new password.
+Account - Example
+Here you can export your data, share a read-only version of your report or permanently delete all your data.
 
-Once you've created your account you can log migraines individually or upload a file containing lots of them from a Spreadsheet (.xsl, .csv) or Calendar file (.ics).
+Add - Example
+Add a single attack or upload a file containing several. We accept most spreadsheet formats (.xls, .xlsx, .csv) or calendar export files (.ics).
 
 
+No Data - List and Report
+You don't have any attacks logged.  Go here to log an attack or upload a file containing several.
 
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 100;
-  src: local('Roboto Thin'), local('Roboto-Thin'), url(/static/fonts/roboto-thin.woff2) format('woff2'), url(/static/fonts/roboto-thin.woff) format('woff');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 300;
-  src: local('Roboto Light'), local('Roboto-Light'), url(/static/fonts/roboto-light.woff2) format('woff2'), url(/static/fonts/roboto-light.woff) format('woff');
-}
-@font-face {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Roboto'), local('Roboto-Regular'), url(/static/fonts/roboto-regular.woff2) format('woff2'), url(roboto-regular.woff) format('woff');
-}
+Less than 3 - Report
+You only have one/two/three attacks logged.  Go here to log more attacks or upload a file containing several.
