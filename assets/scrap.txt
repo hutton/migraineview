@@ -16,3 +16,14 @@ You don't have any attacks logged.  Go here to log an attack or upload a file co
 
 Less than 3 - Report
 You only have one/two/three attacks logged.  Go here to log more attacks or upload a file containing several.
+
+
+
+class ProcessUpload(webapp.RequestHandler): 
+   def post(self): 
+     self.response.out.write(self.request.get('csv')) 
+
+     # Iterating over a string as a file 
+     stringReader = csv.reader(StringIO.StringIO(self.request.get('csv')))
+     for row in stringReader: 
+        self.response.out.write(row) 
