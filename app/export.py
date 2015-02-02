@@ -30,7 +30,7 @@ def build_tab_lib_dataset(attacks):
 def generate_xlsx_output(attacks):
     data = build_tab_lib_dataset(attacks)
 
-    return data.xls
+    return data.xlsx
 
 
 def generate_csv_output(attacks):

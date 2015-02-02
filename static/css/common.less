@@ -208,37 +208,43 @@ a {
 }
 
 @panel-padding: 20px;
-@panel-margin: 50px 30px;
+@panel-margin: 50px 20px;
 
 .panel{
+    font-size: 16px;
+    margin: 50px auto;
+    max-width: 560px;
 }
 
 .panel-blue{
     .panel;
-    margin: @panel-margin;
-
 }
 
 .panel-yellow{
     .panel;
-    margin: @panel-margin;
+}
+
+.panel-inner{
+    margin: 0px 20px;
+    display: inline-block;
+    padding: @panel-padding;
 
 }
 
 .panel-blue > div{
-    max-width: 600px;
+    .panel-inner;
     border: 1px solid #bce8f1;
-    padding: @panel-padding;
     color: #31708f;
     background-color: #d9edf7;
-    margin: 0px auto;
+}
+.panel-blue > div a {
+    font-weight: bold;
+    color: #1a3948;
 }
 
 .panel-yellow > div{
-    max-width: 600px;
-    padding: @panel-padding;
+    .panel-inner;
     background-color: #fcf8e3;
     border: 1px solid #faebcc;
     color: #8a6d3b; //yellow
-    margin: 0px auto;
 }

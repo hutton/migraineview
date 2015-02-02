@@ -147,7 +147,7 @@
                     {% if example %}
                     <div class="panel-yellow">
                         <div>
-                        Add a single attack or upload a file containing several.  We accept most spreadsheet formats (.xls, .xlsx, .csv) or calendar export files (.ics).
+                        See insightful statistics about the frequency and correlation of your attacks.  Also find patterns with the data visualisations.
                         </div>
                     </div>
                     {% endif %}
@@ -159,7 +159,18 @@
                         </div>
                     </div>
                     <div id="stats-no-data" class="loading-message" style="display: none;">
-                        <div>No data</div>
+                        <div class="panel-blue">
+                            <div>
+                            You don't have any attacks logged.<br/>Go <a href="/add">here</a> to log an attack or upload a file containing several.
+                            </div>
+                        </div>
+                    </div>
+                    <div id="stats-not-much-data" class="loading-message" style="display: none;">
+                        <div class="panel-blue">
+                            <div>
+                            You only have <span id="stats-not-much-data-top-line">one attacks</span> logged, you need four to show a report.<br/>Go <a href="/add">here</a> to log an attack or upload a file containing several.
+                            </div>
+                        </div>
                     </div>
                     <div id="stat-sections-container" class="content">
                     </div>
@@ -174,6 +185,13 @@
                     <div>
                         <h2 class="title">List</h2>
                     </div>
+                    {% if example %}
+                    <div class="panel-yellow">
+                        <div>
+                        See a full list of your attacks and instantly search them.  You can also edit or delete your attacks here.
+                        </div>
+                    </div>
+                    {% endif %}
                     <div class="content">
                         <div id="list-loading" class="loading-message">
                             <div>Loading...</div>
@@ -182,7 +200,11 @@
                             </div>
                         </div>
                         <div id="list-no-data" class="loading-message" style="display: none;">
-                            <div>No data</div>
+                            <div class="panel-blue">
+                                <div>
+                                You don't have any attacks logged.<br/>Go <a href="/add">here</a> to log an attack or upload a file containing several.
+                                </div>
+                            </div>
                         </div>
                         <div style="display: none;" id="list-table-container">
                             <div id="list-search"  class="pure-form">
@@ -220,6 +242,13 @@
                         <h2 class="title">Account</h2>
                     </div>
                     <div id="settings-container" class="content narrow">
+                        {% if example %}
+                        <div class="panel-yellow">
+                            <div>
+                            Here you can export your data, share a read-only version of your report or permanently delete all your data.
+                            </div>
+                        </div>
+                        {% endif %}
                         <div class="stat-section-title">
                             Account
                         </div>
@@ -236,19 +265,6 @@
                                     </div>
                                 </fieldset>
                             </form>
-                        </div>
-                         <div class="stat-section-title">
-                            Share
-                        </div>
-                        <div class="section-content">
-                            <p>Sometimes it's useful to share information about your migraines with other people; doctors, family, friends or colleagues.</p>
-                            <p>Use these links to share up to date read-only versions of your report.</p>
-                            <div class="settings-share-link">
-                                <a target="_blank" href="/shared/{{ share_report_and_list }}/report"><i class="fa fa-share"></i> Share Report and List</a>
-                            </div>
-                            <div class="settings-share-link">
-                                <a target="_blank" href="/shared/{{ share_report }}/report"><i class="fa fa-share"></i> Share just Report</a>
-                            </div>
                         </div>
                         <div class="stat-section-title">
                             Export
@@ -276,6 +292,19 @@
                                 </a>
                             </div>
                         </div>
+
+                         <div class="stat-section-title">
+                            Share
+                        </div>
+                        <div class="section-content">
+                            <p>Sometimes it's useful to share information about your migraines with other people; doctors, family, friends or colleagues.</p>
+                            <p>Use these links to share up to date read-only versions of your report.</p>
+                            <div class="settings-share-link">
+                                <a target="_blank" href="/shared/{{ share_report_and_list }}/report"><i class="fa fa-share"></i> Share Report and List</a>
+                            </div>
+                        </div>
+
+
                         <div class="stat-section-title">
                             Clear Data
                         </div>

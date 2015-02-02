@@ -201,9 +201,15 @@ window.StatisticsView = window.MainViewBase.extend({
 
     statsNoDataEl: $('#stats-no-data'),
 
+    statsNotMuchDataEl: $('#stats-not-much-data'),
+
+    statsNotMuchDataTopEl: $('#stats-not-much-data-top-line'),
+
     render: function() {
         if (_.isUndefined(this.model.events)){
             this.showNoAttacks();
+        } else if (this.model.events.length < 4) {
+            this.showNotMuchAttacks();
         } else {
             this.showAttacks();
         }
@@ -212,6 +218,7 @@ window.StatisticsView = window.MainViewBase.extend({
     showDataLoading: function(){
         this.statsNoDataEl.hide();
         this.statsLoaderEl.show();
+        this.statsNotMuchDataEl.hide();
 
         this.statsListEl.empty();
     },
@@ -221,9 +228,23 @@ window.StatisticsView = window.MainViewBase.extend({
         this.statsLoaderEl.hide();
     },
 
+    showNotMuchAttacks: function(){
+        this.statsNotMuchDataEl.show();
+        this.statsLoaderEl.hide();
+
+        if (this.model.events.length == 1){
+            this.statsNotMuchDataTopEl.html("one attack");
+        } else if (this.model.events.length == 2){
+            this.statsNotMuchDataTopEl.html("two attacks");
+        } else if (this.model.events.length == 3){
+            this.statsNotMuchDataTopEl.html("three attacks");
+        }
+    },
+
     showAttacks: function(){
         this.statsNoDataEl.hide();
         this.statsLoaderEl.hide();
+        this.statsNotMuchDataEl.hide();
 
         Chart.defaults.global.animation = false;
         Chart.defaults.global.scaleBeginAtZero = true;

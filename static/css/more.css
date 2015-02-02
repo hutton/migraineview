@@ -4103,27 +4103,45 @@ a {
   margin: 10px 10px 0px 10px;
   min-width: 80px;
 }
+.panel {
+  font-size: 16px;
+  margin: 50px auto;
+  max-width: 560px;
+}
 .panel-blue {
-  margin: 50px 30px;
+  font-size: 16px;
+  margin: 50px auto;
+  max-width: 560px;
 }
 .panel-yellow {
-  margin: 50px 30px;
+  font-size: 16px;
+  margin: 50px auto;
+  max-width: 560px;
+}
+.panel-inner {
+  margin: 0px 20px;
+  display: inline-block;
+  padding: 20px;
 }
 .panel-blue > div {
-  max-width: 600px;
-  border: 1px solid #bce8f1;
+  margin: 0px 20px;
+  display: inline-block;
   padding: 20px;
+  border: 1px solid #bce8f1;
   color: #31708f;
   background-color: #d9edf7;
-  margin: 0px auto;
+}
+.panel-blue > div a {
+  font-weight: bold;
+  color: #1a3948;
 }
 .panel-yellow > div {
-  max-width: 600px;
+  margin: 0px 20px;
+  display: inline-block;
   padding: 20px;
   background-color: #fcf8e3;
   border: 1px solid #faebcc;
   color: #8a6d3b;
-  margin: 0px auto;
 }
 input[type=date] {
   min-width: 160px;
@@ -4414,28 +4432,10 @@ svg {
   fill: rgba(151, 187, 205, 0.6);
 }
 .RdYlGn .q3-11 {
-  fill: #fdae61;
+  fill: rgba(151, 187, 205, 0.8);
 }
 .RdYlGn .q4-11 {
-  fill: #fee08b;
-}
-.RdYlGn .q5-11 {
-  fill: #ffffbf;
-}
-.RdYlGn .q6-11 {
-  fill: #d9ef8b;
-}
-.RdYlGn .q7-11 {
-  fill: #a6d96a;
-}
-.RdYlGn .q8-11 {
-  fill: #66bd63;
-}
-.RdYlGn .q9-11 {
-  fill: #1a9850;
-}
-.RdYlGn .q10-11 {
-  fill: #006837;
+  fill: #97bbcd;
 }
 /**** Attack gaps **********/
 .domain {
