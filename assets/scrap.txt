@@ -31,3 +31,14 @@ class ProcessUpload(webapp.RequestHandler):
 
 https://github.com/dateutil/dateutil/
 https://labix.org/python-dateutil
+
+https://github.com/python-excel/xlrd
+http://www.youlikeprogramming.com/2012/03/examples-reading-excel-xls-documents-using-pythons-xlrd/
+
+def read_rows(inputfile):
+  rows = []
+  wb = xlrd.open_workbook(file_contents=inputfile.read())
+  sh = wb.sheet_by_index(0)
+  for rownum in range(sh.nrows):
+    rows.append(sh.row_values(rownum))
+  return rows
