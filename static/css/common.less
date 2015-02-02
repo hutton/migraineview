@@ -173,7 +173,7 @@ a {
     left: 0px;
     right: 0px;
 
-    background: rgba(0,0,0,0.25);
+    background: rgba(0,0,0,0.4);
     text-align: center;
 
     z-index: 100;
@@ -183,7 +183,7 @@ a {
 
 .popup{
     border-radius: 8px;
-    box-shadow: 0px 2px 12px rgba(0,0,0,0.3);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.7);
     background: white;
     padding: 20px;
     border: 1px solid rgba(0,0,0,0.4);
@@ -205,7 +205,40 @@ a {
 .popup-buttons > button{
     margin: 10px 10px 0px 10px;
     min-width: 80px;
+}
+
+@panel-padding: 20px;
+@panel-margin: 50px 30px;
+
+.panel{
+}
+
+.panel-blue{
+    .panel;
+    margin: @panel-margin;
 
 }
 
+.panel-yellow{
+    .panel;
+    margin: @panel-margin;
 
+}
+
+.panel-blue > div{
+    max-width: 600px;
+    border: 1px solid #bce8f1;
+    padding: @panel-padding;
+    color: #31708f;
+    background-color: #d9edf7;
+    margin: 0px auto;
+}
+
+.panel-yellow > div{
+    max-width: 600px;
+    padding: @panel-padding;
+    background-color: #fcf8e3;
+    border: 1px solid #faebcc;
+    color: #8a6d3b; //yellow
+    margin: 0px auto;
+}

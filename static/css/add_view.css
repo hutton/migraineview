@@ -63,6 +63,6 @@ input[type=date] {
 }
 #attack-details-popup .popup-title {
   font-size: 160%;
-  opacity: 0.5;
+  opacity: 0.75;
   margin-top: 15px;
 }

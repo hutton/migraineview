@@ -3,7 +3,7 @@ import sys
 from google.appengine.api import users
 from google.appengine.ext import db
 import webob
-from app.helper import generate_string
+from app.helper import generate_string, support_email
 from app.model.mr_user import User
 
 sys.path.insert(0, 'libs')
@@ -205,6 +205,8 @@ class AuthHandler(BaseRequestHandler, SimpleAuthHandler):
 
                 if ok:
                     self.auth.set_session(self.auth.store.user_to_dict(user))
+
+                support_email("New User", "A new account has been created: " + str(_attrs))
 
         destination_url = '/report'
 

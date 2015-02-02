@@ -4077,14 +4077,14 @@ a {
   bottom: 0px;
   left: 0px;
   right: 0px;
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.4);
   text-align: center;
   z-index: 100;
   overflow: scroll;
 }
 .popup {
   border-radius: 8px;
-  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.7);
   background: white;
   padding: 20px;
   border: 1px solid rgba(0, 0, 0, 0.4);
@@ -4102,6 +4102,28 @@ a {
 .popup-buttons > button {
   margin: 10px 10px 0px 10px;
   min-width: 80px;
+}
+.panel-blue {
+  margin: 50px 30px;
+}
+.panel-yellow {
+  margin: 50px 30px;
+}
+.panel-blue > div {
+  max-width: 600px;
+  border: 1px solid #bce8f1;
+  padding: 20px;
+  color: #31708f;
+  background-color: #d9edf7;
+  margin: 0px auto;
+}
+.panel-yellow > div {
+  max-width: 600px;
+  padding: 20px;
+  background-color: #fcf8e3;
+  border: 1px solid #faebcc;
+  color: #8a6d3b;
+  margin: 0px auto;
 }
 input[type=date] {
   min-width: 160px;
@@ -4168,7 +4190,7 @@ input[type=date] {
 }
 #attack-details-popup .popup-title {
   font-size: 160%;
-  opacity: 0.5;
+  opacity: 0.75;
   margin-top: 15px;
 }
 .mode-buttons {
@@ -4196,6 +4218,7 @@ input[type=date] {
 .stat-section-title {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   font-size: 120%;
+  padding-bottom: 12px;
 }
 .stat-section-sub-heading {
   text-align: left;

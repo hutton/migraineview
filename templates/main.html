@@ -73,7 +73,13 @@
                         <h2 class="title">Add</h2>
                     </div>
                     <div class="content narrow">
-                        <!--<p>Add a single attack or upload a file containing several.  We accept most spreadsheet formats (.xls, .xlsx, .csv) or calendar export files (.ics).</p>-->
+                        {% if example or low_count %}
+                        <div class="panel-yellow">
+                            <div>
+                            Add a single attack or upload a file containing several.  We accept most spreadsheet formats (.xls, .xlsx, .csv) or calendar export files (.ics).
+                            </div>
+                        </div>
+                        {% endif %}
                         <div class="stat-section-title">
                             Log an attack
                         </div>
@@ -138,6 +144,14 @@
                     <div>
                         <h2 class="title">Report</h2>
                     </div>
+                    {% if example %}
+                    <div class="panel-yellow">
+                        <div>
+                        Add a single attack or upload a file containing several.  We accept most spreadsheet formats (.xls, .xlsx, .csv) or calendar export files (.ics).
+                        </div>
+                    </div>
+                    {% endif %}
+
                     <div id="stats-loading" class="loading-message">
                         <div>Loading...</div>
                         <div class='progress indefinite'>

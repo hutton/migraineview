@@ -88,8 +88,8 @@ def build_json_events(events):
 
 
 def support_email(subject, message):
-    mail.send_mail(sender="ICS Convert Support <simon.hutton@gmail.com>",
-                   to="Simon <simon.hutton@gmail.com>",
+    mail.send_mail(sender="Migraine.Report Support <simon@migraine.report>",
+                   to="Simon <simon@migraine.report>",
                    subject=subject,
                    body=message)
 

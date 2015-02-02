@@ -4,7 +4,7 @@ from google.appengine._internal.django.utils import simplejson
 from google.appengine.ext import ndb
 import webapp2
 from app.authentication import BaseRequestHandler
-from app.helper import create_start_text, create_duration_text
+from app.helper import create_start_text, create_duration_text, support_email
 from app.migraine_statistics import json_to_events, ics_to_events
 from app.model import attack
 
@@ -44,6 +44,8 @@ class Upload(BaseRequestHandler):
                     ndb.put_multi(new_attacks)
 
                 self.response.out.write(simplejson.dumps({'message': str(len(new_attacks)) + ' attacks uploaded.'}))
+
+                support_email("List uploaded", str(len(new_attacks)) + " attacks uploaded.")
             except Exception as e:
 
                 trace = traceback.format_exc()
