@@ -84,7 +84,7 @@ window.EditAttackView = Backbone.View.extend({
                 _.delay(function(){
                     that.hide();
                     that.attackView.addMessageLabelEl.html("");
-                }, 600);
+                }, 100);
 
                 var durationSeconds = (that.attackView.getEndedDate() - that.attackView.getStartedDate()) / 1000;
 

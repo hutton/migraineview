@@ -1,10 +1,6 @@
-- Example banners
-    - background-color: #fcf8e3;    border-color: #faebcc; #color: 8a6d3b; //yellow
-    - color: #31708f; background-color: #d9edf7; border-color: #bce8f1; // blue
 - Update example data
 - Upload of xlsx
 - Download of xlsx
-- Check report amount of data before showing.
 - Add email alerts
 ^^^^^^^^^^^^^^
 Before release
@@ -12,6 +8,7 @@ Before release
 
 Done
 ====
+- Example banners
 - Finish edit/delete
 - Getting Started tidy up.
 - Screenshots on homepage

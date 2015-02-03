@@ -47,6 +47,7 @@ class Example(webapp2.RequestHandler):
         response['show_options'] = True
         response['show_list'] = True
         response['example'] = True
+        response['user'] = {'name': 'Example User', 'provider_name': 'Google+'}
 
         response['data'] = simplejson.dumps(response)
 

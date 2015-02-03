@@ -4655,3 +4655,44 @@ line.line {
 .menu-item-divided {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
+#menu .pure-menu li a:focus {
+  background: #1f8dd6;
+}
+#menu .pure-menu li a:hover {
+  background: #333;
+}
+.pure-menu-heading:hover > .logo {
+  -webkit-transform: rotate(360deg) scale(0.8);
+  -moz-transform: rotate(360deg) scale(0.8);
+  -o-transform: rotate(360deg) scale(0.8);
+  -ms-transform: rotate(360deg) scale(0.8);
+  transform: rotate(360deg) scale(0.8);
+}
+.pure-menu-heading:hover > .cube > div:nth-child(1) {
+  -webkit-transform: translate(10px, 10px);
+  -moz-transform: translate(10px, 10px);
+  -o-transform: translate(10px, 10px);
+  -ms-transform: translate(10px, 10px);
+  transform: translate(10px, 10px);
+}
+.pure-menu-heading:hover > .cube > div:nth-child(2) {
+  -webkit-transform: translate(-10px, 10px);
+  -moz-transform: translate(-10px, 10px);
+  -o-transform: translate(-10px, 10px);
+  -ms-transform: translate(-10px, 10px);
+  transform: translate(-10px, 10px);
+}
+.pure-menu-heading:hover > .cube > div:nth-child(3) {
+  -webkit-transform: translate(10px, -10px);
+  -moz-transform: translate(10px, -10px);
+  -o-transform: translate(10px, -10px);
+  -ms-transform: translate(10px, -10px);
+  transform: translate(10px, -10px);
+}
+.pure-menu-heading:hover > .cube > div:nth-child(4) {
+  -webkit-transform: translate(-10px, -10px);
+  -moz-transform: translate(-10px, -10px);
+  -o-transform: translate(-10px, -10px);
+  -ms-transform: translate(-10px, -10px);
+  transform: translate(-10px, -10px);
+}
