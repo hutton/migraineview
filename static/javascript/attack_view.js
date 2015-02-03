@@ -86,7 +86,9 @@ window.AttackView = Backbone.View.extend({
         var started_date = this.convertDateToUTC(new Date(model.get('start').replace(" ", "T")));
         var ended_date = new Date(started_date.getTime() + (model.get('duration') * 1000));
 
-        this.startedEL.val(this.dateToShortDate(started_date));
+        var d = this.dateToShortDate(started_date);
+
+        this.startedEL.val(d);
         this.startedTimeEL.val(this.dateToTime(started_date));
 
         this.endedEL.val(this.dateToShortDate(ended_date));

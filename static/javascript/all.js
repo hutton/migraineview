@@ -5,6 +5,10 @@
 // @codekit-prepend "tp/underscore.js";
 // @codekit-prepend "tp/backbone.js";
 // @codekit-prepend "tp/d3.v3.min.js";
+// @codekit-prepend "tp/better-dom.js";
+// @codekit-prepend "tp/better-i18n-plugin.js";
+// @codekit-prepend "tp/better-dateinput-polyfill.js";
+
 
 // @codekit-prepend "helper.js";
 

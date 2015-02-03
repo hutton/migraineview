@@ -521,7 +521,7 @@
             <fieldset>
                 <div class="pure-control-group">
                     <label for="started">Started</label>
-                    <input name="started" id="started" type="date" placeholder="Started">
+                    <input name="started" id="started" type="date" data-format="dd/MM/yyyy" placeholder="Started">
                     <select name="started-time" id="started-time">
                        <option value="00:00">00:00</option>
                        <option value="00:30">00:30</option>
@@ -576,7 +576,7 @@
 
                 <div class="pure-control-group">
                     <label for="ended">Recovered</label>
-                    <input name="ended" id="ended" type="date" placeholder="Ended">
+                    <input name="ended" id="ended" type="date" data-format="dd/MM/yyyy" placeholder="Ended">
                     <select name="ended-time" id="ended-time">
                        <option value="00:00">00:00</option>
                        <option value="00:30">00:30</option>
@@ -665,6 +665,10 @@
     <script src="/static/javascript/tp/underscore.js" language="javascript" type="text/javascript"></script>
     <script src="/static/javascript/tp/backbone.js" language="javascript" type="text/javascript"></script>
     <script src="/static/javascript/tp/d3.v3.min.js" language="javascript" type="text/javascript"></script>
+
+    <script src="/static/javascript/tp/better-dom.js" language="javascript" type="text/javascript"></script>
+    <script src="/static/javascript/tp/better-i18n-plugin.js" language="javascript" type="text/javascript"></script>
+    <script src="/static/javascript/tp/better-dateinput-polyfill.js" language="javascript" type="text/javascript"></script>
 
     <script src="/static/javascript/helper.js" language="javascript" type="text/javascript"></script>
 
