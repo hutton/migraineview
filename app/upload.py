@@ -1,12 +1,16 @@
+import StringIO
+import csv
 import logging
 import traceback
 from google.appengine._internal.django.utils import simplejson
 from google.appengine.ext import ndb
 import webapp2
 from app.authentication import BaseRequestHandler
-from app.helper import create_start_text, create_duration_text, support_email
+from app.helper import create_start_text, create_duration_text, support_email, date_to_datetime
 from app.migraine_statistics import json_to_events, ics_to_events
 from app.model import attack
+from libs import xlrd
+from libs.dateutil.parser import parse
 
 __author__ = 'simonhutton'
 
@@ -23,6 +27,12 @@ class Upload(BaseRequestHandler):
 
                     if file_info.filename.endswith('.json'):
                         events = json_to_events(file_content)
+
+                    if file_info.filename.endswith('.xlsx'):
+                        events = xlsx_to_events(file_content)
+
+                    if file_info.filename.endswith('.csv'):
+                        events = csv_to_events(file_content)
 
                     if file_info.filename.endswith('.ics'):
                         events = ics_to_events(file_content)
@@ -59,5 +69,73 @@ class Upload(BaseRequestHandler):
             self.response.out.write(simplejson.dumps({'message': 'Please login before uploading attacks.'}))
 
 
+def xlsx_to_events(file_content):
+    wb = xlrd.open_workbook(file_contents=file_content)
+    sh = wb.sheet_by_index(0)
+
+    new_rows = []
+
+    for row in range(sh.nrows):
+        new_rows.append(sh.row_values(row))
+
+    events = plain_rows_to_events(new_rows)
+
+    return events
+
+
+def plain_rows_to_events(rows):
+    events = []
+
+    if len(rows) == 0:
+        return events
+
+    index_of_start = None
+    index_of_finished = None
+    index_of_comment = None
+
+    header_row = rows[0]
+
+    for i in range(0, len(header_row)):
+        if header_row[i] == "Started":
+            index_of_start = i
+        if header_row[i] == "Recovered":
+            index_of_finished = i
+        if header_row[i] == "Description":
+            index_of_comment = i
+
+    if index_of_start is not None and index_of_finished is not None and index_of_comment is not None:
+        for row in rows[1:]:
+
+            start = parse(row[index_of_start])
+
+            event = {'Start': start}
+
+            finished = parse(row[index_of_finished])
+
+            if finished:
+                duration_delta = finished - start
+
+                event['Duration'] = int(duration_delta.total_seconds())
+            else:
+                event['Duration'] = None
+
+            event['Comment'] = row[index_of_comment]
+
+            events.append(event)
+
+    return events
+
+
+def csv_to_events(file_content):
+    csv_reader = csv.reader(StringIO.StringIO(file_content))
+
+    new_rows = []
+
+    for row in csv_reader:
+        new_rows.append(row)
+
+    events = plain_rows_to_events(new_rows)
+
+    return events
 
 

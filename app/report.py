@@ -92,11 +92,11 @@ class ReportEdit(BaseRequestHandler):
 
             if found_attack:
                 found_attack.start_time = started
-                found_attack.duration = duration_delta.seconds
+                found_attack.duration = int(duration_delta.total_seconds())
                 found_attack.comment = self.request.POST['comment']
 
                 found_attack.start_text = create_start_text(started)
-                found_attack.duration_text = create_duration_text(duration_delta.seconds)
+                found_attack.duration_text = create_duration_text(duration_delta.total_seconds())
 
                 found_attack.put()
 

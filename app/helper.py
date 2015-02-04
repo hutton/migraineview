@@ -50,15 +50,15 @@ def process_calendar(calendar):
                 if end_date:
                     duration_delta = end_date - start_date
 
-                    event['Duration'] = duration_delta.seconds
+                    event['Duration'] = int(duration_delta.total_seconds())
                 else:
                     event['Duration'] = None
 
                 events.append(event)
 
-    sorted_events = sorted(events, key=lambda event: event.get('CompareDate'))
+    # sorted_events = sorted(events, key=lambda event: event.get('CompareDate'))
 
-    return sorted_events
+    return events
 
 
 def date_to_datetime(date):

@@ -17,9 +17,12 @@ __author__ = 'simonhutton'
 def build_tab_lib_dataset(attacks):
     data = tablib.Dataset()
 
-    data.headers = ['Started', 'Duration', 'Description']
+    data.headers = ['Started', 'Duration', 'Recovered', 'Description']
 
-    rows = [[str(attack['Start']), attack['DurationText'], attack['Comment']] for attack in attacks]
+    rows = [[str(attack['Start']),
+             attack['DurationText'],
+             str(attack['Start'] + timedelta(seconds=attack['Duration'])),
+             attack['Comment']] for attack in attacks]
 
     for row in rows:
         data.append(row)
