@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4ea88c3-5bc7-4b67-b3fb-d2fa76a7d74d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/export.py" afterPath="$PROJECT_DIR$/app/export.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/helper.py" afterPath="$PROJECT_DIR$/app/helper.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/main.html" afterPath="$PROJECT_DIR$/templates/main.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/report.py" afterPath="$PROJECT_DIR$/app/report.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/upload.py" afterPath="$PROJECT_DIR$/app/upload.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="migraineview.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -46,10 +41,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="main.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.67375886" vertical-offset="1710" max-vertical-offset="11115">
+            <state vertical-scroll-proportion="-5.7" vertical-offset="1710" max-vertical-offset="11115">
               <caret line="133" column="73" selection-start-line="133" selection-start-column="73" selection-end-line="133" selection-end-column="73" />
               <folding>
                 <element signature="n#style#0;n#div#2;n#div#4;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -98,11 +93,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="report.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="report.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/report.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1089" max-vertical-offset="1935">
-              <caret line="94" column="75" selection-start-line="94" selection-start-column="75" selection-end-line="94" selection-end-column="75" />
+            <state vertical-scroll-proportion="0.5781893" vertical-offset="499" max-vertical-offset="1935">
+              <caret line="63" column="66" selection-start-line="63" selection-start-column="53" selection-end-line="63" selection-end-column="66" />
               <folding />
             </state>
           </provider>
@@ -198,12 +193,12 @@
         <option value="$PROJECT_DIR$/static/javascript/tp/better-dateinput-polyfill.js" />
         <option value="$PROJECT_DIR$/static/javascript/edit_attack_view.js" />
         <option value="$PROJECT_DIR$/static/javascript/attack_view.js" />
-        <option value="$PROJECT_DIR$/app/report.py" />
         <option value="$PROJECT_DIR$/app/migraine_statistics.py" />
         <option value="$PROJECT_DIR$/app/export.py" />
         <option value="$PROJECT_DIR$/app/upload.py" />
         <option value="$PROJECT_DIR$/app/helper.py" />
         <option value="$PROJECT_DIR$/templates/main.html" />
+        <option value="$PROJECT_DIR$/app/report.py" />
       </list>
     </option>
   </component>
@@ -1050,14 +1045,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/report.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1089" max-vertical-offset="1935">
-          <caret line="94" column="75" selection-start-line="94" selection-start-column="75" selection-end-line="94" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/todo.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="780">
@@ -1110,11 +1097,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/main.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.67375886" vertical-offset="1710" max-vertical-offset="11115">
+        <state vertical-scroll-proportion="-5.7" vertical-offset="1710" max-vertical-offset="11115">
           <caret line="133" column="73" selection-start-line="133" selection-start-column="73" selection-end-line="133" selection-end-column="73" />
           <folding>
             <element signature="n#style#0;n#div#2;n#div#4;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/report.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5781893" vertical-offset="499" max-vertical-offset="1935">
+          <caret line="63" column="66" selection-start-line="63" selection-start-column="53" selection-end-line="63" selection-end-column="66" />
+          <folding />
         </state>
       </provider>
     </entry>

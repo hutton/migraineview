@@ -61,7 +61,7 @@ class ReportAdd(BaseRequestHandler):
             new_attack = attack.Attack(parent=user.key)
 
             new_attack.start_time = started
-            new_attack.duration = duration_delta.total_seconds()
+            new_attack.duration = int(duration_delta.total_seconds())
             new_attack.comment = self.request.POST['comment']
 
             new_attack.start_text = create_start_text(started)
