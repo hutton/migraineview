@@ -1,13 +1,13 @@
 - Update example data
 - Upload of xlsx
-- Download of xlsx
-- Add email alerts
 ^^^^^^^^^^^^^^
 Before release
 
 
 Done
 ====
+- Download of xlsx
+- Add email alerts
 - Example banners
 - Finish edit/delete
 - Getting Started tidy up.
