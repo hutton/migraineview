@@ -40,10 +40,6 @@ window.AttackView = Backbone.View.extend({
         return ( "0" + date.getHours()).slice(-2) + ":" + ("0" + date.getMinutes()).slice(-2);
     },
 
-    dateToShortDate: function(date){
-        return date.getUTCFullYear() + "-" + ( "0" + (date.getUTCMonth() + 1)).slice(-2) + "-" + ("0" + date.getUTCDate()).slice(-2);
-    },
-
     getStarted: function(){
         var start = this.startedEL.val();
         var started_time = this.startedTimeEL.val();
@@ -86,13 +82,14 @@ window.AttackView = Backbone.View.extend({
         var started_date = this.convertDateToUTC(new Date(model.get('start').replace(" ", "T")));
         var ended_date = new Date(started_date.getTime() + (model.get('duration') * 1000));
 
-        var d = this.dateToShortDate(started_date);
-
-        this.startedEL.val(d);
+        this.startedEL.val(started_date.toDateInputValue());
         this.startedTimeEL.val(this.dateToTime(started_date));
 
-        this.endedEL.val(this.dateToShortDate(ended_date));
+        this.endedEL.val(ended_date.toDateInputValue());
         this.endedTimeEL.val(this.dateToTime(ended_date));
+
+        DOM.constructor(this.startedEL[0]).fire("change");
+        DOM.constructor(this.endedEL[0]).fire("change");
 
         this.commentEL.val(model.get('comment'));
 

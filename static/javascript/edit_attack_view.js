@@ -36,7 +36,7 @@ window.EditAttackView = Backbone.View.extend({
     show: function(model){
         this.model = model;
 
-        this.popupEl.fadeIn('fast');
+        this.popupEl.show();
 
         this.attackView.setModel(model);
         this.deleteButton.removeClass('delete-sure');

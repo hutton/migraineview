@@ -46,17 +46,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/attack_view.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/attack_view.js",
-		"outputAbbreviatedPath": "\/min\/attack_view-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/better-dateinput-polyfill.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -96,17 +85,6 @@
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/calendar_report_view.js",
 		"outputAbbreviatedPath": "\/min\/calendar_report_view-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/edit_attack_view.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/edit_attack_view.js",
-		"outputAbbreviatedPath": "\/min\/edit_attack_view-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -162,17 +140,6 @@
 		"ignoreWasSetByUser": 1,
 		"inputAbbreviatedPath": "\/main_view_base.js",
 		"outputAbbreviatedPath": "\/min\/main_view_base-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
-	"\/min\/all-min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/min\/all-min.js",
-		"outputAbbreviatedPath": "\/min\/min\/all-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
