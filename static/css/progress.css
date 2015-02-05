@@ -12,11 +12,11 @@
 .indefinite > span {
   position: relative;
   width: 10% !important;
-  -webkit-animation: myfirst linear 2s infinite;
-  animation: myfirst linear 2s infinite;
+  -webkit-animation: progressAnimation linear 2s infinite;
+  animation: progressAnimation linear 2s infinite;
 }
 /* Standard syntax */
-@keyframes myfirst {
+@keyframes progressAnimation {
   0% {
     left: 0%;
   }
@@ -27,7 +27,7 @@
     left: 0%;
   }
 }
-@-webkit-keyframes myfirst {
+@-webkit-keyframes progressAnimation {
   0% {
     left: 0%;
   }

@@ -72,7 +72,7 @@
                     <div>
                         <h2 class="title">Add</h2>
                     </div>
-                    <div class="narrow">
+                    <div class="narrow content">
                         {% if example or low_count %}
                         <div class="panel-yellow">
                             <div>
@@ -91,6 +91,17 @@
                         </div>
                         <div class="section-content">
                             <p>Drag and drop your spreadsheet or calendar file containing your migraine dairy.</p>
+                            <div class="panel-yellow">
+                                <div>
+                                If you're uploading a spreadsheet, there's three columns we're looking for*:
+                                    <ul>
+                                        <li><span>Start</span> or <span>Started</span> or <span>Began</span> or <span>Start Time</span></li>
+                                        <li><span>Recovered</span> or <span>Finished</span> or <span>Finish</span></li>
+                                        <li><span>Description</span> or <span>Comment(s)</span></li>
+                                    </ul>
+                                    * Column names don't have to match exactly but be similar.
+                                </div>
+                            </div>
                             <div class="upload-container">
                                 <div>
                                     <div class="file-type green">
@@ -131,9 +142,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="panel-blue" style="display: none;">
+                            <div class="panel-blue" id="add-upload-could-not-find" style="display: none;">
                                 <div>
-                                Unfortunately we we're unable to extract any attack out of the file you uploaded.
+                                Unfortunately we we're unable to extract any attacks out of the file you uploaded.
                                 </div>
                             </div>
                         </div>

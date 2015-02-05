@@ -6,8 +6,7 @@ input[type=date] {
   margin: 40px 0px 0px 0px;
 }
 .add-duration-group-container {
-  min-height: 40px;
-  padding-top: 7px;
+  margin: 30px 0px;
 }
 #add-comment-text {
   width: 320px;
@@ -40,7 +39,7 @@ input[type=date] {
   display: inline-block;
 }
 #add-status-panel-container {
-  height: 100px;
+  height: 40px;
 }
 #add-message-label-container {
   text-align: center;
@@ -65,4 +64,11 @@ input[type=date] {
   font-size: 160%;
   opacity: 0.75;
   margin-top: 15px;
+}
+#single-upload-attack-view-container p {
+  margin: 0px;
+  max-width: none;
+  font-size: 120%;
+  line-height: 1.7em;
+  opacity: 0.8;
 }

@@ -18,11 +18,11 @@
 .indefinite > span {
   position: relative;
   width: 10% !important;
-  -webkit-animation: myfirst linear 2s infinite;
-  animation: myfirst linear 2s infinite;
+  -webkit-animation: progressAnimation linear 2s infinite;
+  animation: progressAnimation linear 2s infinite;
 }
 /* Standard syntax */
-@keyframes myfirst {
+@keyframes progressAnimation {
   0% {
     left: 0%;
   }
@@ -33,7 +33,7 @@
     left: 0%;
   }
 }
-@-webkit-keyframes myfirst {
+@-webkit-keyframes progressAnimation {
   0% {
     left: 0%;
   }
@@ -217,6 +217,9 @@ a {
   font-weight: bold;
   color: #1a3948;
 }
+.panel-blue li {
+  list-style-type: disc;
+}
 .panel-yellow > div {
   margin: 0px 20px;
   display: inline-block;
@@ -224,4 +227,15 @@ a {
   background-color: #fcf8e3;
   border: 1px solid #faebcc;
   color: #8a6d3b;
+}
+.panel-yellow > div a {
+  font-weight: bold;
+  color: #1a3948;
+}
+.panel-yellow li {
+  list-style-type: disc;
+}
+.panel-yellow li > span {
+  font-style: italic;
+  font-weight: bold;
 }

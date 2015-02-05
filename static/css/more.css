@@ -3936,11 +3936,11 @@ Hides the menu at `48em`, but modify this based on your app's needs.
 .indefinite > span {
   position: relative;
   width: 10% !important;
-  -webkit-animation: myfirst linear 2s infinite;
-  animation: myfirst linear 2s infinite;
+  -webkit-animation: progressAnimation linear 2s infinite;
+  animation: progressAnimation linear 2s infinite;
 }
 /* Standard syntax */
-@keyframes myfirst {
+@keyframes progressAnimation {
   0% {
     left: 0%;
   }
@@ -3951,7 +3951,7 @@ Hides the menu at `48em`, but modify this based on your app's needs.
     left: 0%;
   }
 }
-@-webkit-keyframes myfirst {
+@-webkit-keyframes progressAnimation {
   0% {
     left: 0%;
   }
@@ -4135,6 +4135,9 @@ a {
   font-weight: bold;
   color: #1a3948;
 }
+.panel-blue li {
+  list-style-type: disc;
+}
 .panel-yellow > div {
   margin: 0px 20px;
   display: inline-block;
@@ -4142,6 +4145,17 @@ a {
   background-color: #fcf8e3;
   border: 1px solid #faebcc;
   color: #8a6d3b;
+}
+.panel-yellow > div a {
+  font-weight: bold;
+  color: #1a3948;
+}
+.panel-yellow li {
+  list-style-type: disc;
+}
+.panel-yellow li > span {
+  font-style: italic;
+  font-weight: bold;
 }
 input[type=date] {
   min-width: 160px;
@@ -4151,8 +4165,7 @@ input[type=date] {
   margin: 40px 0px 0px 0px;
 }
 .add-duration-group-container {
-  min-height: 40px;
-  padding-top: 7px;
+  margin: 30px 0px;
 }
 #add-comment-text {
   width: 320px;
@@ -4185,7 +4198,7 @@ input[type=date] {
   display: inline-block;
 }
 #add-status-panel-container {
-  height: 100px;
+  height: 40px;
 }
 #add-message-label-container {
   text-align: center;
@@ -4210,6 +4223,13 @@ input[type=date] {
   font-size: 160%;
   opacity: 0.75;
   margin-top: 15px;
+}
+#single-upload-attack-view-container p {
+  margin: 0px;
+  max-width: none;
+  font-size: 120%;
+  line-height: 1.7em;
+  opacity: 0.8;
 }
 .mode-buttons {
   text-align: center;
