@@ -3936,8 +3936,8 @@ Hides the menu at `48em`, but modify this based on your app's needs.
 .indefinite > span {
   position: relative;
   width: 10% !important;
-  -webkit-animation: progressAnimation linear 2s infinite;
-  animation: progressAnimation linear 2s infinite;
+  -webkit-animation: progressAnimation linear 2s infinite !important;
+  animation: progressAnimation linear 2s infinite !important;
 }
 /* Standard syntax */
 @keyframes progressAnimation {
@@ -4196,9 +4196,6 @@ input[type=date] {
 }
 #delete-button.delete-sure > span {
   display: inline-block;
-}
-#add-status-panel-container {
-  height: 40px;
 }
 #add-message-label-container {
   text-align: center;

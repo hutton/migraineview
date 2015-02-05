@@ -38,9 +38,6 @@ input[type=date] {
 #delete-button.delete-sure > span {
   display: inline-block;
 }
-#add-status-panel-container {
-  height: 40px;
-}
 #add-message-label-container {
   text-align: center;
   height: 8px;

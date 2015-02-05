@@ -64,7 +64,9 @@ class Upload(BaseRequestHandler):
                 logging.error(trace)
 
                 self.response.set_status(500)
-                self.response.out.write(simplejson.dumps({'message': "Upload failed.  Sorry!  We're looking at it."}))
+                self.response.out.write(simplejson.dumps({'message': "Upload failed.<br/>Sorry!  We're looking at it."}))
+
+                support_email("Upload failed", "Couldn't upload: " + file_info.filename)
         else:
             self.response.out.write(simplejson.dumps({'message': 'Please login before uploading attacks.'}))
 
@@ -83,6 +85,18 @@ def xlsx_to_events(file_content):
     return events
 
 
+def string_matches(text, match_list):
+    text = text.upper()
+
+    for match in match_list:
+        match = match.upper()
+
+        if text == match:
+            return True
+
+    return False
+
+
 def plain_rows_to_events(rows):
     events = []
 
@@ -96,11 +110,11 @@ def plain_rows_to_events(rows):
     header_row = rows[0]
 
     for i in range(0, len(header_row)):
-        if header_row[i] == "Started":
+        if string_matches(header_row[i], ["Started", "Start", "Start Time", "Began", "When"]):
             index_of_start = i
-        if header_row[i] == "Recovered":
+        if string_matches(header_row[i], ["Recovered", "Finished", "Finish"]):
             index_of_finished = i
-        if header_row[i] == "Description":
+        if string_matches(header_row[i], ["Description", "Comment", "Comments"]):
             index_of_comment = i
 
     if index_of_start is not None and index_of_finished is not None and index_of_comment is not None:

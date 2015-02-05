@@ -3414,8 +3414,8 @@ striping:
 .indefinite > span {
   position: relative;
   width: 10% !important;
-  -webkit-animation: progressAnimation linear 2s infinite;
-  animation: progressAnimation linear 2s infinite;
+  -webkit-animation: progressAnimation linear 2s infinite !important;
+  animation: progressAnimation linear 2s infinite !important;
 }
 /* Standard syntax */
 @keyframes progressAnimation {
@@ -3854,12 +3854,47 @@ body {
   margin-top: 10px;
   margin-bottom: 20px;
 }
-.splash-buttons > a {
-  min-width: 120px;
+.splash-button {
+  background: white;
+  color: #1f8dd6;
+  text-decoration: none;
+  padding: 0.5em 1em;
+  min-width: 130px;
   margin: 10px;
+  font-size: 125%;
+  display: inline-block;
+  -moz-transition-duration: 0.3s;
+  -webkit-transition-duration: 0.3s;
+  -o-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  font-weight: 100;
+  border-radius: 4px;
+}
+#tour-button:hover {
+  border: 1px solid #1f8dd6;
+  color: #1f8dd6;
+  background: white;
+  font-weight: 400;
+}
+#get-started-button:hover {
+  border: 1px solid #ca3c3c;
+  color: #ca3c3c;
+  background: white;
+  font-weight: 400;
+}
+#tour-button {
+  border: 1px solid #1f8dd6;
+  background: #1f8dd6;
+  color: white;
+}
+#get-started-button {
+  border: 1px solid #ca3c3c;
+  background: #ca3c3c;
+  color: white;
 }
 #get-started-button > i {
   margin-left: 3px;
+  font-size: 120%;
 }
 #hero-image {
   margin: 0px auto 20px;

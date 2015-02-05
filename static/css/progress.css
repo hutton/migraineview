@@ -12,8 +12,8 @@
 .indefinite > span {
   position: relative;
   width: 10% !important;
-  -webkit-animation: progressAnimation linear 2s infinite;
-  animation: progressAnimation linear 2s infinite;
+  -webkit-animation: progressAnimation linear 2s infinite !important;
+  animation: progressAnimation linear 2s infinite !important;
 }
 /* Standard syntax */
 @keyframes progressAnimation {
