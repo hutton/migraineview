@@ -1,3 +1,5 @@
-Migraine Report - Free, easy to use migraine dairy.
+Title: Migraine Report - Free, easy to use migraine dairy.
 
-Log, search and view beautiful reports about your migraines for free.  Easily import exisiting data and instantly see insightful visualisations.
+Description: Log, search and view beautiful reports about your migraines for free.  Easily import exisiting data and instantly see insightful visualisations.
+
+Keywords: free migraine diary, free migraine calendar, migraine visualisations, log migraines, migraine report
