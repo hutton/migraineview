@@ -1,4 +1,5 @@
 - "Log, Search and Visualise your Migraine Data."
+- Prevent adding, editing or deleting for Example
 - Upload of xlsx
 ^^^^^^^^^^^^^^
 Before release
