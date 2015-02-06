@@ -3,3 +3,5 @@ Title: Migraine Report - Free, easy to use migraine dairy.
 Description: Log, search and view beautiful reports about your migraines for free.  Easily import exisiting data and instantly see insightful visualisations.
 
 Keywords: free migraine diary, free migraine calendar, migraine visualisations, log migraines, migraine report
+
+At this time we only support these three identity providers, if you'd like to use another type of account or just plain old email address and password then please <a href="mailto:simon@migraine.report?subject=I'd like another Sign In option">let me know</a>.
