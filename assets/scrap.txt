@@ -1,34 +1,3 @@
-DOM.constructor(dateInputElement).fire("change");
+Migraine Report - Free, easy to use migraine dairy.
 
-https://github.com/chemerisuk/better-dateinput-polyfill
-<script src="bower_components/better-dom/dist/better-dom.js"></script>
-<script src="bower_components/better-i18n-plugin/dist/better-i18n-plugin.js"></script>
-<script src="bower_components/better-dateinput-polyfill/dist/better-dateinput-polyfill.js"></script>
-
-<input type="date" />
-
-
-
-class ProcessUpload(webapp.RequestHandler): 
-   def post(self): 
-     self.response.out.write(self.request.get('csv')) 
-
-     # Iterating over a string as a file 
-     stringReader = csv.reader(StringIO.StringIO(self.request.get('csv')))
-     for row in stringReader: 
-        self.response.out.write(row) 
-
-
-https://github.com/dateutil/dateutil/
-https://labix.org/python-dateutil
-
-https://github.com/python-excel/xlrd
-http://www.youlikeprogramming.com/2012/03/examples-reading-excel-xls-documents-using-pythons-xlrd/
-
-def read_rows(inputfile):
-  rows = []
-  wb = xlrd.open_workbook(file_contents=inputfile.read())
-  sh = wb.sheet_by_index(0)
-  for rownum in range(sh.nrows):
-    rows.append(sh.row_values(rownum))
-  return rows
+Log, search and view beautiful reports about your migraines for free.  Easily import exisiting data and instantly see insightful visualisations.
