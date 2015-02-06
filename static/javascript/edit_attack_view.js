@@ -145,7 +145,7 @@ window.EditAttackView = Backbone.View.extend({
                     that.deleteButton.removeClass('pure-button-disabled');
                 });
             }
-        } else {
+        } else if (!App.example){
             this.deleteButton.addClass('delete-sure');
 
             _.delay(function(){

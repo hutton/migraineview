@@ -321,7 +321,7 @@
                         </div>
                         <div class="section-content">
                             <div id="settings-buttons">
-                                <button id="settings-clear-all" class="button-error button-large pure-button  {% if example %}pure-button-disabled{% endif %}">Delete all data...</button>
+                                <button id="settings-clear-all" class="button-error button-large pure-button {% if example %}pure-button-disabled{% endif %}">Delete all data...</button>
                                 <div id="settings-buttons-message"></div>
                             </div>
                         </div>
@@ -661,7 +661,7 @@
                         <button id="cancel-button" type="submit" class="pure-button">Cancel</button>
                     <% } %>
                     <% if (show_delete){ %>
-                    <button id="delete-button" type="submit" class="pure-button button-error"><i class="fa fa-trash"></i><span>Sure?</span></button>
+                    <button id="delete-button" type="submit" class="pure-button button-error {% if example %}pure-button-disabled{% endif %}"><i class="fa fa-trash"></i><span>Sure?</span></button>
                     <% } %>
                 </div>
             </fieldset>
