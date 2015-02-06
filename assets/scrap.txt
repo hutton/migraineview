@@ -1,6 +1,6 @@
 Title: Migraine Report - Free, easy to use migraine diary.
 
-Description: Log, search and view beautiful reports about your migraines for free.  Easily import exisiting data and instantly see insightful visualisations.
+Description: Log, search and view beautiful reports about your migraines for free.  Easily import exisiting data and see insightful visualisations.
 
 Keywords: free migraine diary, free migraine calendar, migraine visualisations, log migraines, migraine report
 
