@@ -1,4 +1,4 @@
-- Update example data
+- "Log, Search and Visualise your Migraine Data."
 - Upload of xlsx
 ^^^^^^^^^^^^^^
 Before release
@@ -6,6 +6,7 @@ Before release
 
 Done
 ====
+- Update example data
 - Download of xlsx
 - Add email alerts
 - Example banners
