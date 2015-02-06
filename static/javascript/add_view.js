@@ -66,7 +66,9 @@ window.AddView = window.MainViewBase.extend({
     onDrop: function(e){
         e.preventDefault();
 
-        this.sendFiles(e.originalEvent.dataTransfer.files);
+        if (!App.example){
+            this.sendFiles(e.originalEvent.dataTransfer.files);
+        }
     },
 
     sendFiles: function (files) {
@@ -199,6 +201,5 @@ window.AddView = window.MainViewBase.extend({
 
     singleUploadFinished: function(){
         App.dataChanged();
-    },
-
+    }
 });

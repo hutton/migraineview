@@ -9,6 +9,8 @@ window.SettingsView = window.MainViewBase.extend({
 
     el: $('#settings-view'),
 
+    settingsClearAllEl : $('#settings-clear-all'),
+
     settingsButtonsMessageEl: $('#settings-buttons-message'),
 
     clearAllAttacksPopupEl: $('#clear-all-attacks-popup'),
@@ -27,8 +29,10 @@ window.SettingsView = window.MainViewBase.extend({
     },
 
     showClearAllPopup: function(){
-        this.clearAllAttacksPopupEl.fadeIn('fast');
-        this.yesButton.removeClass('pure-button-disabled');
+        if (!this.settingsClearAllEl.hasClass('pure-button-disabled')) {
+            this.clearAllAttacksPopupEl.fadeIn('fast');
+            this.yesButton.removeClass('pure-button-disabled');
+        }
     },
 
     hideClearAllPopup: function(){

@@ -102,7 +102,7 @@ window.AttackView = Backbone.View.extend({
 
         var text = this.commentEL.val();
 
-        if (text == "" || started >= ended) {
+        if (text == "" || started >= ended || App.example) {
             this.submitButtonEl.addClass('pure-button-disabled');
         } else {
             this.submitButtonEl.removeClass('pure-button-disabled');

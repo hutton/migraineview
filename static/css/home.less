@@ -147,7 +147,7 @@ body{
     color: #888;
     letter-spacing: 0.05em;
     opacity: 0.8;
-    font-size: 160%;
+    font-size: 145%;
     line-height: 1.4em;
     position: relative;
     margin-top: 6px;
@@ -179,24 +179,40 @@ body{
     min-width: 130px;
     margin: 10px;
     font-size: 125%;
+    border-radius: 6px;
+    position: relative;
+    top: 0px;
     .transition-duration(0.3s);
 }
 
 #tour-button{
     background: @tour-button-color;
+    border-bottom: 2px solid #125784;
 }
 
 #get-started-button{
     background: @signup-button-color;
+    border-bottom: 2px solid #8b1f1f;
 }
 
 #tour-button:hover{
     background: #1b84c5;
 }
 
+#tour-button:active{
+    top: 2px;
+    border-bottom: 0px solid #125784;
+}
+
 #get-started-button:hover{
     background: #be2d2d;
 }
+
+#get-started-button:active{
+    top: 2px;
+    border-bottom: 0px solid #8b1f1f;
+}
+
 
 #get-started-button > i{
     margin-left: 3px;
@@ -291,9 +307,8 @@ p.register-text{
     }
 
     .splash-subhead {
-        font-size: 175%;
+        font-size: 145%;
         line-height: 1.4em;
-        margin-top: 10px;
         font-weight: 100;
     }
 
@@ -343,9 +358,8 @@ p.register-text{
     }
 
     .splash-subhead {
-        font-size: 175%;
+        font-size: 145%;
         line-height: 1.4em;
-        margin-top: 10px;
     }
 
     .splash-icons{

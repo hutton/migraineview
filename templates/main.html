@@ -321,7 +321,7 @@
                         </div>
                         <div class="section-content">
                             <div id="settings-buttons">
-                                <button id="settings-clear-all" class="button-error button-large pure-button">Delete all data...</button>
+                                <button id="settings-clear-all" class="button-error button-large pure-button  {% if example %}pure-button-disabled{% endif %}">Delete all data...</button>
                                 <div id="settings-buttons-message"></div>
                             </div>
                         </div>
@@ -712,6 +712,10 @@
             window.App = new App();
 
             window.App.Routes = new Workspace();
+
+            {% if example %}
+            window.App.example = true;
+            {% endif %}
 
             {% if data %}
             window.App.loadData({{ data|safe }});

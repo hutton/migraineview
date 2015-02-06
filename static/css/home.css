@@ -3834,7 +3834,7 @@ body {
   color: #888;
   letter-spacing: 0.05em;
   opacity: 0.8;
-  font-size: 160%;
+  font-size: 145%;
   line-height: 1.4em;
   position: relative;
   margin-top: 6px;
@@ -3859,6 +3859,9 @@ body {
   min-width: 130px;
   margin: 10px;
   font-size: 125%;
+  border-radius: 6px;
+  position: relative;
+  top: 0px;
   -moz-transition-duration: 0.3s;
   -webkit-transition-duration: 0.3s;
   -o-transition-duration: 0.3s;
@@ -3866,15 +3869,25 @@ body {
 }
 #tour-button {
   background: #1f8dd6;
+  border-bottom: 2px solid #125784;
 }
 #get-started-button {
   background: #ca3c3c;
+  border-bottom: 2px solid #8b1f1f;
 }
 #tour-button:hover {
   background: #1b84c5;
 }
+#tour-button:active {
+  top: 2px;
+  border-bottom: 0px solid #125784;
+}
 #get-started-button:hover {
   background: #be2d2d;
+}
+#get-started-button:active {
+  top: 2px;
+  border-bottom: 0px solid #8b1f1f;
 }
 #get-started-button > i {
   margin-left: 3px;
@@ -3954,9 +3967,8 @@ p.register-text {
     padding-top: 100px;
   }
   .splash-subhead {
-    font-size: 175%;
+    font-size: 145%;
     line-height: 1.4em;
-    margin-top: 10px;
     font-weight: 100;
   }
   .splash-icons {
@@ -3997,9 +4009,8 @@ p.register-text {
     font-size: 500%;
   }
   .splash-subhead {
-    font-size: 175%;
+    font-size: 145%;
     line-height: 1.4em;
-    margin-top: 10px;
   }
   .splash-icons {
     margin-top: 40px;
