@@ -19,6 +19,7 @@ import os
 from google.appengine.api import users
 from google.appengine.ext.webapp import template
 import webapp2
+from app.admin import SharedLinks
 from app.authentication import BaseRequestHandler
 from app.example import Example
 from app.export import Export
@@ -92,5 +93,6 @@ app = webapp2.WSGIApplication([webapp2.Route('/auth/<provider>',
                                ('/report/edit', ReportEdit),
                                ('/report/delete', ReportDelete),
                                ('/shared/.*', Shared),
-                               ('/(report|account|add|list)', Report)
+                               ('/(report|account|add|list)', Report),
+                               ('/admin/shared_links/', SharedLinks)
                               ], config=app_config, debug=True)

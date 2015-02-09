@@ -3686,41 +3686,6 @@ a {
   border-bottom-style: none;
   border-right-style: none;
 }
-.logo:hover {
-  -webkit-transform: rotate(360deg) scale(0.8);
-  -moz-transform: rotate(360deg) scale(0.8);
-  -o-transform: rotate(360deg) scale(0.8);
-  -ms-transform: rotate(360deg) scale(0.8);
-  transform: rotate(360deg) scale(0.8);
-}
-.cube:hover > div:nth-child(1) {
-  -webkit-transform: translate(10px, 10px);
-  -moz-transform: translate(10px, 10px);
-  -o-transform: translate(10px, 10px);
-  -ms-transform: translate(10px, 10px);
-  transform: translate(10px, 10px);
-}
-.cube:hover > div:nth-child(2) {
-  -webkit-transform: translate(-10px, 10px);
-  -moz-transform: translate(-10px, 10px);
-  -o-transform: translate(-10px, 10px);
-  -ms-transform: translate(-10px, 10px);
-  transform: translate(-10px, 10px);
-}
-.cube:hover > div:nth-child(3) {
-  -webkit-transform: translate(10px, -10px);
-  -moz-transform: translate(10px, -10px);
-  -o-transform: translate(10px, -10px);
-  -ms-transform: translate(10px, -10px);
-  transform: translate(10px, -10px);
-}
-.cube:hover > div:nth-child(4) {
-  -webkit-transform: translate(-10px, -10px);
-  -moz-transform: translate(-10px, -10px);
-  -o-transform: translate(-10px, -10px);
-  -ms-transform: translate(-10px, -10px);
-  transform: translate(-10px, -10px);
-}
 .logon-provider > a {
   width: 200px;
   margin: 10px;
