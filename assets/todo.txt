@@ -1,8 +1,5 @@
-- "Log, Search and Visualise your Migraine Data."
-- Prevent adding, editing or deleting for Example
-- Update Title and Description
-- Upload of xlsx
-
+- IE reszie issue
+- Dynamic last migraine in example
 
 ^^^^^^^^^^^^^^
 Before release
@@ -10,6 +7,10 @@ Before release
 
 Done
 ====
+- "Log, Search and Visualise your Migraine Data."
+- Prevent adding, editing or deleting for Example
+- Update Title and Description
+- Upload of xlsx
 - Update example data
 - Download of xlsx
 - Add email alerts
