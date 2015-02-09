@@ -1,5 +1,6 @@
 - IE reszie issue
 - Dynamic last migraine in example
+- Speed up logo
 
 ^^^^^^^^^^^^^^
 Before release
