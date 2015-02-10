@@ -6,4 +6,4 @@ So being a programmer I built a report to show this (you can see an example here
 
 I would love to hear what you think about it and especially any ideas you may have about insightful ways to display your migraine data.
 
-http://migraine.report
+Give it a try here http://migraine.report

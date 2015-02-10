@@ -4003,6 +4003,9 @@ textarea,
   font-family: 'Roboto', 'helvetica neue', helvetica, arial, sans-serif;
   font-weight: 300;
 }
+.italic {
+  font-style: italic;
+}
 .narrow {
   max-width: 600px;
   margin: 0px auto;
@@ -4318,6 +4321,8 @@ input[type=date] {
 }
 .side-by-side-container > canvas {
   height: 240px !important;
+  width: 100% !important;
+  max-width: 1000px;
 }
 .all-chart {
   -moz-transition-duration: 0.4s;
@@ -4592,10 +4597,10 @@ line.line {
   position: relative;
   width: 24px;
   height: 24px;
-  -moz-transition-duration: 1s;
-  -webkit-transition-duration: 1s;
-  -o-transition-duration: 1s;
-  transition-duration: 1s;
+  -moz-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  transition-duration: 0.4s;
   -webkit-transform: rotate(0deg) scale(0.7);
   -moz-transform: rotate(0deg) scale(0.7);
   -o-transform: rotate(0deg) scale(0.7);
@@ -4650,12 +4655,18 @@ line.line {
 #menu .pure-menu li a:hover {
   background: #333;
 }
+.pure-menu-heading > .logo-container > .cube > div {
+  -moz-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
 .pure-menu-heading:hover > .logo-container > .logo {
-  -webkit-transform: rotate(360deg) scale(0.8);
-  -moz-transform: rotate(360deg) scale(0.8);
-  -o-transform: rotate(360deg) scale(0.8);
-  -ms-transform: rotate(360deg) scale(0.8);
-  transform: rotate(360deg) scale(0.8);
+  -webkit-transform: rotate(0deg) scale(0.8);
+  -moz-transform: rotate(0deg) scale(0.8);
+  -o-transform: rotate(0deg) scale(0.8);
+  -ms-transform: rotate(0deg) scale(0.8);
+  transform: rotate(0deg) scale(0.8);
 }
 .pure-menu-heading:hover > .logo-container > .cube > div:nth-child(1) {
   -webkit-transform: translate(10px, 10px);
@@ -4692,16 +4703,16 @@ line.line {
 .logo-hat {
   border-top: 2px #6FBEF3 solid;
   border-left: 2px #6FBEF3 solid;
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
   position: absolute;
-  top: 16px;
-  left: 5px;
+  top: 15px;
+  left: 6px;
   opacity: 0.0;
-  -moz-transition-duration: 1s;
-  -webkit-transition-duration: 1s;
-  -o-transition-duration: 1s;
-  transition-duration: 1s;
+  -moz-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  transition-duration: 0.4s;
   -webkit-transform: rotate(45deg) scale(0) translate(0px, 0px);
   -moz-transform: rotate(45deg) scale(0) translate(0px, 0px);
   -o-transform: rotate(45deg) scale(0) translate(0px, 0px);
@@ -4710,9 +4721,9 @@ line.line {
 }
 .pure-menu-heading:hover > .logo-container > .logo-hat {
   opacity: 1.0;
-  -webkit-transform: rotate(-315deg) scale(1) translate(-6.5px, -6.5px);
-  -moz-transform: rotate(-315deg) scale(1) translate(-6.5px, -6.5px);
-  -o-transform: rotate(-315deg) scale(1) translate(-6.5px, -6.5px);
-  -ms-transform: rotate(-315deg) scale(1) translate(-6.5px, -6.5px);
-  transform: rotate(-315deg) scale(1) translate(-6.5px, -6.5px);
+  -webkit-transform: rotate(45deg) scale(1) translate(-5.5px, -5.5px);
+  -moz-transform: rotate(45deg) scale(1) translate(-5.5px, -5.5px);
+  -o-transform: rotate(45deg) scale(1) translate(-5.5px, -5.5px);
+  -ms-transform: rotate(45deg) scale(1) translate(-5.5px, -5.5px);
+  transform: rotate(45deg) scale(1) translate(-5.5px, -5.5px);
 }

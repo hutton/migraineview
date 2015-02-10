@@ -9,10 +9,10 @@
   position: relative;
   width: 24px;
   height: 24px;
-  -moz-transition-duration: 1s;
-  -webkit-transition-duration: 1s;
-  -o-transition-duration: 1s;
-  transition-duration: 1s;
+  -moz-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  transition-duration: 0.4s;
   -webkit-transform: rotate(0deg) scale(0.7);
   -moz-transform: rotate(0deg) scale(0.7);
   -o-transform: rotate(0deg) scale(0.7);

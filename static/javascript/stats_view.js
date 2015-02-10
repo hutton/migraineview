@@ -47,16 +47,16 @@ window.MonthsOfYearBarView = Backbone.View.extend({
             datasets: datasets
         };
 
-        new Chart(ctx).Bar(chartData, {responsive: true,
+        return new Chart(ctx).Bar(chartData, {responsive: true,
                                   maintainAspectRatio: false});
     },
 
     render: function(){
         this.$el.html(this.template(this.model));
 
-        this.createChart(this.$el.find('.all-chart'), this.model.all);
+        this.chart = this.createChart(this.$el.find('.all-chart'), this.model.all);
 
-        this.createChart(this.$el.find('.by-year-chart'), this.model.byYear);
+        this.chartByYear = this.createChart(this.$el.find('.by-year-chart'), this.model.byYear);
 
         return this;
     },
@@ -123,16 +123,16 @@ window.DaysOfWeekBarView = Backbone.View.extend({
             datasets: datasets
         };
 
-        new Chart(ctx).Bar(chartData, {responsive: true,
+        return new Chart(ctx).Bar(chartData, {responsive: true,
                                   maintainAspectRatio: false});
     },
 
     render: function(){
         this.$el.html(this.template(this.model));
 
-        this.createChart(this.$el.find('.all-chart'), this.model.daysData);
+        this.chart =  this.createChart(this.$el.find('.all-chart'), this.model.daysData);
 
-        this.createChart(this.$el.find('.by-year-chart'), this.model.daysDataByYear);
+        this.chartByYear = this.createChart(this.$el.find('.by-year-chart'), this.model.daysDataByYear);
 
         return this;
     },
@@ -278,7 +278,13 @@ window.StatisticsView = window.MainViewBase.extend({
 
     triggerResize: function(){
         try{
-            window.dispatchEvent(new Event('resize'));
+//            window.dispatchEvent(new Event('resize'));
+
+            this.daysOfWeekViewBarView.chart.resize(this.daysOfWeekViewBarView.chart.render, true);
+            this.daysOfWeekViewBarView.chartByYear.resize(this.daysOfWeekViewBarView.chartByYear.render, true);
+
+            this.monthsOfYearBarView.chart.resize(this.monthsOfYearBarView.chart.render, true);
+            this.monthsOfYearBarView.chartByYear.resize(this.monthsOfYearBarView.chartByYear.render, true);
         } catch (err){
 
         }

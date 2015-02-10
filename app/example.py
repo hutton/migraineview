@@ -1,4 +1,5 @@
 import os
+import datetime
 import webapp2
 from app.helper import create_start_text, create_duration_text
 from app.migraine_statistics import json_to_events, generate_statistics_from_events
@@ -9,8 +10,8 @@ from app.model.configuration import Configuration
 
 __author__ = 'simonhutton'
 
-class Example(webapp2.RequestHandler):
 
+class Example(webapp2.RequestHandler):
     @staticmethod
     def get_example_attacks():
         f = open('migraines.json')
@@ -20,6 +21,13 @@ class Example(webapp2.RequestHandler):
         events = json_to_events(file_content)
 
         i = -1
+
+        last_event = events[-1:][0]
+
+        most_recent_start = datetime.datetime.now() - datetime.timedelta(45)
+
+        last_event['Start'] = datetime.datetime(most_recent_start.year, most_recent_start.month, most_recent_start.day,
+                                                20, 0, 0)
 
         for event in events:
             if 'StartText' not in event:
