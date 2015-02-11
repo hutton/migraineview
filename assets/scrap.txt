@@ -1,9 +1,12 @@
-I wanted a better way to log my Migraines so I built this.
+I wanted a better way to log my Migraines so I built this
 
 I've been logging my migraines in Google Calendar for 5 years but I didn't really feel I was getting much out of it.  I wanted some sort of analysis on when attacks were happening; which days/times of year were most frequent, are they evenly spread out or all clustered together? etc.
 
-So being a programmer I built a report to show this (you can see an example here http://migraine.report/example/report).  I've since build a website around this to let other people upload (from Google Calendar or a spreadsheet) their own migraines and log new ones.
+So being a computer programmer I built a report to show this (you can see an example here <a href="http://migraine.report/example/report" title="http://migraine.report/example/report" rel="" target="">http://migraine.report/example/report</a>).  I've since build a website around this to let other people upload (from Google Calendar or a spreadsheet) their own migraines and log new ones.
 
 I would love to hear what you think about it and especially any ideas you may have about insightful ways to display your migraine data.
 
-Give it a try here http://migraine.report
+<a href="http://migraine.report" title="http://migraine.report" rel="" target="">http://migraine.report</a>
+
+(Turns out Monday's are my worst days and I've never had a migraine in February!)
+
