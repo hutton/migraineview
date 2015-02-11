@@ -78,7 +78,13 @@ class BaseRequestHandler(webapp2.RequestHandler):
             all_users = query.fetch(1)
 
             if all_users:
-                return all_users[0]
+                user = all_users[0]
+
+                if not hasattr(user, 'admin'):
+                    user.admin = False
+                    user.put()
+
+                return user
             else:
                 _attrs = {}
 
@@ -86,6 +92,7 @@ class BaseRequestHandler(webapp2.RequestHandler):
                 _attrs['share_report_key'] = generate_string(8)
                 _attrs['share_report_and_list_key'] = generate_string(7)
                 _attrs['provider'] = "debug"
+                _attrs['admin'] = False
 
                 ok, user = User.create_user("debug:" + user.user_id(), **_attrs)
 
@@ -175,6 +182,9 @@ class AuthHandler(BaseRequestHandler, SimpleAuthHandler):
 
             user.provider = provider
 
+            if not hasattr(user, 'admin'):
+                user.admin = False
+
             user.put()
             self.auth.set_session(self.auth.store.user_to_dict(user))
 
@@ -200,6 +210,7 @@ class AuthHandler(BaseRequestHandler, SimpleAuthHandler):
                 _attrs['share_report_key'] = generate_string(8)
                 _attrs['share_report_and_list_key'] = generate_string(7)
                 _attrs['provider'] = provider
+                _attrs['admin'] = False
 
                 ok, user = self.auth.store.user_model.create_user(auth_id, **_attrs)
 

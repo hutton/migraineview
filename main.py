@@ -94,5 +94,5 @@ app = webapp2.WSGIApplication([webapp2.Route('/auth/<provider>',
                                ('/report/delete', ReportDelete),
                                ('/shared/.*', Shared),
                                ('/(report|account|add|list)', Report),
-                               ('/admin/shared_links/', SharedLinks)
+                               ('/admin/shared/', SharedLinks)
                               ], config=app_config, debug=True)
