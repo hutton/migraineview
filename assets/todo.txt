@@ -1,13 +1,13 @@
-- IE reszie issue
-- Dynamic last migraine in example
-- Speed up logo
-
-^^^^^^^^^^^^^^
-Before release
-
+- Add Provider to shared list
+- Fixed shared links for zero attacks
 
 Done
 ====
+- IE reszie issue
+- Dynamic last migraine in example
+- Speed up logo
+^^^^^^^^^^^^^^
+Before release
 - "Log, Search and Visualise your Migraine Data."
 - Prevent adding, editing or deleting for Example
 - Update Title and Description
