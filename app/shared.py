@@ -50,8 +50,9 @@ class Shared(webapp2.RequestHandler):
                 attacks = Example.get_example_attacks()
 
             if attacks is not None:
-
-                response['data'] = simplejson.dumps(generate_statistics_from_events(attacks))
+                if len(attacks) > 0:
+                    response['data'] = simplejson.dumps(generate_statistics_from_events(attacks))
+                    
                 response['show_logout'] = False
                 response['show_add'] = False
                 response['show_options'] = False
