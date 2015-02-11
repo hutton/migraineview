@@ -1,5 +1,6 @@
 - Add Provider to shared list
 - Fixed shared links for zero attacks
+- Add 404 page
 
 Done
 ====
