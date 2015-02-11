@@ -1,5 +1,5 @@
 - Add Provider to shared list
-- Fixed shared links for zero attacks
+- Fix when logged in and viewing an empty shared list shows your data
 - Add 404 page
 
 Done
