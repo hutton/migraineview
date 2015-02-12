@@ -82,7 +82,7 @@ class Export(BaseRequestHandler):
                 attacks = self.current_user.get_attacks_as_dict()
                 uid = self.current_user.share_report_and_list_key
 
-        if attacks:
+        if attacks is not None:
             self.response.headers['Content-Transfer-Encoding'] = 'binary'
             self.response.headers['Accept-Range'] = 'bytes'
             self.response.headers['Content-Encoding'] = 'binary'

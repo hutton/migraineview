@@ -7,7 +7,7 @@ from app.model.mr_user import User
 __author__ = 'simonhutton'
 
 
-class SharedLinks(BaseRequestHandler):
+class Accounts(BaseRequestHandler):
     def get(self):
 
         if self.logged_in and self.current_user.admin:
@@ -20,7 +20,7 @@ class SharedLinks(BaseRequestHandler):
 
             template_values = {'users': users}
 
-            path = os.path.join(os.path.join(os.path.dirname(__file__), 'html'), '../../templates/admin/shared.html')
+            path = os.path.join(os.path.join(os.path.dirname(__file__), 'html'), '../../templates/admin/accounts.html')
             self.response.out.write(template.render(path, template_values))
 
         else:

@@ -29,7 +29,10 @@ class Upload(BaseRequestHandler):
                         events = json_to_events(file_content)
 
                     if file_info.filename.endswith('.xlsx'):
-                        events = xlsx_to_events(file_content)
+                        events = excel_to_events(file_content)
+
+                    if file_info.filename.endswith('.xls'):
+                        events = excel_to_events(file_content)
 
                     if file_info.filename.endswith('.csv'):
                         events = csv_to_events(file_content)
@@ -71,7 +74,7 @@ class Upload(BaseRequestHandler):
             self.response.out.write(simplejson.dumps({'message': 'Please login before uploading attacks.'}))
 
 
-def xlsx_to_events(file_content):
+def excel_to_events(file_content):
     wb = xlrd.open_workbook(file_contents=file_content)
     sh = wb.sheet_by_index(0)
 

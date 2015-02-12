@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Admin - Shared Links</title>
+    <title>Admin - Accounts</title>
 
     <link type="text/css" rel="stylesheet" href="/static/css/admin.css" />
     <link rel="stylesheet" href="/static/css/tp/grids-responsive-min.css">
@@ -14,13 +14,14 @@
 <body>
     <div class="content">
         <div>
-            <h2 class="title">Shared Links</h2>
+            <h2 class="title">Accounts</h2>
         </div>
 
         <table id="shared-link-table" class="pure-table pure-table-horizontal">
             <thead>
                 <tr>
-                    <th>Started</th>
+                    <th>Name</th>
+                    <th>ID Provider</th>
                     <th>Link</th>
                     <th>Created</th>
                 </tr>
@@ -28,7 +29,8 @@
             {% for user in users %}
             <tr>
                 <td>{{ user.name }}</td>
-                <td><a href="/shared/{{ user.share_report_and_list_key }}/report">{{ user.share_report_and_list_key }}</a> </td>
+                <td>{{ user.provider }}</td>
+                <td><a href="/shared/{{ user.share_report_and_list_key }}/report" target="_blank">{{ user.share_report_and_list_key }}</a> </td>
                 <td>{{ user.created }}</td>
             </tr>
             {% endfor %}

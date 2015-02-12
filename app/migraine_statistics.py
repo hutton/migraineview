@@ -139,6 +139,9 @@ def generate_statistics_from_events(events):
     #       EndDate (optional)
     #       Comment (optional)
 
+    if len(events) == 0:
+        return {}
+
     weekdays_counter = Counter()
     months_counter = Counter()
     hours_counter = Counter()

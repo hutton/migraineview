@@ -1647,6 +1647,226 @@ striping:
 .pure-table-horizontal tbody > tr:last-child td {
   border-bottom-width: 0;
 }
+.pure-img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+/*
+Add transition to containers so they can push in and out.
+*/
+#layout,
+#menu,
+.menu-link {
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  -ms-transition: all 0.2s ease-out;
+  -o-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+/*
+This is the parent `<div>` that contains the menu and the content area.
+*/
+#layout {
+  position: relative;
+  padding-left: 0;
+}
+#layout.active {
+  position: relative;
+  left: 220px;
+}
+#layout.active #menu {
+  left: 220px;
+  width: 220px;
+}
+#layout.active .menu-link {
+  left: 220px;
+}
+/*
+The content `<div>` is where all your content goes.
+*/
+.content {
+  margin: 0 auto;
+  padding: 0 1em;
+  max-width: 1024px;
+  margin-bottom: 50px;
+  line-height: 1.6em;
+}
+.header {
+  margin: 0;
+  color: #333;
+  text-align: center;
+  padding: 2.5em 2em 0;
+  border-bottom: 1px solid #eee;
+}
+.header h1 {
+  margin: 0.2em 0;
+  font-size: 3em;
+  font-weight: 300;
+}
+.header h2 {
+  font-weight: 300;
+  color: #ccc;
+  padding: 0;
+  margin-top: 0;
+}
+.content-subhead {
+  margin: 50px 0 20px 0;
+  font-weight: 300;
+  color: #888;
+}
+/*
+The `#menu` `<div>` is the parent `<div>` that contains the `.pure-menu` that
+appears on the left side of the page.
+*/
+#menu {
+  margin-left: -220px;
+  /* "#menu" width */
+
+  width: 220px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1000;
+  /* so the menu or its navicon stays above all content */
+
+  background: #191818;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+/*
+    All anchors inside the menu should be styled like this.
+    */
+#menu a {
+  color: #999;
+  border: none;
+  padding: 1.2em 0 1.2em 1.2em;
+}
+#menu a > i {
+  margin-right: 6px;
+}
+/*
+    Remove all background/borders, since we are applying them to #menu.
+    */
+#menu .pure-menu,
+#menu .pure-menu ul {
+  border: none;
+  background: transparent;
+}
+/*
+    Add that light border to separate items into groups.
+    */
+#menu .pure-menu ul,
+#menu .pure-menu .menu-item-divided {
+  border-top: 1px solid #333;
+}
+/*
+        Change color of the anchor links on hover/focus.
+        */
+#menu .pure-menu li a:hover,
+#menu .pure-menu li a:focus {
+  background: #333;
+}
+/*
+    This styles the selected menu item `<li>`.
+    */
+#menu .pure-menu-selected {
+  background: #1f8dd6;
+}
+/*
+        This styles a link within a selected menu item `<li>`.
+        */
+#menu .pure-menu-selected a {
+  color: #fff;
+}
+/*
+    This styles the menu heading.
+    */
+#menu .pure-menu-heading {
+  font-size: 110%;
+  color: #fff;
+  margin: 0;
+}
+/* -- Dynamic Button For Responsive Menu -------------------------------------*/
+/*
+The button to open/close the Menu is custom-made and not part of Pure. Here's
+how it works:
+*/
+/*
+`.menu-link` represents the responsive menu toggle that shows/hides on
+small screens.
+*/
+.menu-link {
+  position: fixed;
+  display: block;
+  /* show this only on small screens */
+
+  top: 0;
+  left: 0;
+  /* "#menu width" */
+
+  background: #000;
+  background: rgba(0, 0, 0, 0.7);
+  font-size: 10px;
+  /* change this value to increase/decrease button size */
+
+  z-index: 10;
+  width: 2em;
+  height: auto;
+  padding: 2.1em 1.6em;
+}
+.menu-link:hover,
+.menu-link:focus {
+  background: #000;
+}
+.menu-link span {
+  position: relative;
+  display: block;
+}
+.menu-link span,
+.menu-link span:before,
+.menu-link span:after {
+  background-color: #fff;
+  width: 100%;
+  height: 0.2em;
+}
+.menu-link span:before,
+.menu-link span:after {
+  position: absolute;
+  margin-top: -0.6em;
+  content: " ";
+}
+.menu-link span:after {
+  margin-top: 0.6em;
+}
+/* -- Responsive Styles (Media Queries) ------------------------------------- */
+/*
+Hides the menu at `48em`, but modify this based on your app's needs.
+*/
+@media (min-width: 64em) {
+  .header,
+  .content {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+  #layout {
+    padding-left: 220px;
+    /* left col width "#menu" */
+  
+    left: 0;
+  }
+  #menu {
+    left: 220px;
+  }
+  .menu-link {
+    position: fixed;
+    left: 220px;
+    display: none;
+  }
+  #layout.active .menu-link {
+    left: 220px;
+  }
+}
 /*!
  *  Font Awesome 4.2.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -3313,6 +3533,308 @@ striping:
 .fa-meanpath:before {
   content: "\f20c";
 }
+/*---------------------------------------------------
+    LESS Elements 0.9
+  ---------------------------------------------------
+    A set of useful LESS mixins
+    More info at: http://lesselements.com
+  ---------------------------------------------------*/
+.file-type {
+  display: inline-block;
+  -webkit-perspective: 300;
+  -moz-perspective: 300;
+  perspective: 300;
+  width: 4em;
+  height: 6em;
+}
+.file-type-spin div {
+  transition-duration: 0.0s;
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+}
+.file-type-spin:hover div {
+  transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  animation: spinny linear 0.8s;
+  -moz-animation: spinny linear 0.8s;
+  -webkit-animation: spinny linear 0.8s;
+}
+.file-type-jump div {
+  transition-duration: 0.2s;
+}
+.file-type-jump:hover div {
+  -webkit-transform: rotateX(-18deg) translateY(-13px) translateZ(40px);
+  -moz-transform: rotateX(-18deg) translateY(-13px) translateZ(40px);
+  -o-transform: rotateX(-18deg) translateY(-13px) translateZ(40px);
+  -ms-transform: rotateX(-18deg) translateY(-13px) translateZ(40px);
+  transform: rotateX(-18deg) translateY(-13px) translateZ(40px);
+}
+.file-type-spinny div {
+  transform-style: preserve-3d;
+  animation: spinny linear 2s infinite;
+  -webkit-animation: spinny linear 2s infinite;
+  -moz-animation: spinny linear 2s infinite;
+}
+/* Standard syntax */
+@keyframes spinny {
+  0% {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+  25% {
+    -webkit-transform: rotateY(-90deg);
+    -moz-transform: rotateY(-90deg);
+    -o-transform: rotateY(-90deg);
+    -ms-transform: rotateY(-90deg);
+    transform: rotateY(-90deg);
+  }
+  50% {
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+  }
+  75% {
+    -webkit-transform: rotateY(-270deg);
+    -moz-transform: rotateY(-270deg);
+    -o-transform: rotateY(-270deg);
+    -ms-transform: rotateY(-270deg);
+    transform: rotateY(-270deg);
+  }
+  100% {
+    -webkit-transform: rotateY(-360deg);
+    -moz-transform: rotateY(-360deg);
+    -o-transform: rotateY(-360deg);
+    -ms-transform: rotateY(-360deg);
+    transform: rotateY(-360deg);
+  }
+}
+@-webkit-keyframes spinny {
+  0% {
+    -webkit-transform: rotateY(0deg);
+    -moz-transform: rotateY(0deg);
+    -o-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+  25% {
+    -webkit-transform: rotateY(-90deg);
+    -moz-transform: rotateY(-90deg);
+    -o-transform: rotateY(-90deg);
+    -ms-transform: rotateY(-90deg);
+    transform: rotateY(-90deg);
+  }
+  50% {
+    -webkit-transform: rotateY(-180deg);
+    -moz-transform: rotateY(-180deg);
+    -o-transform: rotateY(-180deg);
+    -ms-transform: rotateY(-180deg);
+    transform: rotateY(-180deg);
+  }
+  75% {
+    -webkit-transform: rotateY(-270deg);
+    -moz-transform: rotateY(-270deg);
+    -o-transform: rotateY(-270deg);
+    -ms-transform: rotateY(-270deg);
+    transform: rotateY(-270deg);
+  }
+  100% {
+    -webkit-transform: rotateY(-360deg);
+    -moz-transform: rotateY(-360deg);
+    -o-transform: rotateY(-360deg);
+    -ms-transform: rotateY(-360deg);
+    transform: rotateY(-360deg);
+  }
+}
+@-webkit-keyframes spinny2 {
+  0% {
+    -webkit-transform: rotateY(0deg) translateZ(0px);
+    -moz-transform: rotateY(0deg) translateZ(0px);
+    -o-transform: rotateY(0deg) translateZ(0px);
+    -ms-transform: rotateY(0deg) translateZ(0px);
+    transform: rotateY(0deg) translateZ(0px);
+    left: 0px;
+  }
+  25% {
+    -webkit-transform: rotateY(-90deg) translateZ(10px);
+    -moz-transform: rotateY(-90deg) translateZ(10px);
+    -o-transform: rotateY(-90deg) translateZ(10px);
+    -ms-transform: rotateY(-90deg) translateZ(10px);
+    transform: rotateY(-90deg) translateZ(10px);
+    left: -20px;
+  }
+  50% {
+    -webkit-transform: rotateY(-180deg) translateZ(20px);
+    -moz-transform: rotateY(-180deg) translateZ(20px);
+    -o-transform: rotateY(-180deg) translateZ(20px);
+    -ms-transform: rotateY(-180deg) translateZ(20px);
+    transform: rotateY(-180deg) translateZ(20px);
+    left: 0px;
+  }
+  75% {
+    -webkit-transform: rotateY(-270deg) translateZ(10px);
+    -moz-transform: rotateY(-270deg) translateZ(10px);
+    -o-transform: rotateY(-270deg) translateZ(10px);
+    -ms-transform: rotateY(-270deg) translateZ(10px);
+    transform: rotateY(-270deg) translateZ(10px);
+    left: 20px;
+  }
+  100% {
+    -webkit-transform: rotateY(-360deg) translateZ(0px);
+    -moz-transform: rotateY(-360deg) translateZ(0px);
+    -o-transform: rotateY(-360deg) translateZ(0px);
+    -ms-transform: rotateY(-360deg) translateZ(0px);
+    transform: rotateY(-360deg) translateZ(0px);
+    left: 0px;
+  }
+}
+.file-type > div {
+  width: 100%;
+  text-align: center;
+  background: #f0f0f0;
+  position: relative;
+  height: 4em;
+  top: 2em;
+  cursor: pointer;
+  display: inline-block;
+  -webkit-transform: rotateX(0deg) translateY(0px);
+  -moz-transform: rotateX(0deg) translateY(0px);
+  -o-transform: rotateX(0deg) translateY(0px);
+  -ms-transform: rotateX(0deg) translateY(0px);
+  transform: rotateX(0deg) translateY(0px);
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in-out;
+}
+.file-type > div:before {
+  content: "";
+  position: absolute;
+  top: -2em;
+  right: 0;
+  border-width: 0 2em 2em 0;
+  border-style: solid;
+  border-color: white transparent;
+}
+.file-type > div:after {
+  content: "";
+  position: absolute;
+  top: -2em;
+  left: 0;
+  right: 2em;
+  border-width: 1em;
+  border-style: solid;
+  border-color: #f0f0f0;
+}
+.file-type > div > span {
+  position: absolute;
+  top: 0em;
+  right: 0;
+  border-width: 2em 0 0 2em;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0.05) transparent;
+}
+.file-type > div > p {
+  font-family: "Trebuchet MS", Helvetica, sans-serif;
+  font-size: 1.25em;
+  font-weight: bold;
+  margin-top: 1.4em;
+  color: white;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.big {
+  width: 8em;
+  height: 12em;
+}
+.big > div {
+  height: 8em;
+  top: 4em;
+}
+.big > div:before {
+  top: -4em;
+  border-width: 0 4em 4em 0;
+}
+.big > div:after {
+  top: -4em;
+  right: 4em;
+  border-width: 2em;
+}
+.big > div > span {
+  border-width: 4em 0 0 4em;
+}
+.big > div > p {
+  font-size: 2.5em;
+  margin-top: 1.4em;
+}
+.green > div {
+  background: #37C49C;
+}
+.green > div:before {
+  border-color: #4ECEA6 transparent;
+}
+.green > div:after {
+  border-color: #37C49C;
+}
+.red > div {
+  background: #EC5757;
+}
+.red > div:before {
+  border-color: #F47878 transparent;
+}
+.red > div:after {
+  border-color: #EC5757;
+}
+.blue > div {
+  background: #47B8F7;
+}
+.blue > div:before {
+  border-color: #6BD0FB transparent;
+}
+.blue > div:after {
+  border-color: #47B8F7;
+}
+.yellow > div {
+  background: #FFC35A;
+}
+.yellow > div:before {
+  border-color: #FFCE87 transparent;
+}
+.yellow > div:after {
+  border-color: #FFC35A;
+}
+.orange > div {
+  background: #F7974A;
+}
+.orange > div:before {
+  border-color: #FBAB75 transparent;
+}
+.orange > div:after {
+  border-color: #F7974A;
+}
+.pink > div {
+  background: #F76081;
+}
+.pink > div:before {
+  border-color: #F77BA1 transparent;
+}
+.pink > div:after {
+  border-color: #F76081;
+}
+.brown > div {
+  background: #998B79;
+}
+.brown > div:before {
+  border-color: #A2968D transparent;
+}
+.brown > div:after {
+  border-color: #998B79;
+}
 .pure-menu .pure-menu-heading {
   text-transform: none;
   font-weight: 100;
@@ -3689,301 +4211,28 @@ a {
   border-bottom-style: none;
   border-right-style: none;
 }
-.logon-provider > a {
-  width: 200px;
-  margin: 10px;
+.error-title {
+  margin-top: 100px;
+  line-height: 1.5em;
 }
-.logon-provider > a > i {
-  margin-right: 10px;
+.error-message {
+  opacity: 0.6;
 }
-body {
-  font-size: 12px;
-}
-.button-google {
-  color: white;
-  background: #dd4b39;
-}
-.button-windows {
-  color: white;
-  background: #00bcf2;
-}
-.button-facebook {
-  color: white;
-  background: #3b5998;
-}
-.pure-menu-horizontal li {
-  min-width: 92px;
-}
-/********* MENU STYLES  ***********/
-#header-home-link {
+#error-home-link {
+  text-decoration: none;
   position: relative;
+  top: 5px;
+  left: 20px;
 }
-#header-home-link > span {
-  margin-left: 27px;
-  color: rgba(168, 173, 178, 0.96);
-  text-shadow: white 0px 0px 1px;
+#error-home-link > .logo {
+  position: relative;
+  top: 5px;
 }
-#header-logo {
-  position: absolute;
-  top: 4px;
-}
-@media (min-width: 48em) {
-  #header-logo {
-    position: absolute;
-    top: 6px;
-  }
-}
-.home-menu {
-  padding: 0.5em;
-  text-align: center;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-}
-#header-home-link {
-  display: none;
-}
-.home-menu.pure-menu-open {
-  background: rgba(227, 231, 234, 0.24);
-}
-.pure-menu.pure-menu-open.pure-menu-fixed {
-  /* Fixed menus normally have a border at the bottom. */
-
-  border-bottom: none;
-  /* I need a higher z-index here because of the scroll-over effect. */
-
-  z-index: 4;
-}
-.home-menu .pure-menu-heading {
-  color: white;
-  font-weight: 100;
+#error-home-link > span {
+  color: #000000;
+  opacity: 0.5;
   font-size: 120%;
 }
-.home-menu .pure-menu-selected a {
-  color: white;
-}
-.home-menu a {
-  color: #6FBEF3;
-}
-.home-menu li a:hover,
-.home-menu li a:focus {
-  background: none;
-  border: none;
-  color: #AECFE5;
-}
-/*
- * -- SPLASH STYLES --
- * This is the blue top section that appears on the page.
- */
-.splash-container {
-  background-position: center center;
-  background-size: cover;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-.splash {
-  /* absolute center .splash within .splash-container */
-
-  width: 80%;
-  margin: auto;
-  position: relative;
-  top: 0px;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  text-align: center;
-}
-/* This is the main heading that appears on the blue section */
-.splash-head {
-  font-size: 350%;
-  padding-top: 80px;
-  color: #444;
-  font-weight: 100;
-  line-height: 1.2em;
-  margin: 0px;
-}
-/* This is the subheading that appears on the blue section */
-.splash-subhead {
-  color: #888;
-  letter-spacing: 0.05em;
-  opacity: 0.8;
-  font-size: 145%;
-  line-height: 1.4em;
-  position: relative;
-  margin-top: 6px;
-}
-.splash-icons {
-  font-size: 200%;
-  color: rgba(0, 0, 0, 0.05);
-  margin-top: 20px;
-}
-.splash-icons > i {
-  margin-left: 5%;
-  margin-right: 5%;
-}
-.splash-buttons {
-  position: relative;
-  width: 100%;
-  margin-top: 10px;
-  margin-bottom: 20px;
-}
-.splash-button {
-  padding: 0.5em 1em;
-  min-width: 130px;
-  margin: 10px;
-  font-size: 125%;
-  border-radius: 6px;
-  position: relative;
-  top: 0px;
-  -moz-transition-duration: 0.3s;
-  -webkit-transition-duration: 0.3s;
-  -o-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-}
-#tour-button {
-  background: #1f8dd6;
-  border-bottom: 2px solid #125784;
-}
-#get-started-button {
-  background: #ca3c3c;
-  border-bottom: 2px solid #8b1f1f;
-}
-#tour-button:hover {
-  background: #1b84c5;
-}
-#tour-button:active {
-  top: 2px;
-  border-bottom: 0px solid #125784;
-}
-#get-started-button:hover {
-  background: #be2d2d;
-}
-#get-started-button:active {
-  top: 2px;
-  border-bottom: 0px solid #8b1f1f;
-}
-#get-started-button > i {
-  margin-left: 3px;
-  font-size: 120%;
-}
-#hero-image {
-  margin: 0px auto 20px;
-}
-/* Content */
-.content {
-  font-size: 14px;
-  padding: 8em 1em;
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.l-box > div {
-  margin: 2em;
-}
-/* This is the class used for the main content headers (<h2>) */
-.content-head {
-  font-weight: 100;
-  /*text-transform: uppercase;*/
-
-  letter-spacing: 0.1em;
-  margin: 0em 0 1em;
-  line-height: 1.2em;
-}
-/* This is a modifier class used when the content-head is inside a ribbon */
-.content-head-ribbon {
-  color: white;
-}
-/* This is the class used for the content sub-headers (<h3>) */
-.content-subhead {
-  color: #1f8dd6;
-}
-.content-subhead i {
-  margin-right: 7px;
-}
-/* This is the class used for the dark-background areas. */
-.ribbon {
-  background: #2d3e50;
-  color: #aaa;
-}
-#logon-provider-list {
-  margin-bottom: 20px;
-}
-p.register-title {
-  margin: 0px 50px 20px;
-}
-p.register-text {
-  margin: 0px 20px 40px;
-}
-.feedback {
-  text-align: center;
-  margin: 80px auto;
-}
-.footer {
-  background: #111;
-  color: #808080;
-  padding: 1em;
-  text-align: center;
-  font-size: 90%;
-}
-/*
- * -- TABLET (AND UP) MEDIA QUERIES --
- * On tablets and other medium-sized devices, we want to customize some
- * of the mobile styles.
- */
-@media (min-width: 48em) {
-  body {
-    font-size: 14px;
-  }
-  .splash-head {
-    font-size: 500%;
-    line-height: 1.2em;
-    padding-top: 120px;
-  }
-  .splash-subhead {
-    font-size: 145%;
-    line-height: 1.4em;
-    font-weight: 100;
-  }
-  .splash-icons {
-    margin-top: 40px;
-    font-size: 400%;
-  }
-  .splash-buttons {
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  /* We want to give the content area some more padding */
-  .content {
-    padding: 10em 2em;
-  }
-  /* We can align the menu header to the left, but float the
-      menu items to the right. */
-  .home-menu {
-    text-align: left;
-  }
-  .home-menu ul {
-    float: right;
-  }
-  #header-home-link {
-    display: inline-block;
-  }
-}
-/*
- * -- DESKTOP (AND UP) MEDIA QUERIES --
- * On desktops and other large devices, we want to over-ride some
- * of the mobile and tablet styles.
- */
-@media (min-width: 78em) {
-  body {
-    font-size: 14px;
-  }
-  /* We increase the header font size even more */
-  .splash-head {
-    font-size: 500%;
-  }
-  .splash-subhead {
-    font-size: 145%;
-    line-height: 1.4em;
-  }
-  .splash-icons {
-    margin-top: 40px;
-    font-size: 600%;
-  }
+#error-home-link:hover > span {
+  opacity: 0.7;
 }

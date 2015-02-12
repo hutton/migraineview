@@ -1,10 +1,10 @@
-- Add Provider to shared list
-- Fix when logged in and viewing an empty shared list shows your data
 - Add 404 page
 - Did you know you can upload all your existing migraine data.
 
 Done
 ====
+- Add Provider to shared list
+- Fix when logged in and viewing an empty shared list shows your data
 - IE reszie issue
 - Dynamic last migraine in example
 - Speed up logo

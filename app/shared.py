@@ -6,6 +6,7 @@ import webapp2
 from app.example import Example
 from app.migraine_statistics import generate_statistics_from_events
 from app.model.account import Account
+from app.model.configuration import Configuration
 from app.model.mr_user import User
 
 __author__ = 'simonhutton'
@@ -22,6 +23,7 @@ class Shared(webapp2.RequestHandler):
             shared_link = matches.group("key")
 
             response = {}
+            attacks = None
 
             if len(shared_link) == 7:
                 # Report with List
@@ -52,17 +54,30 @@ class Shared(webapp2.RequestHandler):
             if attacks is not None:
                 if len(attacks) > 0:
                     response['data'] = simplejson.dumps(generate_statistics_from_events(attacks))
-                    
+                else:
+                    response['data'] = {}
+
                 response['show_logout'] = False
                 response['show_add'] = False
                 response['show_options'] = False
+                response['shared_link'] = True
+                response['web_debug'] = Configuration.get_instance().web_debug
 
                 path = os.path.join(os.path.join(os.path.dirname(__file__), 'html'), '../../templates/main.html')
                 self.response.out.write(template.render(path, response))
             else:
+                template_values = {'status': '404 - Not found',
+                                   'title': 'What a headache!',
+                                   'message': "Sorry, we couldn't find what you're looking for."}
+
                 self.response.status = 404
+                path = os.path.join(os.path.join(os.path.dirname(__file__), 'html'), '../../templates/error.html')
+                self.response.out.write(template.render(path, template_values))
         else:
+            template_values = {'status': '404 - Not found',
+                               'title': 'What a headache!',
+                               'message': "Sorry, we couldn't find what you're looking for."}
+
             self.response.status = 404
-
-
-
+            path = os.path.join(os.path.join(os.path.dirname(__file__), 'html'), '../../templates/error.html')
+            self.response.out.write(template.render(path, template_values))

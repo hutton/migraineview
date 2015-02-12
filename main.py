@@ -19,11 +19,10 @@ import os
 from google.appengine.api import users
 from google.appengine.ext.webapp import template
 import webapp2
-from app.admin import SharedLinks
+from app.admin import Accounts
 from app.authentication import BaseRequestHandler
 from app.example import Example
 from app.export import Export
-from app.model.account import Account
 from app.model.configuration import Configuration
 from app.model.mr_user import User
 
@@ -51,9 +50,17 @@ class Main(BaseRequestHandler):
         self.response.out.write(template.render(path, template_values))
 
 
-class Uploaded(webapp2.RequestHandler):
+class NotFound(BaseRequestHandler):
     def get(self):
-        self.redirect('/')
+
+        template_values = {'status': '404 - Not found',
+                           'title': 'What a headache!',
+                           'message': "Sorry, we couldn't find what you're looking for."}
+
+        self.response.status = 404
+        path = os.path.join(os.path.join(os.path.dirname(__file__), 'html'), '../templates/error.html')
+        self.response.out.write(template.render(path, template_values))
+
 
 
 # class CreateAccount(webapp2.RequestHandler):
@@ -77,6 +84,8 @@ app_config = {
   }
 }
 
+
+
 app = webapp2.WSGIApplication([webapp2.Route('/auth/<provider>',
                                              handler='app.authentication.AuthHandler:_simple_auth', name='auth_login'),
                                webapp2.Route('/auth/<provider>/callback',
@@ -84,7 +93,6 @@ app = webapp2.WSGIApplication([webapp2.Route('/auth/<provider>',
                                webapp2.Route('/logout', handler='app.authentication.AuthHandler:logout', name='logout'),
                                ('/', Main),
                                ('/upload', Upload),
-                               ('/uploaded/.*', Uploaded),
                                ('/example/.*', Example),
                                ('/service/stats', Stats),
                                ('/service/clearAllEvents', ClearAllEvents),
@@ -94,5 +102,6 @@ app = webapp2.WSGIApplication([webapp2.Route('/auth/<provider>',
                                ('/report/delete', ReportDelete),
                                ('/shared/.*', Shared),
                                ('/(report|account|add|list)', Report),
-                               ('/admin/shared/', SharedLinks)
+                               ('/admin/accounts', Accounts),
+                               ('/.*', NotFound),
                               ], config=app_config, debug=True)

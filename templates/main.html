@@ -136,7 +136,7 @@
                             </div>
                             <div class="panel-yellow">
                                 <div>
-                                If you're uploading a spreadsheet, there's three columns we're looking for:
+                                If you're uploading a spreadsheet there's three columns we look for:
                                     <ul>
                                         <li><span>Start</span> or <span>Started</span> or <span>Began</span> or <span>Start Time</span></li>
                                         <li><span>Recovered</span> or <span>Finished</span> or <span>Finish</span></li>
@@ -314,7 +314,7 @@
                             <p>Sometimes it's useful to share information about your migraines with other people; doctors, family, friends or colleagues.</p>
                             <p>Use these links to share up to date read-only versions of your report.</p>
                             <div class="settings-share-link">
-                                <a target="_blank" href="/shared/{{ share_report_and_list }}/report"><i class="fa fa-share"></i> Share Report and List</a>
+                                <a target="_blank" href="/shared/{{ share_report_and_list }}/report"><i class="fa fa-share"></i> Share Report</a>
                             </div>
                         </div>
 
@@ -720,9 +720,7 @@
             window.App.example = true;
             {% endif %}
 
-            {% if data %}
             window.App.loadData({{ data|safe }});
-            {% endif %}
 
             var enablePushState = true;
 

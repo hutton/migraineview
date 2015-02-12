@@ -20,11 +20,8 @@ class Report(BaseRequestHandler):
 
         response = {}
 
-        if "report" in self.request.uri or "list" in self.request.uri:
-            attacks = user.get_attacks_as_dict()
-
-            if len(attacks) > 0:
-                response['data'] = simplejson.dumps(generate_statistics_from_events(attacks))
+        attacks = user.get_attacks_as_dict()
+        response['data'] = simplejson.dumps(generate_statistics_from_events(attacks))
 
         response['web_debug'] = Configuration.get_instance().web_debug
         response['share_report'] = user.share_report_key
@@ -107,7 +104,13 @@ class ReportEdit(BaseRequestHandler):
                 self.response.status = 404
 
         else:
-            self.redirect('/')
+            template_values = {'status': '401 - Unauthenticated',
+                               'title': 'What a headache!',
+                               'message': "You need to be logged in to update attacks."}
+
+            self.response.status = 404
+            path = os.path.join(os.path.join(os.path.dirname(__file__), 'html'), '../templates/error.html')
+            self.response.out.write(template.render(path, template_values))
 
 class ReportDelete(BaseRequestHandler):
     def post(self):
@@ -129,6 +132,12 @@ class ReportDelete(BaseRequestHandler):
                 self.response.status = 404
 
         else:
-            self.redirect('/')
+            template_values = {'status': '401 - Unauthenticated',
+                               'title': 'What a headache!',
+                               'message': "You need to be logged in to delete attacks."}
+
+            self.response.status = 404
+            path = os.path.join(os.path.join(os.path.dirname(__file__), 'html'), '../templates/error.html')
+            self.response.out.write(template.render(path, template_values))
 
 
