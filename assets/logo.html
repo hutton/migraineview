@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+    <style type="text/css">
+        body{
+
+            background: #f1f1f1;
+        }
+
+        .logo {
+            display: inline-block;
+            position: relative;
+            width: 136px;
+            height: 136px;
+            background: white;
+        }
+
+        .logo > div {
+            border: 8px #6FBEF3 solid;
+            width: 32px;
+            height: 32px;
+            position: absolute;
+        }
+
+        .logo > div:nth-child(1) {
+            top: 20px;
+            left: 20px;
+
+            border-top-style: none;
+            border-left-style: none;
+        }
+
+        .logo > div:nth-child(2) {
+            top: 20px;
+            left: 76px;
+
+            border-top-style: none;
+            border-right-style: none;
+        }
+
+        .logo > div:nth-child(3) {
+            top: 76px;
+            left: 20px;
+
+            border-bottom-style: none;
+            border-left-style: none;
+        }
+
+        .logo > div:nth-child(4) {
+            top: 76px;
+            left: 76px;
+
+            border-bottom-style: none;
+            border-right-style: none;
+        }
+
+        .inverted {
+            background: #6FBEF3;
+        }
+
+        .inverted > div {
+            border: 8px white solid;
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="logo">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+<div class="logo inverted">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+</div>
+
+
+</body>
+</html>

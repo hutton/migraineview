@@ -5,7 +5,7 @@
 - Hero text 
 "Simple Migraine Log"
 "Simple Migraine Logging"
-"Simple Migraine Dairy"
+"Simple Migraine Diary"
 "Visualise Your Migraines"
 *"Log And Visualise Your Migraines"
 "
