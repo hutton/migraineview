@@ -23,4 +23,18 @@ handlers:
 
 
 from random import randint
->>> randint(2,9) #Inclusive
+
+if randint(1,4) == 1:
+	qry = Tweet.query(Tweet.sent == None).order(Tweet.priority, -Tweet.priority)
+
+	tweet = qry.fetch(1)
+
+	if tweet:
+		post_tweet(tweet.message)
+
+		tweet.sent = datetime.datetime.now()
+
+		tweet.put()
+
+
+
