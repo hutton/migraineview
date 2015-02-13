@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Admin - Tweets</title>
+
+    <link type="text/css" rel="stylesheet" href="/static/css/admin.css" />
+    <link rel="stylesheet" href="/static/css/tp/grids-responsive-min.css">
+
+    <link rel="shortcut icon" href="/static/images/32x32.png">
+
+    <title>Shared Links</title>
+</head>
+<body>
+    <div class="content">
+        <div>
+            <h2 class="title">Tweet Queue</h2>
+        </div>
+        <div class="content">
+            <form id="single-upload-form" class="pure-form pure-form-aligned center-margin" action="/admin/new_tweet" method="POST">
+                <fieldset>
+                    <div class="pure-control-group">
+                        <div class="pure-control-group">
+                            <label for="add-comment-text">Message</label>
+                            <textarea name="message" id="add-comment-text" placeholder="Tweet..."></textarea>
+                        </div>
+
+                        <label for="priority">Priority</label>
+                        <select name="priority" id="priority">
+                           <option value="1">1</option>
+                           <option value="2">2</option>
+                           <option value="3">3</option>
+                           <option value="4">4</option>
+                           <option value="5" selected>5</option>
+                           <option value="6">6</option>
+                           <option value="7">7</option>
+                           <option value="8">8</option>
+                           <option value="9">9</option>
+                           <option value="10">10</option>
+                        </select>
+                    </div>
+
+                    <div class="pure-controls">
+                        <button id="submit-button" type="submit" class="pure-button pure-button-primary">Submit</button>
+                    </div>
+                </fieldset>
+            </form>
+
+        </div>
+
+        <table id="shared-link-table" class="pure-table pure-table-horizontal">
+            <thead>
+                <tr>
+                    <th>Message</th>
+                    <th>Priority</th>
+                    <th>Created</th>
+                    <th>Sent</th>
+                    <th></th>
+                </tr>
+            </thead>
+            {% for tweet in tweets %}
+            <tr>
+                <td>{{ tweet.message }}</td>
+                <td>{{ tweet.priority }}</td>
+                <td>{{ tweet.created }}</td>
+                <td>{{ tweet.sent }}</td>
+                <td><form method="POST" action="/admin/delete_tweet"><button class="pure-button button-error">Delete</button>
+                    <input type="hidden" value="{{ tweet.id }}"/>
+                </form></td>
+            </tr>
+            {% endfor %}
+            <tbody>
+
+            </tbody>
+        </table>
+
+    </div>
+</body>
+</html>
