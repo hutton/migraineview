@@ -1,0 +1,4 @@
+cron:
+- description: Post tweet
+  url: /admin/post_tweet
+  schedule: every 27 minutes from 9:00 to 23:30
