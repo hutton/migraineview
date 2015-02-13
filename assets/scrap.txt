@@ -20,3 +20,7 @@ handlers:
 - url: /report/weekly
   script: reports.app
   login: admin
+
+
+from random import randint
+>>> randint(2,9) #Inclusive
