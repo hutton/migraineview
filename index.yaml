@@ -14,3 +14,8 @@ indexes:
   ancestor: yes
   properties:
   - name: start_time
+
+- kind: Tweet
+  properties:
+  - name: sent
+  - name: priority

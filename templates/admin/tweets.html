@@ -45,9 +45,10 @@
                     </div>
                 </fieldset>
             </form>
-
         </div>
-
+        <div class="content center tweet-counts">
+            <span>Sent: {{ sent_tweets }}</span><span>Unsent: {{ unsent_tweets }}</span><span>Total: {{ total }}</span><span>Frequency: 1/{{ frequency }}</span>
+        </div>
         <table id="shared-link-table" class="pure-table pure-table-horizontal">
             <thead>
                 <tr>
@@ -65,7 +66,7 @@
                 <td>{{ tweet.created }}</td>
                 <td>{{ tweet.sent }}</td>
                 <td><form method="POST" action="/admin/delete_tweet"><button class="pure-button button-error">Delete</button>
-                    <input type="hidden" value="{{ tweet.id }}"/>
+                    <input type="hidden" name="id" id="id" value="{{ tweet.id }}"/>
                 </form></td>
             </tr>
             {% endfor %}

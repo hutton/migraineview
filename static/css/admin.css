@@ -4168,3 +4168,6 @@ a {
   margin-left: auto;
   margin-right: auto;
 }
+.tweet-counts > span {
+  margin: 0px 20px;
+}

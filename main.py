@@ -19,7 +19,7 @@ import os
 from google.appengine.api import users
 from google.appengine.ext.webapp import template
 import webapp2
-from app.admin import Accounts, Tweets
+from app.admin import Accounts, Tweets, TweetDelete, TweetPost
 from app.authentication import BaseRequestHandler
 from app.example import Example
 from app.export import Export
@@ -105,5 +105,8 @@ app = webapp2.WSGIApplication([webapp2.Route('/auth/<provider>',
                                ('/admin/accounts', Accounts),
                                ('/admin/tweets', Tweets),
                                ('/admin/new_tweet', Tweets),
+                               ('/admin/delete_tweet', TweetDelete),
+                               ('/tasks/post_tweet', TweetPost),
                                ('/.*', NotFound),
+
                               ], config=app_config, debug=True)
