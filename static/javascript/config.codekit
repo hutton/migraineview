@@ -13,6 +13,17 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/admin\/tweets.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 1,
+		"inputAbbreviatedPath": "\/admin\/tweets.js",
+		"outputAbbreviatedPath": "\/admin\/min\/tweets-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
 	"\/all.js": {
 		"fileType": 64,
 		"ignore": 0,

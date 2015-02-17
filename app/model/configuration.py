@@ -29,7 +29,7 @@ class Configuration(Model):
         if not cls._INSTANCE or cls._INSTANCE_AGE + cls.CACHE_TIME < now:
             cls._INSTANCE = cls.get_or_insert('config')
 
-            if not cls._INSTANCE.public_stripe_key or not cls._INSTANCE.consumer_key:
+            if not cls._INSTANCE.public_stripe_key or not cls._INSTANCE.consumer_key or not cls._INSTANCE.tweet_frequency:
                 cls._INSTANCE.public_stripe_key = 'public key'
 
                 cls._INSTANCE.web_debug = True

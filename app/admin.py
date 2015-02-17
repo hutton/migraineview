@@ -76,12 +76,26 @@ class Tweets(BaseRequestHandler):
 
     def post(self):
 
-        new_tweet = tweet.Tweet()
+        try:
+            new_tweet = tweet.Tweet()
 
-        new_tweet.message = self.request.POST['message']
-        new_tweet.priority = int(self.request.POST['priority'])
+            new_tweet.message = self.request.POST['message']
 
-        new_tweet.put()
+            if self.request.POST['priority'] == 'Now':
+                post_tweet(new_tweet.message)
+                new_tweet.priority = -1
+                new_tweet.sent = datetime.datetime.now()
+            else:
+                new_tweet.priority = int(self.request.POST['priority'])
+
+            new_tweet.put()
+        except Exception as e:
+            self.response.status = 500
+
+            trace = traceback.format_exc()
+
+            logging.error(e.message)
+            logging.error(trace)
 
         self.redirect('/admin/tweets')
 
