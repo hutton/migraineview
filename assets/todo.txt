@@ -1,8 +1,16 @@
-- Add 404 page
+*******************
+ * More delight! *
+*******************
+
+- Popup title for edit
+- Popup animate open
+- Select tab animate
+
 - Did you know you can upload all your existing migraine data.
 
 Done
 ====
+- Add 404 page
 - Add Provider to shared list
 - Fix when logged in and viewing an empty shared list shows your data
 - IE reszie issue
