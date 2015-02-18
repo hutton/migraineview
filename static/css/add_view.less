@@ -16,8 +16,7 @@ input[type=date]{
 }
 
 #add-comment-text{
-    width: 320px;
-    height: 120px;
+    height: 140px;
 }
 
 .upload-container{
@@ -70,10 +69,16 @@ input[type=date]{
 
 #attack-details-popup .popup{
     text-align: left;
+    max-width: 600px;
+    display: block;
 }
 
 #attack-details-popup .pure-form-aligned .pure-control-group label{
     width: 7em;
+}
+
+#attack-details-popup .text-area-container{
+    margin-left: 0px;
 }
 
 @media (min-width: 48em) {
@@ -82,6 +87,11 @@ input[type=date]{
     }
 }
 
+@media (min-width: 480px) {
+    #attack-details-popup .text-area-container{
+        margin-left: 8em;
+    }
+}
 
 #attack-details-popup .popup-title{
     font-size: 160%;

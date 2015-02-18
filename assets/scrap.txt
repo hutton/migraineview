@@ -10,43 +10,43 @@ http://migraine-ista.blogspot.co.uk/
 http://brainlessblogger.blogspot.co.uk/
 https://mymigrainelife.wordpress.com/
 
-
-application: hello-cron
-version: 1
-runtime: python27
-api_version: 1
-
-handlers:
-- url: /report/weekly
-  script: reports.app
-  login: admin
+.post-header, .post-footer {
+    line-height: 1.6;
+    margin-top: 60px;
+    margin-bottom: 100px;
+}
 
 
-from random import randint
+.post, .page {
+    margin: 0 0 100px 0;
+    height: 1%;
+    font-size: 1.8em;
+    font-weight: 300;
+    line-height: 1.8em;
+}
 
-if randint(1,4) == 1:
-	qry = Tweet.query(Tweet.sent == None).order(Tweet.priority, -Tweet.priority)
+.post li {
+    font-size: 1em;
+    line-height: 1.65;
+}
 
-	tweet = qry.fetch(1)
+.post-header p {
+    font-family: Roboto, "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif;
+    font-size: 1.1em;
+    color: #777;
+    font-weight: 100;
+}
 
-	if tweet:
-		post_tweet(tweet.message)
+.post-meta li {
+    font-family: Roboto, "Lucida Grande", "Lucida Sans Unicode", Verdana, sans-serif;
+    font-size: 1.1em;
+    line-height: 1.5;
+    color: #777;
+    font-weight: 300;
+}
 
-		tweet.sent = datetime.datetime.now()
-
-		tweet.put()
-
-
-# http://dev.twitter.com/apps/myappid
-CONSUMER_KEY = config.get('Twitter OAuth', 'CONSUMER_KEY')
-CONSUMER_SECRET = config.get('Twitter OAuth', 'CONSUMER_SECRET')
-# http://dev.twitter.com/apps/myappid/my_token
-ACCESS_TOKEN_KEY = config.get('Twitter OAuth', 'ACCESS_TOKEN_KEY')
-ACCESS_TOKEN_SECRET = config.get('Twitter OAuth', 'ACCESS_TOKEN_SECRET')
-
-auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
-auth.set_access_token(ACCESS_TOKEN_KEY, ACCESS_TOKEN_SECRET)
-api = tweepy.API(auth)
-result = api.update_status(status)
-
-
+.post-header h2 a {
+    border: 0 none;
+    color: #333;
+    font-weight: 100;
+}

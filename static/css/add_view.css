@@ -9,8 +9,7 @@ input[type=date] {
   margin: 30px 0px;
 }
 #add-comment-text {
-  width: 320px;
-  height: 120px;
+  height: 140px;
 }
 .upload-container {
   border: 5px dashed rgba(0, 0, 0, 0.1);
@@ -48,12 +47,22 @@ input[type=date] {
 }
 #attack-details-popup .popup {
   text-align: left;
+  max-width: 600px;
+  display: block;
 }
 #attack-details-popup .pure-form-aligned .pure-control-group label {
   width: 7em;
 }
+#attack-details-popup .text-area-container {
+  margin-left: 0px;
+}
 @media (min-width: 48em) {
   #attack-details-popup .pure-form-aligned .pure-controls {
+    margin-left: 8em;
+  }
+}
+@media (min-width: 480px) {
+  #attack-details-popup .text-area-container {
     margin-left: 8em;
   }
 }

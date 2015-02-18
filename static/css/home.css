@@ -3564,7 +3564,7 @@ a {
   right: 0px;
   background: rgba(0, 0, 0, 0.4);
   text-align: center;
-  z-index: 100;
+  z-index: 2000;
   overflow: scroll;
 }
 .popup {
@@ -3641,6 +3641,22 @@ a {
 .panel-yellow li > span {
   font-style: italic;
   font-weight: bold;
+}
+.text-area-container {
+  margin-left: 11em;
+  margin-top: -25px;
+}
+.text-area-container > textarea {
+  width: 100%;
+}
+@media only screen and (max-width: 480px) {
+  .text-area-container {
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+  .text-area-container > textarea {
+    width: 100%;
+  }
 }
 /*---------------------------------------------------
     LESS Elements 0.9

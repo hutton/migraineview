@@ -14,7 +14,7 @@
 <body>
     <div class="content">
         <div>
-            <h2 class="title">Tweet Queue</h2>
+            <h2 class="title">Queue</h2>
         </div>
         <div class="content">
             <form id="single-upload-form" class="pure-form pure-form-aligned center-margin" action="/admin/new_tweet" method="POST">
@@ -22,7 +22,9 @@
                     <div class="pure-control-group">
                         <div class="pure-control-group">
                             <label for="message-text">Message</label>
-                            <textarea name="message" id="message-text" placeholder="Tweet..."></textarea>
+                            <div class="text-area-container">
+                                <textarea name="message" id="message-text" placeholder="Tweet..."></textarea>
+                            </div>
                         </div>
                         <div class="pure-control-group">
                             <label>Message Length</label>
