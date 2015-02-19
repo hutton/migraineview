@@ -49,6 +49,7 @@ input[type=date] {
   text-align: left;
   max-width: 600px;
   display: block;
+  border-radius: 10px;
 }
 #attack-details-popup .pure-form-aligned .pure-control-group label {
   width: 7em;

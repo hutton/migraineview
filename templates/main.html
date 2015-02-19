@@ -331,10 +331,12 @@
                    </div>
                     <div class="popup-background" id="clear-all-attacks-popup" style="display: none;">
                         <div class="popup">
-                           <div class="popup-title">Delete all data.<br/>Are you sure?</div>
-                            <div class="popup-buttons">
-                                <button id="clear-all-cancel" class="pure-button">Cancel</button>
-                                <button id="clear-all-yes" class="button-error pure-button">Yes</button>
+                            <div class="popup-container">
+                                <div class="popup-title">Delete all data.<br/>Are you sure?</div>
+                                <div class="popup-buttons">
+                                    <button id="clear-all-cancel" class="pure-button">Cancel</button>
+                                    <button id="clear-all-yes" class="button-error pure-button">Yes</button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -357,11 +359,13 @@
             </div>
         </div>
     </div>
-    <div class="popup-background" id="attack-details-popup" style="display: none;">
-        <div class="popup">
-            <div class="popup-title">Edit Attack</div>
-            <div id="edit-attack-view-container">
+    <div class="popup-background popup-background-hidden" id="attack-details-popup" style="display: none;">
+        <div class="popup popup-hidden">
+            <div class="popup-header">Edit Attack</div>
+            <div class="popup-container">
+                <div id="edit-attack-view-container">
 
+                </div>
             </div>
         </div>
     </div>

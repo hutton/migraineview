@@ -3557,6 +3557,10 @@ a {
   margin: 50px 0px;
 }
 .popup-background {
+  -moz-transition-duration: 0.4s;
+  -webkit-transition-duration: 0.4s;
+  -o-transition-duration: 0.4s;
+  transition-duration: 0.4s;
   position: fixed;
   top: 0px;
   bottom: 0px;
@@ -3566,15 +3570,47 @@ a {
   text-align: center;
   z-index: 2000;
   overflow: scroll;
+  padding: 10px;
+  opacity: 1.0;
+}
+.popup-background-hidden {
+  opacity: 0.0;
 }
 .popup {
+  -moz-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
   border-radius: 8px;
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.7);
   background: white;
-  padding: 20px;
   border: 1px solid rgba(0, 0, 0, 0.4);
   display: inline-block;
   margin: 60px auto;
+  -webkit-transform: scale(1) translate(0px, 0px);
+  -moz-transform: scale(1) translate(0px, 0px);
+  -o-transform: scale(1) translate(0px, 0px);
+  -ms-transform: scale(1) translate(0px, 0px);
+  transform: scale(1) translate(0px, 0px);
+}
+.popup-hidden {
+  opacity: 0.0;
+  -webkit-transform: scale(0.75) translate(0px, 400px);
+  -moz-transform: scale(0.75) translate(0px, 400px);
+  -o-transform: scale(0.75) translate(0px, 400px);
+  -ms-transform: scale(0.75) translate(0px, 400px);
+  transform: scale(0.75) translate(0px, 400px);
+}
+.popup-container {
+  padding: 20px;
+}
+.popup-header {
+  font-size: 110%;
+  text-align: left;
+  background: rgba(0, 0, 0, 0.05);
+  padding: 10px 20px;
+  color: rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 .popup-title {
   font-size: 110%;
@@ -3812,7 +3848,7 @@ body {
 }
 /* This is the main heading that appears on the blue section */
 .splash-head {
-  font-size: 350%;
+  font-size: 300%;
   padding-top: 80px;
   color: #444;
   font-weight: 100;
@@ -3824,7 +3860,7 @@ body {
   color: #888;
   letter-spacing: 0.05em;
   opacity: 0.8;
-  font-size: 145%;
+  font-size: 135%;
   line-height: 1.4em;
   position: relative;
   margin-top: 6px;
@@ -3841,7 +3877,7 @@ body {
 .splash-buttons {
   position: relative;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 20px;
   margin-bottom: 20px;
 }
 .splash-button {
@@ -3952,12 +3988,12 @@ p.register-text {
     font-size: 14px;
   }
   .splash-head {
-    font-size: 500%;
+    font-size: 400%;
     line-height: 1.2em;
     padding-top: 120px;
   }
   .splash-subhead {
-    font-size: 145%;
+    font-size: 160%;
     line-height: 1.4em;
     font-weight: 100;
   }
@@ -3966,7 +4002,7 @@ p.register-text {
     font-size: 400%;
   }
   .splash-buttons {
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 30px;
   }
   /* We want to give the content area some more padding */
@@ -3996,10 +4032,10 @@ p.register-text {
   }
   /* We increase the header font size even more */
   .splash-head {
-    font-size: 500%;
+    font-size: 400%;
   }
   .splash-subhead {
-    font-size: 145%;
+    font-size: 160%;
     line-height: 1.4em;
   }
   .splash-icons {

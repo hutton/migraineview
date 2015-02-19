@@ -13,7 +13,7 @@ Done
 - Add 404 page
 - Add Provider to shared list
 - Fix when logged in and viewing an empty shared list shows your data
-- IE reszie issue
+- IE resize issue
 - Dynamic last migraine in example
 - Speed up logo
 ^^^^^^^^^^^^^^

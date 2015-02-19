@@ -6,7 +6,9 @@ window.EditAttackView = Backbone.View.extend({
 
     el: $('#attack-details-popup'),
 
-    popupEl: $('#attack-details-popup'),
+    popupBackgroundEl: $('#attack-details-popup'),
+
+    popupEl: $('#attack-details-popup > .popup'),
 
     events: {
         "click #submit-button":     "editAttack",
@@ -34,9 +36,19 @@ window.EditAttackView = Backbone.View.extend({
     },
 
     show: function(model){
+        var that = this;
         this.model = model;
 
-        this.popupEl.show();
+        this.popupBackgroundEl.show();
+
+        _.delay(function(){
+            that.popupBackgroundEl.removeClass("popup-background-hidden");
+
+            _.delay(function(){
+                that.popupEl.removeClass("popup-hidden");
+            }, 100);
+
+        }, 100);
 
         this.attackView.setModel(model);
         this.deleteButton.removeClass('delete-sure');
@@ -51,7 +63,14 @@ window.EditAttackView = Backbone.View.extend({
     },
 
     hide: function(){
-        this.popupEl.fadeOut('fast');
+        var that = this;
+
+        this.popupBackgroundEl.addClass("popup-background-hidden");
+        this.popupEl.addClass("popup-hidden");
+
+        _.delay(function(){
+            that.popupBackgroundEl.hide();
+        }, 500);
     },
 
     editAttack: function(e){
