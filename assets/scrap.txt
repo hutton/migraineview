@@ -1,9 +1,39 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<title></title> 
+	
+	<script src="velocity.js"></script>
 
-Migraine Tracking. Simplified.
-The Migraine Diary you'll want to use.
+	<style type="text/css">
+	#d1{
+		position: relative;
+		left: 100px;
+		padding: 10px 20px;
+		border: 1px solid gray;
+	}
+
+	</style>
+
+</head> 
+<body> 
+	<div id="d1" style="display: none;">hello</div>
+	<script type="text/javascript">
+	Velocity(document.getElementById("d1"), 
+		{ opacity: 1.0, top: [100, 200], scaleX: [1.0, 0.5], scaleY: [1.0, 0.5] }, 
+		{ display: "inline-block", duration: 400, easing: [.37,1,.55,1.24] });
+
+	Velocity(document.getElementById("d1"), "reverse", {delay: 1000, display: "none"} );
 
 
-http://www.patient.co.uk/forums/discuss/browse/migraine-1415
+	$element.velocity( 
+		{ opacity: 1.0, top: [100, 200], scaleX: [1.0, 0.5], scaleY: [1.0, 0.5] }, 
+		{ display: "inline-block", duration: 400, easing: [.37,1,.55,1.24] });
+
+	$element.velocity("reverse", { duration: 2000 });
+	</script>
+</body>
+</html>
 
 
 Blogs to target
