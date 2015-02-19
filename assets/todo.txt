@@ -2,14 +2,25 @@
  * More delight! *
 *******************
 
-- Popup title for edit
-- Popup animate open
-- Select tab animate
+- Restyle popup title 
+    - (bk f5f5f7)
+    - header #efeff1
+    - border-top-left-radius: 10px;
+    - Bold text, padding
+- Use velocity for popup animation
+    - backgroundColorAlpha: 0.5,
+- Use velocity for swtiching page animation
+    - transition.slideLeftBigOut
+    - $elements.velocity("callout.bounce", {drag: true});
+
 
 - Did you know you can upload all your existing migraine data.
 
 Done
 ====
+- Popup animate open
+- Select tab animate
+- Popup title for edit
 - Add 404 page
 - Add Provider to shared list
 - Fix when logged in and viewing an empty shared list shows your data
