@@ -1,7 +1,7 @@
 *******************
  * More delight! *
 *******************
-
+- Fix signin popup
 - Restyle popup title 
     - (bk f5f5f7)
     - header #efeff1
