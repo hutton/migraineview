@@ -36,19 +36,14 @@ window.EditAttackView = Backbone.View.extend({
     },
 
     show: function(model){
-        var that = this;
         this.model = model;
 
-        this.popupBackgroundEl.show();
+        this.popupBackgroundEl.velocity({backgroundColor: ["#000000", "#000000"] ,backgroundColorAlpha: [0.6, 0.0] },
+            {duration: 400, display: "block"});
 
-        _.delay(function(){
-            that.popupBackgroundEl.removeClass("popup-background-hidden");
-
-            _.delay(function(){
-                that.popupEl.removeClass("popup-hidden");
-            }, 100);
-
-        }, 100);
+        this.popupEl.velocity(
+            { opacity: 1.0, top: [60, 200], scaleX: [1.0, 0.8], scaleY: [1.0, 0.8] },
+            { display: "block", duration: 300, easing: [.37,1,.55,1.24] });
 
         this.attackView.setModel(model);
         this.deleteButton.removeClass('delete-sure');
@@ -63,14 +58,8 @@ window.EditAttackView = Backbone.View.extend({
     },
 
     hide: function(){
-        var that = this;
-
-        this.popupBackgroundEl.addClass("popup-background-hidden");
-        this.popupEl.addClass("popup-hidden");
-
-        _.delay(function(){
-            that.popupBackgroundEl.hide();
-        }, 500);
+        this.popupBackgroundEl.velocity("reverse", {display: "none"});
+        this.popupEl.velocity("reverse", {display: "none"});
     },
 
     editAttack: function(e){

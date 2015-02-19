@@ -243,24 +243,26 @@
     -->
     <div class="popup-background" id="logon" style="display: none;">
         <div class="popup">
-           <div class="popup-title">Sign in with any of these services</div>
-            <div>
-                <div class="logon-provider">
-                    <a href="/auth/googleplus?destination_url=/report" class="button-xlarge button-google pure-button"><i class="fa fa-google-plus-square"></i>Google+</a>
-                </div>
-                <div class="logon-provider">
-                    <a href="/auth/windows_live?destination_url=/report" class="button-xlarge button-windows pure-button"><i class="fa fa-windows"></i>Windows Live</a>
-                </div>
-                <div class="logon-provider">
-                    <a href="/auth/facebook?destination_url=/report" class="button-xlarge button-facebook pure-button"><i class="fa fa-facebook"></i>Facebook</a>
-                </div>
-                {% if debug_login %}
-                <div class="logon-provider">
-                    <a href="{{ login_url }}" class="button-xlarge pure-button">Debug Sign In</a>
-                </div>
-                {% endif %}
+           <div class="popup-container">
+               <div class="popup-title">Sign in with any of these services</div>
+                <div>
+                    <div class="logon-provider">
+                        <a href="/auth/googleplus?destination_url=/report" class="button-xlarge button-google pure-button"><i class="fa fa-google-plus-square"></i>Google+</a>
+                    </div>
+                    <div class="logon-provider">
+                        <a href="/auth/windows_live?destination_url=/report" class="button-xlarge button-windows pure-button"><i class="fa fa-windows"></i>Windows Live</a>
+                    </div>
+                    <div class="logon-provider">
+                        <a href="/auth/facebook?destination_url=/report" class="button-xlarge button-facebook pure-button"><i class="fa fa-facebook"></i>Facebook</a>
+                    </div>
+                    {% if debug_login %}
+                    <div class="logon-provider">
+                        <a href="{{ login_url }}" class="button-xlarge pure-button">Debug Sign In</a>
+                    </div>
+                    {% endif %}
 
-                <button class="popup-close button-large pure-button">Close</button>
+                    <button class="popup-close button-large pure-button">Close</button>
+                </div>
             </div>
         </div>
     </div>

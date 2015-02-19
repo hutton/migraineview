@@ -13,7 +13,9 @@ window.SettingsView = window.MainViewBase.extend({
 
     settingsButtonsMessageEl: $('#settings-buttons-message'),
 
-    clearAllAttacksPopupEl: $('#clear-all-attacks-popup'),
+    clearAllAttacksPopupBackgroundEl: $('#clear-all-attacks-popup'),
+
+    clearAllAttacksPopupEl: $('#clear-all-attacks-popup > .popup'),
 
     yesButton: $('#clear-all-yes'),
 
@@ -30,13 +32,21 @@ window.SettingsView = window.MainViewBase.extend({
 
     showClearAllPopup: function(){
         if (!this.settingsClearAllEl.hasClass('pure-button-disabled')) {
-            this.clearAllAttacksPopupEl.fadeIn('fast');
+
+            this.clearAllAttacksPopupBackgroundEl.velocity({backgroundColor: ["#000000", "#000000"] ,backgroundColorAlpha: [0.6, 0.0] },
+                {duration: 400, display: "block"});
+
+            this.clearAllAttacksPopupEl.velocity(
+                { opacity: 1.0, top: [60, 200], scaleX: [1.0, 0.8], scaleY: [1.0, 0.8] },
+            { display: "inline-block", duration: 300, easing: [.37,1,.55,1.24] });
+
             this.yesButton.removeClass('pure-button-disabled');
         }
     },
 
     hideClearAllPopup: function(){
-        this.clearAllAttacksPopupEl.fadeOut('fast');
+        this.clearAllAttacksPopupBackgroundEl.velocity("reverse", {display: "none"});
+        this.clearAllAttacksPopupEl.velocity("reverse", {display: "none"});
     },
 
     settingsClearAll: function(){
