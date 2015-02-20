@@ -1,14 +1,15 @@
 *******************
  * More delight! *
 *******************
+- Remove scroll positioner on tab switch
+    - onShow should be called on complete
+- Remove tab swtich animation for narrow screens
 - Fix delete data popup
     - Move popup back and try setting defaults for elements
     - If not remove elements on complete
 - Change popup to white
     - center header text, make bigger
-- Remove scroll positioner on tab switch
-    - onShow should be called on complete
-- Remove tab swtich animation for narrow screens
+    - Add close button
 
 - Do Timeline
 
