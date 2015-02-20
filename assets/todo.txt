@@ -2,7 +2,10 @@
  * More delight! *
 *******************
 - Fix delete data popup
-- Get progress working for tab switch
+    - Move popup back and try setting defaults for elements
+    - If not remove elements on complete
+- Remove scroll positioner on tab switch
+    - onShow should be called on complete
 - Remove tab swtich animation for narrow screens
 
 - Do Timeline
