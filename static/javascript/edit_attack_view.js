@@ -39,7 +39,7 @@ window.EditAttackView = Backbone.View.extend({
         this.model = model;
 
         this.popupBackgroundEl.velocity({backgroundColor: ["#000000", "#000000"] ,backgroundColorAlpha: [0.6, 0.0] },
-            {duration: 400, display: "block"});
+            {duration: 300, display: "block"});
 
         this.popupEl.velocity(
             { opacity: 1.0, top: [60, 200], scaleX: [1.0, 0.8], scaleY: [1.0, 0.8] },

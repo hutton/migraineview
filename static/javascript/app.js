@@ -162,6 +162,8 @@ window.Workspace = Backbone.Router.extend({
         "shared/:base/list":    "list"
     },
 
+    currentView: null,
+
     statistics: function(){
         App.refreshData();
 

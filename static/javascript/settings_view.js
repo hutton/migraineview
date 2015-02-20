@@ -5,6 +5,9 @@
 
 window.SettingsView = window.MainViewBase.extend({
     initialize: function () {
+        this.clearAllAttacksPopupBackgroundEl = $('#clear-all-attacks-popup')
+
+        this.clearAllAttacksPopupEl = $('#clear-all-attacks-popup > .popup');
     },
 
     el: $('#settings-view'),
@@ -12,10 +15,6 @@ window.SettingsView = window.MainViewBase.extend({
     settingsClearAllEl : $('#settings-clear-all'),
 
     settingsButtonsMessageEl: $('#settings-buttons-message'),
-
-    clearAllAttacksPopupBackgroundEl: $('#clear-all-attacks-popup'),
-
-    clearAllAttacksPopupEl: $('#clear-all-attacks-popup > .popup'),
 
     yesButton: $('#clear-all-yes'),
 
@@ -34,7 +33,7 @@ window.SettingsView = window.MainViewBase.extend({
         if (!this.settingsClearAllEl.hasClass('pure-button-disabled')) {
 
             this.clearAllAttacksPopupBackgroundEl.velocity({backgroundColor: ["#000000", "#000000"] ,backgroundColorAlpha: [0.6, 0.0] },
-                {duration: 400, display: "block"});
+                {duration: 300, display: "block"});
 
             this.clearAllAttacksPopupEl.velocity(
                 { opacity: 1.0, top: [60, 200], scaleX: [1.0, 0.8], scaleY: [1.0, 0.8] },

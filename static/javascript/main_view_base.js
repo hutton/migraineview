@@ -12,13 +12,11 @@ window.MainViewBase = Backbone.View.extend({
 
     show: function(){
         if (!this.visible){
-            this.$el.show();
-
-            this.bodyEl.scrollTop(this.scrollPos);
+            this.switchToView(this);
 
             this.visible = true;
 
-            this.onShow();
+            App.currentView = this;
         }
     },
 
@@ -30,9 +28,30 @@ window.MainViewBase = Backbone.View.extend({
         if (this.visible){
             this.scrollPos = this.bodyEl.scrollTop();
 
-            this.$el.hide();
+//            this.$el.hide();
 
             this.visible = false;
         }
+    },
+
+    switchToView: function(element){
+        var that = this;
+        var duration = 100;
+
+        if (!_.isUndefined(App.currentView)){
+            App.currentView.$el.velocity("transition.slideLeftOut", {duration: duration, complete: function(){
+                element.$el.velocity("transition.slideLeftIn", {duration: duration, complete: function(){
+                    that.onShow();
+                    that.bodyEl.scrollTop(that.scrollPos);
+                }});
+            }});
+        } else {
+            element.$el.show();
+
+            that.onShow();
+            that.bodyEl.scrollTop(that.scrollPos);
+        }
+
+        this.currentView = element;
     }
 });
