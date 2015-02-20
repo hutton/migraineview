@@ -1,17 +1,18 @@
 *******************
  * More delight! *
 *******************
-- Use velocity for popup animation
-    - backgroundColorAlpha: 0.5,
-- Use velocity for swtiching page animation
-    - transition.slideLeftBigOut
-    - $elements.velocity("callout.bounce", {drag: true});
+- Fix delete data popup
+- Get progress working for tab switch
+- Remove tab swtich animation for narrow screens
 
+- Do Timeline
 
 - Did you know you can upload all your existing migraine data.
 
 Done
 ====
+- Use velocity for swtiching page animation
+- Use velocity for popup animation
 - Fix signin popup
 - Restyle popup title
 - Popup animate open
