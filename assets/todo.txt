@@ -4,7 +4,7 @@
 - Remove scroll positioner on tab switch
     - onShow should be called on complete
 - Remove tab swtich animation for narrow screens
-    - $(window).width < 1024
+    - $(window).width < 1000
 - Fix delete data popup
     - Move popup back and try setting defaults for elements
     - If not remove elements on complete
