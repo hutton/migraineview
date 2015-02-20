@@ -154,7 +154,7 @@
                 <!-
                     Stats view
                 ->
-                <div id="stats-view" style="display: none;">
+                <div class="view-container" id="stats-view" style="display: none;">
                     <div>
                         <h2 class="title">Report</h2>
                     </div>
@@ -195,7 +195,7 @@
                 ->
 
                 {% if show_list %}
-                <div id="event_list_container" style="display: none;">
+                <div class="view-container" id="event_list_container" style="display: none;">
                     <div>
                         <h2 class="title">List</h2>
                     </div>
@@ -251,7 +251,7 @@
                     Settings view
                 ->
                 {% if show_options %}
-                <div id="settings-view" style="display: none;">
+                <div class="view-container" id="settings-view" style="display: none;">
                     <div>
                         <h2 class="title">Account</h2>
                     </div>
@@ -329,6 +329,17 @@
                             </div>
                         </div>
                    </div>
+                    <div class="popup-background" id="clear-all-attacks-popup" style="display: none;">
+                        <div class="popup">
+                            <div class="popup-container">
+                                <div class="popup-title">Delete all data.<br/>Are you sure?</div>
+                                <div class="popup-buttons">
+                                    <button id="clear-all-cancel" class="pure-button">Cancel</button>
+                                    <button id="clear-all-yes" class="button-error pure-button">Yes</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
                 {% endif %}
@@ -337,7 +348,7 @@
                     Export view
                 ->
                 {% if False %}
-                <div id="export-view" style="display: none;">
+                <div class="view-container" id="export-view" style="display: none;">
                     <div>
                         <h2 class="title">Export</h2>
                     </div>
@@ -348,21 +359,10 @@
             </div>
         </div>
     </div>
-    <div class="popup-background" id="clear-all-attacks-popup" style="display: none;">
-        <div class="popup">
-            <div class="popup-container">
-                <div class="popup-title">Delete all data.<br/>Are you sure?</div>
-                <div class="popup-buttons">
-                    <button id="clear-all-cancel" class="pure-button">Cancel</button>
-                    <button id="clear-all-yes" class="button-error pure-button">Yes</button>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="popup-background" id="attack-details-popup" style="display: none;">
         <div class="popup">
             <div class="popup-header"><i class="fa fa-edit"></i> Edit Attack
-                <div class="popup-header-close"></div>
+                <i class="fa fa-close"></i>
             </div>
             <div class="popup-container">
                 <div id="edit-attack-view-container">

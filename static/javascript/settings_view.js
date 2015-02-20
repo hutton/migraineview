@@ -5,9 +5,6 @@
 
 window.SettingsView = window.MainViewBase.extend({
     initialize: function () {
-        this.clearAllAttacksPopupBackgroundEl = $('#clear-all-attacks-popup')
-
-        this.clearAllAttacksPopupEl = $('#clear-all-attacks-popup > .popup');
     },
 
     el: $('#settings-view'),
@@ -17,6 +14,10 @@ window.SettingsView = window.MainViewBase.extend({
     settingsButtonsMessageEl: $('#settings-buttons-message'),
 
     yesButton: $('#clear-all-yes'),
+
+    clearAllAttacksPopupBackgroundEl: $('#clear-all-attacks-popup'),
+
+    clearAllAttacksPopupEl: $('#clear-all-attacks-popup > .popup'),
 
     events: {
         "click #settings-clear-all":  "showClearAllPopup",

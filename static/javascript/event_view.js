@@ -37,7 +37,7 @@ window.EventView = Backbone.View.extend({
             if (!this.model.get('filtered')){
                 var filter = this.model.get('filter');
 
-                if (filter.length > 0) {
+                if (!_.isUndefined(filter) && filter.length > 0) {
                     modelDict.start_text = replaceAll(modelDict.start_text, "<br/>", "º");
                     modelDict.start_text = replaceAll(modelDict.start_text, filter, "<span>" + filter + "</span>");
                     modelDict.start_text = replaceAll(modelDict.start_text, "º", "<br/>");

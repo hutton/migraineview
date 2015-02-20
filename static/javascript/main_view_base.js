@@ -26,10 +26,6 @@ window.MainViewBase = Backbone.View.extend({
 
     hide: function(){
         if (this.visible){
-            this.scrollPos = this.bodyEl.scrollTop();
-
-//            this.$el.hide();
-
             this.visible = false;
         }
     },
@@ -39,17 +35,25 @@ window.MainViewBase = Backbone.View.extend({
         var duration = 100;
 
         if (!_.isUndefined(App.currentView)){
-            App.currentView.$el.velocity("transition.slideLeftOut", {duration: duration, complete: function(){
-                element.$el.velocity("transition.slideLeftIn", {duration: duration, complete: function(){
-                    that.onShow();
-                    that.bodyEl.scrollTop(that.scrollPos);
+
+            if ($(window).width() < 1024){
+                App.currentView.$el.hide();
+                element.$el.show();
+
+                this.onShow();
+            } else {
+                App.currentView.$el.velocity("transition.slideLeftOut", {duration: duration, complete: function(){
+                    element.$el.velocity("transition.slideLeftIn", {duration: duration, complete: function(elements){
+                        element.$el.removeAttr('style');
+
+                        that.onShow();
+                    }});
                 }});
-            }});
+            }
         } else {
             element.$el.show();
 
             that.onShow();
-            that.bodyEl.scrollTop(that.scrollPos);
         }
 
         this.currentView = element;

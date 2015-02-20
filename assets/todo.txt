@@ -1,16 +1,6 @@
 *******************
  * More delight! *
 *******************
-- Remove scroll positioner on tab switch
-    - onShow should be called on complete
-- Remove tab swtich animation for narrow screens
-    - $(window).width < 1000
-- Fix delete data popup
-    - Move popup back and try setting defaults for elements
-    - If not remove elements on complete
-- Change popup to white
-    - center header text, make bigger
-    - Add close button
 
 - Do Timeline
 
@@ -18,6 +8,10 @@
 
 Done
 ====
+- Change popup to white
+- Fix delete data popup
+- Remove scroll positioner on tab switch
+- Remove tab swtich animation for narrow screens
 - Use velocity for swtiching page animation
 - Use velocity for popup animation
 - Fix signin popup

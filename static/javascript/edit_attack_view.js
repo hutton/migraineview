@@ -14,7 +14,8 @@ window.EditAttackView = Backbone.View.extend({
         "click #submit-button":     "editAttack",
         "click #cancel-button":     "cancel",
         "click #delete-button":     "deleteAttack",
-        "click":  "closePopup"
+        "click .fa-close":          "cancel",
+        "click":                    "closePopup"
     },
 
     attackViewContainer: $('#edit-attack-view-container'),
