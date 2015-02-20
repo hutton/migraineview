@@ -1,39 +1,13 @@
-<!DOCTYPE html> 
-<html> 
-<head> 
-	<title></title> 
-	
-	<script src="velocity.js"></script>
-
-	<style type="text/css">
-	#d1{
-		position: relative;
-		left: 100px;
-		padding: 10px 20px;
-		border: 1px solid gray;
-	}
-
-	</style>
-
-</head> 
-<body> 
-	<div id="d1" style="display: none;">hello</div>
-	<script type="text/javascript">
-	Velocity(document.getElementById("d1"), 
-		{ opacity: 1.0, top: [100, 200], scaleX: [1.0, 0.5], scaleY: [1.0, 0.5] }, 
-		{ display: "inline-block", duration: 400, easing: [.37,1,.55,1.24] });
-
-	Velocity(document.getElementById("d1"), "reverse", {delay: 1000, display: "none"} );
-
-
-	$element.velocity( 
-		{ opacity: 1.0, top: [100, 200], scaleX: [1.0, 0.5], scaleY: [1.0, 0.5] }, 
-		{ display: "inline-block", duration: 400, easing: [.37,1,.55,1.24] });
-
-	$element.velocity("reverse", { duration: 2000 });
-	</script>
-</body>
-</html>
+$element.velocity({
+    opacity: 0,
+    tween: 1000 // Optional
+}, {
+    progress: function(elements, complete, remaining, start, tweenValue) {
+        console.log((complete * 100) + "%");
+        console.log(remaining + "ms remaining!");
+        console.log("The current tween value is " + tweenValue)
+    }
+});
 
 
 Blogs to target
