@@ -1,3 +1,89 @@
+
+Date.prototype.getWeekday = function() {
+	var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+	return days[this.getDay()];
+};
+
+Date.prototype.getMonthNameShort = function(lang) {
+	lang = lang && (lang in Date.locale) ? lang : 'en';
+	return Date.locale[lang].month_names_short[this.getMonth()];
+};
+
+Date.locale = {
+	en: {
+	   month_names: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+	   month_names_short: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+	}
+};
+
+function secondsToText(seconds){
+	var diffHours = seconds / 60;
+
+	var hours = Math.floor(diffHours/60);
+	var minutes = Math.floor(diffHours % 60);
+
+	var result = "";
+
+	if (hours > 48){
+		result = Math.floor(hours / 24) + " Days";
+	} else {
+		if (hours == 1){
+			result = "1 hour ";
+		} else if (hours > 1){
+			result = hours + " hours ";
+		}
+
+		if (hours < 12 ){
+			if (minutes == 1){
+				result += "1 minute";
+			} else if (minutes > 1){
+				result += minutes + " minutes";
+			}
+		}
+	}
+
+	return result;
+}
+
+function difference_text(date1, date2){
+	var started;
+	var ended;
+	if (date1 < date2){
+		started = date1;
+		ended = date2;
+	} else{
+		started = date2;
+		ended = date1;
+	}
+
+	var secondsDiff = Math.abs((ended.getTime() - started.getTime()) / 1000);
+
+	return secondsToText(secondsDiff);
+}
+
+
+var now = new Date();
+
+console.log(now.getMonthNameShort() + " " + now.getDate());
+console.log(now.getWeekday());
+console.log(now.getFullYear());
+
+console.log(now.getHours() + ":" + now.getMinutes());
+
+
+var other = new Date(2015, 4, 23, 13, 23, 4, 0);
+
+console.log();
+console.log(now);
+console.log(other);
+
+console.log(difference_text(other, now));
+
+console.log(secondsToText(3810));
+
+
+
+
 <table>
     <tr>
         <td>
