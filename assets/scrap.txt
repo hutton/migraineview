@@ -1,13 +1,65 @@
-$element.velocity({
-    opacity: 0,
-    tween: 1000 // Optional
-}, {
-    progress: function(elements, complete, remaining, start, tweenValue) {
-        console.log((complete * 100) + "%");
-        console.log(remaining + "ms remaining!");
-        console.log("The current tween value is " + tweenValue)
-    }
-});
+<table>
+    <tr>
+        <td>
+            <div class="line">
+            </div>
+            <div class="circle">
+                <div>Sept 14</div>
+                <div>Wednesday</div>
+                <div>2014</div>
+            </div>
+        </td>
+        <td>
+            <div class="comment">
+                <div>@ 20:00 for 6 hours 30 minutes</div>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent aliquet libero sem, sed mollis justo mattis at. Proin commodo vel lorem id semper. Nullam eu dui cursus, convallis lacus sed, consequat mi. Pellentesque orci elit, accumsan semper             </div>
+        </td>
+    </tr>
+</table>
+
+
+td{
+    position: relative;
+    height: 200px;
+}
+
+.line{
+    height: 100%;
+    width: 52px;
+    border-right: 4px solid rgba(0,0,0,0.1);
+    position: absolute;
+    top: 0px;
+    z-index: 10;
+}
+.line:before{
+    content: '';
+    border-top: 4px solid rgba(0,0,0,0.1);
+    width: 20px;
+    position: relative;
+    z-index: 10;
+    display: block;
+    top: 50%;
+    left: 100px;
+    margin-top: -2px;
+}
+
+.circle{
+    background: white;
+    border-radius: 100px;
+    width: 100px;
+    height: 100px;
+    border: 4px solid rgba(0,0,0,0.1);
+    z-index: 100;
+    position: relative;
+    text-align: center;
+}
+.circle > div:nth-child(1){
+   margin-top: 25px;
+}
+
+.comment{
+    margin: 20px 0px 20px 20px;
+}
 
 
 Blogs to target
