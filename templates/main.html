@@ -230,9 +230,9 @@
                             <div id="list-count">
                                 Showing 62 attacks
                             </div>
-                            <ul>
+                            <table>
 
-                            </ul>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -496,17 +496,21 @@
     </script>
 
     <script type="text/template" id="event-view-template">
-            <div class="tl-left">
-                <div>
-                    <div>
-                        <%= start_text %>
-                    </div>
+            <td>
+                <div class="tl-line">
                 </div>
-            </div>
-            <div class="tl-comment">
-                <div><%= duration_text %></div>
-                <div><%= comment %></div>
-            </div>
+                <div class="tl-circle">
+                    <div><%= date %></div>
+                    <div class="tl-day"><%= day %></div>
+                    <div><%= year %></div>
+                </div>
+            </td>
+            <td>
+                <div class="tl-comment">
+                    <div class="tl-title"><%= title %></div>
+                    <%= comment %>
+                </div>
+            </td>
     </script>
 
     <script type="text/template" id="calendar-report-view-template">

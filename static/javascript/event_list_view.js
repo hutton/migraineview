@@ -12,7 +12,7 @@ window.EventListView = window.MainViewBase.extend({
 
     listLoadingEl: $('#list-loading'),
 
-    listEl: $('#event_list_container ul'),
+    listEl: $('#event_list_container table'),
 
     tableContainerEl: $('#list-table-container'),
 

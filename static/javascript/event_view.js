@@ -8,7 +8,7 @@ window.EventView = Backbone.View.extend({
         this.listenTo(this.model, "change", this.changed);
     },
 
-    tagName: 'li',
+    tagName: 'tr',
 
     template: _.template($('#event-view-template').html()),
 
@@ -17,7 +17,18 @@ window.EventView = Backbone.View.extend({
     },
 
     render: function(){
-        this.$el.html(this.template(this.model.toJSON()));
+        var templateValues = this.model.toJSON();
+
+
+        var date = (new Date(this.model.get('start').replace(" ", "T"))).convertDateToUTC();
+
+        templateValues['date'] = date.getMonthNameShort() + " " + date.getDate();
+        templateValues['day'] = date.getWeekday();
+        templateValues['year'] = date.getFullYear();
+
+        templateValues['title'] = date.getTimeText() + " for " + secondsToText(this.model.get('duration'));
+
+        this.$el.html(this.template(templateValues));
 
         return this;
     },

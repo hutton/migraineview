@@ -3916,6 +3916,9 @@ Hides the menu at `48em`, but modify this based on your app's needs.
   opacity: 0.5;
   font-weight: bold;
 }
+.menu-link {
+  z-index: 1000;
+}
 /*---------------------------------------------------
     LESS Elements 0.9
   ---------------------------------------------------
