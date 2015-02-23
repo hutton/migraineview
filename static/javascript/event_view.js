@@ -8,7 +8,7 @@ window.EventView = Backbone.View.extend({
         this.listenTo(this.model, "change", this.changed);
     },
 
-    tagName: 'tr',
+    tagName: 'li',
 
     template: _.template($('#event-view-template').html()),
 

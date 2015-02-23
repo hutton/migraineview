@@ -41,11 +41,12 @@
                 <ul>
                     {% if user %}
                     <li><a href="#about">About</a></li>
+                    <li><a href="http://blog.migraine.report/">Blog</a></li>
                     <li><a href="{{ logout_url }}">Sign Out</a></li>
                     <li><a href="/report">Go to your report <i class="fa fa-arrow-right"></i></a></li>
                     {% else %}
-                    <li><a href="/example/report">Tour</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="http://blog.migraine.report/">Blog</a></li>
                     <li><a id="login-link" href="#">Sign In</a></li>
                     {% endif %}
                 </ul>

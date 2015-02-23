@@ -12,7 +12,7 @@ window.EventListView = window.MainViewBase.extend({
 
     listLoadingEl: $('#list-loading'),
 
-    tableBodyEl: $('#event_list_container tbody'),
+    listEl: $('#event_list_container ul'),
 
     tableContainerEl: $('#list-table-container'),
 
@@ -96,12 +96,12 @@ window.EventListView = window.MainViewBase.extend({
         this.listLoadingEl.hide();
 
         this.tableContainerEl.show();
-        this.tableBodyEl.empty();
+        this.listEl.empty();
 
         _.each(this.collection.models, function(event_model){
             var event_view = new EventView({model: event_model});
 
-            that.tableBodyEl.append(event_view.render().$el);
+            that.listEl.append(event_view.render().$el);
         });
 
         this.updateSearchLabel(this.collection.models.length);
