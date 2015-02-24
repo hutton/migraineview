@@ -3,6 +3,12 @@
 *******************
 
 - Do Timeline
+    - Move gap label (63px, align left)
+    - Change list url
+    - Fix searching
+    - Move today up
+    - Fix inline edit update
+    
 
 - Did you know you can upload all your existing migraine data.
 
