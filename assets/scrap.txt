@@ -1,7 +1,9 @@
 
 http://docs.scipy.org/doc/numpy/reference/generated/numpy.random.binomial.html
 
-numpy.random.binomial(n, p, size=None)
+http://en.wikipedia.org/wiki/Binomial_test
+
+numpy.random.binomial(51, 1.0/6, 235)
 
 Blogs to target
 ===============
