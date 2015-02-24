@@ -84,7 +84,7 @@ window.App = Backbone.View.extend({
     },
 
     showEvents: function(event){
-        this.Routes.navigate(this.getCurrentBase() + '/list', {trigger: true});
+        this.Routes.navigate(this.getCurrentBase() + '/timeline', {trigger: true});
 
         event.preventDefault();
     },
@@ -149,17 +149,17 @@ window.Workspace = Backbone.Router.extend({
 
     routes: {
         ":base/report":         "statistics",
-        ":base/list":           "list",
+        ":base/timeline":           "timeline",
         ":base/add":            "add",
         ":base/account":        "options",
         ":base/export":         "export",
         "report":               "statistics",
-        "list":                 "list",
+        "timeline":                 "timeline",
         "add":                  "add",
         "account":              "options",
         "export":               "export",
         "shared/:base/report":  "statistics",
-        "shared/:base/list":    "list"
+        "shared/:base/timeline":    "timeline"
     },
 
     currentView: null,
@@ -182,7 +182,7 @@ window.Workspace = Backbone.Router.extend({
         $('#export-toggle').parent().removeClass('pure-menu-selected');
     },
 
-    list: function(){
+    timeline: function(){
         App.refreshData();
 
         App.addView.hide();

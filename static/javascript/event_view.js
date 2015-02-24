@@ -21,14 +21,7 @@ window.EventView = Backbone.View.extend({
     render: function(){
         var templateValues = this.model.toJSON();
 
-        var prev = this.model.get('previousModel');
-        var date = this.model.get('date');
-
-        if (prev != null){
-            templateValues['previous'] = date.getDifferenceText(prev.get('date'));
-        } else {
-            templateValues['previous'] = date.getDifferenceText((new Date()).convertDateToUTC());
-        }
+        templateValues['previous'] = this.getPreviousText();
 
         this.$el.html(this.template(templateValues));
 
@@ -53,18 +46,36 @@ window.EventView = Backbone.View.extend({
                 var filter = this.model.get('filter');
 
                 if (!_.isUndefined(filter) && filter.length > 0) {
-                    modelDict.start_text = replaceAll(modelDict.start_text, "<br/>", "º");
-                    modelDict.start_text = replaceAll(modelDict.start_text, filter, "<span>" + filter + "</span>");
-                    modelDict.start_text = replaceAll(modelDict.start_text, "º", "<br/>");
+                    modelDict.title = replaceAll(modelDict.title, filter, "<span>" + filter + "</span>");
 
-                    modelDict.duration_text = replaceAll(modelDict.duration_text, filter, "<span>" + filter + "</span>");
+                    modelDict.day = replaceAll(modelDict.day, filter, "<span>" + filter + "</span>");
+                    modelDict.dateText = replaceAll(modelDict.dateText, filter, "<span>" + filter + "</span>");
+                    modelDict.year = replaceAll(modelDict.year, filter, "<span>" + filter + "</span>");
+
                     modelDict.comment = replaceAll(modelDict.comment, filter, "<span>" + filter + "</span>");
                 }
             }
 
+            modelDict['previous'] = this.getPreviousText();
+
             var currentHtml = this.template(modelDict);
 
             this.$el.html(currentHtml);
+        }
+    },
+
+    getPreviousText: function(){
+        var prev = this.model.get('previousModel');
+        var date = this.model.get('date');
+
+        while (prev != null && prev.get('filtered')){
+            prev = prev.get('previousModel');
+        }
+
+        if (prev != null){
+            return date.getDifferenceText(prev.get('date'));
+        } else {
+            return  date.getDifferenceText((new Date()).convertDateToUTC());
         }
     }
 });

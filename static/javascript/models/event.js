@@ -14,9 +14,12 @@ window.EventModel = Backbone.Model.extend({
             'date': date,
             'dateText': date.getMonthNameShort() + " " + date.getDate(),
             'day': date.getWeekday(),
-            'year': date.getFullYear(),
+            'year': '' + date.getFullYear(),
             'title': date.getTimeText() + " - " + secondsToText(this.get('duration'))
         };
+
+        this.fullText = (dateValues['dateText'] + seperator + dateValues['day'] + seperator + dateValues['year'] + seperator + dateValues['title'] + seperator + this.get('comment')).toUpperCase();
+
 
         this.set(dateValues);
     }

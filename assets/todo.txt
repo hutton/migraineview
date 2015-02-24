@@ -8,6 +8,7 @@
     - Fix searching
     - Move today up
     - Fix inline edit update
+- Prevent edit in shared
     
 
 - Did you know you can upload all your existing migraine data.
