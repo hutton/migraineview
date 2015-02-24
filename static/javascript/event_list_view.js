@@ -96,12 +96,17 @@ window.EventListView = window.MainViewBase.extend({
         this.listLoadingEl.hide();
 
         this.tableContainerEl.show();
-        this.listEl.empty();
+        this.listEl.find('.lt-row').remove();
+
+        var previousModel = null;
 
         _.each(this.collection.models, function(event_model){
+            event_model.set('previousModel', previousModel);
             var event_view = new EventView({model: event_model});
 
             that.listEl.append(event_view.render().$el);
+
+            previousModel = event_model;
         });
 
         this.updateSearchLabel(this.collection.models.length);

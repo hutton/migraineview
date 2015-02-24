@@ -231,6 +231,19 @@
                                 Showing 62 attacks
                             </div>
                             <table>
+                                <tr>
+                                    <td>
+                                        <div class="tl-first-line">
+                                        </div>
+                                        <div class="tl-first-circle">
+                                            <div class="tl-day">Today</div>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="tl-comment">
+                                        </div>
+                                    </td>
+                                </tr>
 
                             </table>
                         </div>
@@ -497,10 +510,13 @@
 
     <script type="text/template" id="event-view-template">
             <td>
+                <div class="tl-previous">
+                    <%= previous %>
+                </div>
                 <div class="tl-line">
                 </div>
                 <div class="tl-circle">
-                    <div><%= date %></div>
+                    <div><%= dateText %></div>
                     <div class="tl-day"><%= day %></div>
                     <div><%= year %></div>
                 </div>

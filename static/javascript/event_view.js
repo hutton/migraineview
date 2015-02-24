@@ -10,6 +10,8 @@ window.EventView = Backbone.View.extend({
 
     tagName: 'tr',
 
+    className: 'tl-row',
+
     template: _.template($('#event-view-template').html()),
 
     events: {
@@ -19,14 +21,14 @@ window.EventView = Backbone.View.extend({
     render: function(){
         var templateValues = this.model.toJSON();
 
+        var prev = this.model.get('previousModel');
+        var date = this.model.get('date');
 
-        var date = (new Date(this.model.get('start').replace(" ", "T"))).convertDateToUTC();
-
-        templateValues['date'] = date.getMonthNameShort() + " " + date.getDate();
-        templateValues['day'] = date.getWeekday();
-        templateValues['year'] = date.getFullYear();
-
-        templateValues['title'] = date.getTimeText() + " for " + secondsToText(this.model.get('duration'));
+        if (prev != null){
+            templateValues['previous'] = date.getDifferenceText(prev.get('date'));
+        } else {
+            templateValues['previous'] = date.getDifferenceText((new Date()).convertDateToUTC());
+        }
 
         this.$el.html(this.template(templateValues));
 
@@ -40,8 +42,10 @@ window.EventView = Backbone.View.extend({
     changed: function(){
         if (this.model.get('filtered')){
             this.$el.hide();
+//            this.$el.velocity('transition.slideRightBigOut', {duration: 200});
         } else {
             this.$el.show();
+//            this.$el.velocity('transition.slideRightBigIn', {duration: 200});
 
             var modelDict = this.model.toJSON();
 
