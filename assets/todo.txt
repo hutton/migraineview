@@ -1,20 +1,16 @@
 *******************
  * More delight! *
 *******************
-
-- Do Timeline
-    - Move gap label (63px, align left)
-    - Change list url
-    - Fix searching
-    - Move today up
-    - Fix inline edit update
-- Prevent edit in shared
+- Add calendar and clock icons to add/edit
+- Make edit full screen for small screens
     
 
 - Did you know you can upload all your existing migraine data.
 
 Done
 ====
+- Do Timeline
+- Prevent edit in shared
 - Change popup to white
 - Fix delete data popup
 - Remove scroll positioner on tab switch
