@@ -5,20 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4ea88c3-5bc7-4b67-b3fb-d2fa76a7d74d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/admin.css" afterPath="$PROJECT_DIR$/static/css/admin.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/javascript/min/all-min.js" afterPath="$PROJECT_DIR$/static/javascript/min/all-min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/javascript/app.js" afterPath="$PROJECT_DIR$/static/javascript/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/common.css" afterPath="$PROJECT_DIR$/static/css/common.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/common.less" afterPath="$PROJECT_DIR$/static/css/common.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/error.css" afterPath="$PROJECT_DIR$/static/css/error.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/javascript/models/event.js" afterPath="$PROJECT_DIR$/static/javascript/models/event.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/javascript/event_list_view.js" afterPath="$PROJECT_DIR$/static/javascript/event_list_view.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/javascript/event_view.js" afterPath="$PROJECT_DIR$/static/javascript/event_view.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/events_view.css" afterPath="$PROJECT_DIR$/static/css/events_view.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/events_view.less" afterPath="$PROJECT_DIR$/static/css/events_view.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/home.css" afterPath="$PROJECT_DIR$/static/css/home.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.py" afterPath="$PROJECT_DIR$/main.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/main.html" afterPath="$PROJECT_DIR$/templates/main.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/more.css" afterPath="$PROJECT_DIR$/static/css/more.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/todo.txt" afterPath="$PROJECT_DIR$/assets/todo.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/shared.py" afterPath="$PROJECT_DIR$/app/shared.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/stats_view.less" afterPath="$PROJECT_DIR$/static/css/stats_view.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="migraineview.iws" />
@@ -45,63 +40,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="common.less" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/css/common.less">
+      <file leaf-file-name="main.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/main.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.88" vertical-offset="2616" max-vertical-offset="5190">
-              <caret line="204" column="30" selection-start-line="204" selection-start-column="30" selection-end-line="204" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="event.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/javascript/models/event.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="495">
-              <caret line="20" column="144" selection-start-line="20" selection-start-column="144" selection-end-line="20" selection-end-column="144" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/javascript/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="46.53846" vertical-offset="1495" max-vertical-offset="3810">
-              <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="report.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/report.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="2235">
-              <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main_view_base.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/javascript/main_view_base.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="213" max-vertical-offset="1005">
-              <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="stats_view.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/static/javascript/stats_view.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="4115" max-vertical-offset="4455">
-              <caret line="287" column="22" selection-start-line="287" selection-start-column="22" selection-end-line="287" selection-end-column="22" />
+            <state vertical-scroll-proportion="-4.94" vertical-offset="2918" max-vertical-offset="11745">
+              <caret line="211" column="60" selection-start-line="211" selection-start-column="60" selection-end-line="211" selection-end-column="60" />
               <folding />
             </state>
           </provider>
@@ -110,40 +53,88 @@
       <file leaf-file-name="events_view.less" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/css/events_view.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.208333" vertical-offset="2491" max-vertical-offset="2865">
-              <caret line="184" column="0" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
+            <state vertical-scroll-proportion="4.54" vertical-offset="497" max-vertical-offset="2865">
+              <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="event_list_view.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/javascript/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="407" max-vertical-offset="3810">
+              <caret line="41" column="39" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="stats_view.less" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/css/stats_view.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.14" vertical-offset="1128" max-vertical-offset="4995">
+              <caret line="99" column="18" selection-start-line="99" selection-start-column="18" selection-end-line="99" selection-end-column="18" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="event_view.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/javascript/event_view.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="15.923077" vertical-offset="834" max-vertical-offset="1335">
+              <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="attack_gap_view.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/javascript/attack_gap_view.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2910">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit_attack_view.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/javascript/edit_attack_view.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="1245" max-vertical-offset="2565">
+              <caret line="101" column="29" selection-start-line="101" selection-start-column="29" selection-end-line="101" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="better-dateinput-polyfill.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/javascript/better-dateinput-polyfill.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5025">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="attack_view.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/javascript/attack_view.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2340">
+              <caret line="66" column="43" selection-start-line="66" selection-start-column="43" selection-end-line="66" selection-end-column="43" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="event_list_view.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/javascript/event_list_view.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="498" max-vertical-offset="1950">
-              <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/main.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1107" max-vertical-offset="1770">
-              <caret line="94" column="51" selection-start-line="94" selection-start-column="51" selection-end-line="94" selection-end-column="51" />
-              <folding>
-                <element signature="e#597#606#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="todo.txt" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/assets/todo.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.305499" vertical-offset="0" max-vertical-offset="1275">
-              <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.5913978" vertical-offset="1315" max-vertical-offset="1950">
+              <caret line="106" column="54" selection-start-line="106" selection-start-column="54" selection-end-line="106" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -163,7 +154,6 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/app/example.py" />
-        <option value="$PROJECT_DIR$/static/css/stats_view.less" />
         <option value="$PROJECT_DIR$/static/javascript/stats_view.js" />
         <option value="$PROJECT_DIR$/app/authentication.py" />
         <option value="$PROJECT_DIR$/templates/admin/shared.html" />
@@ -175,7 +165,6 @@
         <option value="$PROJECT_DIR$/templates/error.html" />
         <option value="$PROJECT_DIR$/static/css/error.less" />
         <option value="$PROJECT_DIR$/app/report.py" />
-        <option value="$PROJECT_DIR$/app/shared.py" />
         <option value="$PROJECT_DIR$/assets/landing.txt" />
         <option value="$PROJECT_DIR$/static/css/logo.less" />
         <option value="$PROJECT_DIR$/assets/logo.html" />
@@ -204,15 +193,17 @@
         <option value="$PROJECT_DIR$/static/css/pure-overrides.less" />
         <option value="$PROJECT_DIR$/static/javascript/helper.js" />
         <option value="$PROJECT_DIR$/migraines.json" />
-        <option value="$PROJECT_DIR$/static/javascript/event_list_view.js" />
-        <option value="$PROJECT_DIR$/templates/main.html" />
-        <option value="$PROJECT_DIR$/static/javascript/event_view.js" />
         <option value="$PROJECT_DIR$/static/javascript/models/event.js" />
         <option value="$PROJECT_DIR$/static/javascript/app.js" />
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/static/css/common.less" />
-        <option value="$PROJECT_DIR$/static/css/events_view.less" />
         <option value="$PROJECT_DIR$/assets/todo.txt" />
+        <option value="$PROJECT_DIR$/templates/main.html" />
+        <option value="$PROJECT_DIR$/app/shared.py" />
+        <option value="$PROJECT_DIR$/static/javascript/event_view.js" />
+        <option value="$PROJECT_DIR$/static/css/events_view.less" />
+        <option value="$PROJECT_DIR$/static/css/stats_view.less" />
+        <option value="$PROJECT_DIR$/static/javascript/event_list_view.js" />
       </list>
     </option>
   </component>
@@ -646,7 +637,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3149931" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3772291" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25447044" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25447044" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Documentation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="FLOATING" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" x="100" y="100" width="1080" height="600" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -699,27 +690,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/libs/six.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9803921" vertical-offset="6439" max-vertical-offset="11295">
-          <caret line="436" column="25" selection-start-line="436" selection-start-column="16" selection-end-line="436" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Python/2.7/site-packages/tweepy/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="7485">
-          <caret line="18" column="24" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file:///Library/Python/2.7/site-packages/twitter/api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="54420">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Python/2.7/site-packages/twitter/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="62" max-vertical-offset="705">
@@ -788,18 +758,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/javascript/add_view.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3165">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/javascript/admin/tweets.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
           <caret line="6" column="36" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
+          <folding>
+            <element signature="n#!!doc;n#messageChanged#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -892,14 +857,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/javascript/edit_attack_view.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="2565">
-          <caret line="18" column="6" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/css/home.less">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-17.916666" vertical-offset="5000" max-vertical-offset="5685">
@@ -943,16 +900,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/example.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1065">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#9#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/migraines.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.166667" vertical-offset="7991" max-vertical-offset="8445">
@@ -977,42 +924,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/main.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.96" vertical-offset="7582" max-vertical-offset="11685">
-          <caret line="512" column="39" selection-start-line="512" selection-start-column="28" selection-end-line="512" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/javascript/attack_view.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="727" max-vertical-offset="2340">
-          <caret line="66" column="43" selection-start-line="66" selection-start-column="43" selection-end-line="66" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/javascript/event_view.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="552" max-vertical-offset="1305">
-          <caret line="44" column="45" selection-start-line="44" selection-start-column="45" selection-end-line="44" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/javascript/calendar_report_view.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="2175" max-vertical-offset="5295">
           <caret line="159" column="0" selection-start-line="159" selection-start-column="0" selection-end-line="159" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/javascript/attack_gap_view.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2910">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1025,22 +940,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/report.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="2235">
-          <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1107" max-vertical-offset="1770">
           <caret line="94" column="51" selection-start-line="94" selection-start-column="51" selection-end-line="94" selection-end-column="51" />
           <folding>
-            <element signature="e#597#606#0" expanded="true" />
+            <element signature="e#597#606#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1049,22 +954,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.88" vertical-offset="2616" max-vertical-offset="5190">
           <caret line="204" column="30" selection-start-line="204" selection-start-column="30" selection-end-line="204" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/javascript/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="46.53846" vertical-offset="1495" max-vertical-offset="3810">
-          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/static/javascript/event_list_view.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="498" max-vertical-offset="1950">
-          <caret line="41" column="4" selection-start-line="41" selection-start-column="4" selection-end-line="41" selection-end-column="4" />
           <folding />
         </state>
       </provider>
@@ -1085,18 +974,128 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/events_view.less">
+    <entry file="file://$PROJECT_DIR$/assets/todo.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.208333" vertical-offset="2491" max-vertical-offset="2865">
-          <caret line="184" column="0" selection-start-line="184" selection-start-column="0" selection-end-line="184" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="1275">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/todo.txt">
+    <entry file="file://$PROJECT_DIR$/app/report.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.305499" vertical-offset="0" max-vertical-offset="1275">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="2235">
+          <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/example.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1065">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/shared.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="633" max-vertical-offset="1335">
+          <caret line="62" column="32" selection-start-line="62" selection-start-column="32" selection-end-line="62" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/javascript/add_view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="903" max-vertical-offset="3165">
+          <caret line="69" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/events_view.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.54" vertical-offset="497" max-vertical-offset="2865">
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/css/stats_view.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.14" vertical-offset="1128" max-vertical-offset="4995">
+          <caret line="99" column="18" selection-start-line="99" selection-start-column="18" selection-end-line="99" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/javascript/event_view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="15.923077" vertical-offset="834" max-vertical-offset="1335">
+          <caret line="28" column="6" selection-start-line="28" selection-start-column="6" selection-end-line="28" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/javascript/attack_gap_view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2910">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/javascript/better-dateinput-polyfill.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5025">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/javascript/attack_view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="727" max-vertical-offset="2340">
+          <caret line="66" column="43" selection-start-line="66" selection-start-column="43" selection-end-line="66" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/javascript/edit_attack_view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="1245" max-vertical-offset="2565">
+          <caret line="101" column="29" selection-start-line="101" selection-start-column="29" selection-end-line="101" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/javascript/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="407" max-vertical-offset="3810">
+          <caret line="41" column="39" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.94" vertical-offset="2918" max-vertical-offset="11745">
+          <caret line="211" column="60" selection-start-line="211" selection-start-column="60" selection-end-line="211" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/static/javascript/event_list_view.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5913978" vertical-offset="1315" max-vertical-offset="1950">
+          <caret line="106" column="54" selection-start-line="106" selection-start-column="54" selection-end-line="106" selection-end-column="54" />
           <folding />
         </state>
       </provider>

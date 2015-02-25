@@ -60,7 +60,7 @@ class Shared(webapp2.RequestHandler):
                 response['show_logout'] = False
                 response['show_add'] = False
                 response['show_options'] = False
-                response['shared_link'] = True
+                response['shared'] = True
                 response['web_debug'] = Configuration.get_instance().web_debug
 
                 path = os.path.join(os.path.join(os.path.dirname(__file__), 'html'), '../../templates/main.html')

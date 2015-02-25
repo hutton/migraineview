@@ -29,7 +29,9 @@ window.EventView = Backbone.View.extend({
     },
 
     showDetails: function(){
-        window.App.eventsView.showDetails(this.model);
+        if (!App.shared) {
+            window.App.eventsView.showDetails(this.model);
+        }
     },
 
     changed: function(){

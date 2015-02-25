@@ -747,6 +747,10 @@
             window.App.example = true;
             {% endif %}
 
+            {% if shared %}
+            window.App.shared = true;
+            {% endif %}
+
             window.App.loadData({{ data|safe }});
 
             var enablePushState = true;

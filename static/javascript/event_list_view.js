@@ -96,7 +96,7 @@ window.EventListView = window.MainViewBase.extend({
         this.listLoadingEl.hide();
 
         this.tableContainerEl.show();
-        this.listEl.find('.lt-row').remove();
+        this.listEl.find('.tl-row').remove();
 
         var previousModel = null;
 

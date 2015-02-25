@@ -87,7 +87,7 @@
     background: yellow;
 }
 
-@line-color: rgba(0,0,0,0.1);
+@line-color: #DFDFDF;
 
 #list-table-container table{
 }
@@ -107,14 +107,14 @@
 .tl-line{
     height: 100%;
     width: 52px;
-    border-right: 4px solid rgba(0,0,0,0.1);
+    border-right: 4px solid @line-color;
     position: absolute;
     top: 0px;
     z-index: 10;
 }
 .tl-line:before{
     content: '';
-    border-top: 4px solid rgba(0,0,0,0.1);
+    border-top: 4px solid @line-color;
     width: 20px;
     position: relative;
     z-index: 10;
@@ -129,7 +129,7 @@
     border-radius: 100px;
     width: 100px;
     height: 100px;
-    border: 4px solid rgba(0,0,0,0.1);
+    border: 4px solid @line-color;
     z-index: 11;
     position: relative;
     text-align: center;
@@ -181,5 +181,5 @@
 
     width: 100px;
     z-index: 15;
-    color: #C0C0C0;
+    color: #b0b0b0;
 }
