@@ -3,7 +3,7 @@
 *******************
 - Add calendar and clock icons to add/edit
 - Make edit full screen for small screens
-    
+- Allow add from timeline
 
 - Did you know you can upload all your existing migraine data.
 
