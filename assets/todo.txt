@@ -1,6 +1,7 @@
 *******************
  * More delight! *
 *******************
+- Fix up ICS stats
 - Add calendar and clock icons to add/edit
 - Make edit full screen for small screens
 - Allow add from timeline
