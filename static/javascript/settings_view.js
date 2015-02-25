@@ -38,7 +38,7 @@ window.SettingsView = window.MainViewBase.extend({
 
             this.clearAllAttacksPopupEl.velocity(
                 { opacity: 1.0, top: [60, 200], scaleX: [1.0, 0.8], scaleY: [1.0, 0.8] },
-            { display: "inline-block", duration: 300, easing: [.37,1,.55,1.24] });
+            { display: "inline-block", duration: 300, easing: [0.175, 0.885, 0.32, 1.275] });
 
             this.yesButton.removeClass('pure-button-disabled');
         }

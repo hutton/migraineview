@@ -26,7 +26,8 @@ window.EventListView = window.MainViewBase.extend({
 
     events: {
         "input #list-search-input": "searchInputChanged",
-        "click #list-search-input-clear": "clearInputClicked"
+        "click #list-search-input-clear": "clearInputClicked",
+        "click .tl-add-attack":         "addAttack"
     },
 
     render: function(){
@@ -120,5 +121,9 @@ window.EventListView = window.MainViewBase.extend({
 
     showDetails: function(model){
         this.editAttackView.show(model);
+    },
+
+    addAttack: function(){
+        this.editAttackView.show(null);
     }
 });

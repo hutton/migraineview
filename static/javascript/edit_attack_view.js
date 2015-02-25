@@ -44,7 +44,7 @@ window.EditAttackView = Backbone.View.extend({
 
         this.popupEl.velocity(
             { opacity: 1.0, top: [60, 200], scaleX: [1.0, 0.8], scaleY: [1.0, 0.8] },
-            { display: "block", duration: 300, easing: [.37,1,.55,1.24] });
+            { display: "block", duration: 300, easing: [0.175, 0.885, 0.32, 1.275] });
 
         this.attackView.setModel(model);
         this.deleteButton.removeClass('delete-sure');

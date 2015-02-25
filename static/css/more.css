@@ -4130,6 +4130,10 @@ a {
 .popup-header .fa-close {
   float: right;
   opacity: 0.4;
+  position: relative;
+  padding: 10px;
+  top: -10px;
+  right: -10px;
 }
 .popup-header .fa-close:hover {
   opacity: 0.8;
@@ -4266,6 +4270,18 @@ input[type=date] {
   max-width: 600px;
   display: block;
   border-radius: 10px;
+}
+@media (max-width: 600px) {
+  #attack-details-popup .popup {
+    position: absolute;
+    top: 0px !important;
+    left: 0px;
+    margin: 0px;
+    border-radius: 0px;
+    min-height: 100%;
+    width: 100%;
+    border: none;
+  }
 }
 #attack-details-popup .pure-form-aligned .pure-control-group label {
   width: 7em;
@@ -4714,6 +4730,24 @@ line.line {
   width: 100px;
   z-index: 15;
   color: #b0b0b0;
+}
+.tl-add-attack {
+  cursor: pointer;
+  color: #d8d8d8;
+  font-size: 150%;
+  -moz-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+  position: relative;
+  top: 9px;
+}
+.tl-add-attack:hover {
+  color: #606060;
+}
+.tl-add-attack span {
+  background: none !important;
+  margin-left: 8px;
 }
 #settings-buttons-message {
   margin: 20px 0px;

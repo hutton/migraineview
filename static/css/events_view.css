@@ -149,3 +149,15 @@
   z-index: 15;
   color: #b0b0b0;
 }
+.tl-add-attack {
+  cursor: pointer;
+  color: #d8d8d8;
+  font-size: 150%;
+}
+.tl-add-attack:hover {
+  color: #a0a0a0;
+}
+.tl-add-attack span {
+  background: none !important;
+  margin-left: 8px;
+}
