@@ -5,6 +5,8 @@ http://en.wikipedia.org/wiki/Binomial_test
 
 numpy.random.binomial(51, 1.0/6, 235)
 
+https://github.com/timdream/wordcloud2.js
+
 Blogs to target
 ===============
 http://www.thedailyheadache.com/
