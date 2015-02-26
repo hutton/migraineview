@@ -354,17 +354,6 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
-	"\/tp\/fastclick.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/tp\/fastclick.js",
-		"outputAbbreviatedPath": "\/tp\/min\/fastclick-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/tp\/jquery-2.0.3.min.js": {
 		"fileType": 64,
 		"ignore": 1,
