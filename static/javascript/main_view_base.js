@@ -40,6 +40,8 @@ window.MainViewBase = Backbone.View.extend({
                 App.currentView.$el.hide();
                 element.$el.show();
 
+                element.$el.scrollTop();
+
                 this.onShow();
             } else {
                 App.currentView.$el.velocity("transition.slideLeftOut", {duration: duration, complete: function(){

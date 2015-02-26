@@ -7,6 +7,7 @@
 // @codekit-prepend "tp/d3.v3.min.js";
 // @codekit-prepend "tp/velocity.min.js";
 // @codekit-prepend "tp/velocity.ui.min.js";
+// @codekit-prepend "tp/fastclick.js";
 
 // @codekit-prepend "tp/better-dom.js";
 // @codekit-prepend "tp/better-i18n-plugin.js";

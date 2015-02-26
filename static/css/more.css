@@ -4116,6 +4116,7 @@ a {
   border-top-left-radius: 8px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
   font-weight: bold;
+  background: #fafafa;
 }
 .popup-footer {
   padding: 18px 20px;
@@ -4742,7 +4743,8 @@ line.line {
   -o-transition-duration: 0.2s;
   transition-duration: 0.2s;
   position: relative;
-  top: 9px;
+  padding: 9px;
+  left: -9px;
 }
 .tl-add-attack:hover {
   color: #606060;
@@ -4923,4 +4925,16 @@ line.line {
 }
 .pure-menu-heading:hover {
   padding-left: 1.2em !important;
+}
+.time-selector i {
+  position: relative;
+  width: 0px;
+  font-size: 130%;
+  left: 17px;
+  top: 2px;
+  color: #cdcdcd;
+  pointer-events: none;
+}
+.time-selector select {
+  padding-left: 40px;
 }
