@@ -21,6 +21,7 @@
 // @codekit-prepend "main_view_base.js";
 // @codekit-prepend "attack_view.js";
 // @codekit-prepend "edit_attack_view.js";
+// @codekit-prepend "new_attack_view.js";
 
 // @codekit-prepend "add_view.js";
 

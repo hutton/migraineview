@@ -30,12 +30,6 @@ class Example(webapp2.RequestHandler):
                                                 20, 0, 0)
 
         for event in events:
-            if 'StartText' not in event:
-                event['StartText'] = create_start_text(event['Start'])
-
-            if 'DurationText' not in event:
-                event['DurationText'] = create_duration_text(event['Duration'])
-
             event['Id'] = i
             i -= 1
 

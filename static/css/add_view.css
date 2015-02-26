@@ -42,45 +42,6 @@ input[type=date] {
 #add-status-panel {
   text-align: center;
 }
-#attack-details-popup .popup {
-  text-align: left;
-  max-width: 600px;
-  display: block;
-  border-radius: 10px;
-}
-@media (max-width: 600px) {
-  #attack-details-popup .popup {
-    position: absolute;
-    top: 0px !important;
-    left: 0px;
-    margin: 0px;
-    border-radius: 0px;
-    min-height: 100%;
-    width: 100%;
-    border: none;
-  }
-}
-#attack-details-popup .pure-form-aligned .pure-control-group label {
-  width: 7em;
-}
-#attack-details-popup .text-area-container {
-  margin-left: 0px;
-}
-@media (min-width: 48em) {
-  #attack-details-popup .pure-form-aligned .pure-controls {
-    margin-left: 8em;
-  }
-}
-@media (min-width: 480px) {
-  #attack-details-popup .text-area-container {
-    margin-left: 8em;
-  }
-}
-#attack-details-popup .popup-title {
-  font-size: 160%;
-  opacity: 0.75;
-  margin-top: 15px;
-}
 #single-upload-attack-view-container p {
   margin: 0px;
   max-width: none;

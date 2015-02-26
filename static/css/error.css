@@ -4212,6 +4212,23 @@ a {
 .text-area-container > textarea {
   width: 100%;
 }
+.popup-edit {
+  text-align: left;
+  max-width: 600px;
+  display: block;
+  border-radius: 10px;
+}
+.popup-edit .pure-form-aligned .pure-control-group label {
+  width: 7em;
+}
+.popup-edit .text-area-container {
+  margin-left: 0px;
+}
+.popup-edit .popup-title {
+  font-size: 160%;
+  opacity: 0.75;
+  margin-top: 15px;
+}
 @media only screen and (max-width: 480px) {
   .text-area-container {
     margin-left: 0px;
@@ -4219,6 +4236,28 @@ a {
   }
   .text-area-container > textarea {
     width: 100%;
+  }
+}
+@media (min-width: 48em) {
+  .popup .pure-form-aligned .pure-controls {
+    margin-left: 8em;
+  }
+}
+@media (min-width: 480px) {
+  .popup .text-area-container {
+    margin-left: 8em;
+  }
+}
+@media (max-width: 600px) {
+  .popup-full-screen-on-mobile {
+    position: absolute;
+    top: 0px !important;
+    left: 0px;
+    margin: 0px;
+    border-radius: 0px;
+    min-height: 100%;
+    width: 100%;
+    border: none;
   }
 }
 /*---------------------------------------------------

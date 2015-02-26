@@ -6,9 +6,13 @@ window.EventModel = Backbone.Model.extend({
     initialize: function() {
         var seperator = "º";
 
-        this.fullText = (this.get('duration_text') + seperator + replaceAll(this.get('start_text'),"<br/>",seperator) + seperator + this.get('comment')).toUpperCase();
+        var date = null;
 
-        var date = (new Date(this.get('start').replace(" ", "T"))).convertDateToUTC();
+        if (this.has('date')){
+            date = this.get('date');
+        } else{
+            date = (new Date(this.get('start').replace(" ", "T"))).convertDateToUTC();
+        }
 
         var dateValues = {
             'date': date,
