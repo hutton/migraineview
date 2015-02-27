@@ -1,4 +1,9 @@
 
+helper.py ln:80
+'date': event['ShortStartDate'],
+
+
+
 http://docs.scipy.org/doc/numpy/reference/generated/numpy.random.binomial.html
 
 http://en.wikipedia.org/wiki/Binomial_test
