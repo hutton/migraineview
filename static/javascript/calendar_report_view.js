@@ -308,10 +308,10 @@ window.CalendarReportView = Backbone.View.extend({
         var dates = {};
 
         _.each(events, function(event){
-            if (event.start in dates){
-                dates[event.start] = [dates[event.start][0] + 1, dates[event.start][0] + "\n" + event.comment];
+            if (event.dateText in dates){
+                dates[event.dateText] = [dates[event.dateText][0] + 1, dates[event.dateText][0] + "\n" + event.comment];
             } else {
-                dates[event.start] = [1, event.comment];
+                dates[event.dateText] = [1, event.comment];
             }
         });
 
