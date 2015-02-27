@@ -2,6 +2,7 @@
  * More delight! *
 *******************
 - tl-line min-height: 200px;
+- Check stats onShow is triggered when loaded on timeline
 
 - When you add attack "Thanks for logging. Remember more attacks you log the better stats we can give you"
 - Tag cloud
