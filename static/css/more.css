@@ -4672,6 +4672,7 @@ line.line {
 }
 .tl-line {
   height: 100%;
+  min-height: 200px;
   width: 52px;
   border-right: 4px solid #dfdfdf;
   position: absolute;
@@ -4714,6 +4715,7 @@ line.line {
 }
 .tl-first-line {
   height: 100%;
+  min-height: 200px;
   width: 52px;
   border-right: 4px solid #dfdfdf;
   position: absolute;
@@ -4937,11 +4939,11 @@ line.line {
   position: relative;
   width: 0px;
   font-size: 130%;
-  left: 17px;
+  left: 14px;
   top: 2px;
   color: #cdcdcd;
   pointer-events: none;
 }
 .time-selector select {
-  padding-left: 40px;
+  padding-left: 34px;
 }

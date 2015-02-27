@@ -138,6 +138,8 @@ window.EventListView = window.MainViewBase.extend({
     },
 
     addAttack: function(){
-        this.newAttackView.show();
+        if (!App.shared) {
+            this.newAttackView.show();
+        }
     }
 });

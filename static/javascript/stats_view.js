@@ -285,6 +285,9 @@ window.StatisticsView = window.MainViewBase.extend({
 
             this.monthsOfYearBarView.chart.resize(this.monthsOfYearBarView.chart.render, true);
             this.monthsOfYearBarView.chartByYear.resize(this.monthsOfYearBarView.chartByYear.render, true);
+
+            this.attackGapView.resize();
+            this.calendarReportView.doResize();
         } catch (err){
 
         }
