@@ -111,7 +111,7 @@ window.AttackView = Backbone.View.extend({
         if (started >= ended){
             this.durationGroupEl.show();
             this.durationLabelEl.html("");
-            this.durationValueEl.html("Select a valid duration");
+            this.durationValueEl.html("<i class='fa fa-exclamation-triangle'></i> Recovered time is before started");
         } else {
 
             var timeDiff = Math.abs(ended.getTime() - started.getTime());

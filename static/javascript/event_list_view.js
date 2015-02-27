@@ -26,6 +26,8 @@ window.EventListView = window.MainViewBase.extend({
 
     listSearchInputClearEl: $('#list-search-input-clear'),
 
+    hiddenRows: null,
+
     events: {
         "input #list-search-input": "searchInputChanged",
         "click #list-search-input-clear": "clearInputClicked",
@@ -43,7 +45,15 @@ window.EventListView = window.MainViewBase.extend({
     },
 
     onShow: function(){
-        //this.listSearchInputEl.focus();
+        if (this.hiddenRows != null){
+            this.hiddenRows.show();
+        }
+    },
+
+    onHidden: function(){
+        this.hiddenRows = this.listEl.find('.tl-row').slice(4);
+
+        this.hiddenRows.hide();
     },
 
     searchInputChanged: function(){
@@ -111,6 +121,8 @@ window.EventListView = window.MainViewBase.extend({
 
             previousModel = event_model;
         });
+
+        this.onHidden();
 
         this.updateSearchLabel(this.collection.models.length);
     },

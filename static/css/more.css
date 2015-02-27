@@ -4150,7 +4150,10 @@ a {
 }
 .popup-buttons > button {
   margin: 10px 10px 0px 10px;
-  min-width: 80px;
+  min-width: 90px;
+}
+.big-popup-button {
+  min-width: 90px;
 }
 .panel {
   font-size: 16px;
@@ -4267,6 +4270,10 @@ input[type=date] {
 }
 .add-duration-group-container {
   margin: 30px 0px;
+}
+#add-duration-group > span .fa {
+  color: red;
+  margin-right: 4px;
 }
 #add-comment-text {
   height: 140px;
