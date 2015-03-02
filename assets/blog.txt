@@ -1,1 +1,17 @@
 Blog - statistical significance
+
+# Your Migraine Timeline
+
+There’s a new feature we’re adding to Migraine.Report today, <a href=“http://migraine.report/example/timeline”>Timelines</a>.
+
+<image>
+
+You can now see a complete timeline of all your attacks in one view, see all details about each attack and also the time between attacks.  Your timeline is instantly searchable so finding patterns in your attacks should be even easier.
+
+From the timeline view you can add new attacks as well as update and delete existing ones.
+
+If you have any feedback on this feature or any other then please let me know <a href=“mailto:simon@migraine.report”>simon@migraine.report</a>.  Thanks.
+
+
+
+

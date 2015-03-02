@@ -122,7 +122,9 @@ window.EventListView = window.MainViewBase.extend({
             previousModel = event_model;
         });
 
-        this.onHidden();
+        if (!this.visible){
+            this.onHidden();
+        }
 
         this.updateSearchLabel(this.collection.models.length);
     },

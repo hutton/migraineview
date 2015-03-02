@@ -12,7 +12,7 @@ window.MainViewBase = Backbone.View.extend({
 
     show: function(){
         if (!this.visible){
-            this.switchToView(this);
+            this.switchToView();
 
             this.visible = true;
         }
@@ -25,12 +25,9 @@ window.MainViewBase = Backbone.View.extend({
     },
 
     hide: function(){
-        if (this.visible){
-            this.visible = false;
-        }
     },
 
-    switchToView: function(element){
+    switchToView: function(){
         var that = this;
         var duration = 100;
 
@@ -39,32 +36,34 @@ window.MainViewBase = Backbone.View.extend({
             if ($(window).width() < 1024){
                 App.currentView.$el.hide();
 
+                App.currentView.visible = false;
                 App.currentView.onHidden();
-                element.$el.show();
+                this.$el.show();
 
                 $(window).scrollTop();
 
-                App.currentView = element;
+                App.currentView = this;
 
                 this.onShow();
             } else {
                 App.currentView.$el.velocity("transition.slideLeftOut", {duration: duration, complete: function(){
+                    App.currentView.visible = false;
                     App.currentView.onHidden();
-                    element.$el.velocity("transition.slideLeftIn", {duration: duration, complete: function(elements){
-                        element.$el.removeAttr('style');
+                    that.$el.velocity("transition.slideLeftIn", {duration: duration, complete: function(elements){
+                        that.$el.removeAttr('style');
 
                         that.onShow();
 
-                        App.currentView = element;
+                        App.currentView = that;
                     }});
                 }});
             }
         } else {
-            element.$el.show();
+            this.$el.show();
 
             that.onShow();
 
-            App.currentView = element;
+            App.currentView = this;
         }
     }
 });
