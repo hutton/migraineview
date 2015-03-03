@@ -1,3 +1,14 @@
+Track Your Migraines
+See a beautiful timeline of all
+your migraines where you can instantly
+add, update and search everything.
+
+
+$('.pop').animate({
+  'background-position-x': '10%',
+  'background-position-y': '20%'
+}, 10000, 'linear');
+
 background: -moz-linear-gradient(338deg, rgba(2,12,18,1) 0%, rgba(31,141,214,1) 62%, rgba(223,233,247,1) 100%); /* ff3.6+ */
 background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(2,12,18,1)), color-stop(62%, rgba(31,141,214,1)), color-stop(100%, rgba(223,233,247,1))); /* safari4+,chrome */
 background: -webkit-linear-gradient(338deg, rgba(2,12,18,1) 0%, rgba(31,141,214,1) 62%, rgba(223,233,247,1) 100%); /* safari5.1+,chrome10+ */
