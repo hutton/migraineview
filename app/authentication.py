@@ -108,6 +108,7 @@ class AuthHandler(BaseRequestHandler, SimpleAuthHandler):
         'facebook': {
             'id': lambda id: ('avatar_url', FACEBOOK_AVATAR_URL.format(id)),
             'name': 'name',
+            'email': 'email',
             'link': 'link'
         },
         'google': {
@@ -118,11 +119,13 @@ class AuthHandler(BaseRequestHandler, SimpleAuthHandler):
         'googleplus': {
             'image': lambda img: ('avatar_url', img.get('url', DEFAULT_AVATAR_URL)),
             'displayName': 'name',
+            'emails': lambda emails: ('email', emails[0].get('value')),
             'url': 'link'
         },
         'windows_live': {
             'avatar_url': 'avatar_url',
             'name': 'name',
+            'emails': lambda emails: ('email', emails['preferred']),
             'link': 'link'
         },
         'twitter': {

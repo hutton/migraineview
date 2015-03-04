@@ -67,7 +67,8 @@ body{
 }
 
 .home-menu.pure-menu-open {
-    background: rgba(241, 244, 245, 0.83);
+
+    background: rgba(30, 31, 31, 0.24);
 }
 .pure-menu.pure-menu-open.pure-menu-fixed {
     /* Fixed menus normally have a border at the bottom. */
@@ -110,16 +111,13 @@ body{
 	background-position: center center;
 	background-size: cover;
 
-//    background-image: linear-gradient(transparent, rgba(0, 0, 0, 0.0) 40%, rgba(0, 0, 0, 0.04));
-
-
-//    background: -moz-radial-gradient(center, ellipse cover, @splash-start 0%, @splash-middle 86%, @splash-end 100%);
-//    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,@splash-start), color-stop(86%,@splash-middle), color-stop(100%,@splash-end));
-//    background: -webkit-radial-gradient(center, ellipse cover, @splash-start 0%,@splash-middle 86%,@splash-end 100%);
-//    background: -o-radial-gradient(center, ellipse cover, @splash-start 0%,@splash-middle 86%,@splash-end 100%);
-//    background: -ms-radial-gradient(center, ellipse cover, @splash-start 0%,@splash-middle 86%,@splash-end 100%);
-//    background: radial-gradient(ellipse at center, @splash-start 0%,@splash-middle 86%,@splash-end 100%);
-//    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='@splash-start', endColorstr='@splash-end',GradientType=1 );
+    background: -moz-linear-gradient(336deg, rgba(10,49,74,1) 0%, rgba(31,141,214,1) 93%, rgba(31,141,214,1) 100%); /* ff3.6+ */
+    background: -webkit-gradient(linear, left top, right bottom, color-stop(0%, rgba(10,49,74,1)), color-stop(93%, rgba(31,141,214,1)), color-stop(100%, rgba(31,141,214,1))); /* safari4+,chrome */
+    background: -webkit-linear-gradient(336deg, rgba(10,49,74,1) 0%, rgba(31,141,214,1) 93%, rgba(31,141,214,1) 100%); /* safari5.1+,chrome10+ */
+    background: -o-linear-gradient(336deg, rgba(10,49,74,1) 0%, rgba(31,141,214,1) 93%, rgba(31,141,214,1) 100%); /* opera 11.10+ */
+    background: -ms-linear-gradient(336deg, rgba(10,49,74,1) 0%, rgba(31,141,214,1) 93%, rgba(31,141,214,1) 100%); /* ie10+ */
+    background: linear-gradient(114deg, rgba(10,49,74,1) 0%, rgba(31,141,214,1) 93%, rgba(31,141,214,1) 100%); /* w3c */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0A314A', endColorstr='#1f8dd6',GradientType=1 ); /* ie6-9 */
 
     border-bottom: 1px solid rgba(0,0,0,0.1);
 }
@@ -131,6 +129,7 @@ body{
     position: relative;
     top: 0px; left: 0; bottom: 0; right: 0;
     text-align: center;
+
 }
 
 /* This is the main heading that appears on the blue section */
@@ -138,7 +137,7 @@ body{
     font-size: 300%;
     padding-top: 80px;
 
-    color: #444;
+    color: white;
     font-weight: 100;
     line-height: 1.2em;
     margin: 0px;
@@ -146,7 +145,7 @@ body{
 
 /* This is the subheading that appears on the blue section */
 .splash-subhead {
-    color: #888;
+    color: white;
     letter-spacing: 0.05em;
     opacity: 0.8;
     font-size: 135%;
@@ -177,22 +176,27 @@ body{
 @signup-button-color: #ca3c3c;
 
 .splash-button{
-    padding: 0.5em 1em;
-    min-width: 130px;
-    margin: 10px;
-    font-size: 125%;
+    color: white;
+    padding: 6px 10px;
+    min-width: 100px;
+    font-size: 100%;
     border-radius: 6px;
     position: relative;
     top: 0px;
+    margin: 20px 0px;
     .transition-duration(0.3s);
 }
 
 #tour-button{
+    .splash-button;
     background: @tour-button-color;
     border-bottom: 2px solid #125784;
+    margin-right: 20px;
+
 }
 
 #get-started-button{
+    .splash-button;
     background: @signup-button-color;
     border-bottom: 2px solid #8b1f1f;
 }
@@ -223,6 +227,52 @@ body{
 
 #hero-image{
     margin: 0px auto 20px;
+}
+
+/********************/
+/* Animation Splash */
+/********************/
+.ani-text-box{
+    color: white;
+    margin: 60px auto 20px;
+    width: 320px;
+}
+
+.ani-header{
+    font-size: 170%;
+    margin-bottom: 20px;
+}
+
+.ani-body{
+    font-weight: 100;
+    font-size: 130%;
+    line-height: 1.6em;
+}
+
+.ani-iphone-image-container{
+    width: 240px;
+    height: 486px;
+    position: relative;
+    overflow: hidden;
+    margin: auto;
+}
+
+.ani-iphone-image{
+    background: url('/static/images/iPhone6small.png') no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.ani-iphone-content-image{
+    background: url('/static/images/timeline.png') no-repeat;
+    width: 100%;
+    position: absolute;
+    top: 58px;
+    left: 13px;
+    bottom: 20px;
 }
 
 /* Content */

@@ -37,10 +37,10 @@ AUTH_CONFIG = {
   # OAuth 2.0 providers
   'google': (GOOGLE_APP_ID, GOOGLE_APP_SECRET,
              'https://www.googleapis.com/auth/userinfo.profile'),
-  'googleplus': (GOOGLE_APP_ID, GOOGLE_APP_SECRET, 'profile'),
+  'googleplus': (GOOGLE_APP_ID, GOOGLE_APP_SECRET, 'profile email'),
   'linkedin2': (LINKEDIN_KEY, LINKEDIN_SECRET, 'r_basicprofile'),
-  'facebook': (FACEBOOK_APP_ID, FACEBOOK_APP_SECRET, 'user_about_me'),
-  'windows_live': (WL_CLIENT_ID, WL_CLIENT_SECRET, 'wl.signin'),
+  'facebook': (FACEBOOK_APP_ID, FACEBOOK_APP_SECRET, 'user_about_me,email'),
+  'windows_live': (WL_CLIENT_ID, WL_CLIENT_SECRET, 'wl.signin wl.emails'),
   'foursquare': (FOURSQUARE_CLIENT_ID, FOURSQUARE_CLIENT_SECRET,
                  'authorization_code'),
 
