@@ -29,10 +29,17 @@
 
 }
 
-Easily track your migraines
-See a beautiful timeline of all
-your migraines where you can instantly
+Your migraine timeline
+Effortlessly track your migraines
+Log your migraines on a beautiful
+where you can instantly
 add, update and search everything.
+
+Understand your migraines
+
+
+Import or Export it's your data
+
 
 
 $('.pop').animate({
