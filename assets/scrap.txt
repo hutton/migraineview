@@ -1,3 +1,15 @@
+#wrap {
+    float: left;
+    position: relative;
+    left: 50%;
+}
+
+#content {
+    float: left;
+    position: relative;
+    left: -50%;
+}
+
 .box {
     background: url( 'img/box-bg.png' ) no-repeat top left;
     width: 200px;
@@ -17,7 +29,7 @@
 
 }
 
-Track Your Migraines
+Easily track your migraines
 See a beautiful timeline of all
 your migraines where you can instantly
 add, update and search everything.
