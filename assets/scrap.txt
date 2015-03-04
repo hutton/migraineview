@@ -1,3 +1,22 @@
+.box {
+    background: url( 'img/box-bg.png' ) no-repeat top left;
+    width: 200px;
+    height: 200px;
+}
+@media only screen and ( -webkit-min-device-pixel-ratio: 1.3 ),
+       only screen and (    min--moz-device-pixel-ratio: 1.3 ),
+       only screen and (      -o-min-device-pixel-ratio: 2.6/2 ), /* returns 1.3, see Dev.Opera */
+       only screen and (         min-device-pixel-ratio: 1.3 ),
+       only screen and ( min-resolution: 124.8dpi ),
+       only screen and ( min-resolution: 1.3dppx ) {
+
+       .box {
+           background: url( 'img/box-bg@2x.png' ) no-repeat top left;
+           background-size: 200px 200px;
+       }
+
+}
+
 Track Your Migraines
 See a beautiful timeline of all
 your migraines where you can instantly
@@ -8,14 +27,6 @@ $('.pop').animate({
   'background-position-x': '10%',
   'background-position-y': '20%'
 }, 10000, 'linear');
-
-background: -moz-linear-gradient(338deg, rgba(2,12,18,1) 0%, rgba(31,141,214,1) 62%, rgba(223,233,247,1) 100%); /* ff3.6+ */
-background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(2,12,18,1)), color-stop(62%, rgba(31,141,214,1)), color-stop(100%, rgba(223,233,247,1))); /* safari4+,chrome */
-background: -webkit-linear-gradient(338deg, rgba(2,12,18,1) 0%, rgba(31,141,214,1) 62%, rgba(223,233,247,1) 100%); /* safari5.1+,chrome10+ */
-background: -o-linear-gradient(338deg, rgba(2,12,18,1) 0%, rgba(31,141,214,1) 62%, rgba(223,233,247,1) 100%); /* opera 11.10+ */
-background: -ms-linear-gradient(338deg, rgba(2,12,18,1) 0%, rgba(31,141,214,1) 62%, rgba(223,233,247,1) 100%); /* ie10+ */
-background: linear-gradient(112deg, rgba(2,12,18,1) 0%, rgba(31,141,214,1) 62%, rgba(223,233,247,1) 100%); /* w3c */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#020C12', endColorstr='#DFE9F7',GradientType=1 ); /* ie6-9 */
 
 http://docs.scipy.org/doc/numpy/reference/generated/numpy.random.binomial.html
 
