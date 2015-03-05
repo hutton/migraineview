@@ -297,11 +297,15 @@
         </div>
     </div>
 
+    {% if web_debug %}
     <script src="/static/javascript/tp/jquery-2.1.1.js" language="javascript" type="text/javascript"></script>
     <script src="/static/javascript/tp/velocity.min.js" language="javascript" type="text/javascript"></script>
     <script src="/static/javascript/tp/velocity.ui.min.js" language="javascript" type="text/javascript"></script>
 
     <script src="/static/javascript/home.js" language="javascript" type="text/javascript"></script>
+    {% else %}
+    <script src="/static/javascript/min/all-home-min.js" language="javascript" type="text/javascript"></script>
+    {% endif %}
     <script>
 
         function setDimensions(){

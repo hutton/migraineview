@@ -4042,6 +4042,10 @@ body {
   font-size: 140%;
   line-height: 1.6em;
 }
+/************/
+#ani-timeline .ani-text-box {
+  width: 330px;
+}
 .ani-iphone-image-container {
   width: 240px;
   height: 486px;
@@ -4106,7 +4110,7 @@ body {
 }
 /* This is the class used for the dark-background areas. */
 .ribbon {
-  background: #2d3e50;
+  background: #214369;
   color: #aaa;
 }
 #logon-provider-list {

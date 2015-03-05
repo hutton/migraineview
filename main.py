@@ -45,6 +45,7 @@ class Main(BaseRequestHandler):
 
         template_values['login_create_url'] = users.create_login_url('/create')
         template_values['debug_login'] = Configuration.get_instance().debug_login
+        template_values['web_debug'] = Configuration.get_instance().web_debug
 
         path = os.path.join(os.path.join(os.path.dirname(__file__), 'html'), '../templates/home.html')
         self.response.out.write(template.render(path, template_values))

@@ -19,17 +19,14 @@ function hideLogin(){
 function animateTimeline(){
     var rootEl = $('#ani-timeline');
 
-    rootEl.find('.ani-header').velocity('transition.slideDownIn', {complete: function(){
-        rootEl.find('.ani-body').velocity('transition.slideUpBigIn', {complete: function(){
-            rootEl.find('.ani-buttons').velocity('transition.fadeIn', {delay: 400});
-        }});
-    }});
+    rootEl.find('.ani-header').velocity('transition.slideDownIn', {duration: 1800, delay: 600});
+    rootEl.find('.ani-body').velocity('transition.slideUpBigIn', {duration: 1800, delay: 1400});
 
-    rootEl.find('.ani-iphone-image-container').velocity('transition.slideUpBigIn', {complete: function(){
-        rootEl.find('.ani-iphone-content-image').velocity({'background-position-y': -750}, {duration: 2000, delay: 1000, easing: 'ease-out', complete: function(){
-            rootEl.find('.ani-iphone-content-image').velocity({'background-position-y': 0}, {duration: 1000, delay: 500, easing: 'ease-in-out'});
-        }});
-    }, delay: 3500});
+    rootEl.find('.ani-iphone-image-container').velocity('transition.slideUpBigIn', {delay: 3000, duration: 1000});
+    rootEl.find('.ani-iphone-content-image').velocity({'background-position-y': -750}, {duration: 3000, delay: 4000, easing: 'ease-in-out', complete: function(){
+        rootEl.find('.ani-iphone-content-image').velocity({'background-position-y': 0}, {duration: 600, delay: 800, easing: 'ease-in-out'});
+    }});
+    rootEl.find('.ani-buttons').velocity('transition.slideDownIn', {delay: 8000});
 }
 
 $(document).ready(function(){
