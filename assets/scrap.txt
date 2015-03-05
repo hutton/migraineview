@@ -1,20 +1,8 @@
-#wrap {
-    float: left;
-    position: relative;
-    left: 50%;
-}
 
-#content {
-    float: left;
-    position: relative;
-    left: -50%;
-}
+id="ani-timeline"
+    overflow-x: hidden
 
-.box {
-    background: url( 'img/box-bg.png' ) no-repeat top left;
-    width: 200px;
-    height: 200px;
-}
+
 @media only screen and ( -webkit-min-device-pixel-ratio: 1.3 ),
        only screen and (    min--moz-device-pixel-ratio: 1.3 ),
        only screen and (      -o-min-device-pixel-ratio: 2.6/2 ), /* returns 1.3, see Dev.Opera */
