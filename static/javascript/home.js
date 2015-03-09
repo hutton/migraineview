@@ -19,6 +19,8 @@ function hideLogin(){
 function animateTimeline(){
     var rootEl = $('#ani-timeline');
 
+    rootEl.show();
+
     rootEl.find('.ani-header').velocity('transition.slideDownIn', {duration: 1800, delay: 600});
     rootEl.find('.ani-body').velocity('transition.slideUpBigIn', {duration: 1800, delay: 1400});
 
@@ -27,6 +29,15 @@ function animateTimeline(){
         rootEl.find('.ani-iphone-content-image').velocity({'background-position-y': 0}, {duration: 600, delay: 800, easing: 'ease-in-out'});
     }});
     rootEl.find('.ani-buttons').velocity('transition.slideDownIn', {delay: 8000});
+}
+
+function animateReport(){
+    var rootEl = $('#ani-report');
+
+    rootEl.find('.ani-ipad-content-image').velocity({'background-position-y': -720}, {duration: 3000, delay: 0, easing: 'ease-out-expo', complete: function(){
+        rootEl.find('.ani-ipad-content-image').velocity({'background-position-y': 0}, {duration: 600, delay: 800, easing: 'ease-in-out'});
+    }});
+
 }
 
 $(document).ready(function(){
@@ -46,4 +57,6 @@ $(document).ready(function(){
     });
 
     animateTimeline();
+
+//    animateReport();
 });
