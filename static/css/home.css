@@ -4021,21 +4021,17 @@ body {
 /* Animation Splash */
 /********************/
 .ani-center-box-container {
-  float: left;
   position: relative;
-  left: 50%;
 }
 .ani-text-box {
-  float: left;
   position: relative;
-  left: -50%;
-  text-align: center;
   color: white;
   margin-bottom: 0px;
 }
 .ani-header {
   font-size: 220%;
-  margin-bottom: 20px;
+  margin-bottom: 4px;
+  line-height: 1.2em;
 }
 .ani-body {
   font-weight: 100;
@@ -4043,11 +4039,8 @@ body {
   line-height: 1.6em;
 }
 /************/
-#ani-timeline-text {
-  overflow-x: hidden;
-}
 #ani-timeline .ani-text-box {
-  width: 330px;
+  max-width: 420px;
   margin-top: 120px;
   text-align: left;
 }
@@ -4055,7 +4048,6 @@ body {
   width: 240px;
   height: 486px;
   position: relative;
-  overflow: hidden;
   margin: auto;
 }
 .ani-iphone-image {
@@ -4069,6 +4061,15 @@ body {
 .ani-iphone-content-image {
   background: url('/static/images/timeline@x2.png') no-repeat;
   background-size: 214px 1157px;
+  width: 100%;
+  position: absolute;
+  top: 58px;
+  left: 13px;
+  bottom: 20px;
+}
+.ani-iphone-report-content-image {
+  background: url('/static/images/report@2x.png') no-repeat;
+  background-size: 214px 1474px;
   width: 100%;
   position: absolute;
   top: 58px;
