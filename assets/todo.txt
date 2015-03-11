@@ -3,6 +3,8 @@
 *******************
 
 - Stop home jumping around
+- Scroll iPhone content on scroll
+--- release ---
 - Add on side bar should launch Add popup
     - Move upload to Account
 
