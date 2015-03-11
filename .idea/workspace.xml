@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d4ea88c3-5bc7-4b67-b3fb-d2fa76a7d74d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/javascript/min/all-home-min.js" afterPath="$PROJECT_DIR$/static/javascript/min/all-home-min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/images/report@2x.png" afterPath="$PROJECT_DIR$/static/images/report@2x.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/home.css" afterPath="$PROJECT_DIR$/static/css/home.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/home.html" afterPath="$PROJECT_DIR$/templates/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/javascript/home.js" afterPath="$PROJECT_DIR$/static/javascript/home.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/static/css/home.less" afterPath="$PROJECT_DIR$/static/css/home.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/scrap.txt" afterPath="$PROJECT_DIR$/assets/scrap.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="migraineview.iws" />
@@ -37,11 +34,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="home.less" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="home.less" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/static/css/home.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.5" vertical-offset="3455" max-vertical-offset="7740">
-              <caret line="252" column="21" selection-start-line="252" selection-start-column="21" selection-end-line="252" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.8194444" vertical-offset="4146" max-vertical-offset="7755">
+              <caret line="300" column="12" selection-start-line="300" selection-start-column="12" selection-end-line="300" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -103,11 +100,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="home.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="home.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/static/javascript/home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9439834" vertical-offset="55" max-vertical-offset="990">
-              <caret line="34" column="95" selection-start-line="34" selection-start-column="95" selection-end-line="34" selection-end-column="95" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="55" max-vertical-offset="990">
+              <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -204,9 +201,9 @@
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/assets/todo.txt" />
         <option value="$PROJECT_DIR$/assets/scrap.txt" />
-        <option value="$PROJECT_DIR$/static/css/home.less" />
         <option value="$PROJECT_DIR$/templates/home.html" />
         <option value="$PROJECT_DIR$/static/javascript/home.js" />
+        <option value="$PROJECT_DIR$/static/css/home.less" />
       </list>
     </option>
   </component>
@@ -1062,18 +1059,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/css/home.less">
+    <entry file="file://$PROJECT_DIR$/static/javascript/home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5" vertical-offset="3455" max-vertical-offset="7740">
-          <caret line="252" column="21" selection-start-line="252" selection-start-column="21" selection-end-line="252" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="55" max-vertical-offset="990">
+          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/static/javascript/home.js">
+    <entry file="file://$PROJECT_DIR$/static/css/home.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9439834" vertical-offset="55" max-vertical-offset="990">
-          <caret line="34" column="95" selection-start-line="34" selection-start-column="95" selection-end-line="34" selection-end-column="95" />
+        <state vertical-scroll-proportion="0.8194444" vertical-offset="4146" max-vertical-offset="7755">
+          <caret line="300" column="12" selection-start-line="300" selection-start-column="12" selection-end-line="300" selection-end-column="12" />
           <folding />
         </state>
       </provider>
