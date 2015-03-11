@@ -2,6 +2,10 @@
  * More delight! *
 *******************
 
+- Stop home jumping around
+- Add on side bar should launch Add popup
+    - Move upload to Account
+
 - When you add attack "Thanks for logging. Remember more attacks you log the better stats we can give you"
 - Tag cloud
 - Weather and location
