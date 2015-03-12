@@ -23,29 +23,40 @@ function animateTimeline(){
     rootEl.find('#ani-timeline-text > .ani-body').velocity('transition.slideUpBigIn', {duration: 1800, delay: 1400});
 
     rootEl.find('.ani-iphone-image-container').velocity('transition.slideUpBigIn', {delay: 3000, duration: 2000});
-    rootEl.find('.ani-iphone-content-image').velocity({'background-position-y': -100}, {duration: 500, delay: 4400, easing: 'ease-in-out', complete: function(){
-        rootEl.find('.ani-iphone-content-image').velocity({'background-position-y': 0}, {duration: 200, delay: 100, easing: 'ease-in-out'});
-    }});
 
-    rootEl.find('#ani-timeline-text').velocity('transition.slideRightOut', {duration: 400, delay: 6000, complete: function(){
+    window.setTimeout(function(){
+        switchToReport();
+    }, 6000);
+
+    rootEl.find('.ani-buttons').velocity('transition.slideDownIn', {delay: 7500});
+}
+
+function switchToReport(){
+    var rootEl = $('#ani-timeline');
+
+    rootEl.find('#ani-timeline-text').velocity('transition.slideRightOut', {duration: 400, complete: function(){
         rootEl.find('#ani-report-text').velocity('transition.slideLeftIn', {duration: 400});
     }});
 
-    rootEl.find('.ani-iphone-report-content-image').velocity('transition.slideLeftIn', {duration: 400, delay: 6000, complete: function(){
-        rootEl.find('.ani-iphone-report-content-image').velocity({'background-position-y': -100}, {duration: 500, delay: 1400, easing: 'ease-in-out', complete: function(){
-            rootEl.find('.ani-iphone-report-content-image').velocity({'background-position-y': 0}, {duration: 200, delay: 100, easing: 'ease-in-out'});
-        }});
+    rootEl.find('.ani-iphone-report-content-image').velocity('transition.slideLeftIn', {duration: 400});
+}
+
+function switchToTimeline(){
+    var rootEl = $('#ani-timeline');
+
+    rootEl.find('#ani-report-text').velocity('transition.slideLeftOut', {duration: 400, complete: function(){
+        rootEl.find('#ani-timeline-text').velocity('transition.slideRightIn', {duration: 400});
     }});
 
-    rootEl.find('.ani-buttons').velocity('transition.slideDownIn', {delay: 9000});
+    rootEl.find('.ani-iphone-report-content-image').velocity('transition.slideLeftOut', {duration: 400});
 }
 
 function bindScroll(){
     var timelineHeight = 780;
     var reportHeight = 1100;
 
-    var timelineContent = $('.ani-iphone-content-image');
-    var reportContent = $('.ani-iphone-report-content-image');
+    var timelineContent = $('.ani-iphone-content-image > div');
+    var reportContent = $('.ani-iphone-report-content-image > div');
 
     $(window).scroll(function() {
         var scrollPos = $(window).scrollTop();
@@ -56,8 +67,14 @@ function bindScroll(){
         var timelineScrollPos =  Math.min(timelineHeight * percentScroll, timelineHeight);
         var reportScrollPos =  Math.min(reportHeight * percentScroll, reportHeight);
 
-        timelineContent.css("background-position-y", -timelineScrollPos);
-        reportContent.css("background-position-y", -reportScrollPos);
+        timelineContent.velocity("stop");
+        reportContent.velocity("stop");
+
+        timelineContent.velocity({"background-position-y": -timelineScrollPos}, {duration: 100});
+        reportContent.velocity({"background-position-y": -reportScrollPos}, {duration: 100});
+
+//        timelineContent.css("background-position-y", -timelineScrollPos);
+//        reportContent.css("background-position-y", -reportScrollPos);
     });
 
 }
@@ -82,5 +99,12 @@ $(document).ready(function(){
 
     animateTimeline();
 
+    $('#track').click(function(){
+        switchToTimeline();
+    });
+
+    $('#understand').click(function(){
+        switchToReport();
+    });
 
 });
