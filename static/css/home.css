@@ -3949,9 +3949,9 @@ body {
 }
 .splash-button {
   color: white;
-  padding: 6px 10px;
-  min-width: 100px;
-  font-size: 100%;
+  padding: 8px 14px;
+  width: 100px;
+  font-size: 120%;
   border-radius: 6px;
   position: relative;
   top: 0px;
@@ -3963,9 +3963,9 @@ body {
 }
 .tour-button {
   color: white;
-  padding: 6px 10px;
-  min-width: 100px;
-  font-size: 100%;
+  padding: 8px 14px;
+  width: 100px;
+  font-size: 120%;
   border-radius: 6px;
   position: relative;
   top: 0px;
@@ -3980,9 +3980,9 @@ body {
 }
 .get-started-button {
   color: white;
-  padding: 6px 10px;
-  min-width: 100px;
-  font-size: 100%;
+  padding: 8px 14px;
+  width: 100px;
+  font-size: 120%;
   border-radius: 6px;
   position: relative;
   top: 0px;
@@ -4064,7 +4064,7 @@ body {
   left: 0px;
 }
 .ani-iphone-content-image {
-  width: 100%;
+  width: 214px;
   position: absolute;
   top: 63px;
   left: 19px;
@@ -4072,12 +4072,16 @@ body {
   overflow: hidden;
 }
 .ani-iphone-content-image > div {
+  background: white;
+  height: 100%;
+}
+.ani-iphone-content-image > div > div {
   background: url('/static/images/timeline@x2.png') no-repeat;
   background-size: 214px 1157px;
   height: 100%;
 }
 .ani-iphone-report-content-image {
-  width: 100%;
+  width: 214px;
   position: absolute;
   top: 63px;
   left: 19px;
@@ -4085,16 +4089,45 @@ body {
   overflow: hidden;
 }
 .ani-iphone-report-content-image > div {
+  background: white;
+  height: 100%;
+}
+.ani-iphone-report-content-image > div > div {
   background: url('/static/images/report@2x.png') no-repeat;
   background-size: 214px 1474px;
   height: 100%;
 }
+.ani-switch-container {
+  height: 60px;
+}
 .ani-switch-container > div {
   display: inline-block;
-  padding: 10px;
+  padding: 6px 15px;
   color: white;
   font-size: 120%;
   cursor: pointer;
+  border: 1px solid white;
+  width: 100px;
+  margin-top: 60px;
+  -moz-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  transition-duration: 0.2s;
+}
+.ani-switch-container > div:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.ani-switch-container > div:nth-child(1) {
+  border-top-left-radius: 50px;
+  border-bottom-left-radius: 50px;
+}
+.ani-switch-container > div:nth-child(2) {
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+}
+.ani-switch-container > .selected {
+  background: white !important;
+  color: #14548C;
 }
 @media (max-width: 48em) {
   #ani-timeline .ani-text-box {
@@ -4103,6 +4136,7 @@ body {
     margin-bottom: 20px;
     margin-left: auto;
     margin-right: auto;
+    min-height: 240px;
   }
 }
 /* iPad Report */

@@ -29,6 +29,9 @@ function animateTimeline(){
     }, 6000);
 
     rootEl.find('.ani-buttons').velocity('transition.slideDownIn', {delay: 7500});
+
+     rootEl.find('.ani-switch-container > div').velocity('transition.slideDownIn', {delay: 7500, display: 'inline-block'});
+
 }
 
 function switchToReport(){
@@ -38,7 +41,8 @@ function switchToReport(){
         rootEl.find('#ani-report-text').velocity('transition.slideLeftIn', {duration: 400});
     }});
 
-    rootEl.find('.ani-iphone-report-content-image').velocity('transition.slideLeftIn', {duration: 400});
+    rootEl.find('.ani-iphone-report-content-image > div').velocity('transition.slideLeftIn', {duration: 400});
+    rootEl.find('.ani-iphone-content-image > div').velocity('transition.slideRightOut', {duration: 400});
 }
 
 function switchToTimeline(){
@@ -48,15 +52,16 @@ function switchToTimeline(){
         rootEl.find('#ani-timeline-text').velocity('transition.slideRightIn', {duration: 400});
     }});
 
-    rootEl.find('.ani-iphone-report-content-image').velocity('transition.slideLeftOut', {duration: 400});
+    rootEl.find('.ani-iphone-content-image > div').velocity('transition.slideRightIn', {duration: 400});
+    rootEl.find('.ani-iphone-report-content-image > div').velocity('transition.slideLeftOut', {duration: 400});
 }
 
 function bindScroll(){
     var timelineHeight = 780;
     var reportHeight = 1100;
 
-    var timelineContent = $('.ani-iphone-content-image > div');
-    var reportContent = $('.ani-iphone-report-content-image > div');
+    var timelineContent = $('.ani-iphone-content-image > div > div');
+    var reportContent = $('.ani-iphone-report-content-image > div > div');
 
     $(window).scroll(function() {
         var scrollPos = $(window).scrollTop();
@@ -70,8 +75,8 @@ function bindScroll(){
         timelineContent.velocity("stop");
         reportContent.velocity("stop");
 
-        timelineContent.velocity({"background-position-y": -timelineScrollPos}, {duration: 100});
-        reportContent.velocity({"background-position-y": -reportScrollPos}, {duration: 100});
+        timelineContent.velocity({"background-position-y": -timelineScrollPos}, {duration: 60});
+        reportContent.velocity({"background-position-y": -reportScrollPos}, {duration: 60});
 
 //        timelineContent.css("background-position-y", -timelineScrollPos);
 //        reportContent.css("background-position-y", -reportScrollPos);
@@ -99,12 +104,23 @@ $(document).ready(function(){
 
     animateTimeline();
 
-    $('#track').click(function(){
-        switchToTimeline();
+    $('#track').click(function(event){
+        var el = $(event.target);
+
+        if (!el.hasClass('selected')){
+            $('#understand').removeClass('selected');
+            el.addClass('selected');
+            switchToTimeline();
+        }
     });
 
-    $('#understand').click(function(){
-        switchToReport();
-    });
+    $('#understand').click(function(event){
+        var el = $(event.target);
 
+        if (!el.hasClass('selected')){
+            $('#track').removeClass('selected');
+            el.addClass('selected');
+            switchToReport();
+        }
+    });
 });
