@@ -26,19 +26,19 @@ function animateTimeline(){
 
     window.setTimeout(function(){
         switchToReport();
-    }, 6000);
+    }, 5500);
 
-    rootEl.find('.ani-buttons').velocity('transition.slideDownIn', {delay: 7500});
+    rootEl.find('.ani-switch-container > div').velocity('transition.slideDownIn', {delay: 6000, display: 'inline-block'});
 
-     rootEl.find('.ani-switch-container > div').velocity('transition.slideDownIn', {delay: 7500, display: 'inline-block'});
+    rootEl.find('.ani-buttons').velocity('transition.slideDownIn', {delay: 7000});
 
 }
 
 function switchToReport(){
     var rootEl = $('#ani-timeline');
 
-    rootEl.find('#ani-timeline-text').velocity('transition.slideRightOut', {duration: 400, complete: function(){
-        rootEl.find('#ani-report-text').velocity('transition.slideLeftIn', {duration: 400});
+    rootEl.find('#ani-timeline-text').velocity('transition.slideRightOut', {duration: 200, complete: function(){
+        rootEl.find('#ani-report-text').velocity('transition.slideLeftIn', {duration: 200});
     }});
 
     rootEl.find('.ani-iphone-report-content-image > div').velocity('transition.slideLeftIn', {duration: 400});
@@ -48,8 +48,8 @@ function switchToReport(){
 function switchToTimeline(){
     var rootEl = $('#ani-timeline');
 
-    rootEl.find('#ani-report-text').velocity('transition.slideLeftOut', {duration: 400, complete: function(){
-        rootEl.find('#ani-timeline-text').velocity('transition.slideRightIn', {duration: 400});
+    rootEl.find('#ani-report-text').velocity('transition.slideLeftOut', {duration: 200, complete: function(){
+        rootEl.find('#ani-timeline-text').velocity('transition.slideRightIn', {duration: 200});
     }});
 
     rootEl.find('.ani-iphone-content-image > div').velocity('transition.slideRightIn', {duration: 400});
@@ -77,20 +77,16 @@ function bindScroll(){
 
         timelineContent.velocity({"background-position-y": -timelineScrollPos}, {duration: 60});
         reportContent.velocity({"background-position-y": -reportScrollPos}, {duration: 60});
-
-//        timelineContent.css("background-position-y", -timelineScrollPos);
-//        reportContent.css("background-position-y", -reportScrollPos);
     });
-
 }
 
 $(document).ready(function(){
-    setDimensions();
-
-    //when resizing the site, we adjust the heights of the sections
-    $(window).resize(function() {
-        setDimensions();
-    });
+//    setDimensions();
+//
+//    //when resizing the site, we adjust the heights of the sections
+//    $(window).resize(function() {
+//        setDimensions();
+//    });
 
     bindScroll();
 

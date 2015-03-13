@@ -98,56 +98,8 @@
                         </div>
                     </div>
                 </div>
-                <!--<div id="ani-report" class="pure-g">-->
-                    <!--<div class="pure-u-1">-->
-                        <!--<div class="ani-center-box-container">-->
-                            <!--<div class="ani-text-box">-->
-                                <!--<h1 class="ani-header">Track Your Migraines</h1>-->
-                                <!--<div class="ani-body">See a beautiful timeline of all<br/>-->
-                                    <!--your migraines where you can instantly<br/>-->
-                                    <!--add, update and search everything.</div>-->
-                                <!--<div class="ani-buttons">-->
-                                    <!--<a class="pure-button pure-button-primary tour-button" href="/example/report">Tour</a>-->
-                                    <!--<a class="pure-button pure-button-error get-started-button" href="#started">Sign Up <i class="fa fa-arrow-circle-o-right"></i></a>-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                    <!--<div class="pure-u-1">-->
-                        <!--<div class="ani-centering-container">-->
-                            <!--<div class="ani-ipad-image-container">-->
-                                <!--<div class="ani-ipad-content-image">-->
-                                <!--</div>-->
-                                <!--<div class="ani-ipad-content-menu-image">-->
-                                <!--</div>-->
-                                <!--<div class="ani-ipad-image">-->
-                                <!--</div>-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
-                <!--</div>-->
             </div>
         </div>
-
-        <!--<div class="splash-container">-->
-            <!--<div class="splash">-->
-                <!--<h1 class="splash-head">Simple Migraine Tracking</h1>-->
-                <!--<div class="splash-subhead">-->
-                    <!--The Migraine Diary you'll want to use-->
-                <!--</div>-->
-
-                <!--<div class="splash-buttons">-->
-                    <!--<a class="pure-button pure-button-primary button-xlarge splash-button" id="tour-button" href="/example/report">Tour</a>-->
-                    <!--<a class="pure-button pure-button-primary button-xlarge splash-button" id="get-started-button" href="#started" class="button-xlarge pure-button button-error">Sign Up <i class="fa fa-arrow-circle-o-right"></i></a>-->
-                <!--</div>-->
-                <!--&lt;!&ndash;<img id="hero-image" class="pure-img" src="/static/images/browser1.png">&ndash;&gt;-->
-                <!--&lt;!&ndash;<div class="splash-icons">&ndash;&gt;-->
-                    <!--&lt;!&ndash;<i class="fa fa-list"></i>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<i class="fa fa-search"></i>&ndash;&gt;-->
-                    <!--&lt;!&ndash;<i class="fa fa-bar-chart"></i>&ndash;&gt;-->
-                <!--&lt;!&ndash;</div>&ndash;&gt;-->
-            <!--</div>-->
-        <!--</div>-->
 
         <div class="content-wrapper">
             <div class="content">
@@ -353,39 +305,6 @@
     {% else %}
     <script src="/static/javascript/min/all-home-min.js" language="javascript" type="text/javascript"></script>
     {% endif %}
-    <script>
-
-        function setDimensions(){
-          var windowsHeight = $(window).height();
-          $('.splash-container').css('min-height', windowsHeight + 'px');
-        }
-
-        function showLogin(){
-            $("#logon").fadeIn('fast');
-        }
-
-        function hideLogin(){
-            $("#logon").fadeOut('fast');
-        }
-
-        $(document).ready(function(){
-          setDimensions();
-
-          //when resizing the site, we adjust the heights of the sections
-          $(window).resize(function() {
-            setDimensions();
-          });
-
-          $('#login-link').click(function(){
-              showLogin();
-          });
-
-          $('#logon').click(function(){
-              hideLogin();
-          });
-        });
-
-    </script>
 
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
