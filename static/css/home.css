@@ -4100,40 +4100,9 @@ body {
     margin-bottom: 6px;
     line-height: 1.2em;
   }
-}
-/* iPad Report */
-.ani-ipad-image-container {
-  width: 550px;
-  height: 388px;
-  position: relative;
-  overflow: hidden;
-  margin: auto;
-}
-.ani-ipad-image {
-  background: url('/static/images/ipad-frame.png') no-repeat;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-}
-.ani-ipad-content-menu-image {
-  background: url('/static/images/ipad-menu@2x.png') no-repeat;
-  background-size: 96px 365px;
-  width: 100%;
-  position: absolute;
-  top: 26px;
-  left: 50px;
-  bottom: 20px;
-}
-.ani-ipad-content-image {
-  background: url('/static/images/ipad-content@2x.png') no-repeat;
-  background-size: 353px 1066px;
-  width: 100%;
-  position: absolute;
-  top: 25px;
-  left: 144px;
-  bottom: 20px;
+  .ani-body {
+    color: rgba(255, 255, 255, 0.8);
+  }
 }
 /* Content */
 .content {
