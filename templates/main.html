@@ -89,63 +89,63 @@
                         <div class="section-content" id="single-upload-attack-view-container">
                         </div>
 
-                        <div class="stat-section-title">
-                            Upload attacks
-                        </div>
-                        <div class="section-content">
-                            <p>Drag and drop your spreadsheet or calendar file containing your migraine diary.</p>
-                            <div class="upload-container">
-                                <div>
-                                    <div class="file-type green">
-                                        <div>
-                                            <span></span>
-                                            <p>XLSX</p>
-                                        </div>
-                                    </div>
-                                    <div class="file-type blue">
-                                        <div>
-                                            <span></span>
-                                            <p>CSV</p>
-                                        </div>
-                                    </div>
-                                    <div class="file-type red">
-                                        <div>
-                                            <span></span>
-                                            <p>ICS</p>
-                                        </div>
-                                    </div>
-                                </div>
+                        <!--<div class="stat-section-title">-->
+                            <!--Upload attacks-->
+                        <!--</div>-->
+                        <!--<div class="section-content">-->
+                            <!--<p>Drag and drop your spreadsheet or calendar file containing your migraine diary.</p>-->
+                            <!--<div class="upload-container">-->
+                                <!--<div>-->
+                                    <!--<div class="file-type green">-->
+                                        <!--<div>-->
+                                            <!--<span></span>-->
+                                            <!--<p>XLSX</p>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="file-type blue">-->
+                                        <!--<div>-->
+                                            <!--<span></span>-->
+                                            <!--<p>CSV</p>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div class="file-type red">-->
+                                        <!--<div>-->
+                                            <!--<span></span>-->
+                                            <!--<p>ICS</p>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
 
-                            </div>
-                            <div id="add-status-panel-container">
-                                <div id="add-status-panel" style="display: none;">
-                                    <div id="add-uploading-message" style="display: none;">Uploading...
-                                        <div class='progress'>
-                                            <span style="width: 0%;"></span>
-                                        </div>
-                                    </div>
-                                    <div id="add-processing-message" style="display: none;">Processing...
-                                        <div class='progress indefinite'>
-                                            <span></span>
-                                        </div>
-                                    </div>
-                                    <div id="add-uploaded-message" style="display: none;">
+                            <!--</div>-->
+                            <!--<div id="add-status-panel-container">-->
+                                <!--<div id="add-status-panel" style="display: none;">-->
+                                    <!--<div id="add-uploading-message" style="display: none;">Uploading...-->
+                                        <!--<div class='progress'>-->
+                                            <!--<span style="width: 0%;"></span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div id="add-processing-message" style="display: none;">Processing...-->
+                                        <!--<div class='progress indefinite'>-->
+                                            <!--<span></span>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                    <!--<div id="add-uploaded-message" style="display: none;">-->
 
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="panel-yellow">
-                                <div>
-                                If you're uploading a spreadsheet there's three columns we look for:
-                                    <ul>
-                                        <li><span>Start</span> or <span>Started</span> or <span>Began</span> or <span>Start Time</span></li>
-                                        <li><span>Recovered</span> or <span>Finished</span> or <span>Finish</span></li>
-                                        <li><span>Description</span> or <span>Comment(s)</span></li>
-                                    </ul>
-                                    Column names don't have to match exactly but be similar.
-                                </div>
-                            </div>
-                        </div>
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="panel-yellow">-->
+                                <!--<div>-->
+                                <!--If you're uploading a spreadsheet there's three columns we look for:-->
+                                    <!--<ul>-->
+                                        <!--<li><span>Start</span> or <span>Started</span> or <span>Began</span> or <span>Start Time</span></li>-->
+                                        <!--<li><span>Recovered</span> or <span>Finished</span> or <span>Finish</span></li>-->
+                                        <!--<li><span>Description</span> or <span>Comment(s)</span></li>-->
+                                    <!--</ul>-->
+                                    <!--Column names don't have to match exactly but be similar.-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
                     </div>
                     </div>
                 </div>
@@ -285,6 +285,73 @@
                                 </fieldset>
                             </form>
                         </div>
+                         <div class="stat-section-title">
+                            Share
+                        </div>
+                        <div class="section-content">
+                            <p>Sometimes it's useful to share information about your migraines with other people; doctors, family, friends or colleagues.</p>
+                            <p>Use this link to share a read-only version of your report.</p>
+                            <div class="settings-share-link">
+                                <a target="_blank" href="/shared/{{ share_report_and_list }}/report"><i class="fa fa-share"></i> Share Report</a>
+                            </div>
+                        </div>
+                        <div class="stat-section-title">
+                            Import
+                        </div>
+                        <div class="section-content">
+                            <p>Drag and drop a spreadsheet or calendar file containing your migraine diary.</p>
+                            <div class="upload-container">
+                                <div>
+                                    <div class="file-type green">
+                                        <div>
+                                            <span></span>
+                                            <p>XLSX</p>
+                                        </div>
+                                    </div>
+                                    <div class="file-type blue">
+                                        <div>
+                                            <span></span>
+                                            <p>CSV</p>
+                                        </div>
+                                    </div>
+                                    <div class="file-type red">
+                                        <div>
+                                            <span></span>
+                                            <p>ICS</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div id="add-status-panel-container">
+                                <div id="add-status-panel" style="display: none;">
+                                    <div id="add-uploading-message" style="display: none;">Uploading...
+                                        <div class='progress'>
+                                            <span style="width: 0%;"></span>
+                                        </div>
+                                    </div>
+                                    <div id="add-processing-message" style="display: none;">Processing...
+                                        <div class='progress indefinite'>
+                                            <span></span>
+                                        </div>
+                                    </div>
+                                    <div id="add-uploaded-message" style="display: none;">
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-yellow">
+                                <div>
+                                If you're uploading a spreadsheet there's three columns we look for:
+                                    <ul>
+                                        <li><span>Start</span> or <span>Started</span> or <span>Began</span> or <span>Start Time</span></li>
+                                        <li><span>Recovered</span> or <span>Finished</span> or <span>Finish</span></li>
+                                        <li><span>Description</span> or <span>Comment(s)</span></li>
+                                    </ul>
+                                    Column names don't have to match exactly but be similar.
+                                </div>
+                            </div>
+                        </div>
                         <div class="stat-section-title">
                             Export
                         </div>
@@ -311,18 +378,6 @@
                                 </a>
                             </div>
                         </div>
-
-                         <div class="stat-section-title">
-                            Share
-                        </div>
-                        <div class="section-content">
-                            <p>Sometimes it's useful to share information about your migraines with other people; doctors, family, friends or colleagues.</p>
-                            <p>Use these links to share up to date read-only versions of your report.</p>
-                            <div class="settings-share-link">
-                                <a target="_blank" href="/shared/{{ share_report_and_list }}/report"><i class="fa fa-share"></i> Share Report</a>
-                            </div>
-                        </div>
-
 
                         <div class="stat-section-title">
                             Clear Data
@@ -379,7 +434,7 @@
 
     <div class="popup-background" id="add-attack-popup" style="display: none;">
         <div class="popup popup-edit popup-full-screen-on-mobile">
-            <div class="popup-header"><i class="fa fa-plus"></i> New Attack
+            <div class="popup-header">Log an attack
                 <i class="fa fa-close"></i>
             </div>
             <div class="popup-container">

@@ -36,10 +36,12 @@ window.NewAttackView = Backbone.View.extend({
         return this;
     },
 
-    show: function(){
+    show: function(complete){
         var newDate = (new Date).convertDateToUTC();
 
         newDate.setMinutes(0);
+
+        this.complete = complete;
 
         this.model = new EventModel({'date': newDate,
                                 'duration': 60 * 60 * 4});
@@ -66,6 +68,10 @@ window.NewAttackView = Backbone.View.extend({
     hide: function(){
         this.popupBackgroundEl.velocity("reverse", {display: "none"});
         this.popupEl.velocity("reverse", {display: "none"});
+
+        if (!_.isUndefined(this.complete)){
+            this.complete();
+        }
     },
 
     addAttack: function(e){
@@ -98,7 +104,7 @@ window.NewAttackView = Backbone.View.extend({
                 _.delay(function(){
                     that.hide();
                     that.attackView.addMessageLabelEl.html("");
-                }, 100);
+                }, 10);
 
                 App.dataChanged();
                 App.refreshData();

@@ -13,6 +13,8 @@ window.App = Backbone.View.extend({
         this.exportView = new ExportView();
 
         this.addView.render();
+
+        this.newAttackView = new NewAttackView();
     },
 
     el: $("body"),
@@ -90,7 +92,30 @@ window.App = Backbone.View.extend({
     },
 
     showAdd: function(event){
-        this.Routes.navigate(this.getCurrentBase() + '/add', {trigger: true});
+        if (!App.shared) {
+            var selectItem;
+
+            if ($('#statistics-toggle').parent().hasClass('pure-menu-selected')){
+                selectItem = $('#statistics-toggle').parent();
+            }
+
+            if ($('#events-toggle').parent().hasClass('pure-menu-selected')){
+                selectItem = $('#events-toggle').parent();
+            }
+
+            if ($('#settings-toggle').parent().hasClass('pure-menu-selected')){
+                selectItem = $('#settings-toggle').parent();
+            }
+            $('#add-toggle').parent().addClass('pure-menu-selected');
+            selectItem.removeClass('pure-menu-selected');
+
+            this.newAttackView.show(function(){
+                $('#add-toggle').parent().removeClass('pure-menu-selected');
+                selectItem.addClass('pure-menu-selected');
+            });
+        }
+
+//        this.Routes.navigate(this.getCurrentBase() + '/add', {trigger: true});
 
         event.preventDefault();
     },
