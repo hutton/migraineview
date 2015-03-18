@@ -175,14 +175,14 @@
                     <div id="stats-no-data" class="loading-message" style="display: none;">
                         <div class="panel-blue">
                             <div>
-                            You don't have any attacks logged.<br/>Go <a href="/add">here</a> to log an attack or upload a file containing several.
+                            You don't have any attacks logged.<br/>Go <a href="/timeline?add">here</a> to log an attack or upload a file containing several.
                             </div>
                         </div>
                     </div>
                     <div id="stats-not-much-data" class="loading-message" style="display: none;">
                         <div class="panel-blue">
                             <div>
-                            You only have <span id="stats-not-much-data-top-line">one attacks</span> logged, you need four to show a report.<br/>Go <a href="/add">here</a> to log an attack or upload a file containing several.
+                            You only have <span id="stats-not-much-data-top-line">one attacks</span> logged, you need four to show a report.<br/>Go <a href="/timeline?add">here</a> to log an attack or upload a file containing several.
                             </div>
                         </div>
                     </div>
@@ -216,7 +216,7 @@
                         <div id="list-no-data" class="loading-message" style="display: none;">
                             <div class="panel-blue">
                                 <div>
-                                You don't have any attacks logged.<br/>Go <a href="/add">here</a> to log an attack or upload a file containing several.
+                                You don't have any attacks logged.<br/>Go <a href="/timeline?add">here</a> to log an attack or upload a file containing several.
                                 </div>
                             </div>
                         </div>
@@ -407,12 +407,15 @@
                 <!-
                     Export view
                 ->
-                {% if False %}
-                <div class="view-container" id="export-view" style="display: none;">
-                    <div>
-                        <h2 class="title">Export</h2>
-                    </div>
+                {% if show_options %}
+                <div class="view-container" id="welcome-view" style="display: none;">
                     <div id="export-container" class="content narrow">
+                        <div id="list-welcome">
+                            <h3 class="center">Thanks for signing up.</h3>
+                            <p>The first thing to do is start logging your migraines.  You can log individual attacks <span id="welcome-add-link" class="welcome-link">here</span> or if you have an existing list of attacks you can upload them <span id="welcome-upload-link" class="welcome-link">here</span>.</p>
+                            <p>Remember, the more migraines you log the more insightful statistics we can show you.</p>
+                            <p>Thank you.</p>
+                        </div>
                     </div>
                 </div>
                 {% endif %}

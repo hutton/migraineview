@@ -10,7 +10,7 @@ window.App = Backbone.View.extend({
         this.eventsView = new EventListView();
         this.statisticsView = new StatisticsView();
         this.settingsView = new SettingsView();
-        this.exportView = new ExportView();
+        this.welcomeView = new WelcomeView();
 
         this.addView.render();
 
@@ -174,15 +174,18 @@ window.Workspace = Backbone.Router.extend({
 
     routes: {
         ":base/report":         "statistics",
-        ":base/timeline":           "timeline",
+        ":base/timeline":       "timeline",
         ":base/add":            "add",
         ":base/account":        "options",
         ":base/export":         "export",
         "report":               "statistics",
-        "timeline":                 "timeline",
+        "timeline":             "timeline",
+        "timeline?add":         "timeline",
         "add":                  "add",
         "account":              "options",
+        "account?upload":       "options",
         "export":               "export",
+        "welcome":               "welcome",
         "shared/:base/report":  "statistics",
         "shared/:base/timeline":    "timeline"
     },
@@ -202,8 +205,14 @@ window.Workspace = Backbone.Router.extend({
         $('#export-toggle').parent().removeClass('pure-menu-selected');
     },
 
-    timeline: function(){
+    timeline: function(query){
         App.refreshData();
+
+        if (query === "add"){
+            App.eventsView.add = true;
+        } else {
+            App.eventsView.add = false;
+        }
 
         App.eventsView.show();
 
@@ -215,17 +224,25 @@ window.Workspace = Backbone.Router.extend({
     },
 
     add: function(){
-        App.addView.show();
+        App.refreshData();
+
+        App.eventsView.show();
 
         $('#statistics-toggle').parent().removeClass('pure-menu-selected');
-        $('#events-toggle').parent().removeClass('pure-menu-selected');
-        $('#add-toggle').parent().addClass('pure-menu-selected');
+        $('#events-toggle').parent().addClass('pure-menu-selected');
+        $('#add-toggle').parent().removeClass('pure-menu-selected');
         $('#settings-toggle').parent().removeClass('pure-menu-selected');
         $('#export-toggle').parent().removeClass('pure-menu-selected');
     },
 
-    options: function(){
+    options: function(query){
         App.settingsView.show();
+
+        if (query === "upload"){
+            App.settingsView.upload = true;
+        } else {
+            App.settingsView.upload = false;
+        }
 
         $('#settings-toggle').parent().addClass('pure-menu-selected');
 
@@ -235,10 +252,8 @@ window.Workspace = Backbone.Router.extend({
         $('#export-toggle').parent().removeClass('pure-menu-selected');
     },
 
-    export: function(){
-        App.exportView.show();
-
-        $('#export-toggle').parent().addClass('pure-menu-selected');
+    welcome: function(){
+        App.welcomeView.show();
 
         $('#statistics-toggle').parent().removeClass('pure-menu-selected');
         $('#events-toggle').parent().removeClass('pure-menu-selected');

@@ -2,15 +2,6 @@
  * More delight! *
 *******************
 
-- Stop home jumping around
-- Scroll iPhone content on scroll
---- release ---
-- Add on side bar should launch Add popup
-    - Move upload to Account
-- Vertically center home content
-- Switch between 'Track' and 'Understand' on home
-
-
 - When you add attack "Thanks for logging. Remember more attacks you log the better stats we can give you"
 - Tag cloud
 - Weather and location
@@ -20,6 +11,12 @@
 
 Done
 ====
+- Vertically center home content
+- Switch between 'Track' and 'Understand' on home
+- Add on side bar should launch Add popup
+    - Move upload to Account
+- Stop home jumping around
+- Scroll iPhone content on scroll
 - tl-line min-height: 200px;
 - Check stats onShow is triggered when loaded on timeline
 - Popups in iPhone 5

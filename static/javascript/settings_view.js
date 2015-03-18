@@ -49,6 +49,8 @@ window.SettingsView = window.MainViewBase.extend({
 
     uploadingProgress: $('#uploading-message > .progress > span'),
 
+    upload: false,
+
     events: {
         "click #settings-clear-all":  "showClearAllPopup",
         "click #clear-all-cancel":   "hideClearAllPopup",
@@ -58,6 +60,11 @@ window.SettingsView = window.MainViewBase.extend({
     render: function(){
 
         return this;
+    },
+
+    onShow: function(){
+        if (this.upload){
+        }
     },
 
     showClearAllPopup: function(){

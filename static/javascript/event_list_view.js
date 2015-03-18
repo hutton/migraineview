@@ -26,7 +26,11 @@ window.EventListView = window.MainViewBase.extend({
 
     listSearchInputClearEl: $('#list-search-input-clear'),
 
+    listWelcomeEl: $('#list-welcome'),
+
     hiddenRows: null,
+
+    welcome: false,
 
     events: {
         "input #list-search-input": "searchInputChanged",
@@ -47,6 +51,10 @@ window.EventListView = window.MainViewBase.extend({
     onShow: function(){
         if (this.hiddenRows != null){
             this.hiddenRows.show();
+        }
+
+        if (this.add){
+            this.addAttack();
         }
     },
 

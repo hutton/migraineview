@@ -37,10 +37,8 @@ window.EventView = Backbone.View.extend({
     changed: function(){
         if (this.model.get('filtered')){
             this.$el.hide();
-//            this.$el.velocity('transition.slideRightBigOut', {duration: 200});
         } else {
             this.$el.show();
-//            this.$el.velocity('transition.slideRightBigIn', {duration: 200});
 
             var modelDict = this.model.toJSON();
 

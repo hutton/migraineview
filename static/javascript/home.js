@@ -3,11 +3,6 @@
  */
 
 
-function setDimensions(){
-  var windowsHeight = $(window).height();
-  $('.splash-container').css('min-height', windowsHeight + 'px');
-}
-
 function showLogin(){
     $("#logon").fadeIn('fast');
 }
@@ -16,22 +11,21 @@ function hideLogin(){
     $("#logon").fadeOut('fast');
 }
 
-function animateTimeline(){
+function animate(){
     var rootEl = $('#ani-timeline');
 
     rootEl.find('#ani-timeline-text > .ani-header').velocity('transition.slideDownIn', {duration: 1800, delay: 600});
     rootEl.find('#ani-timeline-text > .ani-body').velocity('transition.slideUpBigIn', {duration: 1800, delay: 1400});
 
-    rootEl.find('.ani-iphone-image-container').velocity('transition.slideUpBigIn', {delay: 3000, duration: 2000});
+    rootEl.find('.ani-iphone-image-container').velocity('transition.slideUpBigIn', {delay: 2000, duration: 2000});
 
     window.setTimeout(function(){
         switchToReport();
-    }, 5500);
+    }, 4000);
 
-    rootEl.find('.ani-switch-container > div').velocity('transition.slideDownIn', {delay: 6000, display: 'inline-block'});
+    rootEl.find('.ani-buttons').velocity('transition.slideDownIn', {delay: 4000});
 
-    rootEl.find('.ani-buttons').velocity('transition.slideDownIn', {delay: 7000});
-
+    rootEl.find('.ani-switch-container > div').velocity('transition.slideDownIn', {delay: 4500, display: 'inline-block'});
 }
 
 function switchToReport(){
@@ -81,13 +75,6 @@ function bindScroll(){
 }
 
 $(document).ready(function(){
-//    setDimensions();
-//
-//    //when resizing the site, we adjust the heights of the sections
-//    $(window).resize(function() {
-//        setDimensions();
-//    });
-
     bindScroll();
 
     $('#login-link').click(function(){
@@ -98,7 +85,7 @@ $(document).ready(function(){
       hideLogin();
     });
 
-    animateTimeline();
+    animate();
 
     $('#track').click(function(event){
         var el = $(event.target);

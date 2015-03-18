@@ -30,6 +30,7 @@ class Example(webapp2.RequestHandler):
                                                 20, 0, 0)
 
         for event in events:
+            event['DurationText'] = create_duration_text(event['Duration'])
             event['Id'] = i
             i -= 1
 
