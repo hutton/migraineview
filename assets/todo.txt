@@ -4,7 +4,8 @@
 - Change here and here to links
 - Sort heading font size
 - Sign the bottom of Welcome
-
+- Change upload 'here' like to use id /account#upload
+- Increase delay for switch buttons to appear (500ms)
 
 - When you add attack "Thanks for logging. Remember more attacks you log the better stats we can give you"
 - Tag cloud
