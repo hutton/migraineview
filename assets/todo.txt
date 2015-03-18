@@ -1,6 +1,7 @@
 *******************
  * More delight! *
 *******************
+- Put sort back in gaps 
 - Change upload 'here' like to use id /account#upload
 - Change here and here to links
 - Sort heading font size
