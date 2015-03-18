@@ -1,6 +1,10 @@
 *******************
  * More delight! *
 *******************
+- Change here and here to links
+- Sort heading font size
+- Sign the bottom of Welcome
+
 
 - When you add attack "Thanks for logging. Remember more attacks you log the better stats we can give you"
 - Tag cloud
