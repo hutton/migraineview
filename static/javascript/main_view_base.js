@@ -31,6 +31,8 @@ window.MainViewBase = Backbone.View.extend({
         var that = this;
         var duration = 100;
 
+        App.newAttackView.hide();
+
         if (!_.isUndefined(App.currentView)){
 
             if ($(window).width() < 1024){

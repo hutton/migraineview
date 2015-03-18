@@ -25,7 +25,7 @@ function animate(){
 
     rootEl.find('.ani-buttons').velocity('transition.slideDownIn', {delay: 4000});
 
-    rootEl.find('.ani-switch-container > div').velocity('transition.slideDownIn', {delay: 4500, display: 'inline-block'});
+    rootEl.find('.ani-switch-container > div').velocity('transition.slideDownIn', {delay: 5000, display: 'inline-block'});
 }
 
 function switchToReport(){

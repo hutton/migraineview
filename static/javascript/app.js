@@ -93,7 +93,7 @@ window.App = Backbone.View.extend({
 
     showAdd: function(event){
         if (!App.shared) {
-            var selectItem;
+            var selectItem = null;
 
             if ($('#statistics-toggle').parent().hasClass('pure-menu-selected')){
                 selectItem = $('#statistics-toggle').parent();
@@ -107,11 +107,15 @@ window.App = Backbone.View.extend({
                 selectItem = $('#settings-toggle').parent();
             }
             $('#add-toggle').parent().addClass('pure-menu-selected');
-            selectItem.removeClass('pure-menu-selected');
+            if (selectItem != null){
+                selectItem.removeClass('pure-menu-selected');
+            }
 
             this.newAttackView.show(function(){
                 $('#add-toggle').parent().removeClass('pure-menu-selected');
-                selectItem.addClass('pure-menu-selected');
+                if (selectItem != null) {
+                    selectItem.addClass('pure-menu-selected');
+                }
             });
         }
 

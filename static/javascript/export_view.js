@@ -8,8 +8,8 @@ window.WelcomeView = window.MainViewBase.extend({
     },
 
     events: {
-        "click #welcome-add-link":  "add",
-        "click #welcome-upload-link":  "upload"
+//        "click #welcome-add-link":  "add",
+//        "click #welcome-upload-link":  "upload"
     },
 
     el: $('#welcome-view'),
@@ -20,11 +20,11 @@ window.WelcomeView = window.MainViewBase.extend({
     },
 
     add: function(){
-        window.App.Routes.navigate(window.App.getCurrentBase() + '/timeline?add', {trigger: true});
+//        window.App.Routes.navigate(window.App.getCurrentBase() + '/timeline?add', {trigger: true});
     },
 
     upload: function(){
-        window.App.Routes.navigate(window.App.getCurrentBase() + '/account?upload', {trigger: true});
+//        window.App.Routes.navigate(window.App.getCurrentBase() + '/account#upload', {trigger: true});
     }
 
 });

@@ -4591,13 +4591,15 @@ line.line {
 #list-welcome {
   font-size: 120%;
   color: rgba(0, 0, 0, 0.8);
+  margin-bottom: 100px;
 }
 #list-welcome > h3 {
-  font-size: 210%;
+  font-size: 230%;
   color: rgba(0, 0, 0, 0.5);
   font-weight: 100;
   margin-top: 100px;
   margin-bottom: 70px;
+  line-height: 1.4em;
 }
 .welcome-link {
   cursor: pointer;

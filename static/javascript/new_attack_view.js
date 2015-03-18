@@ -10,6 +10,8 @@ window.NewAttackView = Backbone.View.extend({
 
     popupEl: $('#add-attack-popup > .popup'),
 
+    showing: false,
+
     events: {
         "click #submit-button":     "addAttack",
         "click #cancel-button":     "cancel",
@@ -37,6 +39,8 @@ window.NewAttackView = Backbone.View.extend({
     },
 
     show: function(complete){
+        this.showing = true;
+
         var newDate = (new Date).convertDateToUTC();
 
         newDate.setMinutes(0);
@@ -66,12 +70,18 @@ window.NewAttackView = Backbone.View.extend({
     },
 
     hide: function(){
+        if (!this.showing){
+            return;
+        }
+
         this.popupBackgroundEl.velocity("reverse", {display: "none"});
         this.popupEl.velocity("reverse", {display: "none"});
 
         if (!_.isUndefined(this.complete)){
             this.complete();
         }
+
+        this.showing = false;
     },
 
     addAttack: function(e){

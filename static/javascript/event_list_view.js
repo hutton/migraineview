@@ -6,8 +6,6 @@
 window.EventListView = window.MainViewBase.extend({
     initialize: function () {
         this.editAttackView = new EditAttackView();
-
-        this.newAttackView = new NewAttackView();
     },
 
     el: $('#event_list_container'),
@@ -149,7 +147,7 @@ window.EventListView = window.MainViewBase.extend({
 
     addAttack: function(){
         if (!App.shared) {
-            this.newAttackView.show();
+            window.App.newAttackView.show();
         }
     }
 });

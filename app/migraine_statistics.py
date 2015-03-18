@@ -71,7 +71,7 @@ def find_time_between_attacks(events):
 
         previous_start = event['Start']
 
-    # times = sorted(times)
+    times = sorted(times)
 
     return times
 
