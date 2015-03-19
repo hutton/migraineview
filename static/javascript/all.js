@@ -12,7 +12,7 @@
 // @codekit-prepend "tp/better-dom.js";
 // @codekit-prepend "tp/better-i18n-plugin.js";
 // @codekit-prepend "tp/better-dateinput-polyfill.js";
-
+// @codekit-prepend "tp/circular-slider.js";
 
 // @codekit-prepend "helper.js";
 

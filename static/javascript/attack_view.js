@@ -29,6 +29,8 @@ window.AttackView = Backbone.View.extend({
         this.submitButtonEl = this.$el.find('#submit-button');
         this.addMessageLabelEl = this.$el.find('#add-message-label');
 
+        this.$el.find('#slider').CircularSlider({radius: 120});
+
         this.datesChanged();
 
         return this;
