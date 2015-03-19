@@ -35,8 +35,8 @@ SOFTWARE.
                 return;
 
             jcsComponents.jcsIndicator.css({
-                'width': (radius / 5) + "px",
-                'height': (radius / 5) + "px",
+                'width': (radius / 3) + "px",
+                'height': (radius / 3) + "px",
             });
         };
 

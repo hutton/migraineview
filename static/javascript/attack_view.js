@@ -13,7 +13,9 @@ window.AttackView = Backbone.View.extend({
 
     attributes: {},
 
-    render: function(){        
+    render: function(){
+        _.bindAll(this, 'durationLabelUpdate');
+
         this.$el.html(this.template(this.attributes));
 
         this.$el.find("input[type='date']").val(new Date().toDateInputValue());
@@ -29,7 +31,13 @@ window.AttackView = Backbone.View.extend({
         this.submitButtonEl = this.$el.find('#submit-button');
         this.addMessageLabelEl = this.$el.find('#add-message-label');
 
-        this.$el.find('#slider').CircularSlider({radius: 120});
+        this.$el.find('#slider').CircularSlider({radius: 120,
+            formLabel : this.durationLabelUpdate,
+            min: 0,
+            max: 47,
+            innerCircleRatio: .9,
+            animateDuration: 100
+        });
 
         this.datesChanged();
 
@@ -37,6 +45,40 @@ window.AttackView = Backbone.View.extend({
     },
 
     template: _.template($('#attack-view-template').html()),
+
+    durationMultiplier: 0,
+
+    previousValue: 0,
+
+    durationLabelUpdate: function(value, prefix, suffix) {
+
+        if (this.previousValue > 38 && value < 8){
+            this.durationMultiplier += 1;
+        }
+
+        if (this.previousValue < 8 && value > 38){
+            if (this.durationMultiplier > 0){
+                this.durationMultiplier -= 1;
+            }
+        }
+
+        this.previousValue = value;
+
+        var total = value + (this.durationMultiplier * 48); // Total is number of half hours
+
+        var hours = Math.floor(total / 4);
+        var minutes = (total % 4) * 15;
+
+        var content = "";
+
+        if (minutes === 0){
+            content = "<span id='duration-total'>" + hours + "</span><span id='duration-hours-label'> hours</span>";
+        } else {
+            content = "<span id='duration-total'>" + hours + "</span><span id='duration-hours-label'> hours</span><br/><span id='duration-minutes'>" + minutes + "</span><span id='duration-minutes-label'> mins</span>";
+        }
+
+        return content;
+    },
 
     dateToTime: function(date){
         return ( "0" + date.getHours()).slice(-2) + ":" + ("0" + date.getMinutes()).slice(-2);
