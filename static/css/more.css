@@ -3573,12 +3573,12 @@ SOFTWARE.
   text-align: center;
   pointer-events: none;
   line-height: 0.5em;
-  color: #b0b0b0;
+  color: #808080;
   font-weight: 100;
   background-color: transparent;
   outline: none;
   font-size: 350% !important;
-  margin-top: 83px;
+  margin-top: 69px;
 }
 .jcs-indicator {
   position: absolute;
@@ -4208,10 +4208,10 @@ a {
 .popup-header .fa-close {
   float: right;
   opacity: 0.4;
-  position: relative;
+  position: absolute;
   padding: 10px;
-  top: -10px;
-  right: -10px;
+  top: 10px;
+  right: 10px;
 }
 .popup-header .fa-close:hover {
   opacity: 0.8;
@@ -4344,6 +4344,10 @@ a {
 input[type=date] {
   min-width: 160px;
   min-height: 42px;
+}
+#slider {
+  margin-top: -15px;
+  margin-bottom: -15px;
 }
 .add-duration-group-container {
   margin: 30px 0px;

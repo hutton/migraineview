@@ -48,21 +48,27 @@ class ReportAdd(BaseRequestHandler):
     def post(self):
 
         if self.logged_in:
-            user = self.current_user;
+            user = self.current_user
 
             started = datetime.datetime.strptime(self.request.POST['started'], "%Y-%m-%d %H:%M")
-            ended = datetime.datetime.strptime(self.request.POST['ended'], "%Y-%m-%d %H:%M")
 
-            duration_delta = ended - started
+            if 'duration' in self.request.POST:
+                duration = int(self.request.POST['duration'])
+            else:
+                ended = datetime.datetime.strptime(self.request.POST['ended'], "%Y-%m-%d %H:%M")
+
+                duration_delta = ended - started
+
+                duration = int(duration_delta.total_seconds())
 
             new_attack = attack.Attack(parent=user.key)
 
             new_attack.start_time = started
-            new_attack.duration = int(duration_delta.total_seconds())
+            new_attack.duration = duration
             new_attack.comment = self.request.POST['comment']
 
             new_attack.start_text = create_start_text(started)
-            new_attack.duration_text = create_duration_text(duration_delta.total_seconds())
+            new_attack.duration_text = create_duration_text(duration)
 
             new_attack.put()
 
@@ -77,23 +83,29 @@ class ReportEdit(BaseRequestHandler):
     def post(self):
 
         if self.logged_in:
-            user = self.current_user;
+            user = self.current_user
 
             id = int(self.request.POST['id'])
             started = datetime.datetime.strptime(self.request.POST['started'], "%Y-%m-%d %H:%M")
-            ended = datetime.datetime.strptime(self.request.POST['ended'], "%Y-%m-%d %H:%M")
 
-            duration_delta = ended - started
+            if 'duration' in self.request.POST:
+                duration = int(self.request.POST['duration'])
+            else:
+                ended = datetime.datetime.strptime(self.request.POST['ended'], "%Y-%m-%d %H:%M")
+
+                duration_delta = ended - started
+
+                duration = int(duration_delta.total_seconds())
 
             found_attack = Attack.get_by_id(id, parent=user.key)
 
             if found_attack:
                 found_attack.start_time = started
-                found_attack.duration = int(duration_delta.total_seconds())
+                found_attack.duration = duration
                 found_attack.comment = self.request.POST['comment']
 
                 found_attack.start_text = create_start_text(started)
-                found_attack.duration_text = create_duration_text(duration_delta.total_seconds())
+                found_attack.duration_text = create_duration_text(duration)
 
                 found_attack.put()
 

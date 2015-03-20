@@ -165,7 +165,7 @@ window.AddView = window.MainViewBase.extend({
         var that = this;
 
         var started_send = this.attackView.getStarted();
-        var ended_send = this.attackView.getEnded();
+        var duration_send = this.attackView.getDuration();
         var commentEL = this.attackView.commentEL.val();
 
         if (!this.attackView.submitButtonEl.hasClass('pure-button-disabled')) {
@@ -178,7 +178,7 @@ window.AddView = window.MainViewBase.extend({
                 url: "/report/add",
                 data: {
                     started: started_send,
-                    ended: ended_send,
+                    duration: duration_send,
                     comment: commentEL
                 }
             }).done(function (response) {

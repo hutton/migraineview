@@ -2,6 +2,10 @@ input[type=date] {
   min-width: 160px;
   min-height: 42px;
 }
+#slider {
+  margin-top: -15px;
+  margin-bottom: -15px;
+}
 .add-duration-group-container {
   margin: 30px 0px;
 }

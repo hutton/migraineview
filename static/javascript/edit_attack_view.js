@@ -69,7 +69,7 @@ window.EditAttackView = Backbone.View.extend({
         var that = this;
 
         var started_send = this.attackView.getStarted();
-        var ended_send = this.attackView.getEnded();
+        var duration_send = this.attackView.getDuration();
         var comment = this.attackView.commentEL.val();
 
         if (!this.attackView.submitButtonEl.hasClass('pure-button-disabled')) {
@@ -83,7 +83,7 @@ window.EditAttackView = Backbone.View.extend({
                 data: {
                     id: this.model.get("id"),
                     started: started_send,
-                    ended: ended_send,
+                    duration: duration_send,
                     comment: comment
                 }
             }).done(function (response) {
@@ -95,10 +95,8 @@ window.EditAttackView = Backbone.View.extend({
                     that.attackView.addMessageLabelEl.html("");
                 }, 100);
 
-                var durationSeconds = (that.attackView.getEndedDate() - that.attackView.getStartedDate()) / 1000;
-
                 if (that.attackView.getStarted() != that.model.get('start') ||
-                    durationSeconds != that.model.get('duration')){
+                    that.attackView.getDuration() != that.model.get('duration')){
                     App.dataChanged();
                     App.refreshData();
                 } else {

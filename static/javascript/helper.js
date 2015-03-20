@@ -104,4 +104,3 @@ Date.prototype.getTimeText = function() {
 
     return "12:" + ("0" + this.getMinutes()).slice(-2) + "pm";
 }
-
